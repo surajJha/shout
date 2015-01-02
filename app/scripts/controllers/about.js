@@ -12,7 +12,7 @@ angular.module('shoutApp')
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
-      'Karma',
-      'suraj'
+      'Karma'
+
     ];
   });

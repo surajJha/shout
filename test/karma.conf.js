@@ -28,7 +28,7 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
+     // 'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
@@ -48,13 +48,30 @@ module.exports = function(config) {
     // - IE (only Windows)
     browsers: [
       'PhantomJS'
+     // 'Firefox'
     ],
 
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-js-coverage',
+      'karma-htmlfile-reporter'
     ],
+    // coverage reporter generates the coverage
+    reporters: ['progress', 'coverage'],
+    preprocessors: {
+      'app/scripts/controllers/*.js' : ['coverage'],
+      'app/scripts/services/*.js' : ['coverage'],
+      'app/scripts/directives/*.js' : ['coverage'],
+      'app/scripts/*.js' : ['coverage']
+    },
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
@@ -64,7 +81,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
     // Uncomment the following lines if you are using grunt's server to run the tests
     // proxies: {

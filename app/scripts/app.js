@@ -35,4 +35,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .run(function($rootScope){
+    $rootScope.baseUrl = 'http://localhost:80'
+  })
