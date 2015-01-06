@@ -35,7 +35,14 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
   })
   .run(function($rootScope){
+        /**
+         * base URL  points to the server where PHP interpreter
+         * is present. PORT 80 used by apache has the interpreter
+         * port 9000 used by the grunt server cannot run PHP
+         * @type {string}
+         */
     $rootScope.baseUrl = 'http://localhost:80'
   })
