@@ -1,0 +1,27 @@
+@import url('../../bower_components/bootstrap/dist/css/bootstrap.css');
+.mypageheader{
+    height: 70px;
+    background: #F44141;
+}
+
+.navbar-default .mybrand{
+    font-size: 30px;
+    padding-top: 22%;
+    color: #ffffff;
+}
+
+.mypagefooter{
+    background: #0f0f0f;
+    opacity: 0.9;
+}
+
+#footer {
+    height: 120px;
+    background: #0f0f0f;
+    opacity: 0.9;
+}
+
+.mycontent{
+    margin-top: 7%;
+    margin-left: 2%;
+}
