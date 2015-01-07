@@ -25,4 +25,20 @@ angular.module('shoutApp')
       })
     }
 
+            $scope.newCounter = 8;
+
+        setInterval(function(){
+
+            console.log("running");
+            $scope.newCounter++;
+            console.log($scope.newCounter);
+            $scope.$apply(function(){
+                return $scope.counter;
+            });
+            //  $scope.$watch(function(scope){
+            //      return scope.counter;
+            //  },function(){
+            //
+            //  });
+        },1000)
   });

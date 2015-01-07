@@ -16,27 +16,48 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/admin', {
-        templateUrl: 'views/admin.html',
-        controller: 'adminHomeController'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
 
-  })
+    .config(function($stateProvider, $urlRouterProvider){
+
+        // For any unmatched url, send to /route1
+        $urlRouterProvider.otherwise("/about")
+
+        $stateProvider
+            .state('about', {
+                //abstract:true,
+                url:'/about',
+
+                views:{
+                    '':{
+                        templateUrl: 'views/about.html'
+                    },
+                    'sidebar@about':{
+                        url:"",
+                        templateUrl:'views/admin.html',
+                        controller: 'adminHomeController'
+
+                    },
+                    'content@about':{
+                        url:"",
+                        templateUrl:'views/main.html',
+                        controller: 'MainCtrl'
+                    }
+                }
+            })
+            //.state('about.main', {
+            //    url:'/main',
+            //    templateUrl: 'views/main.html',
+            //    controller: 'MainCtrl'
+            //})
+            //.state('about.admin', {
+            //    url:'/admin',
+            //    templateUrl: 'views/admin.html',
+            //    controller: 'adminHomeController'
+            //})
+    })
   .run(function($rootScope){
         /**
          * base URL  points to the server where PHP interpreter
@@ -46,3 +67,27 @@ angular
          */
     $rootScope.baseUrl = 'http://localhost:80'
   })
+
+
+
+
+
+//.config(function ($routeProvider) {
+//  $routeProvider
+//    .when('/', {
+//      templateUrl: 'views/main.html',
+//      controller: 'MainCtrl'
+//    })
+//    .when('/about', {
+//      templateUrl: 'views/about.html',
+//      controller: 'AboutCtrl'
+//    })
+//    .when('/admin', {
+//      templateUrl: 'views/admin.html',
+//      controller: 'adminHomeController'
+//    })
+//    .otherwise({
+//      redirectTo: '/'
+//    });
+//
+//})

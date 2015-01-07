@@ -14,4 +14,18 @@ angular.module('shoutApp')
       'AngularJS',
       'Karma'
     ];
+        $scope.counter=0;
+
+        setInterval(function(){
+
+    console.log("running");
+            $scope.counter++;
+            console.log($scope.counter);
+            $scope.$digest();
+          //  $scope.$watch(function(scope){
+          //      return scope.counter;
+          //  },function(){
+          //
+          //  });
+        },1000)
   });
