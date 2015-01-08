@@ -1,8 +1,12 @@
+<!-- THis page is the admin template
+    where admin sidebar and admin content will
+    be loaded in 2 diff coloumns  -->
 
-
-{{ msg }}
-<input type="text" class="input-lg" ng-model="news">
-<input type="button" class="btn btn-lg btn-primary" value="Change name" ng-click="changeName()">
-        {{ counter}}
-        {{ counter }}
-
+<div class="row">
+    <div class="col-lg-2">
+        <ng-include src=" '/views/partials/adminSidebar.html' "></ng-include>
+    </div>
+    <div class="col-lg-10">
+        <div ui-view></div>
+    </div>
+</div>

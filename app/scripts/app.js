@@ -23,40 +23,31 @@ angular
     .config(function($stateProvider, $urlRouterProvider){
 
         // For any unmatched url, send to /route1
-        $urlRouterProvider.otherwise("/about")
+        $urlRouterProvider.otherwise("/admin")
 
         $stateProvider
-            .state('about', {
+            .state('admin', {
                 //abstract:true,
-                url:'/about',
+                url:'/admin',
 
                 views:{
                     '':{
-                        templateUrl: 'views/about.html'
+                        templateUrl: 'views/admin.html'
                     },
-                    'sidebar@about':{
-                        url:"",
-                        templateUrl:'views/admin.html',
-                        controller: 'adminHomeController'
-
-                    },
-                    'content@about':{
-                        url:"",
-                        templateUrl:'views/main.html',
-                        controller: 'MainCtrl'
+                  'content@admin': {
+                        url: "",
+                        templateUrl: 'views/partials/adminViewEvent.html',
+                        //controller: 'MainCtrl'
                     }
+
                 }
             })
-            //.state('about.main', {
-            //    url:'/main',
-            //    templateUrl: 'views/main.html',
-            //    controller: 'MainCtrl'
-            //})
-            //.state('about.admin', {
-            //    url:'/admin',
-            //    templateUrl: 'views/admin.html',
-            //    controller: 'adminHomeController'
-            //})
+            .state('admin.add', {
+                url:'/add',
+                templateUrl:'views/partials/adminAddEvent.html'
+
+            })
+
     })
   .run(function($rootScope){
         /**
@@ -67,27 +58,3 @@ angular
          */
     $rootScope.baseUrl = 'http://localhost:80'
   })
-
-
-
-
-
-//.config(function ($routeProvider) {
-//  $routeProvider
-//    .when('/', {
-//      templateUrl: 'views/main.html',
-//      controller: 'MainCtrl'
-//    })
-//    .when('/about', {
-//      templateUrl: 'views/about.html',
-//      controller: 'AboutCtrl'
-//    })
-//    .when('/admin', {
-//      templateUrl: 'views/admin.html',
-//      controller: 'adminHomeController'
-//    })
-//    .otherwise({
-//      redirectTo: '/'
-//    });
-//
-//})
