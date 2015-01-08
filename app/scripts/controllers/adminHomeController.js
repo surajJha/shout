@@ -25,13 +25,13 @@ angular.module('shoutApp')
       })
     }
 
-            $scope.newCounter = 8;
+            $scope.counter = 8;
 
         setInterval(function(){
 
             console.log("running");
-            $scope.newCounter++;
-            console.log($scope.newCounter);
+            $scope.counter++;
+            console.log($scope.counter);
             $scope.$apply(function(){
                 return $scope.counter;
             });
