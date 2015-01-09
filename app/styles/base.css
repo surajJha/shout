@@ -1,7 +1,7 @@
 @import url('../../bower_components/bootstrap/dist/css/bootstrap.css');
 .mypageheader{
     height: 70px;
-    background:#336699 ;
+    background:darkred;
 }
 
 .navbar-default .mybrand{

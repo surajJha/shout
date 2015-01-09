@@ -17,7 +17,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ngBootstrap',
+    'angularFileUpload'
+
   ])
 
     .config(function($stateProvider, $urlRouterProvider){
@@ -36,7 +39,7 @@ angular
                     },
                   'content@admin': {
                         url: "",
-                        templateUrl: 'views/partials/adminViewEvent.html',
+                        templateUrl: 'views/partials/adminViewEvent.html'
                         //controller: 'MainCtrl'
                     }
 
