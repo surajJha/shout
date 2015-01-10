@@ -19,7 +19,8 @@ angular
     'ngTouch',
     'ui.router',
     'ngBootstrap',
-    'angularFileUpload'
+    'angularFileUpload',
+    'ui.bootstrap'
 
   ])
 
@@ -47,7 +48,8 @@ angular
             })
             .state('admin.add', {
                 url:'/add',
-                templateUrl:'views/partials/adminAddEvent.html'
+                templateUrl:'views/partials/adminAddEvent.html',
+                controller : 'adminAddEventController'
 
             })
 

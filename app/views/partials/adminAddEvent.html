@@ -1,23 +1,146 @@
-<section id="about" class="section tabbable" style="height: 743px; ">
-    <!-- Section Title -->
-    <h2>About</h2>
-    <!-- Subsection Title Navigation -->
-    <ul class="nav nav-pills" id="an">
-        <li class=""><a data-toggle="pill" href="#about-content">About</a></li>
-        <li class="active"><a data-toggle="pill" href="#execs">Your Executives</a></li>
-        <li class=""><a data-toggle="pill" href="#governing-documents">Governing Documents</a></li>
-    </ul><!--"/.nav-pills"-->
-    <div class="contentArea tab-content">
-        <div class="contents tab-pane" id="about-content" style="width: 1019px; padding-left: 0px; ">
-            <img src="//placehold.it/600x400&text=About"></img>
-        </div><!-- /.contents -->
-        <div class="contents tab-pane active" id="execs" style="width: 1019px; padding-left: 0px; ">
-            <img src="//placehold.it/600x400&text=Your+Executives"></img>
-        </div><!-- /.contents -->
-        <div class="contents tab-pane" id="governing-documents" style="width: 1019px; padding-left: 0px; ">
-            <img src="//placehold.it/600x400&text=Governing+Documents"></img>
-        </div><!-- /.contents -->
-    </div><!-- /.contentArea -->
-</section>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container-fluid">
+            <form class="form-horizontal" role="form">
+                <h2 class="event-heading">Event Details</h2>
+                <hr/>
 
-        add event
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="event_name" class="col-md-4 control-label">Event Name:</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="event_category" class="col-md-4 control-label">Event Category:</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="event_category" name="event_category">
+                                        <option value="one">one</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                        <option value="four">Four</option>
+                                        <option value="five">Five</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="event_cost" class="col-md-4 control-label">Cost:</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="event_cost" placeholder="Minimum Cost">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="event_overview" class="col-md-4 control-label">Event Overview:</label>
+                                <div class="col-md-8">
+                                    <textarea style="resize: none;" class="form-control" rows="6" id="event_overview"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12" style="margin-left: 3%;">
+                    <div class="col-lg-1"><span class="hashtag-heading" style="font-size: 15px;font-weight: 800;">Hashtag:</span></div>
+                    <div class="col-lg-3" style="margin-left: 4%">
+                        <div class="input-group">
+                            <span class="input-group-addon">#</span>
+                            <input type="text" class="form-control" id="hash1" >
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">#</span>
+                            <input type="text" class="form-control" id="hash2">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">#</span>
+                            <input type="text" class="form-control" id="hash3">
+                        </div>
+                    </div>
+                </div>
+                </div>
+<!--Venue Form Starts here-->
+                <h2 class="venue-heading">Venue Details</h2>
+                <hr/>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="venue_name" class="col-md-4 control-label">Venue Name:</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="venue_name" class="form-control" id="venue_name" placeholder="Venue Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="event_area" class="col-md-4 control-label">Area:</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="event_area" name="event_area">
+                                        <option value="one">one</option>
+                                        <option value="two">Two</option>
+                                        <option value="three">Three</option>
+                                        <option value="four">Four</option>
+                                        <option value="five">Five</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="event_location" class="col-md-4 control-label">Address:</label>
+                                <div class="col-md-8">
+                                    <textarea style="resize: none;" class="form-control" rows="4" id="event_location"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="schedule_heading">Event Schedule</h2>
+                <hr/>
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-lg-2"></div>
+                        <label for="no_of_days" class="col-md-2 control-label">Select no of Days: </label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="no_of_days" name="no_of_days" ng-model="day" ng-change="change(day)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" mydatepicker day="day">
+
+                </div>
+                <div id="datepicker-placeholder"></div>
+            </form>
+
+
+        </div><!-- /.container -->
+    </div>
+</div>
