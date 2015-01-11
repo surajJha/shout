@@ -35,12 +35,12 @@ angular.module('shoutApp')
                       scope.minDate = scope.minDate ? null : new Date();
                   };
                   scope.toggleMin();
-
-                  scope.open = function($event) {
+                  scope.opened = [];
+                  scope.open = function($event, id) {
                       $event.preventDefault();
                       $event.stopPropagation();
 
-                      scope.opened = true;
+                      scope.opened[id] = true;
                   };
 
                   scope.dateOptions = {
@@ -51,9 +51,9 @@ angular.module('shoutApp')
                   scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
                   scope.format = scope.formats[0];
 
-                  scope.getNumber = function(day) {
-                      return new Array(day);
-                  }
+                  //scope.getNumber = function(day) {
+                  //    return new Array(day);
+                  //}
                   newvalue = parseInt(newvalue);
                   var items = [];
                   for(var i =0;i<newvalue;i++){
@@ -61,7 +61,7 @@ angular.module('shoutApp')
                   }
                   scope.items = items;
 
-                  var template = '<div ng-repeat="i in items"><div class="row"><div class="col-md-6"><p class="input-group"> <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="\'2015-06-22\'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" /> <span class="input-group-btn"> <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button> </span> </p> </div></div>';
+                  var template = '<div ng-repeat="i in items track by $index"><div class="row"><div class="col-md-6"><p class="input-group"> <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened[\'dt-\'+$index]" min-date="minDate" max-date="\'2015-06-22\'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" id="dt-{{$index}}" /> <span class="input-group-btn"> <button type="button" class="btn btn-default" ng-click="open($event, \'dt-\'+$index)"><i class="glyphicon glyphicon-calendar"></i></button> </span> </p> </div></div>';
 
                   angular.element(document.getElementById('datepicker-placeholder')).append($compile(template)(scope));
 
