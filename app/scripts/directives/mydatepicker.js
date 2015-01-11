@@ -35,6 +35,10 @@ angular.module('shoutApp')
                       scope.minDate = scope.minDate ? null : new Date();
                   };
                   scope.toggleMin();
+
+                  /** Making opened a array
+                   * this will be used to create different calender
+                   */
                   scope.opened = [];
                   scope.open = function($event, id) {
                       $event.preventDefault();
@@ -51,15 +55,16 @@ angular.module('shoutApp')
                   scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
                   scope.format = scope.formats[0];
 
-                  //scope.getNumber = function(day) {
-                  //    return new Array(day);
-                  //}
                   newvalue = parseInt(newvalue);
+                  //add the number of days in array items in order to loop through it in ng-repeat
                   var items = [];
                   for(var i =0;i<newvalue;i++){
                       items.push(i);
                   }
                   scope.items = items;
+
+                  // this is to empty the div if the no of days is changed
+                  angular.element(document.getElementById('datepicker-placeholder')).html('');
 
                   var template = '<div ng-repeat="i in items track by $index"><div class="row"><div class="col-md-6"><p class="input-group"> <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened[\'dt-\'+$index]" min-date="minDate" max-date="\'2015-06-22\'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" id="dt-{{$index}}" /> <span class="input-group-btn"> <button type="button" class="btn btn-default" ng-click="open($event, \'dt-\'+$index)"><i class="glyphicon glyphicon-calendar"></i></button> </span> </p> </div></div>';
 
