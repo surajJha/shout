@@ -9,6 +9,7 @@ angular.module('shoutApp')
         $scope.$watch('myFiles', function() {
             for (var i = 0; i < $scope.myFiles.length; i++) {
                 var file = $scope.myFiles[i];
+                console.log(file.type);
                 $scope.upload = $upload.upload({
                     url: $rootScope.baseUrl +'/server/rest.php&f=getDetails',
                     headers: {'Content-Type': file.type},
