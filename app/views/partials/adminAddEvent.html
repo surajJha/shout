@@ -140,6 +140,22 @@
                 <div id="datepicker-placeholder"></div>
             </form>
 
+            <div ng-controller="MyCtrl">
+
+
+                <!--<button ng-file-select ng-model="myFiles" ng-multiple="true"  accept="image/*,*.pdf,*.xml" resetOnClick="true">Upload</button>-->
+
+                <!--<div ng-file-drop ng-model="myFiles"  ng-multiple="true" accept="image/*"  allowDir="true" dragOverClass="{accept:'acceptClass', reject:'rejectClass', delay:100}" dropAvailable="dropSupported" stopPropagation="true" hideOnDropNotAvailable="true">Drop files here</div>-->
+
+
+        <!--Sample:-->
+
+        <button ng-file-select ng-model="myFiles" multiple="true">Attach Any File</button>
+        <div ng-file-drop ng-model="myFiles" class="drop-box" drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" multiple="true" allow-dir="true" accept="image/*,application/pdf">Drop Images or PDFs files here</div>
+        <div ng-no-file-drop>File Farg/Drop is not supported for this browser</div>
+
+    </div>
+
 
         </div><!-- /.container -->
     </div>

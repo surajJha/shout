@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 class Api {
 	public function getDetails($name) {
 		$con=mysqli_connect("localhost","root","root","mytest");
