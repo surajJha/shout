@@ -1,5 +1,10 @@
 <?php
+//header('content-type: application/pdf');
 header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Credentials: true");
+//header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+//header('Access-Control-Max-Age: 1000');
+//header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Disposition, Content-Description');
 include_once 'api.php';
 class Rest {
   protected $func = '';

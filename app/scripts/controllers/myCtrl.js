@@ -4,21 +4,23 @@
 
 
 angular.module('shoutApp')
-    .controller('MyCtrl', ['$scope', '$upload', '$rootScope', function ($scope, $upload, $rootScope) {
+    .controller('MyCtrl', function ($scope, $upload, $rootScope) {
         $scope.myFiles = [];
         $scope.$watch('myFiles', function() {
             for (var i = 0; i < $scope.myFiles.length; i++) {
                 var file = $scope.myFiles[i];
                 $scope.upload = $upload.upload({
-                    url: $rootScope.baseUrl +'/server/rest.php&f=getDetails',
+                    url: $rootScope.baseUrl +'/server/rest.php',
                     headers: {'Content-Type': file.type},
                     method: 'POST',
-                    data: file,
+                  //  data: file,
                     file: file
 
-                }).progress(function(evt) {
+                })
+                    .progress(function(evt) {
                     console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
-                }).success(function(data, status, headers, config) {
+                })
+                    .success(function(data, status, headers, config) {
 
                     console.log('file ' + config.file.name + 'is  uploaded successfully. Response: ' + data);
                 }).error(function(error){
@@ -30,4 +32,4 @@ angular.module('shoutApp')
 
         });
 
-    }]);
+    });
