@@ -137,22 +137,26 @@
                 <div class="row" mydatepicker day="day">
 
                 </div>
-                <div id="datepicker-placeholder"></div>
+                <div id="datepicker-placeholder" class="well"></div>
 
-                <div ng-controller="MyCtrl">
+                <h2 class="image-heading">Image Upload</h2>
+                <hr/>
 
-
-                    <!--<button ng-file-select ng-model="myFiles" ng-multiple="true"  accept="image/*,*.pdf,*.xml" resetOnClick="true">Upload</button>-->
-
-                    <!--<div ng-file-drop ng-model="myFiles"  ng-multiple="true" accept="image/*"  allowDir="true" dragOverClass="{accept:'acceptClass', reject:'rejectClass', delay:100}" dropAvailable="dropSupported" stopPropagation="true" hideOnDropNotAvailable="true">Drop files here</div>-->
-
-
-                    <!--Sample:-->
-
-                    <button ng-file-select ng-model="myFiles" multiple="true">Attach Any File</button>
-                    <div ng-file-drop ng-model="myFiles" class="drop-box" drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" multiple="true" allow-dir="true" accept="image/*,application/pdf">Drop Images or PDFs files here</div>
-                    <div ng-no-file-drop>File Farg/Drop is not supported for this browser</div>
-
+                <div class="row">
+                    <div ng-controller="MyCtrl">
+                        <div class="col-lg-4">
+                            <label for="image1" class="col-md-4 control-label">Image One: </label>
+                            <button class="btn btn-success" ng-file-select ng-model="image1" ng-multiple="false" accept="image/*" id="image1">Attach Image One</button>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="image2" class="col-md-4 control-label">Image Two: </label>
+                            <button class="btn btn-success" ng-file-select ng-model="image2" ng-multiple="false" accept="image/*" id="image2">Attach Image Two</button>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="image3" class="col-md-4 control-label">Image Three: </label>
+                            <button class="btn btn-success" ng-file-select ng-model="image3" ng-multiple="false" accept="image/*" id="image3">Attach Image Three</button>
+                        </div>
+                    </div>
                 </div>
             </form>
 

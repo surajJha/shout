@@ -1,6 +1,9 @@
 <?php
 //header('content-type: application/pdf');
 header("Access-Control-Allow-Origin: *");
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
+
 //header("Access-Control-Allow-Credentials: true");
 //header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
 //header('Access-Control-Max-Age: 1000');
@@ -80,6 +83,14 @@ class Rest {
 		echo $api->getDetails($name);
 
 	}
+
+    public function saveImage(){
+        $filename = $_FILES['file']['name'];
+        $destination = '/var/www/html/shout/server/' . $filename;
+
+        move_uploaded_file( $_FILES['file']['tmp_name'] , $destination );
+        echo $destination;
+    }
 
 	public function getAllDetails($name) {
 
