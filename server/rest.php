@@ -1,8 +1,8 @@
 <?php
 //header('content-type: application/pdf');
 header("Access-Control-Allow-Origin: *");
-//error_reporting(E_ALL);
-//ini_set('display_errors', '1');
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 //header("Access-Control-Allow-Credentials: true");
 //header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
