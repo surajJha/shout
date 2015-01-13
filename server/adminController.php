@@ -5,7 +5,8 @@
  * Date: 07-01-2015
  * Time: 10:56
  */
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 header("Access-Control-Allow-Origin: *");
 include_once 'adminModel.php';
 
@@ -22,25 +23,34 @@ class AdminController{
     public function __construct() {
         $func = $_GET['func'];
         $this->$func();
+
     }
 
     function addEvent(){
-        $data = array();
-        $data['venue_name'] = $_POST['venue_name'];
-        $data['event_name'] = $_POST['event_name'];
-        $data['event_overview'] = $_POST['event_overview'];
-        $data['event_hashtags'] = $_POST['event_hashtags'];
-        $data['event_date'] = $_POST['event_date'];
-        $data['event_start_time'] = $_POST['event_start_time'];
-        $data['event_end_time'] = $_POST['event_end_time'];
-        $data['event_location'] = $_POST['event_location'];
-        $data['event_area'] = $_POST['event_area'];
-        $data['event_cost'] = $_POST['event_cost'];
-        $data['category_name'] = $_POST['category_name'];
-        $data['event_organizer_id'] = 1;
+        /**
+         * Cannot access POST data as usual
+         * we need to use file_get_contents as
+         * done below
+         */
+        $data = json_decode(file_get_contents("php://input"));
+
+//        $data = array();
+//        $data['venue_name'] = $_POST['venue_name'];
+//        $data['event_name'] = $_POST['event_name'];
+//        $data['event_overview'] = $_POST['event_overview'];
+//        $data['event_hashtags'] = $_POST['event_hashtags'];
+//        $data['event_date'] = $_POST['event_date'];
+//        $data['event_start_time'] = $_POST['event_start_time'];
+//        $data['event_end_time'] = $_POST['event_end_time'];
+//        $data['event_location'] = $_POST['event_location'];
+//        $data['event_area'] = $_POST['event_area'];
+//        $data['event_cost'] = $_POST['event_cost'];
+//        $data['category_name'] = $_POST['category_name'];
+//        $data['event_organizer_id'] = 1;
 
         $model = new AdminModel();
-        $result = $model->addEvent($data);
+       $result = $model->addEvent($data);
+        var_dump($data);
     }
 
     function editEvent(){
@@ -82,3 +92,5 @@ class AdminController{
 
     }
 }
+
+$ob = new AdminController();

@@ -29,18 +29,18 @@ class AdminModel {
      */
    public function addEvent($data) {
        $db = $this->getDatabaseObject();
-      $venue_name = $db->real_escape_string($data['venue_name']);
-       $event_name = $db->real_escape_string($data['event_name']);
-      $event_overview =  $db->real_escape_string( $data['event_overview']);
-      $event_hashtags =  $db->real_escape_string($data['event_hashtags']);
-      $event_date =  $db->real_escape_string($data['event_date']);
-      $event_start_time =  $db->real_escape_string($data['event_start_time']);
-      $event_end_time =  $db->real_escape_string( $data['event_end_time']);
-      $event_location =  $db->real_escape_string( $data['event_location']);
-      $event_area =  $db->real_escape_string( $data['event_area']);
-      $event_cost =  $db->real_escape_string( $data['event_cost']);
-      $category_name =  $db->real_escape_string( $data['category_name']);
-      $event_organizer_id =  $db->real_escape_string($data['event_organizer_id']);
+      $venue_name = $db->real_escape_string($data->venue_name);
+       $event_name = $db->real_escape_string($data->event_name);
+      $event_overview =  $db->real_escape_string( $data->event_overview);
+      $event_hashtags =  $db->real_escape_string($data->event_hashtags);
+      $event_date =  $db->real_escape_string($data->event_date);
+      $event_start_time =  $db->real_escape_string($data->event_start_time);
+      $event_end_time =  $db->real_escape_string( $data->event_end_time);
+      $event_location =  $db->real_escape_string( $data->event_location);
+      $event_area =  $db->real_escape_string( $data->event_area);
+      $event_cost =  $db->real_escape_string( $data->event_cost);
+      $category_name =  $db->real_escape_string( $data->category_name);
+      $event_organizer_id =  $db->real_escape_string($data->event_organizer_id);
 
        $query = "insert into event_detail VALUES (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) INTO ($venue_name,$event_name,$event_overview,$event_hashtags,$event_location,$event_area,$event_cost,$category_name,$event_organizer_id)";
       $res1 = $db->query($query);

@@ -35,9 +35,25 @@ angular.module('shoutApp')
 
       return defer.promise;
     }
+        /**
+         * addnewevent takes the formdata model as input
+         * and makes a post request to the adminController
+         * @param formData
+         * @returns {*}
+         */
+    factory.addNewEvent = function(formData) {
+        var defer = $q.defer();
 
-    factory.addNewEvent = function() {
+        $http.post($rootScope.baseUrl + '/server/adminController.php?func=addEvent', formData)
+            .success(function(res){
+                defer.resolve(res);
+                console.log(res);
+            })
+            .error(function (err, status) {
+                defer.reject(err);
+            })
 
+        return defer.promise;
     }
 
     factory.EditEvent = function() {
