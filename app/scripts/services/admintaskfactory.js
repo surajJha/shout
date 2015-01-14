@@ -68,19 +68,7 @@ angular.module('shoutApp')
 
     }
 
-    factory.changeName = function (newname) {
-      var defer = $q.defer();
 
-      $http.get($rootScope.baseUrl + '/shout/server/rest.php?f=changeName&name='+newname)
-        .success(function(res){
-          defer.resolve(res);
-        })
-        .error(function (err, status) {
-          defer.reject(err);
-        })
-
-      return defer.promise;
-    }
 
 
 
