@@ -54,7 +54,7 @@ angular.module('shoutApp')
                   };
 
                   scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-                  scope.format = scope.formats[0];
+                  scope.format = scope.formats[1];
 
                   /* Timepicker Angularjs javascript */
 
@@ -64,7 +64,7 @@ angular.module('shoutApp')
                   scope.hstep = 1;
                   scope.mstep = 15;
 
-                  scope.ismeridian = true;
+                  scope.ismeridian = false;
                   //scope.toggleMode = function() {
                   //    scope.ismeridian = ! scope.ismeridian;
                   //};

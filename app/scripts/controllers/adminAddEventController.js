@@ -31,13 +31,9 @@ angular.module('shoutApp')
         $scope.formData.event_area = '';
         $scope.formData.event_location = '';
         $scope.formData.no_of_days = '';
-        $scope.formData.image1 = '';
-        $scope.formData.image2 = '';
-        $scope.formData.image3 = '';
+        $scope.formData.images = [];
         $scope.formData.datetime = [];
-        //$scope.formData.datetime.dt = [];
-        //$scope.formData.datetime.mytime1 = [];
-        //$scope.formData.datetime.mytime2 = [];
+
         /**
          * ========================================================
          */
@@ -65,89 +61,53 @@ angular.module('shoutApp')
                 $scope.formData.datetime.push({date: $('#dt-'+i).val(), starttime: $('#time1-'+i).html(), endtime: $('#time2-'+i).html()})
             }
         }
-
+        /**
+         * submit event form func will be called when submit
+         * button will be pressed on the form
+         */
         $scope.submitEventForm = function () {
           $scope.getDateTime();
-            adminTaskFactory.addNewEvent($scope.formData,function(result){
-                console.log("result returned"+result);
+         adminTaskFactory.addNewEvent($scope.formData).then(function(result){
+             console.log(result);
+             // for successful insertion into the database
+             // the result returned should bt "success"
+                if(result['status']==='success') {
+                    /**
+                     * upload the images once the form with remaining
+                     * fields have been entered into the database
+                     */
+                   // console.log('result is '+result);
+                    $scope.uploadImages(result['organiser_id']);
+
+                }
             });
         }
 
-        $scope.image1 = "";
-        $scope.image2 = "";
-        $scope.image3 = "";
+        $scope.uploadImages = function(organiser_id) {
+
+            for(var i = 0;i<$scope.formData.images.length;i++) {
+                var file = $scope.formData.images[i];
+                $upload.upload({
+                    url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&organiser_id='+organiser_id,
+                    headers: {'Content-Type': file.type},
+                    method: 'POST',
+                    data: file,
+                    file: file
+
+                }).progress(function(evt) {
 
 
-        $scope.$watch('image1', function() {
+                   console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
+                }).success(function(data, status, headers, config) {
 
-            var file = $scope.image1;
-            $scope.upload = $upload.upload({
-                url: $rootScope.baseUrl +'/server/rest.php?f=saveImage',
-                headers: {'Content-Type': file.type},
-                method: 'POST',
-                data: file,
-                file: file
-
-            });
-            //    .progress(function(evt) {
-            //    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
-            //})
-            //    .success(function(data, status, headers, config) {
-            //
-            //        console.log('File ' + config.file.name + ' is  uploaded successfully. Response: ' + data);
-            //    }).error(function(error){
-            //        console.log(error);
-            //    });
+                    console.log('File ' + config.file.name + ' is  uploaded successfully. Response: ' + data);
+                }).error(function(error){
+                    console.log(error);
+                });
+            }
 
 
+        }
 
-
-        });
-
-        $scope.$watch('image2', function() {
-
-            var file = $scope.image2;
-            $scope.upload = $upload.upload({
-                url: $rootScope.baseUrl +'/server/rest.php?f=saveImage',
-                headers: {'Content-Type': file.type},
-                method: 'POST',
-                data: file,
-                file: file
-
-            });
-            //.progress(function(evt) {
-            //    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
-            //})
-            //.success(function(data, status, headers, config) {
-            //
-            //    console.log('File ' + config.file.name + ' is  uploaded successfully. Response: ' + data);
-            //}).error(function(error){
-            //    console.log(error);
-            //});
-
-        });
-
-        $scope.$watch('image3', function() {
-
-            var file = $scope.image3;
-            $scope.upload = $upload.upload({
-                url: $rootScope.baseUrl +'/server/rest.php?f=saveImage',
-                headers: {'Content-Type': file.type},
-                method: 'POST',
-                data: file,
-                file: file
-
-            });
-            //.progress(function(evt) {
-            //    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
-            //})
-            //.success(function(data, status, headers, config) {
-            //
-            //    console.log('File ' + config.file.name + ' is  uploaded successfully. Response: ' + data);
-            //}).error(function(error){
-            //    console.log(error);
-            //});
-
-        });
 
     });

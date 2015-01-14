@@ -146,20 +146,24 @@
 
                         <div class="col-lg-4">
                             <label for="image1" class="col-md-4 control-label">Image One: </label>
-                            <button class="btn btn-success" ng-file-select ng-model="image1" ng-multiple="false" accept="image/*" id="image1" ng-model="formData.image1">Attach Image One</button>
+                            <button class="btn btn-success" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
+                            <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
                         </div>
                         <div class="col-lg-4">
                             <label for="image2" class="col-md-4 control-label">Image Two: </label>
-                            <button class="btn btn-success" ng-file-select ng-model="image2" ng-multiple="false" accept="image/*" id="image2" ng-model="formData.image1">Attach Image Two</button>
+                            <button class="btn btn-success" ng-file-select ng-model="formData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
+
                         </div>
                         <div class="col-lg-4">
                             <label for="image3" class="col-md-4 control-label">Image Three: </label>
-                            <button class="btn btn-success" ng-file-select ng-model="image3" ng-multiple="false" accept="image/*" id="image3" ng-model="formData.image1">Attach Image Three</button>
+                            <button class="btn btn-success" ng-file-select ng-model="formData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
+
                         </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-3"><button type='submit' class="btn btn-primary" ng-click="submitEventForm()" style="width: 100%">Submit</button>
+
                     </div>
                 </div>
 

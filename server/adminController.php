@@ -26,6 +26,14 @@ class AdminController{
 
     }
 
+    /**
+     * Add event takes the form inputs via post
+     * and returns success message on succes else
+     * return a custom message and not the actual
+     * error message as database errors should not
+     * be shown to the user EVER ! BEWARE OF THIS
+     * else I WILL KILL YOU
+     */
     function addEvent(){
         /**
          * Cannot access POST data as usual
@@ -33,35 +41,36 @@ class AdminController{
          * done below
          */
         $data = json_decode(file_get_contents("php://input"));
-        print_r($data);
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
 
-//        $data = array();
-//        $data['venue_name'] = $_POST['venue_name'];
-//        $data['event_name'] = $_POST['event_name'];
-//        $data['event_overview'] = $_POST['event_overview'];
-//        $data['event_hashtags'] = $_POST['event_hashtags'];
-//        $data['event_date'] = $_POST['event_date'];
-//        $data['event_start_time'] = $_POST['event_start_time'];
-//        $data['event_end_time'] = $_POST['event_end_time'];
-//        $data['event_location'] = $_POST['event_location'];
-//        $data['event_area'] = $_POST['event_area'];
-//        $data['event_cost'] = $_POST['event_cost'];
-//        $data['category_name'] = $_POST['category_name'];
-//        $data['event_organizer_id'] = 1;
-
         $model = new AdminModel();
-      $result = $model->addEvent($data);
-       // var_dump('result : '.$result);
-        echo $result;
-      //  var_dump($data);
+
+       $result = $model->addEvent($data);
+
+        if($result['status'] == "success") {
+            // echo actual response only when result is success and
+            // not if result is a failure.
+            echo json_encode($result);
+        }
+        else {
+            // do not disclose the actual error message
+            echo 'Sorry, The data couldn\'t be saved. Please try again.';
+        }
+
     }
 
+    /**
+     * @param $hash1
+     * @param $hash2
+     * @param $hash3
+     * @return string
+     * Merge all the hashtags and return it as a string
+     */
     function generateHashtag($hash1, $hash2, $hash3){
         $hashtag[0] = $hash1;
         $hashtag[1] = $hash2;
         $hashtag[2] = $hash3;
-        $final_hash_string = implode('',$hashtag);
+        $final_hash_string = implode(' ',$hashtag);
         return $final_hash_string;
 
     }
@@ -103,6 +112,22 @@ class AdminController{
 
     function showExistingImage(){
 
+    }
+
+    function uploadImages(){
+        $organiser_id = $_GET['organiser_id'];
+        if(!is_dir($organiser_id)) {
+            /**
+             *  the directory DOES NOT already exists
+             * so make a new directory
+             */
+            mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
+        }
+        $filename = $_FILES['file']['name'];
+        $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
+
+        move_uploaded_file( $_FILES['file']['tmp_name'] , $destination );
+        echo $destination;
     }
 }
 
