@@ -160,7 +160,9 @@ html,body {
 .venue-heading {
     margin-top: 4%;
 }
-.hasclass {
+/* error messages for form elements */
+.error-message {
     color: red;
-
+    padding-top: 2px;
+    font-size: 14px;
 }
