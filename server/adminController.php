@@ -33,6 +33,8 @@ class AdminController{
          * done below
          */
         $data = json_decode(file_get_contents("php://input"));
+        print_r($data);
+        $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
 
 //        $data = array();
 //        $data['venue_name'] = $_POST['venue_name'];
@@ -49,8 +51,19 @@ class AdminController{
 //        $data['event_organizer_id'] = 1;
 
         $model = new AdminModel();
-       $result = $model->addEvent($data);
-        var_dump($data);
+      $result = $model->addEvent($data);
+       // var_dump('result : '.$result);
+        echo $result;
+      //  var_dump($data);
+    }
+
+    function generateHashtag($hash1, $hash2, $hash3){
+        $hashtag[0] = $hash1;
+        $hashtag[1] = $hash2;
+        $hashtag[2] = $hash3;
+        $final_hash_string = implode('',$hashtag);
+        return $final_hash_string;
+
     }
 
     function editEvent(){

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="container-fluid">
-            <form class="form-horizontal" role="form" enctype="multipart/form-data">
+            <form class="form-horizontal" role="form" enctype="multipart/form-data" novalidate name="eventForm">
                 <h2 class="event-heading">Event Details</h2>
                 <hr/>
 
@@ -142,7 +142,7 @@
                 <h2 class="image-heading">Image Upload</h2>
                 <hr/>
 
-                <div class="row">
+                <div class="row well">
 
                         <div class="col-lg-4">
                             <label for="image1" class="col-md-4 control-label">Image One: </label>
@@ -156,8 +156,13 @@
                             <label for="image3" class="col-md-4 control-label">Image Three: </label>
                             <button class="btn btn-success" ng-file-select ng-model="image3" ng-multiple="false" accept="image/*" id="image3" ng-model="formData.image1">Attach Image Three</button>
                         </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-3"><button type='submit' class="btn btn-primary" ng-click="submitEventForm()" style="width: 100%">Submit</button>
                     </div>
-                <button type="submit" ng-click="submitEventForm()"> Dabao mujhe</button>
+                </div>
+
             </form>
 
 

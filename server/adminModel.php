@@ -8,6 +8,8 @@
 //ini_set('display_startup_errors',1);
 //ini_set('display_errors',1);
 //error_reporting(-1);
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 include_once 'databaseConnection.php';
 class AdminModel {
 
@@ -33,23 +35,44 @@ class AdminModel {
        $event_name = $db->real_escape_string($data->event_name);
       $event_overview =  $db->real_escape_string( $data->event_overview);
       $event_hashtags =  $db->real_escape_string($data->event_hashtags);
-      $event_date =  $db->real_escape_string($data->event_date);
-      $event_start_time =  $db->real_escape_string($data->event_start_time);
-      $event_end_time =  $db->real_escape_string( $data->event_end_time);
+     // $event_date =  $db->real_escape_string($data->event_date);
+     // $event_start_time =  $db->real_escape_string($data->event_start_time);
+     // $event_end_time =  $db->real_escape_string( $data->event_end_time);
+
+
+
       $event_location =  $db->real_escape_string( $data->event_location);
       $event_area =  $db->real_escape_string( $data->event_area);
       $event_cost =  $db->real_escape_string( $data->event_cost);
-      $category_name =  $db->real_escape_string( $data->category_name);
-      $event_organizer_id =  $db->real_escape_string($data->event_organizer_id);
+      $category_name =  $db->real_escape_string( $data->event_category);
+      $event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
-       $query = "insert into event_detail VALUES (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) INTO ($venue_name,$event_name,$event_overview,$event_hashtags,$event_location,$event_area,$event_cost,$category_name,$event_organizer_id)";
+
+
+       $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$event_organizer_id}')";
       $res1 = $db->query($query);
+
        /**
         * getting id of last inserted row
         */
+
        $event_detail_id = $db->insert_id;
-       $query = "insert into event_schedule VALUES (event_detail_id,event_date,event_start_time,event_end_time) INTO ($event_detail_id,$event_date,$event_start_time,$event_end_time)";
-      $res2 =  $db->query($query);
+       for($i = 0;$i<count($data->datetime);$i++) {
+
+           $event_date = $data->datetime[$i]->date;
+           $event_start_time = $data->datetime[$i]->starttime;
+           $event_end_time = $data->datetime[$i]->endtime;
+
+           $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
+           $res2 =  $db->query($query);
+       }
+      //     return $res1;
+       if($res2){
+           echo 'success';
+       }
+       else {
+           echo 'error'.$db->error;
+       }
        /**
         *  ccheck if res2 is true i.e query executed succesfullu
         * otherwise send appropriate error

@@ -17,14 +17,15 @@ angular.module('shoutApp')
           scope.$watch('day',function(newvalue,oldvalue){
               if(newvalue === oldvalue)return;
               else{
+                  scope.dt = [];
                   scope.today = function() {
-                      scope.dt = new Date();
+                      scope.dt[0] = new Date();
                   };
                   scope.today();
 
-                  scope.clear = function () {
-                      scope.dt = null;
-                  };
+                  //scope.clear = function () {
+                  //    scope.dt = null;
+                  //};
 
                   // Disable weekend selection
                   scope.disabled = function(date, mode) {
@@ -88,7 +89,7 @@ angular.module('shoutApp')
                   // this is to empty the div if the no of days is changed
                   angular.element(document.getElementById('datepicker-placeholder')).html('');
 
-                  var template = '<div ng-repeat="i in items track by $index"><div class="row"><div class="col-md-6" style="margin-top: 34px;"><p class="input-group"> <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened[\'dt-\'+$index]" min-date="minDate" max-date="\'2015-06-22\'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" id="dt-{{$index}}" /> <span class="input-group-btn"> <button type="button" class="btn btn-default" ng-click="open($event, \'dt-\'+$index)"><i class="glyphicon glyphicon-calendar"></i></button> </span> </p> </div><div class="col-md-3"><timepicker ng-model="mytime1" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker><div id="time1-{{$index}}" ng-hide="true">{{mytime1 | date:\'shortTime\' }}</div></div><div class="col-md-3"><timepicker ng-model="mytime2" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker><div id="time2-{{$index}}" ng-hide="true">{{mytime2 | date:\'shortTime\' }}</div></div></div></div>';
+                  var template = '<div ng-repeat="i in items track by $index"><div class="row"><div class="col-md-6" style="margin-top: 34px;"><p class="input-group"> <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="formData.datetime.dt[\'{{$index}}\']" is-open="opened[\'dt-\'+$index]" min-date="minDate" max-date="\'2015-06-22\'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" id="dt-{{$index}}" /> <span class="input-group-btn"> <button type="button" class="btn btn-default" ng-click="open($event, \'dt-\'+$index)"><i class="glyphicon glyphicon-calendar"></i></button> </span> </p> </div><div class="col-md-3"><timepicker ng-model="formData.datetime.mytime1[\'{{$index}}\']" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker><div id="time1-{{$index}}" ng-hide="true">{{mytime1 | date:\'shortTime\' }}</div></div><div class="col-md-3"><timepicker ng-model="formData.datetime.mytime2[\'{{$index}}\']" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker><div id="time2-{{$index}}" ng-hide="true">{{mytime2 | date:\'shortTime\' }}</div></div></div></div>';
 
                   angular.element(document.getElementById('datepicker-placeholder')).append($compile(template)(scope));
               }

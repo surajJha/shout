@@ -34,6 +34,10 @@ angular.module('shoutApp')
         $scope.formData.image1 = '';
         $scope.formData.image2 = '';
         $scope.formData.image3 = '';
+        $scope.formData.datetime = [];
+        //$scope.formData.datetime.dt = [];
+        //$scope.formData.datetime.mytime1 = [];
+        //$scope.formData.datetime.mytime2 = [];
         /**
          * ========================================================
          */
@@ -51,9 +55,19 @@ angular.module('shoutApp')
                 $scope.day = no_of_days;
             }
         })();
+        /**
+         * get date and time fields of the dynamically
+         * generated date fields and push it to the
+         * model varaibles
+         */
+        $scope.getDateTime = function () {
+            for(var i = 0; i< $scope.day; i++){
+                $scope.formData.datetime.push({date: $('#dt-'+i).val(), starttime: $('#time1-'+i).html(), endtime: $('#time2-'+i).html()})
+            }
+        }
 
         $scope.submitEventForm = function () {
-            console.log($scope.formData);
+          $scope.getDateTime();
             adminTaskFactory.addNewEvent($scope.formData,function(result){
                 console.log("result returned"+result);
             });
