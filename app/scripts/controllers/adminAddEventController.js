@@ -100,20 +100,20 @@ angular.module('shoutApp')
          */
         $scope.submitEventForm = function () {
           $scope.getDateTime();
-         //adminTaskFactory.addNewEvent($scope.formData).then(function(result){
-         //    console.log(result);
-         //    // for successful insertion into the database
-         //    // the result returned should bt "success"
-         //       if(result['status']==='success') {
-         //           /**
-         //            * upload the images once the form with remaining
-         //            * fields have been entered into the database
-         //            */
-         //          // console.log('result is '+result);
-         //           $scope.uploadImages(result['organiser_id']);
-         //
-         //       }
-         //   });
+         adminTaskFactory.addNewEvent($scope.formData).then(function(result){
+             console.log(result);
+             // for successful insertion into the database
+             // the result returned should bt "success"
+                if(result['status']==='success') {
+                    /**
+                     * upload the images once the form with remaining
+                     * fields have been entered into the database
+                     */
+                   // console.log('result is '+result);
+                    $scope.uploadImages(result['organiser_id']);
+
+                }
+            });
         }
 
         $scope.uploadImages = function(organiser_id) {
