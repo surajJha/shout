@@ -68,7 +68,35 @@ angular.module('shoutApp')
 
     }
 
+    factory.getEventCategory = function () {
+        var defer = $q.defer();
 
+        $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventCategory')
+            .success(function(res){
+                defer.resolve(res.data);
+               // console.log(res);
+            })
+            .error(function (err, status) {
+                defer.reject(err);
+            })
+
+        return defer.promise;
+    }
+
+        factory.getEventArea = function () {
+            var defer = $q.defer();
+
+            $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventArea')
+                .success(function(res){
+                    defer.resolve(res.data);
+                    // console.log(res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+
+            return defer.promise;
+        }
 
 
 

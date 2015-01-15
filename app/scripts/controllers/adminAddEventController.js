@@ -31,15 +31,43 @@ angular.module('shoutApp')
         $scope.formData.event_area = '';
         $scope.formData.event_location = '';
         $scope.formData.no_of_days = '';
-        $scope.formData.checkbox = '';
+        $scope.formData.repeatEventCheckbox = '';
         $scope.formData.no_of_weeks = '';
         $scope.formData.no_of_months = '';
+        $scope.formData.repeatType = '';
         $scope.formData.images = [];
         $scope.formData.datetime = [];
+        $scope.event_categories = [];
+        $scope.event_areas = [];
+
 
         /**
          * ========================================================
          */
+        /**
+         * Init function will be calles as soon as the
+         * page loads to initialize required params
+         */
+        $scope.init = function() {
+            /**
+             *  FIll the category dropdown with initial data
+             */
+            adminTaskFactory.getEventCategory().then(function (result) {
+                for(var i = 0;i<result.length;i++){
+                    $scope.event_categories[i] = result[i][0];
+                }
+
+            })
+            /**
+             *  FIll the area dropdown with initial data
+             */
+             adminTaskFactory.getEventArea().then(function(result){
+                 for(var i = 0;i<result.length;i++){
+                     $scope.event_areas[i] = result[i][0];
+                 }
+             })
+        }
+        $scope.init();
 
 
         /**
@@ -62,7 +90,9 @@ angular.module('shoutApp')
         $scope.getDateTime = function () {
             for(var i = 0; i< $scope.day; i++){
                 $scope.formData.datetime.push({date: $('#dt-'+i).val(), starttime: $('#time1-'+i).html(), endtime: $('#time2-'+i).html()})
+
             }
+            console.log($scope.formData.datetime);
         }
         /**
          * submit event form func will be called when submit
@@ -70,20 +100,20 @@ angular.module('shoutApp')
          */
         $scope.submitEventForm = function () {
           $scope.getDateTime();
-         adminTaskFactory.addNewEvent($scope.formData).then(function(result){
-             console.log(result);
-             // for successful insertion into the database
-             // the result returned should bt "success"
-                if(result['status']==='success') {
-                    /**
-                     * upload the images once the form with remaining
-                     * fields have been entered into the database
-                     */
-                   // console.log('result is '+result);
-                    $scope.uploadImages(result['organiser_id']);
-
-                }
-            });
+         //adminTaskFactory.addNewEvent($scope.formData).then(function(result){
+         //    console.log(result);
+         //    // for successful insertion into the database
+         //    // the result returned should bt "success"
+         //       if(result['status']==='success') {
+         //           /**
+         //            * upload the images once the form with remaining
+         //            * fields have been entered into the database
+         //            */
+         //          // console.log('result is '+result);
+         //           $scope.uploadImages(result['organiser_id']);
+         //
+         //       }
+         //   });
         }
 
         $scope.uploadImages = function(organiser_id) {

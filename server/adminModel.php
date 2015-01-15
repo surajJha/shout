@@ -45,6 +45,10 @@ class AdminModel {
       $event_area =  $db->real_escape_string( $data->event_area);
       $event_cost =  $db->real_escape_string( $data->event_cost);
       $category_name =  $db->real_escape_string( $data->event_category);
+       $repeatEvent = $db->real_escape_string( $data->repeatEventCheckbox);
+       $repeatType = $db->real_escape_string( $data->repeatType);
+       $no_of_weeks = $db->real_escape_string( $data->no_of_weeks);
+       $no_of_months = $db->real_escape_string( $data->no_of_months);
      // $event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
        /**
         * before firing the query , check if all the NO NULLABLE coloumns
@@ -63,16 +67,56 @@ class AdminModel {
             */
 
            $event_detail_id = $db->insert_id;
-           for($i = 0;$i<count($data->datetime);$i++) {
+           if($repeatEvent) {
+               /**
+                * THe event is repetitive
+                */
+               if($repeatType =='weekly'){
+                   for($i = 0;$i<count($data->datetime);$i++) {
+                       $event_date = $data->datetime[$i]->date;
+                       $event_start_time = $data->datetime[$i]->starttime;
+                       $event_end_time = $data->datetime[$i]->endtime;
+                       for ($j = 0; $j < $no_of_weeks; $j++) {
+                           $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
+                           $res2 = $db->query($query);
+                           $date = new DateTime($event_date);
+                           $date->add(new DateInterval('P1W'));
+                           $event_date = $date->format('Y-m-d');
+                       }
+                   }
+                  }
+                   else if($repeatType == 'monthly') {
+                       for($i = 0;$i<count($data->datetime);$i++) {
+                           $event_date = $data->datetime[$i]->date;
+                           $event_start_time = $data->datetime[$i]->starttime;
+                           $event_end_time = $data->datetime[$i]->endtime;
+                           for ($j = 0; $j < $no_of_months; $j++) {
+                               $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
+                               $res2 = $db->query($query);
+                               $date = new DateTime($event_date);
+                               $date->add(new DateInterval('P1M'));
+                               $event_date = $date->format('Y-m-d');
+                           }
+                       }
+                   }
 
-               $event_date = $data->datetime[$i]->date;
-               $event_start_time = $data->datetime[$i]->starttime;
-               $event_end_time = $data->datetime[$i]->endtime;
 
-               $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
-               $res2 =  $db->query($query);
            }
-           //     return $res1;
+           else {
+               /**
+                * THe event is non-repetitive
+                */
+               for($i = 0;$i<count($data->datetime);$i++) {
+                   $event_date = $data->datetime[$i]->date;
+                   $event_start_time = $data->datetime[$i]->starttime;
+                   $event_end_time = $data->datetime[$i]->endtime;
+                   $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
+                   $res2 = $db->query($query);
+
+               }
+
+           }
+
            if($res2){
                    $result = array();
                $result['status'] = 'success';
@@ -151,6 +195,46 @@ class AdminModel {
         $query = "select * FROM event_detail as ed,event_schedule as es WHERE ed.event_detail_id = es.event_detail_id AND ed.event_organizer_id='{$event_organizer_id}'";
         $result = $db->query($query);
         return $result;
+    }
+
+    public function getEventCategory() {
+        $db = $this->getDatabaseObject();
+        $query = "select category_name from category";
+        $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0){
+            while($row = $temp->fetch_row()){
+                $rows[] = $row;
+            }
+            $result['status'] = 'success';
+            $result['data'] = $rows;
+            return $result;
+        }
+        else {
+           $result['status'] = "failure";
+
+        }
+
+    }
+
+    public function getEventArea() {
+        $db = $this->getDatabaseObject();
+        $query = "SELECT area_name from area";
+        $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0){
+            while($row = $temp->fetch_row()){
+                $rows[] = $row;
+            }
+            $result['status'] = 'success';
+            $result['data'] = $rows;
+            return $result;
+        }
+        else {
+            $result['status'] = "failure";
+
+        }
+
     }
 
 

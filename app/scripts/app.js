@@ -52,6 +52,12 @@ angular
                 controller : 'adminAddEventController'
 
             })
+            .state('admin.view', {
+                url:'/view',
+                templateUrl:'views/partials/adminViewEvent.html',
+                controller : 'adminViewEventsController'
+
+            })
 
     })
   .run(function($rootScope){

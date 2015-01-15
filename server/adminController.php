@@ -114,6 +114,11 @@ class AdminController{
 
     }
 
+    /**
+     * creates a directory if not already present and
+     * then uploads the image in the newly created
+     * directory or the already existing one
+     */
     function uploadImages(){
         $organiser_id = $_GET['organiser_id'];
         if(!is_dir($organiser_id)) {
@@ -124,10 +129,44 @@ class AdminController{
             mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
         }
         $filename = $_FILES['file']['name'];
+        $ext = pathinfo($filename, PATHINFO_EXTENSION);
+        $file_base = basename($filename,$ext);
+
+
+        $filename = $file_base.microtime().'.'.$ext;
+
         $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
 
         move_uploaded_file( $_FILES['file']['tmp_name'] , $destination );
         echo $destination;
+    }
+
+    /**
+     * returns an array of event categories from the database
+     */
+    function getEventCategory() {
+        $model = new AdminModel();
+        $result = $model->getEventCategory();
+        if($result['status'] == 'success'){
+            echo json_encode($result);
+        }
+        else {
+            echo "no available categories";
+        }
+    }
+
+    /**
+     * returns an array of areas from the database
+     */
+    function getEventArea() {
+        $model = new AdminModel();
+        $result = $model->getEventArea();
+        if($result['status'] == 'success'){
+            echo json_encode($result);
+        }
+        else {
+            echo "no available areas";
+        }
     }
 }
 
