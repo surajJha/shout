@@ -31,6 +31,9 @@ angular.module('shoutApp')
         $scope.formData.event_area = '';
         $scope.formData.event_location = '';
         $scope.formData.no_of_days = '';
+        $scope.formData.checkbox = '';
+        $scope.formData.no_of_weeks = '';
+        $scope.formData.no_of_months = '';
         $scope.formData.images = [];
         $scope.formData.datetime = [];
 
