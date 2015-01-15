@@ -121,6 +121,7 @@ class AdminModel {
                    $result = array();
                $result['status'] = 'success';
                $result['organiser_id'] = $this->event_organiser_id;
+               $result['event_detail_id'] = $event_detail_id;
 
                return $result;
            }
@@ -138,6 +139,16 @@ class AdminModel {
         * otherwise send appropriate error
         */
    }
+
+    /**
+     * Add the image URL to the event_image table in the database
+     */
+    public function addImageUrlToDatabase($destination, $event_detail_id, $primary_image) {
+        $db = $this->getDatabaseObject();
+        $query = "insert into event_image (event_detail_id, event_image_name, primary_image) VALUES ('{$event_detail_id}', '{$destination}','{$primary_image}')";
+        $result = $db->query($query);
+        return $result;
+    }
 
     /**
      * @param $data

@@ -55,7 +55,7 @@ angular
             .state('admin.view', {
                 url:'/view',
                 templateUrl:'views/partials/adminViewEvent.html',
-                controller : 'adminViewEventsController'
+                controller : 'adminViewEventController'
 
             })
 

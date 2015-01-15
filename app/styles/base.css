@@ -181,3 +181,8 @@ input[type="radio"] {
     -webkit-transform: scale(1.2); /* Safari and Chrome */
     -o-transform: scale(1.2); /* Opera */
 }
+
+.preloader {
+    padding: 50px;
+    background: url('../images/713.GIF') no-repeat 70% 70% transparent;
+}

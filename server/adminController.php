@@ -121,6 +121,8 @@ class AdminController{
      */
     function uploadImages(){
         $organiser_id = $_GET['organiser_id'];
+        $event_detail_id = $_GET['event_detail_id'];
+        $primary_image = $_GET['primary_image'];
         if(!is_dir($organiser_id)) {
             /**
              *  the directory DOES NOT already exists
@@ -137,8 +139,21 @@ class AdminController{
 
         $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
 
-        move_uploaded_file( $_FILES['file']['tmp_name'] , $destination );
-        echo $destination;
+        if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination )){
+            // when upload is done then make a database instertion of the
+            // path to the image
+            $model = new AdminModel();
+            $imageresult = $model->addImageUrlToDatabase($destination, $event_detail_id, $primary_image);
+           if($imageresult){
+               echo $imageresult;
+
+           }
+            else {
+                echo 'image URL was not saved properly.';
+            }
+        }
+
+
     }
 
     /**

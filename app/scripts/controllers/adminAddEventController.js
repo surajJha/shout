@@ -100,28 +100,30 @@ angular.module('shoutApp')
          */
         $scope.submitEventForm = function () {
           $scope.getDateTime();
-         //adminTaskFactory.addNewEvent($scope.formData).then(function(result){
-         //    console.log(result);
-         //    // for successful insertion into the database
-         //    // the result returned should bt "success"
-         //       if(result['status']==='success') {
-         //           /**
-         //            * upload the images once the form with remaining
-         //            * fields have been entered into the database
-         //            */
-         //          // console.log('result is '+result);
-         //           $scope.uploadImages(result['organiser_id']);
-         //
-         //       }
-         //   });
+        adminTaskFactory.addNewEvent($scope.formData).then(function(result){
+            console.log(result);
+           // for successful insertion into the database
+            // the result returned should bt "success"
+               if(result['status']==='success') {
+                  /**
+                  * upload the images once the form with remaining
+                  * fields have been entered into the database
+                    */
+                 // console.log('result is '+result);
+                   $scope.uploadImages(result['organiser_id'],result['event_detail_id']);
+
+              }
+          });
         }
 
-        $scope.uploadImages = function(organiser_id) {
+        $scope.uploadImages = function(organiser_id, event_detail_id) {
 
             for(var i = 0;i<$scope.formData.images.length;i++) {
+                var primary_image =0;
+                if(i == 0)primary_image=1;
                 var file = $scope.formData.images[i];
                 $upload.upload({
-                    url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&organiser_id='+organiser_id,
+                    url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&organiser_id='+organiser_id+'&event_detail_id='+event_detail_id+'&primary_image='+primary_image,
                     headers: {'Content-Type': file.type},
                     method: 'POST',
                     data: file,
@@ -135,7 +137,7 @@ angular.module('shoutApp')
 
                     console.log('File ' + config.file.name + ' is  uploaded successfully. Response: ' + data);
                 }).error(function(error){
-                    console.log(error);
+                    console.log(error.message);
                 });
             }
 
