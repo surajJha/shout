@@ -1,10 +1,12 @@
-<div style="margin-left: 45%;" class="" ng-hide="loaded"><img src="../app/images/713.GIF" alt=""/></div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container-fluid">
+        {{eventData[0]['event_detail_id']}}
 
-<div>
-    <ul>
-        <li ng-repeat="person in people">
-            {{person.fname}}
-        </li>
-    </ul>
+           <div style="height: 200px;width: 200px;position: absolute;"><img src="{{imageUrl}}" alt=""/></div>
+        </div>
+    </div>
 </div>
-
+<!--<section id="map" >-->
+    <!--<div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>-->
+<!--</section>-->

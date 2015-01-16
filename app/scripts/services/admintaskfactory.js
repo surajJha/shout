@@ -21,12 +21,17 @@ angular.module('shoutApp')
     will be then avaibale to the controller
     which is using this factory
      */
-
-    factory.getAllEvents = function() {
+        /**
+         * Function returns all the events
+         * belonging to a perticular client/admin
+         * @returns {*}
+         */
+    factory.getAllEvents = function(organiser_id) {
       var defer = $q.defer();
 
-      $http.get($rootScope.baseUrl + '/shout/server/rest.php?f=getdetail&name=suraj')
+      $http.get($rootScope.baseUrl + '/server/adminController.php?func=getAllEvents&organiser_id='+organiser_id)
         .success(function(res){
+           //   console.log(res);
           defer.resolve(res);
         })
         .error(function (err, status) {

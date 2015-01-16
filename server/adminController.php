@@ -183,6 +183,19 @@ class AdminController{
             echo "no available areas";
         }
     }
+
+    function getAllEvents() {
+        $organiser_id = $_GET['organiser_id'];
+        $model = new AdminModel();
+        $result = $model->getAllEvents($organiser_id);
+        if($result['status'] == 'success'){
+            echo json_encode($result['data']);
+        }
+        else {
+            echo "No events for the client";
+        }
+
+    }
 }
 
 $ob = new AdminController();

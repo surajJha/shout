@@ -63,7 +63,14 @@ class AdminModel {
        $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
        $res1 = $db->query($query);
        if($res1) {
-           /*
+           /**
+            * if first query is true then insert data into event
+            * schedule
+            * getting id of last inserted row
+            */
+           $event_detail_id = $db->insert_id;
+
+           /**
             * after the event is added into the
             * database the hashtag table is updated
             * or added with the hashtag names
@@ -81,28 +88,24 @@ class AdminModel {
                }
                $query = "select * from hashtag where hashtag_name= '{$hash}'";
                $temp = $db->query($query);
-               var_dump($query);
+             //  var_dump($query);
                if($temp->num_rows == 0){
                    $query = "insert into hashtag (hashtag_name) VALUES ('{$hash}')";
-                   var_dump($query);
+                //   var_dump($query);
                }
                else{
                    $row[] = $temp->fetch_row();
                    $row = intval($row[0][2]);
                    $query = "update hashtag set hashtag_count = '{$row}' + 1  where hashtag_name = '{$hash}' ";
-                   var_dump($query);
+              //     var_dump($query);
                }
                $db->query($query);
            }
 
 
-           /**
-            * if first query is true then insert data into event
-            * schedule
-            * getting id of last inserted row
-            */
 
-           $event_detail_id = $db->insert_id;
+
+
            if($repeatEvent) {
                /**
                 * THe event is repetitive
@@ -282,6 +285,25 @@ class AdminModel {
 
         }
 
+    }
+
+    public function getAllEvents($organiser_id) {
+        $db = $this->getDatabaseObject();
+        $query = "select * from event_detail as e, event_schedule as es, event_image as ei where e.event_detail_id = es.event_detail_id and e.event_detail_id = ei.event_detail_id and e.event_organizer_id = '{$organiser_id}';";
+       $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0){
+            while($row = $temp->fetch_assoc()){
+                $rows[] = $row;
+            }
+            $result['status'] = 'success';
+            $result['data'] = $rows;
+           return $result;
+        }
+        else {
+            $result['status'] = "failure";
+
+        }
     }
 
 

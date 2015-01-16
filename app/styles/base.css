@@ -186,3 +186,8 @@ input[type="radio"] {
     padding: 50px;
     background: url('../images/713.GIF') no-repeat 70% 70% transparent;
 }
+.map-canvas {
+    width: 600px;
+    height: 600px;
+    box-shadow: 1px 5px 2px #555;
+}

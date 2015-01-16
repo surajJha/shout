@@ -18,9 +18,10 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'ngBootstrap',
+        'ui.utils',
     'angularFileUpload',
-    'ui.bootstrap'
+    'ui.bootstrap',
+        'ui.map'
 
   ])
 
