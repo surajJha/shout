@@ -49,6 +49,9 @@ class AdminModel {
        $repeatType = $db->real_escape_string( $data->repeatType);
        $no_of_weeks = $db->real_escape_string( $data->no_of_weeks);
        $no_of_months = $db->real_escape_string( $data->no_of_months);
+       $hash1 = $db->real_escape_string($data->hash1);
+       $hash2 = $db->real_escape_string($data->hash2);
+       $hash3 = $db->real_escape_string($data->hash3);
      // $event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
        /**
         * before firing the query , check if all the NO NULLABLE coloumns
@@ -58,8 +61,41 @@ class AdminModel {
 
 
        $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
-      $res1 = $db->query($query);
+       $res1 = $db->query($query);
        if($res1) {
+           /*
+            * after the event is added into the
+            * database the hashtag table is updated
+            * or added with the hashtag names
+            */
+
+           for($k=1; $k<=3; $k++){
+               if($k==1){
+                   $hash = $hash1;
+               }
+               elseif($k==2){
+                   $hash = $hash2;
+               }
+               elseif($k==3){
+                   $hash = $hash3;
+               }
+               $query = "select * from hashtag where hashtag_name= '{$hash}'";
+               $temp = $db->query($query);
+               var_dump($query);
+               if($temp->num_rows == 0){
+                   $query = "insert into hashtag (hashtag_name) VALUES ('{$hash}')";
+                   var_dump($query);
+               }
+               else{
+                   $row[] = $temp->fetch_row();
+                   $row = intval($row[0][2]);
+                   $query = "update hashtag set hashtag_count = '{$row}' + 1  where hashtag_name = '{$hash}' ";
+                   var_dump($query);
+               }
+               $db->query($query);
+           }
+
+
            /**
             * if first query is true then insert data into event
             * schedule
