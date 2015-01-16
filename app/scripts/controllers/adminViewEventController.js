@@ -17,26 +17,15 @@ angular.module('shoutApp')
               $scope.eventData = result;
               var index = $scope.eventData[0]['event_image_name'].indexOf('/shout');
               $scope.imageUrl = $scope.eventData[0]['event_image_name'].substring(index);
+              console.log($scope.imageUrl);
               for(var i = 0;i<result.length;i++)
               console.log(result[i]);
           })
       }
         $scope.init();
-
-        var mapInitFlag = false;
-        $scope.showMap = function(){
-            $scope.isShow = !$scope.isShow;
-            if(!mapInitFlag)
-            {
-                $timeout(function(){
-                    google.maps.event.trigger($scope.myMap,'resize');
-                    mapInitFlag=true;
-                    console.log('adjust map');
-                });
-            }
-        };
-
-        $scope.myMarkers = [];
+        function onGoogleReady() {
+            angular.bootstrap(document.getElementById("map"), ['app.ui-map']);
+        }
 
         $scope.mapOptions = {
             center: new google.maps.LatLng(19.2147, 72.850),

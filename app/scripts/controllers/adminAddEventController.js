@@ -124,7 +124,7 @@ angular.module('shoutApp')
                 var file = $scope.formData.images[i];
                 $upload.upload({
                     url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&organiser_id='+organiser_id+'&event_detail_id='+event_detail_id+'&primary_image='+primary_image,
-                    headers: {'Content-Type': file.type},
+                   // headers: {'Content-Type': file.type},
                     method: 'POST',
                     data: file,
                     file: file
