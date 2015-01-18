@@ -191,3 +191,31 @@ input[type="radio"] {
     height: 600px;
     box-shadow: 1px 5px 2px #555;
 }
+
+/*************************** View Events CSS ***********************************/
+.viewEvents{
+    width: 100%;
+    height: 200px;
+    background-color: #64A3A3;
+    border: solid black 1px;
+    -webkit-box-shadow: 3px 2px 5px 0px rgba(10,38,38,0.75);
+    -moz-box-shadow: 3px 2px 5px 0px rgba(10,38,38,0.75);
+    box-shadow: 3px 2px 5px 0px rgba(10,38,38,0.75);
+    border-radius: 5px;
+}
+
+.eventTitle {
+    padding-left: 6%;
+    font-size: 20px;
+    padding-top: 2%;
+}
+
+.eventDetails {
+    padding-top: 19%;
+    font-size: 17px;
+    padding-left: 4%;
+}
+#options{
+    padding-top: 5%;
+    padding-left: 15%;
+}
