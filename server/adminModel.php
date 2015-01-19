@@ -294,8 +294,31 @@ class AdminModel {
        $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0){
+            $i = 0;
             while($row = $temp->fetch_assoc()){
-                $rows[] = $row;
+
+                $rows[$i]['category_name'] = $row['category_name'];
+                $rows[$i]['event_area'] = $row['event_area'];
+                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_hashtags'] = $row['event_hashtags'];
+                $rows[$i]['event_location'] = $row['event_location'];
+                $rows[$i]['event_name'] = $row['event_name'];
+                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['venue_name'] = $row['venue_name'];
+                $rows[$i]['datetime'] = array();
+                $temp_date_array = explode(',',$row['schedule']);
+                $y = array();
+                foreach ($temp_date_array as $x) {
+
+                    $y = explode('=',$x);
+                    $z = array();
+                    $z['date'] = $y[0];
+                    $z['start_time'] = $y[1];
+                    $z['end_time'] = $y[2];
+                    array_push($rows[$i]['datetime'] , $z);
+                }
+                $i++;
             }
             $result['status'] = 'success';
             $result['data'] = $rows;

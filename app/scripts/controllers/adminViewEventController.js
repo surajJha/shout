@@ -20,12 +20,10 @@ angular.module('shoutApp')
         $scope.formData.event_area = [];
         $scope.formData.event_location = [];
         $scope.formData.image = [];
-        $scope.formData.schedule = [];
-        $scope.formData.result_length = [];
-        $scope.formData.date_array = [];
         $scope.formData.datetime = [];
-        $scope.formData.date_temp = {};
-        $scope.temp = [];
+        $scope.formData.result_length = [];
+        $scope.formData.no_of_days = [];
+
       $scope.init = function () {
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
@@ -35,7 +33,7 @@ angular.module('shoutApp')
                * used in ng-repeat to
                * repeat the loop and create the div
               */
-                  console.log(result);
+                //  console.log(result);
               var items = [];
               for(var i =0;i<result.length;i++){
                   items.push(i);
@@ -52,35 +50,11 @@ angular.module('shoutApp')
                   $scope.formData.venue_name[i] = result[i].venue_name;
                   $scope.formData.event_area[i] = result[i].event_area;
                   $scope.formData.event_location[i] = result[i].event_location;
-                  $scope.formData.image[i] = result[i].image;
-                  $scope.formData.schedule[i] = result[i].schedule;
+                 // $scope.formData.image[i] = result[i].image;
+                  $scope.formData.datetime[i] = result[i].datetime;
+                  $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
 
-                  //DATE TIME GENERATION
-
-                    /** the rows are joined with ","
-                     * and each column are joined using  "="
-                     * here we spilt based on "," to get
-                     * indivdual rows
-                    */
-                  $scope.formData.date_array[i] = $scope.formData.schedule[i].split(",");
-
-
-                  console.log($scope.formData.date_array[i]);
-
-                  /**Store the date, start time and
-                   * end time in temp array
-                  */
-
-                  /*       DONT DELETE THIS COMMENT      */
-                  //for(var k=i; k< $scope.formData.date_array.length; k++){
-                  //    for(var j=0; j<$scope.formData.date_array[k].length; j++){
-                  //
-                  //        $scope.formData.date_temp[j] = $scope.formData.date_array[k][j].split("=");
-                  //        $scope.temp.push([i, $scope.formData.date_temp[j]]);
-                  //
-                  //    }
-                  //}
-
+                  //console.log($scope.formData.datetime[i][0].date);
 
               }
 

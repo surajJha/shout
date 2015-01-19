@@ -5,7 +5,7 @@ describe('Controller: adminAddEventController', function () {
   // load the controller's module
   beforeEach(module('shoutApp'));
 
-  var adminAddEventController,
+  var adminAddEventController,adminTaskFactory,
     scope;
 
   // Initialize the controller and a mock scope
