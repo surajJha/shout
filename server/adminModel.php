@@ -288,8 +288,9 @@ class AdminModel {
     }
 
     public function getAllEvents($organiser_id) {
+
         $db = $this->getDatabaseObject();
-        $query = "select * from event_detail as e, event_schedule as es, event_image as ei where e.event_detail_id = es.event_detail_id and e.event_detail_id = ei.event_detail_id and e.event_organizer_id = '{$organiser_id}';";
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
        $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0){

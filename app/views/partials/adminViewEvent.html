@@ -2,14 +2,15 @@
     <div class="col-lg-12">
         <div class="container-fluid">
         <!--{{eventData[0]['event_detail_id']}}-->
-            <div class="row">
+            <div class="row" ng-repeat="i in formData.result_length track by $index">
                 <div class="col-lg-6">
+
                     <div class ='viewEvents'>
-                        <div class='row eventTitle'>EVENT NAME </div>
+                        <div class='row eventTitle'> {{formData.event_name[$index]}} </div>
                         <div class='row eventDetails'>
                             <div class='col-lg-4'>
-                                ADDRESS<br>
-                                PRICE : 400/-
+                                {{formData.event_location[$index]}}<br>
+                                PRICE : {{formData.event_cost[$index]}}/-
                             </div>
                             <div class='col-lg-4'></div>
                             <div class='col-lg-4' id='options'>
@@ -21,20 +22,6 @@
                     </div>
 
                 </div>
-
-                <!--<div class="col-lg-6">-->
-                    <!--<div class ="viewEvents">-->
-                        <!--<div class="row eventTitle">-->
-                            <!--EVENT NAME-->
-                        <!--</div>-->
-                        <!--<div class="row eventDetails">-->
-                            <!--<div class="col-lg-4">-->
-                                <!--ADDRESS <br>-->
-                                <!--PRICE : 400/--->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
             </div>
 
         </div>
