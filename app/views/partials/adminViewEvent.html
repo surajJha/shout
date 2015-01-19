@@ -7,6 +7,17 @@
 
                     <div class ='viewEvents'>
                         <div class='row eventTitle'> {{formData.event_name[$index]}} </div>
+                        <div class="row" ng-hide = true>
+                            {{formData.venue_name[$index]}}<br><hr>
+                            {{formData.event_category[$index]}}<br><hr>
+                            {{formData.event_detail_id[$index]}}<br><hr>
+                            {{formData.event_overview[$index]}}<br><hr>
+                            {{formData.event_hashtags[$index]}}<br><hr>
+                            {{formData.event_area[$index]}}<br><hr>
+                            {{formData.image[$index]}}<br><hr>
+                            {{formData.schedule[$index]}}
+
+                        </div>
                         <div class='row eventDetails'>
                             <div class='col-lg-4'>
                                 {{formData.event_location[$index]}}<br>
