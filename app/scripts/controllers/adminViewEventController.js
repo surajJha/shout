@@ -80,4 +80,42 @@ angular.module('shoutApp')
 
 
 
-  });
+  })
+.controller('ModalDemoCtrl', function ($scope, $modal, $log) {
+
+        $scope.open = function (size, formData, id) {
+
+            var modalInstance = $modal.open({
+                templateUrl: 'myModalContent.html',
+                controller: 'ModalInstanceCtrl',
+                size: size,
+                resolve: {
+                    id: function(){
+                      return id;
+                    },
+                    formData: function () {
+                        return formData;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+    })
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData) {
+        $scope.formData = formData;
+        $scope.id = id;
+
+
+    $scope.ok = function () {
+        $modalInstance.close($scope.id);
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+});
