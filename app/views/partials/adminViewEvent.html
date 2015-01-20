@@ -269,7 +269,6 @@
                             <div class="row well">
 
                                 <div class="col-lg-4">
-                                    {{formData.image_encoded_path_array}}
                                     <img ng-src="{{formData.image_encoded_path_array[0]}}">
                                     <label for="image1" class="col-md-4 control-label">Image One: </label>
                                     <button class="btn btn-success" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>

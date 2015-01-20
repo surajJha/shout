@@ -130,6 +130,7 @@ class AdminController{
              * so make a new directory
              */
             mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
+            //mkdir('C:/xampp/htdocs/shout/server/client_images/'.$organiser_id);
         }
         $filename = $_FILES['file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -139,6 +140,7 @@ class AdminController{
         $filename = $file_base.microtime().'.'.$ext;
 
         $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
+        // $destination = 'C:/xampp/htdocs/shout/server/client_images/' .$organiser_id.'/'. $filename;
 
         if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination )){
             // when upload is done then make a database instertion of the

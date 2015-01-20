@@ -83,14 +83,7 @@ angular.module('shoutApp')
                 }
             });
 
-            for(var i = 0;i<$scope.formData.image[id].length;i++) {
-              //  console.log($scope.formData.image[id][i].image_path);
-               adminTaskFactory.loadImages($scope.formData.image[id][i].image_path).then(function(result){
-                   $scope.formData.image_encoded_path_array[i] = result;
 
-               })
-                console.log("image path  "+$scope.formData.image_encoded_path_array);
-            }
 
             modalInstance.result.then(function (selectedItem) {
                 $scope.selected = selectedItem;
@@ -110,13 +103,34 @@ angular.module('shoutApp')
         $scope.id = id;
         $scope.formData.datetime_edit = formData.datetime;
        $scope.change_event_schedule_flag = false;
+        $scope.formData.image_encoded_path_array = [];
          //
-         //console.log(formData);
+        // console.log(formData);
         /**
          * Init function will be called as soon as the
          * page loads to initialize required params
          */
         $scope.init = function() {
+            adminTaskFactory.loadImages($scope.formData.image[id][0].image_path).then(function(result){
+                $scope.formData.image_encoded_path_array[0] = result;
+            })
+            adminTaskFactory.loadImages($scope.formData.image[id][1].image_path).then(function(result){
+                $scope.formData.image_encoded_path_array[1] = result;
+            })
+            adminTaskFactory.loadImages($scope.formData.image[id][2].image_path).then(function(result){
+                $scope.formData.image_encoded_path_array[2] = result;
+            })
+
+
+            //for(var i=0;i<$scope.formData.image[id].length;i++) {
+            //    console.log(i);
+            //    adminTaskFactory.loadImages($scope.formData.image[id][i].image_path).then(function(result){
+            //        console.log(i);
+            //        $scope.formData.image_encoded_path_array[i] = result;
+            //        console.log("i = "+i+" data = "+$scope.formData.image_encoded_path_array[i]);
+            //    })
+            //}
+
             /**
              *  FIll the category dropdown with initial data
              */
