@@ -5,6 +5,8 @@
  * Date: 13/1/15
  * Time: 1:25 PM
  */
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 class ScaleImage
 {
     // ATTRIBUTES
@@ -138,13 +140,24 @@ class ScaleImage
                     switch($this->imageData['mime'])
                     {
                         case "image/jpeg":
-                            imagejpeg($newImage, '/var/www/html/shout/server/1.jpg', 100);
+                            ob_start();
+                             imagejpeg($newImage,'', 100);
+                            echo "data:image/jpeg;base64,".base64_encode(ob_get_clean());
+                            ob_flush();
+
+
                             break;
                         case "image/png":
-                            imagejpeg($newImage, '/var/www/html/shout/server/1.png', 100);
+                            ob_start();
+                            imagejpeg($newImage,'', 100);
+                            echo "data:image/jpeg;base64,".base64_encode(ob_get_clean());
+                            ob_flush();
                             break;
                         case "image/gif":
-                            imagejpeg($newImage, '/var/www/html/shout/server/1.gif', 100);
+                            ob_start();
+                            imagejpeg($newImage,'', 100);
+                            echo "data:image/jpeg;base64,".base64_encode(ob_get_clean());
+                            ob_flush();
                             break;
                         default:
                             $this->error("ScaleImage::calcRatio() - invalid mime type");
@@ -182,5 +195,5 @@ class ScaleImage
 
 // SAMPLE USAGE:
 
-$imageFile = '/var/www/html/shout/server/first.jpg';
-$image = new ScaleImage($imageFile, 200, 200, 1);
+$imageFile = $_GET['imgpath'];
+$image = new ScaleImage($imageFile, 400, 400, 1);

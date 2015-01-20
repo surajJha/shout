@@ -69,8 +69,17 @@ angular.module('shoutApp')
 
     }
 
-    factory.GetAllEventImages = function() {
+    factory.loadImages = function() {
+        $http.get($rootScope.baseUrl + '/server/resize.php?imgpath='+path)
+            .success(function(res){
+                defer.resolve(res);
 
+            })
+            .error(function (err, status) {
+                defer.reject(err);
+            })
+
+        return defer.promise;
     }
 
     factory.getEventCategory = function () {

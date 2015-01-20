@@ -306,23 +306,41 @@ class AdminModel {
                 $rows[$i]['event_overview'] = $row['event_overview'];
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
+                $rows[$i]['image'] = array();
                 $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
+                if($row['schedule']){
+                    $temp_date_array = explode(',',$row['schedule']);
+                    $y = array();
+                    foreach ($temp_date_array as $x) {
 
-                $temp_date_array = explode(',',$row['schedule']);
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['date'] = $y[0];
+                        $z['start_time'] = $y[1];
+                        $z['end_time'] = $y[2];
+                        array_push($rows[$i]['datetime'] , $z);
+                    }
+                }
+
+
+                $temp_image_array = explode(',',$row['image']);
+              //  var_dump($temp_date_array);
                 $y = array();
-                foreach ($temp_date_array as $x) {
+                foreach ($temp_image_array as $x) {
 
                     $y = explode('=',$x);
                     $z = array();
-                    $z['date'] = $y[0];
-                    $z['start_time'] = $y[1];
-                    $z['end_time'] = $y[2];
-                    array_push($rows[$i]['datetime'] , $z);
+                    $z['image_path'] = $y[0];
+                    $z['primary'] = $y[1];
+
+                    array_push($rows[$i]['image'] , $z);
                 }
+
+
                 $i++;
             }
             $result['status'] = 'success';
-            $result['data'] = $rows;
+            $result['data'] =$rows;
            return $result;
         }
         else {

@@ -219,3 +219,6 @@ input[type="radio"] {
     padding-top: 5%;
     padding-left: 15%;
 }
+.modal_date_time {
+    margin-bottom: 15px;
+}

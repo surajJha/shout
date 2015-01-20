@@ -19,6 +19,7 @@
 
 
                         </div>
+
                         <div class='row eventDetails'>
                             <div class='col-lg-4'>
                                 {{formData.event_location[$index]}}<br>
@@ -33,7 +34,7 @@
                         </div>
                     </div>
 
-                    <div ng-controller="ModalDemoCtrl">
+                    <div>
                         <script type="text/ng-template" id="myModalContent.html">
                             <div class="modal-header">
                                 <h3 class="modal-title">I'm a modal!</h3>
@@ -147,91 +148,120 @@
                             </div>
                             <h2 class="schedule_heading">Event Schedule</h2>
                             <hr/>
-                            <div class="row">
-                                <div class="col-lg-12">
+
+                            <div class="row" ng-repeat="d in days" ng-hide="change_event_schedule_flag">
+                                <div class="col-lg-6">
+                                    <input type="text" name="date" class="form-control modal_date_time" ng-model="formData.datetime_edit[id][d].date" placeholder="" ng-disabled="true">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="text" name="start_time" class="form-control modal_date_time" ng-model="formData.datetime_edit[id][d].start_time"  placeholder="" ng-disabled="true">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="text" name="end_time" class="form-control modal_date_time" ng-model="formData.datetime_edit[id][d].end_time" placeholder="" ng-disabled="true">
+                                </div>
+
+                            </div>
+                                <div class="row">
+                                    <div class="col-lg-2"></div>
+                                <div class="col-lg-10">
                                     <div class="form-group">
-                                        <label for="repeat_event" class="col-md-6 control-label">Do you want to repeat the event (Weekly/Monthly) ?</label>
+                                        <label for="change_schedule" class="col-md-6 control-label">Do you want to Change the Event schedule ?</label>
                                         <div class="col-md-4">
-                                            <input type="checkbox" name="repeat_event" id="repeat_event" ng-model="formData.repeatEventCheckbox">
+                                            <input type="checkbox" name="change_schedule" id="change_schedule" ng-model="change_event_schedule_flag">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
 
-                            <div class="row well" ng-show="formData.repeatEventCheckbox">
-                                <div class="col-lg-12 form-group">
-                                    <div class="col-lg-2"></div>
-                                    <div class="col-lg-5">
-                                        <div class="row">
-                                            <div class="col-lg-5">
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="weekly" ng-model="formData.repeatType" checked>
-                                                        Weekly {{week_checkbox}}
-                                                    </label>
+
+                            <div ng-show="change_event_schedule_flag">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="repeat_event" class="col-md-6 control-label">Do you want to repeat the event (Weekly/Monthly) ?</label>
+                                            <div class="col-md-4">
+                                                <input type="checkbox" name="repeat_event" id="repeat_event" ng-model="formData.repeatEventCheckbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row well" ng-show="formData.repeatEventCheckbox">
+                                    <div class="col-lg-12 form-group">
+                                        <div class="col-lg-2"></div>
+                                        <div class="col-lg-5">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="weekly" ng-model="formData.repeatType" checked>
+                                                            Weekly {{week_checkbox}}
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <select class="form-control" id="no_of_weeks" name="no_of_weeks" ng-model="formData.no_of_weeks" ng-show="formData.repeatType == 'weekly'">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                    </select>
+
                                                 </div>
                                             </div>
-                                            <div class="col-lg-7">
-                                                <select class="form-control" id="no_of_weeks" name="no_of_weeks" ng-model="formData.no_of_weeks" ng-show="formData.repeatType == 'weekly'">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                </select>
-
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="row">
-                                            <div class="col-lg-5">
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="monthly" ng-model="formData.repeatType">
-                                                        Monthly
-                                                    </label>
+                                        <div class="col-lg-5">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="monthly" ng-model="formData.repeatType">
+                                                            Monthly
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <select class="form-control" id="no_of_months" name="no_of_months" ng-model="formData.no_of_months" ng-show="formData.repeatType == 'monthly'">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                    </select>
+
                                                 </div>
                                             </div>
-                                            <div class="col-lg-7">
-                                                <select class="form-control" id="no_of_months" name="no_of_months" ng-model="formData.no_of_months" ng-show="formData.repeatType == 'monthly'">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                </select>
 
-                                            </div>
                                         </div>
-
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-lg-2"></div>
-                                    <label for="no_of_days" class="col-md-2 control-label">Select no of Days: </label>
-                                    <div class="col-md-4">
-                                        <select class="form-control" id="no_of_days" name="no_of_days" ng-model="day" ng-change="change(day)">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                        </select>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-lg-2"></div>
+                                        <label for="no_of_days" class="col-md-2 control-label">Select no of Days: </label>
+                                        <div class="col-md-4">
+                                            <select class="form-control" id="no_of_days" name="no_of_days" ng-model="day" ng-change="change(day)">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="row" mydatepicker day="day">
+
+                                </div>
+                                <div id="datepicker-placeholder" class="well"></div>
                             </div>
 
-                            <div class="row" mydatepicker day="day">
-
-                            </div>
-                            <div id="datepicker-placeholder" class="well"></div>
 
                             <h2 class="image-heading">Image Upload</h2>
                             <hr/>
@@ -269,7 +299,6 @@
                 </div>
             </div>
 
-        </div>
     </div>
 </div>
 <!--<section id="map" >-->

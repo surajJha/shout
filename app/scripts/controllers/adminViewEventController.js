@@ -8,7 +8,7 @@
  * Controller of the shoutApp
  */
 angular.module('shoutApp')
-  .controller('adminViewEventController', function ($scope, $rootScope, adminTaskFactory) {
+  .controller('adminViewEventController', function ($scope, $rootScope, adminTaskFactory, $modal, $log) {
         $scope.formData = {};
         $scope.formData.event_detail_id = [];
         $scope.formData.event_name = [];
@@ -23,6 +23,7 @@ angular.module('shoutApp')
         $scope.formData.datetime = [];
         $scope.formData.result_length = [];
         $scope.formData.no_of_days = [];
+        $scope.image_encoded_path_array = [];
 
 
       $scope.init = function () {
@@ -51,38 +52,20 @@ angular.module('shoutApp')
                   $scope.formData.venue_name[i] = result[i].venue_name;
                   $scope.formData.event_area[i] = result[i].event_area;
                   $scope.formData.event_location[i] = result[i].event_location;
-                 // $scope.formData.image[i] = result[i].image;
+                  $scope.formData.image[i] = result[i].image;
                   $scope.formData.datetime[i] = result[i].datetime;
                   $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
+
+
 
                   //console.log($scope.formData.datetime[i][0].date);
 
               }
 
-          })
+          }); //getallevents func ends here
       }
         $scope.init();
-        //function onGoogleReady() {
-        //    angular.bootstrap(document.getElementById("map"), ['app.ui-map']);
-        //}
-        //
-        //$scope.mapOptions = {
-        //    center: new google.maps.LatLng(19.2147, 72.850),
-        //    zoom: 15,
-        //    mapTypeId: google.maps.MapTypeId.ROADMAP
-        //};
-        //
-        //$scope.addMarker = function ($event, $params){
-        //    $scope.myMarkers.push(new google.maps.Marker({
-        //        map: $scope.myMap,
-        //        position: $params[0].latLng
-        //    }));
-        //};
 
-
-
-  })
-.controller('ModalDemoCtrl', function ($scope, $modal, $log) {
 
         $scope.open = function (size, formData, id) {
 
@@ -92,7 +75,7 @@ angular.module('shoutApp')
                 size: size,
                 resolve: {
                     id: function(){
-                      return id;
+                        return id;
                     },
                     formData: function () {
                         return formData;
@@ -102,16 +85,33 @@ angular.module('shoutApp')
 
             modalInstance.result.then(function (selectedItem) {
                 $scope.selected = selectedItem;
+
+                for(var i = 0;i<$scope.formData.image[id].length;i++) {
+
+                        adminTaskFactory.loadImages().then(function (result) {
+                            $scope.image_encoded_path_array[i] = result;
+                            console.log($scope.image_encoded_path_array[i]);
+                        })
+                }
+                adminTaskFactory.loadImages().then(function (result) {
+                    console.log(result);
+                })
             }, function () {
                 $log.info('Modal dismissed at: ' + new Date());
             });
         };
-    })
+
+
+
+
+  })
     .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory) {
         $scope.event_categories = [];
         $scope.event_areas = [];
         $scope.formData = formData;
         $scope.id = id;
+        $scope.formData.datetime_edit = formData.datetime;
+       $scope.change_event_schedule_flag = false;
 
          console.log(formData);
         /**
@@ -142,7 +142,12 @@ angular.module('shoutApp')
 
         $scope.selectedArea = $scope.formData.event_area[id];
         $scope.selectedCategory = $scope.formData.event_category[id];
-        $scope.day = $scope.formData.no_of_days[id];
+
+        var items = [];
+        for(var i =0;i<$scope.formData.no_of_days[id];i++){
+            items.push(i);
+        }
+        $scope.days = items;
 
         $scope.ok = function () {
         $modalInstance.close($scope.id);
