@@ -301,12 +301,13 @@ class AdminModel {
                 $rows[$i]['event_area'] = $row['event_area'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
-                $rows[$i]['event_hashtags'] = $row['event_hashtags'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = $row['event_overview'];
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
+                $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
+
                 $temp_date_array = explode(',',$row['schedule']);
                 $y = array();
                 foreach ($temp_date_array as $x) {
