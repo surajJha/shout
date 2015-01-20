@@ -23,7 +23,7 @@ angular.module('shoutApp')
         $scope.formData.datetime = [];
         $scope.formData.result_length = [];
         $scope.formData.no_of_days = [];
-        $scope.image_encoded_path_array = [];
+
 
 
       $scope.init = function () {
@@ -83,19 +83,17 @@ angular.module('shoutApp')
                 }
             });
 
+            for(var i = 0;i<$scope.formData.image[id].length;i++) {
+              //  console.log($scope.formData.image[id][i].image_path);
+               adminTaskFactory.loadImages($scope.formData.image[id][i].image_path).then(function(result){
+                   $scope.formData.image_encoded_path_array[i] = result;
+
+               })
+                console.log("image path  "+$scope.formData.image_encoded_path_array);
+            }
+
             modalInstance.result.then(function (selectedItem) {
                 $scope.selected = selectedItem;
-
-                for(var i = 0;i<$scope.formData.image[id].length;i++) {
-
-                        adminTaskFactory.loadImages().then(function (result) {
-                            $scope.image_encoded_path_array[i] = result;
-                            console.log($scope.image_encoded_path_array[i]);
-                        })
-                }
-                adminTaskFactory.loadImages().then(function (result) {
-                    console.log(result);
-                })
             }, function () {
                 $log.info('Modal dismissed at: ' + new Date());
             });
@@ -112,8 +110,8 @@ angular.module('shoutApp')
         $scope.id = id;
         $scope.formData.datetime_edit = formData.datetime;
        $scope.change_event_schedule_flag = false;
-
-         console.log(formData);
+         //
+         //console.log(formData);
         /**
          * Init function will be called as soon as the
          * page loads to initialize required params

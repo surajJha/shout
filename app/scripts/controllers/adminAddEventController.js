@@ -39,6 +39,9 @@ angular.module('shoutApp')
         $scope.formData.datetime = [];
         $scope.event_categories = [];
         $scope.event_areas = [];
+        $scope.endtime = '';
+        $scope.starttime = ''
+
 
 
         /**

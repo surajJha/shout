@@ -69,7 +69,8 @@ angular.module('shoutApp')
 
     }
 
-    factory.loadImages = function() {
+    factory.loadImages = function(path) {
+        var defer = $q.defer();
         $http.get($rootScope.baseUrl + '/server/resize.php?imgpath='+path)
             .success(function(res){
                 defer.resolve(res);

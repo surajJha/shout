@@ -58,8 +58,8 @@ angular.module('shoutApp')
 
                   /* Timepicker Angularjs javascript */
 
-                  scope.mytime1 = new Date();
-                  scope.mytime2 = new Date();
+                  scope.starttime = 0 ; new Date();
+                  scope.endtime = new Date();
 
                   scope.hstep = 1;
                   scope.mstep = 15;
