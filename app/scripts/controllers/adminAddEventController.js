@@ -45,7 +45,7 @@ angular.module('shoutApp')
          * ========================================================
          */
         /**
-         * Init function will be calles as soon as the
+         * Init function will be called as soon as the
          * page loads to initialize required params
          */
         $scope.init = function() {

@@ -24,6 +24,7 @@ angular.module('shoutApp')
         $scope.formData.result_length = [];
         $scope.formData.no_of_days = [];
 
+
       $scope.init = function () {
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
@@ -106,12 +107,44 @@ angular.module('shoutApp')
             });
         };
     })
-    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData) {
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory) {
+        $scope.event_categories = [];
+        $scope.event_areas = [];
         $scope.formData = formData;
         $scope.id = id;
 
+         console.log(formData);
+        /**
+         * Init function will be called as soon as the
+         * page loads to initialize required params
+         */
+        $scope.init = function() {
+            /**
+             *  FIll the category dropdown with initial data
+             */
+            adminTaskFactory.getEventCategory().then(function (result) {
+                for(var i = 0;i<result.length;i++){
+                    $scope.event_categories[i] = result[i][0];
+                }
 
-    $scope.ok = function () {
+            })
+            /**
+             *  FIll the area dropdown with initial data
+             */
+            adminTaskFactory.getEventArea().then(function(result){
+              //  console.log(result);
+                for(var i = 0;i<result.length;i++){
+                    $scope.event_areas[i] = result[i][0];
+                }
+            })
+        }
+        $scope.init();
+
+        $scope.selectedArea = $scope.formData.event_area[id];
+        $scope.selectedCategory = $scope.formData.event_category[id];
+        $scope.day = $scope.formData.no_of_days[id];
+
+        $scope.ok = function () {
         $modalInstance.close($scope.id);
     };
 
