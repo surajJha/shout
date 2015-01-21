@@ -9,6 +9,11 @@
  */
 angular.module('shoutApp')
   .controller('adminViewEventController', function ($scope, $rootScope, adminTaskFactory, $modal, $log) {
+        /**
+         * formData is an object which stores the result retreive from
+         * database from function getAllEvents
+         * @type {{}}
+         */
         $scope.formData = {};
         $scope.formData.event_detail_id = [];
         $scope.formData.event_name = [];
@@ -24,10 +29,6 @@ angular.module('shoutApp')
         $scope.formData.result_length = [];
         $scope.formData.no_of_days = [];
 
-
-
-
-
       $scope.init = function () {
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
@@ -37,12 +38,7 @@ angular.module('shoutApp')
                * used in ng-repeat to
                * repeat the loop and create the div
               */
-                //  console.log(result);
-              var items = [];
-              for(var i =0;i<result.length;i++){
-                  items.push(i);
-              }
-              $scope.formData.result_length = items;
+                $scope.makeArray(result);
 
               for(var i=0; i< result.length; i++){
                   $scope.formData.event_detail_id[i] = result[i].event_detail_id;
@@ -57,16 +53,19 @@ angular.module('shoutApp')
                   $scope.formData.image[i] = result[i].image;
                   $scope.formData.datetime[i] = result[i].datetime;
                   $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
-
-
-
-                  //console.log($scope.formData.datetime[i][0].date);
-
               }
 
           }); //getallevents func ends here
       }
         $scope.init();
+
+        $scope.makeArray = function(result){
+            var items = [];
+            for(var i =0;i<result.length;i++){
+                items.push(i);
+            }
+            $scope.formData.result_length = items;
+        }
 
 
         $scope.open = function (size, formData, id) {
@@ -107,26 +106,31 @@ angular.module('shoutApp')
     */
     .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory) {
 
-        $scope.event_categories = [];
-        $scope.event_areas = [];
-        $scope.formData = formData;
+        /**updatedFormData is and object, and it stores the data received when the modal is opened
+         * this object is available in the scope of the modal
+         * selectedArea, selectedCategory is used to display the araa and category
+         * in the dropdown as selected attribute
+         * newly_selected_file used to keep track of the file changed in modal
+         * updated_date_time_array is used to store the datetime of the modal if changed
+         * $scope.day is used to store the number of days selected in dropdown
+         */
+
+        $scope.updatedFormData = formData;
         $scope.id = id;
-        $scope.formData.datetime_edit = formData.datetime;
+        $scope.updatedFormData.datetime_edit = formData.datetime;
         $scope.change_event_schedule_flag = false;
-        $scope.selectedArea = $scope.formData.event_area[id];
-        $scope.selectedCategory = $scope.formData.event_category[id];
-        $scope.formData.image_encoded_path_array = [];
+        $scope.selectedArea = $scope.updatedFormData.event_area[id];
+        $scope.selectedCategory = $scope.updatedFormData.event_category[id];
+        $scope.updatedFormData.image_encoded_path_array = [];
         $scope.isImageHidden = [];
         $scope.newly_selected_file = [];
         $scope.updated_date_time_array = [];
         $scope.day = '';
+        $scope.event_categories = [];
+        $scope.event_areas = [];
 
         $scope.modalFormData = {};
 
-
-
-         //
-        // console.log(formData);
         /**
          * Init function will be called as soon as the
          * page loads to initialize required params
@@ -140,25 +144,16 @@ angular.module('shoutApp')
              * written thrice because it was not working in
              * for loop
              */
-            adminTaskFactory.loadImages($scope.formData.image[id][0].image_path).then(function(result){
-                $scope.formData.image_encoded_path_array[0] = result;
+            adminTaskFactory.loadImages($scope.updatedFormData.image[id][0].image_path).then(function(result){
+                $scope.updatedFormData.image_encoded_path_array[0] = result;
             })
-            adminTaskFactory.loadImages($scope.formData.image[id][1].image_path).then(function(result){
-                $scope.formData.image_encoded_path_array[1] = result;
+            adminTaskFactory.loadImages($scope.updatedFormData.image[id][1].image_path).then(function(result){
+                $scope.updatedFormData.image_encoded_path_array[1] = result;
             })
-            adminTaskFactory.loadImages($scope.formData.image[id][2].image_path).then(function(result){
-                $scope.formData.image_encoded_path_array[2] = result;
+            adminTaskFactory.loadImages($scope.updatedFormData.image[id][2].image_path).then(function(result){
+                $scope.updatedFormData.image_encoded_path_array[2] = result;
             })
 
-
-            //for(var i=0;i<$scope.formData.image[id].length;i++) {
-            //    console.log(i);
-            //    adminTaskFactory.loadImages($scope.formData.image[id][i].image_path).then(function(result){
-            //        console.log(i);
-            //        $scope.formData.image_encoded_path_array[i] = result;
-            //        console.log("i = "+i+" data = "+$scope.formData.image_encoded_path_array[i]);
-            //    })
-            //}
 
             /**
              *  FIll the category dropdown with initial data
@@ -173,7 +168,6 @@ angular.module('shoutApp')
              *  FIll the area dropdown with initial data
              */
             adminTaskFactory.getEventArea().then(function(result){
-              //  console.log(result);
                 for(var i = 0;i<result.length;i++){
                     $scope.event_areas[i] = result[i][0];
                 }
@@ -210,12 +204,18 @@ angular.module('shoutApp')
 
         }
 
-        // used for repeating existing datetime
-        var items = [];
-        for(var i =0;i<$scope.formData.no_of_days[id];i++){
-            items.push(i);
+        /** makeArrayForDays() is used to convert string in array
+         * this will be used in ng-repeat in modal to display the schedule
+         */
+        $scope.makeArrayForDays();
+
+        $scope.makeArrayForDays = function(){
+            var items = [];
+            for(var i =0;i<$scope.updatedFormData.no_of_days[id];i++){
+                items.push(i);
+            }
+            $scope.countDays = items;
         }
-        $scope.days = items;
 
 
 
@@ -224,22 +224,22 @@ angular.module('shoutApp')
     };
 
         $scope.updateEventDetails = function () {
-            $scope.modalFormData.event_detail_id = $scope.formData.event_detail_id[id];
-            $scope.modalFormData.event_name = $scope.formData.event_name[id];
+            $scope.modalFormData.event_detail_id = $scope.updatedFormData.event_detail_id[id];
+            $scope.modalFormData.event_name = $scope.updatedFormData.event_name[id];
             $scope.modalFormData.event_category = $scope.selectedCategory;
-            $scope.modalFormData.event_cost = $scope.formData.event_cost[id];
-            $scope.modalFormData.event_overview = $scope.formData.event_overview[id];
-            $scope.modalFormData.hash1 = $scope.formData.event_hashtags[id][0];
-            $scope.modalFormData.hash2 = $scope.formData.event_hashtags[id][1];
-            $scope.modalFormData.hash3 = $scope.formData.event_hashtags[id][2];
-            $scope.modalFormData.venue_name = $scope.formData.venue_name[id];
+            $scope.modalFormData.event_cost = $scope.updatedFormData.event_cost[id];
+            $scope.modalFormData.event_overview = $scope.updatedFormData.event_overview[id];
+            $scope.modalFormData.hash1 = $scope.updatedFormData.event_hashtags[id][0];
+            $scope.modalFormData.hash2 = $scope.updatedFormData.event_hashtags[id][1];
+            $scope.modalFormData.hash3 = $scope.updatedFormData.event_hashtags[id][2];
+            $scope.modalFormData.venue_name = $scope.updatedFormData.venue_name[id];
             $scope.modalFormData.event_area = $scope.selectedArea;
-            $scope.modalFormData.event_location = $scope.formData.event_location[id];
+            $scope.modalFormData.event_location = $scope.updatedFormData.event_location[id];
             $scope.modalFormData.change_event_schedule_flag = $scope.change_event_schedule_flag;
-            $scope.modalFormData.repeatEventCheckbox = $scope.formData.repeatEventCheckbox;
-            $scope.modalFormData.no_of_weeks = $scope.formData.no_of_weeks;
-            $scope.modalFormData.no_of_months = $scope.formData.no_of_months;
-            $scope.modalFormData.repeatType = $scope.formData.repeatType;
+            $scope.modalFormData.repeatEventCheckbox = $scope.updatedFormData.repeatEventCheckbox;
+            $scope.modalFormData.no_of_weeks = $scope.updatedFormData.no_of_weeks;
+            $scope.modalFormData.no_of_months = $scope.updatedFormData.no_of_months;
+            $scope.modalFormData.repeatType = $scope.updatedFormData.repeatType;
 
 
             if($scope.modalFormData.change_event_schedule_flag) {

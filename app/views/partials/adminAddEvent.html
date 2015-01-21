@@ -11,10 +11,7 @@
                             <div class="form-group">
                                 <label for="event_name" class="col-md-4 control-label">Event Name:</label>
                                 <div class="col-md-8">
-                                    <input type="text" name="event_name" ng-minlength="4" ng-maxlength="8" class="form-control" id="event_name" placeholder="Event Name" ng-model="formData.event_name" ng-model-options="{ updateOn: 'blur' }"  required>
-                                    <div class="error-message" ng-show="eventForm.event_name.$invalid && !eventForm.event_name.$pristine && eventForm.event_name.$error.required">Field is required</div>
-                                    <div class="alert alert-danger" ng-class="" ng-show="eventForm.event_name.$invalid && eventForm.event_name.$dirty && eventForm.event_name.$error.minlength">too low</div>
-                                    <div class="error-message" style="color: red;" ng-show="eventForm.event_name.$invalid && eventForm.event_name.$dirty && eventForm.event_name.$error.maxlength">too high</div>
+                                    <input type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="formData.event_name" ng-model-options="{ updateOn: 'blur' }" >
                                 </div>
                             </div>
                         </div>

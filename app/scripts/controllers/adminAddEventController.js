@@ -18,7 +18,12 @@ angular.module('shoutApp')
          * @type {{}}
          *  formData object will hold all the data from the add event form
          * i.e will act as the model for the form
+         * event_categories, event_areas = the data is retrieved from the database and stored in these variables
+         * repeatEventCheckbox these flag is used to check if event is repeated or not
+         * repeatType is used to store the type of event --> weekly or monthly
+         * selectedFile is used in watch function to store the selected file
          */
+
         $scope.formData = {};
         $scope.formData.event_name = '';
         $scope.formData.event_category = '';
@@ -39,8 +44,8 @@ angular.module('shoutApp')
         $scope.formData.datetime = [];
         $scope.event_categories = [];
         $scope.event_areas = [];
-        $scope.endtime = '';
-        $scope.starttime = ''
+       // $scope.endtime = '';
+      //  $scope.starttime = ''
         $scope.selectedFile = [];
 
 
@@ -79,6 +84,9 @@ angular.module('shoutApp')
          * widget as per the value of dropdown
          * this function is associated only with the dropdown
          */
+          /** $scope.day is used to store the number of days selected in dropdown
+           * $scope.day = $scope.days[0]; this stores the first value by default
+          */
         var generateDatepicker = (function () {
             $scope.days = [1,2,3,4,5,6,7];
             $scope.day = $scope.days[0];
@@ -96,7 +104,6 @@ angular.module('shoutApp')
                 $scope.formData.datetime.push({date: $('#dt-'+i).val(), starttime: $('#time1-'+i).html(), endtime: $('#time2-'+i).html()})
 
             }
-            console.log($scope.formData.datetime);
         }
         /**
          * submit event form func will be called when submit
@@ -106,14 +113,14 @@ angular.module('shoutApp')
           $scope.getDateTime();
         adminTaskFactory.addNewEvent($scope.formData).then(function(result){
             console.log(result);
-           // for successful insertion into the database
-            // the result returned should bt "success"
+           /** for successful insertion into the database
+            * the result returned should bt "success"
+            * */
                if(result['status']==='success') {
                   /**
                   * upload the images once the form with remaining
                   * fields have been entered into the database
                     */
-                 // console.log('result is '+result);
                    $scope.uploadImages(result['organiser_id'],result['event_detail_id']);
 
               }
@@ -128,17 +135,13 @@ angular.module('shoutApp')
                 var file = $scope.formData.images[i];
                 $upload.upload({
                     url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&organiser_id='+organiser_id+'&event_detail_id='+event_detail_id+'&primary_image='+primary_image,
-                   // headers: {'Content-Type': file.type},
                     method: 'POST',
                     data: file,
                     file: file
 
                 }).progress(function(evt) {
-
-
                    console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.file.name);
                 }).success(function(data, status, headers, config) {
-
                     console.log('File ' + config.file.name + ' is  uploaded successfully. Response: ' + data);
                 }).error(function(error){
                     console.log(error.message);
