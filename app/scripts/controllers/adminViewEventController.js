@@ -26,6 +26,8 @@ angular.module('shoutApp')
 
 
 
+
+
       $scope.init = function () {
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
@@ -95,15 +97,34 @@ angular.module('shoutApp')
 
 
 
+
+
   })
+    /**
+     * this is modal controller
+     * its variable and scope are available inside
+     * the modal only
+    */
     .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory) {
+
         $scope.event_categories = [];
         $scope.event_areas = [];
         $scope.formData = formData;
         $scope.id = id;
         $scope.formData.datetime_edit = formData.datetime;
-       $scope.change_event_schedule_flag = false;
+        $scope.change_event_schedule_flag = false;
+        $scope.selectedArea = $scope.formData.event_area[id];
+        $scope.selectedCategory = $scope.formData.event_category[id];
         $scope.formData.image_encoded_path_array = [];
+        $scope.isImageHidden = [];
+        $scope.newly_selected_file = [];
+        $scope.updated_date_time_array = [];
+        $scope.day = '';
+
+        $scope.modalFormData = {};
+
+
+
          //
         // console.log(formData);
         /**
@@ -111,6 +132,14 @@ angular.module('shoutApp')
          * page loads to initialize required params
          */
         $scope.init = function() {
+
+            /**
+             * loadImages is called when modal
+             * is opened, to give preview of
+             * the images.
+             * written thrice because it was not working in
+             * for loop
+             */
             adminTaskFactory.loadImages($scope.formData.image[id][0].image_path).then(function(result){
                 $scope.formData.image_encoded_path_array[0] = result;
             })
@@ -152,20 +181,84 @@ angular.module('shoutApp')
         }
         $scope.init();
 
-        $scope.selectedArea = $scope.formData.event_area[id];
-        $scope.selectedCategory = $scope.formData.event_category[id];
+        /**
+         * get date and time fields of the dynamically
+         * generated date fields and push it to the
+         * model varaibles
+         */
+        $scope.getDateTime = function () {
+            for(var i = 0; i< $scope.day; i++){
+                $scope.updated_date_time_array.push({date: $('#dt-'+i).val(), starttime: $('#time1-'+i).html(), endtime: $('#time2-'+i).html()})
 
+            }
+        }
+
+
+        /**
+         * Funtion handles the file change in the modal
+         * it shows the name of the newly selected file
+         * and removes the thumbnail of the previous file
+         * the previous file will be deleted only when
+         * the modal form will be submitted
+         */
+
+        $scope.handleSelectedFile = function(file_to_be_uploaded, file_id) {
+
+            $scope.newly_selected_file[file_id] = file_to_be_uploaded[0].name;
+            console.log( $scope.newly_selected_file[file_id]);
+            $scope.isImageHidden[file_id] = true;
+
+        }
+
+        // used for repeating existing datetime
         var items = [];
         for(var i =0;i<$scope.formData.no_of_days[id];i++){
             items.push(i);
         }
         $scope.days = items;
 
-        $scope.ok = function () {
-        $modalInstance.close($scope.id);
-    };
+
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
+
+        $scope.updateEventDetails = function () {
+            $scope.modalFormData.event_detail_id = $scope.formData.event_detail_id[id];
+            $scope.modalFormData.event_name = $scope.formData.event_name[id];
+            $scope.modalFormData.event_category = $scope.selectedCategory;
+            $scope.modalFormData.event_cost = $scope.formData.event_cost[id];
+            $scope.modalFormData.event_overview = $scope.formData.event_overview[id];
+            $scope.modalFormData.hash1 = $scope.formData.event_hashtags[id][0];
+            $scope.modalFormData.hash2 = $scope.formData.event_hashtags[id][1];
+            $scope.modalFormData.hash3 = $scope.formData.event_hashtags[id][2];
+            $scope.modalFormData.venue_name = $scope.formData.venue_name[id];
+            $scope.modalFormData.event_area = $scope.selectedArea;
+            $scope.modalFormData.event_location = $scope.formData.event_location[id];
+            $scope.modalFormData.change_event_schedule_flag = $scope.change_event_schedule_flag;
+            $scope.modalFormData.repeatEventCheckbox = $scope.formData.repeatEventCheckbox;
+            $scope.modalFormData.no_of_weeks = $scope.formData.no_of_weeks;
+            $scope.modalFormData.no_of_months = $scope.formData.no_of_months;
+            $scope.modalFormData.repeatType = $scope.formData.repeatType;
+
+
+            if($scope.modalFormData.change_event_schedule_flag) {
+                $scope.getDateTime();
+                $scope.modalFormData.updated_date_time_array = $scope.updated_date_time_array;
+
+            }
+
+
+            adminTaskFactory.updateEventDetails($scope.modalFormData).then(function(result){
+                console.log("updeated = "+result);
+            })
+            /**
+             * close the modal only after database has been updated
+             * */
+
+
+
+
+             $modalInstance.close($scope.id);
+        };
 });

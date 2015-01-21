@@ -41,6 +41,7 @@ angular.module('shoutApp')
         $scope.event_areas = [];
         $scope.endtime = '';
         $scope.starttime = ''
+        $scope.selectedFile = [];
 
 
 
@@ -145,6 +146,14 @@ angular.module('shoutApp')
             }
 
 
+        }
+
+        /**
+         * watch for file change and show the names and preview thumbnail
+         */
+        $scope.fileChanged = function(file_to_be_uploaded, file_id) {
+             $scope.selectedFile[file_id] = file_to_be_uploaded[0].name;
+            console.log($scope.selectedFile[file_id].name);
         }
 
 

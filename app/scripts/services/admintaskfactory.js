@@ -113,6 +113,22 @@ angular.module('shoutApp')
             return defer.promise;
         }
 
+        factory.updateEventDetails = function (modalFormData) {
+            var defer = $q.defer();
+
+            $http.post($rootScope.baseUrl + '/server/adminController.php?func=updateEventDetails', modalFormData)
+                .success(function(res){
+                    defer.resolve(res);
+                     console.log(res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+
+            return defer.promise;
+        }
+
+
 
 
 
