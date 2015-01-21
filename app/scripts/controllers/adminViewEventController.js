@@ -106,6 +106,7 @@ angular.module('shoutApp')
      * the modal only
     */
     .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory) {
+
         $scope.event_categories = [];
         $scope.event_areas = [];
         $scope.formData = formData;
@@ -117,6 +118,8 @@ angular.module('shoutApp')
         $scope.formData.image_encoded_path_array = [];
         $scope.isImageHidden = [];
         $scope.newly_selected_file = [];
+        $scope.updated_date_time_array = [];
+        $scope.day = '';
 
         $scope.modalFormData = {};
 
@@ -178,6 +181,18 @@ angular.module('shoutApp')
         }
         $scope.init();
 
+        /**
+         * get date and time fields of the dynamically
+         * generated date fields and push it to the
+         * model varaibles
+         */
+        $scope.getDateTime = function () {
+            for(var i = 0; i< $scope.day; i++){
+                $scope.updated_date_time_array.push({date: $('#dt-'+i).val(), starttime: $('#time1-'+i).html(), endtime: $('#time2-'+i).html()})
+
+            }
+        }
+
 
         /**
          * Funtion handles the file change in the modal
@@ -195,6 +210,7 @@ angular.module('shoutApp')
 
         }
 
+        // used for repeating existing datetime
         var items = [];
         for(var i =0;i<$scope.formData.no_of_days[id];i++){
             items.push(i);
@@ -220,23 +236,26 @@ angular.module('shoutApp')
             $scope.modalFormData.event_area = $scope.selectedArea;
             $scope.modalFormData.event_location = $scope.formData.event_location[id];
             $scope.modalFormData.change_event_schedule_flag = $scope.change_event_schedule_flag;
+            $scope.modalFormData.repeatEventCheckbox = $scope.formData.repeatEventCheckbox;
+            $scope.modalFormData.no_of_weeks = $scope.formData.no_of_weeks;
+            $scope.modalFormData.no_of_months = $scope.formData.no_of_months;
+            $scope.modalFormData.repeatType = $scope.formData.repeatType;
 
-            //$scope.modalFormData.no_of_days = $scope.formData.no_of_days[id];
-            //$scope.modalFormData.repeatEventCheckbox = $scope.formData.repeatEventCheckbox[id];
-            //$scope.modalFormData.no_of_weeks = $scope.formData.no_of_weeks[id];
-            //$scope.modalFormData.no_of_months = $scope.formData.no_of_months[id];
-            //$scope.modalFormData.repeatType = $scope.formData.repeatType[id];
-            //$scope.modalFormData.images = [];
-            //$scope.modalFormData.datetime = [];
+
+            if($scope.modalFormData.change_event_schedule_flag) {
+                $scope.getDateTime();
+                $scope.modalFormData.updated_date_time_array = $scope.updated_date_time_array;
+
+            }
 
 
             adminTaskFactory.updateEventDetails($scope.modalFormData).then(function(result){
-                console.log(result);
+                console.log("updeated = "+result);
             })
             /**
              * close the modal only after database has been updated
              * */
-            console.log($scope.modalFormData);
+
 
 
 

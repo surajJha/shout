@@ -103,27 +103,64 @@ class AdminModel {
      */
     public function updateEventDetails($data) {
         $db = $this->getDatabaseObject();
-       // var_dump($data);
+
        // $event_schedule_id = $db->real_escape_string($data['event_schedule_id']);
         $event_detail_id = $db->real_escape_string($data->event_detail_id);
         $venue_name = $db->real_escape_string($data->venue_name);
         $event_name = $db->real_escape_string($data->event_name);
         $event_overview =  $db->real_escape_string( $data->event_overview);
         $event_hashtags =  $db->real_escape_string($data->event_hashtags);
-        //$event_date =  $db->real_escape_string($data['event_date']);
-        //$event_start_time =  $db->real_escape_string($data['event_start_time']);
-       // $event_end_time =  $db->real_escape_string( $data['event_end_time']);
         $event_location =  $db->real_escape_string( $data->event_location);
         $event_area =  $db->real_escape_string( $data->event_area);
         $event_cost =  $db->real_escape_string( $data->event_cost);
         $category_name =  $db->real_escape_string( $data->event_category);
-       // $event_organizer_id =  $db->real_escape_string($data['event_organizer_id']);
+        $change_event_schedule_flag = $db->real_escape_string( $data->change_event_schedule_flag);
+        $repeatEvent = $db->real_escape_string( $data->repeatEventCheckbox);
+        $repeatType = $db->real_escape_string( $data->repeatType);
+        $no_of_weeks = $db->real_escape_string( $data->no_of_weeks);
+        $no_of_months = $db->real_escape_string( $data->no_of_months);
+        $datetime =  $data->updated_date_time_array;
+        $hash1 = $db->real_escape_string($data->hash1);
+        $hash2 = $db->real_escape_string($data->hash2);
+        $hash3 = $db->real_escape_string($data->hash3);
+        $final_result = [];
+     //   $event_organizer_id =  $db->real_escape_string($data->event_organizer_id);
 
         $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
 
-        $res1 = $db->query($query);
+        $eventDetailsInserted = $db->query($query);
+        if($eventDetailsInserted) {
+            $this->addHashToDatabase($hash1, $hash2, $hash3);
+            if($change_event_schedule_flag) {
+                // event schedule has been updated
+                $this->deletePreviousEventSchedule($event_detail_id);
+                $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $datetime);
+                if($eventScheduleInserted){
 
-        return $res1;
+                        $final_result['status'] = 'success';
+                        $final_result['message'] = 'Event Updated Successfully';
+                    return $final_result;
+
+                }
+                else {
+                    $final_result['status'] = 'failure';
+                    $final_result['message'] = 'Event Details were updated but event schedule updation failed. Please try again properly';
+                    return $final_result;
+                }
+            }
+            else {
+                $final_result['status'] = 'success';
+                $final_result['message'] = 'Event Updated Successfully';
+                return $final_result;
+            }
+         }
+        else {
+            $final_result['status'] = 'failure';
+            $final_result['message'] = 'Updation failed. Nothing was Updated';
+            return $final_result;
+        }
+
+
         /**
          * getting id of last inserted row
          */
@@ -258,7 +295,7 @@ class AdminModel {
                 //   var_dump($query);
             }
             else{
-                $row[] = $temp->fetch_row();
+                $row[][] = $temp->fetch_row();
                 $row = intval($row[0][2]);
                 $query = "update hashtag set hashtag_count = '{$row}' + 1  where hashtag_name = '{$hash}' ";
 
@@ -359,6 +396,13 @@ class AdminModel {
 
         }
 
+    }
+
+    public function deletePreviousEventSchedule($event_detail_id) {
+        $db = $this->getDatabaseObject();
+        $query = "delete from event_schedule WHERE event_detail_id='{$event_detail_id}'";
+        $deleted = $db->query($query);
+        return $deleted;
     }
 
 
