@@ -11,7 +11,8 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 include_once 'adminModel.php';
 
-class AdminController{
+class AdminController
+{
     protected $func = '';
     protected $response_code = array(
         '10' => 'Success',
@@ -35,20 +36,18 @@ class AdminController{
      * be shown to the user EVER ! BEWARE OF THIS
      * else I WILL KILL YOU
      */
-    function addEvent(){
-        /**
-         * Cannot access POST data as usual
-         * we need to use file_get_contents as
-         * done below
-         */
+    function addEvent()
+    {
         $data = json_decode(file_get_contents("php://input"));
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
         $model = new AdminModel();
         $result = $model->addEvent($data);
-        if($result['status'] == "success") {
+        if($result['status'] == "success")
+        {
             echo json_encode($result);
         }
-        else {
+        else
+        {
             echo 'Sorry, The data couldn\'t be saved. Please try again.';
         }
 
@@ -61,7 +60,8 @@ class AdminController{
      * @return string
      * Merge all the hashtags and return it as a string
      */
-    function generateHashtag($hash1, $hash2, $hash3){
+    function generateHashtag($hash1, $hash2, $hash3)
+    {
         $hashtag[0] = $hash1;
         $hashtag[1] = $hash2;
         $hashtag[2] = $hash3;
@@ -70,7 +70,19 @@ class AdminController{
 
     }
 
-    function updateEventDetails(){
+    /**
+     * function takes the post data as input from the
+     * model form and updates the database with new
+     * data filled by the user.
+     * It calls generageHashtags function to merge the
+     * hashtags into one single strings
+     * It finally calls the updateEventDetails model
+     * function and recieves the result
+     * THe result contains a status and it's corresponding
+     * message(either positive or negative message
+     */
+    function updateEventDetails()
+    {
         $data = json_decode(file_get_contents("php://input"));
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
         $model = new AdminModel();
@@ -78,21 +90,24 @@ class AdminController{
         echo json_encode($result);
     }
 
-    function viewAllEvents(){
+    function viewAllEvents()
+    {
         $event_organizer_id = 1; // $_session se ayega baad mein
         $model = new AdminModel();
         $result = $model->viewAllEvents($event_organizer_id);
 
     }
 
-    function deleteEvent(){
+    function deleteEvent()
+    {
         $event_detail_id = $_POST['event_detail_id'];
         $model = new AdminModel();
         $result =  $model->deleteEvent($event_detail_id);
 
     }
 
-    function showExistingImage(){
+    function showExistingImage()
+    {
 
     }
 
@@ -101,11 +116,13 @@ class AdminController{
      * then uploads the image in the newly created
      * directory or the already existing one
      */
-    function uploadImages(){
+    function uploadImages()
+    {
         $organiser_id = $_GET['organiser_id'];
         $event_detail_id = $_GET['event_detail_id'];
         $primary_image = $_GET['primary_image'];
-        if(!is_dir($organiser_id)) {
+        if(!is_dir($organiser_id))
+        {
             /**
              *  the directory DOES NOT already exists
              * so make a new directory
@@ -123,18 +140,21 @@ class AdminController{
         $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
         // $destination = 'C:/xampp/htdocs/shout/server/client_images/' .$organiser_id.'/'. $filename;
 
-        if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination )){
+        if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination ))
+        {
             // when upload is done then make a database instertion of the
             // path to the image
             $model = new AdminModel();
             $imageresult = $model->addImageUrlToDatabase($destination, $event_detail_id, $primary_image);
-           if($imageresult){
+           if($imageresult)
+           {
                echo $imageresult;
 
            }
-            else {
+           else
+           {
                 echo 'image URL was not saved properly.';
-            }
+           }
         }
 
 
@@ -143,13 +163,16 @@ class AdminController{
     /**
      * returns an array of event categories from the database
      */
-    function getEventCategory() {
+    function getEventCategory()
+    {
         $model = new AdminModel();
         $result = $model->getEventCategory();
-        if($result['status'] == 'success'){
+        if($result['status'] == 'success')
+        {
             echo json_encode($result);
         }
-        else {
+        else
+        {
             echo "no available categories";
         }
     }
@@ -157,25 +180,31 @@ class AdminController{
     /**
      * returns an array of areas from the database
      */
-    function getEventArea() {
+    function getEventArea()
+    {
         $model = new AdminModel();
         $result = $model->getEventArea();
-        if($result['status'] == 'success'){
+        if($result['status'] == 'success')
+        {
             echo json_encode($result);
         }
-        else {
+        else
+        {
             echo "no available areas";
         }
     }
 
-    function getAllEvents() {
+    function getAllEvents()
+    {
         $organiser_id = $_GET['organiser_id'];
         $model = new AdminModel();
         $result = $model->getAllEvents($organiser_id);
-        if($result['status'] == 'success'){
+        if($result['status'] == 'success')
+        {
             echo json_encode($result['data']);
         }
-        else {
+        else
+        {
             echo "No events for the client";
         }
 
