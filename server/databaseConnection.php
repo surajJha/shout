@@ -15,7 +15,7 @@ class DatabaseConnection{
        // return new mysqli($this->servername, $this->username, $this->password, $this->dbname);
         $this->servername = 'localhost';
         $this->username = 'root';
-        $this->password = '';
+        $this->password = 'root';
         $this->dbname = 'shout';
     }
 
