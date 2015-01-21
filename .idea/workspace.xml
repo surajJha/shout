@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminController.php" afterPath="$PROJECT_DIR$/server/adminController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminModel.php" afterPath="$PROJECT_DIR$/server/adminModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" afterPath="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/base.css" afterPath="$PROJECT_DIR$/app/styles/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" afterPath="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -129,87 +130,115 @@
     <favorites_list name="shout" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="adminViewEvent.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25028703" vertical-offset="610" max-vertical-offset="5688">
-              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminAddEvent.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.259259" vertical-offset="3467" max-vertical-offset="4392">
-              <caret line="208" column="27" selection-start-line="208" selection-start-column="27" selection-end-line="208" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminViewEventController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2806" max-vertical-offset="3888">
-              <caret line="199" column="50" selection-start-line="199" selection-start-column="50" selection-end-line="199" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminAddEventController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1827" max-vertical-offset="2988">
-              <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/adminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7777777" vertical-offset="1812" max-vertical-offset="3690">
-              <caret line="120" column="44" selection-start-line="120" selection-start-column="44" selection-end-line="120" selection-end-column="44" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/adminModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="6570">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <marker date="1421825496734" expanded="true" signature="2057:2387" placeholder="insert into ..." />
-                <marker date="1421825496734" expanded="true" signature="5005:5367" placeholder="UPDATE event..." />
-                <marker date="1421825496734" expanded="true" signature="5535:5712" placeholder="UPDATE event..." />
-                <marker date="1421825496734" expanded="true" signature="6051:6118" placeholder="Delete from ..." />
-                <marker date="1421825496734" expanded="true" signature="6175:6244" placeholder="Delete from ..." />
-                <marker date="1421825496734" expanded="true" signature="6567:6716" placeholder="select * FRO..event_detail..." />
-                <marker date="1421825496734" expanded="true" signature="6901:7474" placeholder="select ed.ev..event_detail..." />
-                <marker date="1421825496734" expanded="true" signature="9877:10018" placeholder="insert into ..." />
-                <marker date="1421825496734" expanded="true" signature="10466:10517" placeholder="select * fro..hashtag..." />
-                <marker date="1421825496734" expanded="true" signature="10625:10678" placeholder="insert into ..." />
-                <marker date="1421825496734" expanded="true" signature="10866:10945" placeholder="update hasht..." />
-                <marker date="1421825496734" expanded="true" signature="11658:11833" placeholder="insert into ..." />
-                <marker date="1421825496734" expanded="true" signature="12507:12682" placeholder="insert into ..." />
-                <marker date="1421825496734" expanded="true" signature="13325:13500" placeholder="insert into ..." />
-                <marker date="1421825496734" expanded="true" signature="13707:13741" placeholder="select categ..category..." />
-                <marker date="1421825496734" expanded="true" signature="14221:14247" placeholder="SELECT area_..area..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.7370393">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="adminViewEvent.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.3333335" vertical-offset="540" max-vertical-offset="5688">
+                  <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="adminAddEvent.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-10.259259" vertical-offset="3467" max-vertical-offset="4392">
+                  <caret line="208" column="27" selection-start-line="208" selection-start-column="27" selection-end-line="208" selection-end-column="84" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="adminViewEventController.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="3686" max-vertical-offset="4518">
+                  <caret line="212" column="47" selection-start-line="212" selection-start-column="33" selection-end-line="212" selection-end-column="47" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="adminAddEventController.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2988">
+                  <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="adminController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/adminController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.0" vertical-offset="1026" max-vertical-offset="3348">
+                  <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
+                  <folding>
+                    <element signature="e#6#89#0#PHP" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="adminModel.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="1.2862849" vertical-offset="1284" max-vertical-offset="6894">
+                  <caret line="125" column="21" selection-start-line="125" selection-start-column="21" selection-end-line="125" selection-end-column="21" />
+                  <folding>
+                    <marker date="1421835269739" expanded="true" signature="2057:2387" placeholder="insert into ..." />
+                    <marker date="1421835269739" expanded="true" signature="5034:5353" placeholder="UPDATE event..." />
+                    <marker date="1421835269739" expanded="true" signature="5548:5725" placeholder="UPDATE event..." />
+                    <marker date="1421835269739" expanded="true" signature="6066:6133" placeholder="Delete from ..." />
+                    <marker date="1421835269739" expanded="true" signature="6190:6259" placeholder="Delete from ..." />
+                    <marker date="1421835269739" expanded="true" signature="6582:6731" placeholder="select * FRO..event_detail..." />
+                    <marker date="1421835269739" expanded="true" signature="6916:7489" placeholder="select ed.ev..event_detail..." />
+                    <marker date="1421835269739" expanded="true" signature="9892:10033" placeholder="insert into ..." />
+                    <marker date="1421835269739" expanded="true" signature="10481:10532" placeholder="select * fro..hashtag..." />
+                    <marker date="1421835269739" expanded="true" signature="10640:10693" placeholder="insert into ..." />
+                    <marker date="1421835269739" expanded="true" signature="10881:10960" placeholder="update hasht..." />
+                    <marker date="1421835269739" expanded="true" signature="11673:11848" placeholder="insert into ..." />
+                    <marker date="1421835269739" expanded="true" signature="12522:12697" placeholder="insert into ..." />
+                    <marker date="1421835269739" expanded="true" signature="13340:13515" placeholder="insert into ..." />
+                    <marker date="1421835269739" expanded="true" signature="13722:13756" placeholder="select categ..category..." />
+                    <marker date="1421835269739" expanded="true" signature="14236:14262" placeholder="SELECT area_..area..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admintaskfactory.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1832" max-vertical-offset="2610">
+                  <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="adminViewEvent.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.36447367" vertical-offset="1415" max-vertical-offset="5688">
+                  <caret line="94" column="135" selection-start-line="94" selection-start-column="105" selection-end-line="94" selection-end-column="135" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -235,22 +264,22 @@
         <option value="db-console:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/" />
         <option value="dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_detail" />
         <option value="$PROJECT_DIR$/test/karma.conf.js" />
-        <option value="$PROJECT_DIR$/server/adminController.php" />
         <option value="$PROJECT_DIR$/test/spec/controllers/adminAddEventController.js" />
         <option value="$PROJECT_DIR$/app/scripts/directives/mydatepicker.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/views/about.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/about.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
         <option value="$PROJECT_DIR$/server/databaseConnection.php" />
         <option value="$PROJECT_DIR$/server/resize.php" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
         <option value="$PROJECT_DIR$/app/views/partials/adminAddEvent.html" />
         <option value="$PROJECT_DIR$/app/styles/base.css" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
-        <option value="$PROJECT_DIR$/server/adminModel.php" />
         <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
+        <option value="$PROJECT_DIR$/server/adminController.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
+        <option value="$PROJECT_DIR$/server/adminModel.php" />
       </list>
     </option>
   </component>
@@ -989,7 +1018,13 @@
       <option name="project" value="LOCAL" />
       <updated>1421820242288</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Merge branch 'master' of https://github.com/surajJha/shout&#10;&#10;Conflicts:&#10;&#9;app/styles/base.css&#10;">
+      <created>1421825630510</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1421825630510</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1014,10 +1049,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14374353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14300518" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14300518" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23496966" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5002758" order="7" side_tool="true" content_ui="tabs" />
@@ -1028,7 +1063,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20408164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11693326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35129532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1089,7 +1124,8 @@
     <MESSAGE value="added image upload successfully" />
     <MESSAGE value="almost done with admin form. added multiple dates handling code" />
     <MESSAGE value="added the image url insertion into database feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the image url insertion into database feature" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/surajJha/shout&#10;&#10;Conflicts:&#10;&#9;app/styles/base.css&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/surajJha/shout&#10;&#10;Conflicts:&#10;&#9;app/styles/base.css&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1422,22 +1458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1384" max-vertical-offset="2322">
-          <caret line="88" column="91" selection-start-line="88" selection-start-column="91" selection-end-line="88" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.259259" vertical-offset="3467" max-vertical-offset="4392">
-          <caret line="208" column="27" selection-start-line="208" selection-start-column="27" selection-end-line="208" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_image">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -1482,62 +1502,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.259259" vertical-offset="3467" max-vertical-offset="4392">
+          <caret line="208" column="27" selection-start-line="208" selection-start-column="27" selection-end-line="208" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335" vertical-offset="540" max-vertical-offset="5688">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1827" max-vertical-offset="2988">
-          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="261" max-vertical-offset="2988">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/adminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7777777" vertical-offset="1812" max-vertical-offset="3690">
-          <caret line="120" column="44" selection-start-line="120" selection-start-column="44" selection-end-line="120" selection-end-column="44" />
+        <state vertical-scroll-proportion="-5.0" vertical-offset="1026" max-vertical-offset="3348">
+          <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1832" max-vertical-offset="2610">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2806" max-vertical-offset="3888">
-          <caret line="199" column="50" selection-start-line="199" selection-start-column="50" selection-end-line="199" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3686" max-vertical-offset="4518">
+          <caret line="212" column="47" selection-start-line="212" selection-start-column="33" selection-end-line="212" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/adminModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="6570">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.2862849" vertical-offset="1284" max-vertical-offset="6894">
+          <caret line="125" column="21" selection-start-line="125" selection-start-column="21" selection-end-line="125" selection-end-column="21" />
           <folding>
-            <marker date="1421825496734" expanded="true" signature="2057:2387" placeholder="insert into ..." />
-            <marker date="1421825496734" expanded="true" signature="5005:5367" placeholder="UPDATE event..." />
-            <marker date="1421825496734" expanded="true" signature="5535:5712" placeholder="UPDATE event..." />
-            <marker date="1421825496734" expanded="true" signature="6051:6118" placeholder="Delete from ..." />
-            <marker date="1421825496734" expanded="true" signature="6175:6244" placeholder="Delete from ..." />
-            <marker date="1421825496734" expanded="true" signature="6567:6716" placeholder="select * FRO..event_detail..." />
-            <marker date="1421825496734" expanded="true" signature="6901:7474" placeholder="select ed.ev..event_detail..." />
-            <marker date="1421825496734" expanded="true" signature="9877:10018" placeholder="insert into ..." />
-            <marker date="1421825496734" expanded="true" signature="10466:10517" placeholder="select * fro..hashtag..." />
-            <marker date="1421825496734" expanded="true" signature="10625:10678" placeholder="insert into ..." />
-            <marker date="1421825496734" expanded="true" signature="10866:10945" placeholder="update hasht..." />
-            <marker date="1421825496734" expanded="true" signature="11658:11833" placeholder="insert into ..." />
-            <marker date="1421825496734" expanded="true" signature="12507:12682" placeholder="insert into ..." />
-            <marker date="1421825496734" expanded="true" signature="13325:13500" placeholder="insert into ..." />
-            <marker date="1421825496734" expanded="true" signature="13707:13741" placeholder="select categ..category..." />
-            <marker date="1421825496734" expanded="true" signature="14221:14247" placeholder="SELECT area_..area..." />
+            <marker date="1421835269739" expanded="true" signature="2057:2387" placeholder="insert into ..." />
+            <marker date="1421835269739" expanded="true" signature="5034:5353" placeholder="UPDATE event..." />
+            <marker date="1421835269739" expanded="true" signature="5548:5725" placeholder="UPDATE event..." />
+            <marker date="1421835269739" expanded="true" signature="6066:6133" placeholder="Delete from ..." />
+            <marker date="1421835269739" expanded="true" signature="6190:6259" placeholder="Delete from ..." />
+            <marker date="1421835269739" expanded="true" signature="6582:6731" placeholder="select * FRO..event_detail..." />
+            <marker date="1421835269739" expanded="true" signature="6916:7489" placeholder="select ed.ev..event_detail..." />
+            <marker date="1421835269739" expanded="true" signature="9892:10033" placeholder="insert into ..." />
+            <marker date="1421835269739" expanded="true" signature="10481:10532" placeholder="select * fro..hashtag..." />
+            <marker date="1421835269739" expanded="true" signature="10640:10693" placeholder="insert into ..." />
+            <marker date="1421835269739" expanded="true" signature="10881:10960" placeholder="update hasht..." />
+            <marker date="1421835269739" expanded="true" signature="11673:11848" placeholder="insert into ..." />
+            <marker date="1421835269739" expanded="true" signature="12522:12697" placeholder="insert into ..." />
+            <marker date="1421835269739" expanded="true" signature="13340:13515" placeholder="insert into ..." />
+            <marker date="1421835269739" expanded="true" signature="13722:13756" placeholder="select categ..category..." />
+            <marker date="1421835269739" expanded="true" signature="14236:14262" placeholder="SELECT area_..area..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25028703" vertical-offset="610" max-vertical-offset="5688">
-          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
