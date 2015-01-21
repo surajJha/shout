@@ -30,7 +30,7 @@ class AdminController
 
     /**
      * Add event takes the form inputs via post
-     * and returns success message on succes else
+     * and returns success message on success else
      * return a custom message and not the actual
      * error message as database errors should not
      * be shown to the user EVER ! BEWARE OF THIS
@@ -50,7 +50,88 @@ class AdminController
         {
             echo 'Sorry, The data couldn\'t be saved. Please try again.';
         }
+    }
 
+
+    /**
+     * function takes the post data as input from the
+     * model form and updates the database with new
+     * data filled by the user.
+     * It calls generageHashtags function to merge the
+     * hashtags into one single string.
+     * It finally calls the updateEventDetails model
+     * function and recieves the result
+     * THe result contains a status and it's corresponding
+     * message(either positive or negative message)
+     * returns an array with status and message
+     */
+    function updateEventDetails()
+    {
+        $data = json_decode(file_get_contents("php://input"));
+        $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
+        $model = new AdminModel();
+        $result = $model->updateEventDetails($data);
+        echo json_encode($result);
+    }
+
+
+    /**
+     * This function takes as input the event_detail_id
+     * of an event thats needs to be deleted.
+     * No actual deletion happens. Only the active field or state
+     * of the event is set to false. i.e the event becomes
+     * inactive
+     */
+    function deleteEvent()
+    {
+        $event_detail_id = $_POST['event_detail_id'];
+        $model = new AdminModel();
+        $result =  $model->deleteEvent($event_detail_id);
+
+    }
+
+
+    /**This funtion takes 3 inputs from the $_GET array
+     * creates a directory if not already present and
+     * then uploads the image in the newly created
+     * directory or the already existing one.
+     * It checks for the file validations such as max
+     * file size etc and then uploads the file to
+     * a directory. The directoy name is just the name of
+     * the organiser ID.
+     */
+    function uploadImages()
+    {
+        $organiser_id = $_GET['organiser_id'];
+        $event_detail_id = $_GET['event_detail_id'];
+        $primary_image = $_GET['primary_image'];
+        if(!is_dir($organiser_id))
+        {
+            mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
+        }
+        $filename = $_FILES['file']['name'];
+        $ext = pathinfo($filename, PATHINFO_EXTENSION);
+        $file_base = basename($filename,$ext);
+        $filename = $file_base.microtime().'.'.$ext;
+        $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
+        if(php_uname('s') != 'Linux')
+        {
+            $destination = 'C:/xampp/htdocs/shout/server/client_images/' .$organiser_id.'/'. $filename;
+        }
+        if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination ))
+        {
+            $model = new AdminModel();
+            $imageUploaded = $model->addImageUrlToDatabase($destination, $event_detail_id, $primary_image);
+           if($imageUploaded)
+           {
+               echo $imageUploaded;
+
+           }
+           else
+           {
+                echo 'Image was not Uploaded to the server successfully. Please try again';
+           }
+        }
     }
 
     /**
@@ -58,6 +139,7 @@ class AdminController
      * @param $hash2
      * @param $hash3
      * @return string
+     * takes as input a number of hashtags (currently 3)
      * Merge all the hashtags and return it as a string
      */
     function generateHashtag($hash1, $hash2, $hash3)
@@ -70,98 +152,11 @@ class AdminController
 
     }
 
-    /**
-     * function takes the post data as input from the
-     * model form and updates the database with new
-     * data filled by the user.
-     * It calls generageHashtags function to merge the
-     * hashtags into one single strings
-     * It finally calls the updateEventDetails model
-     * function and recieves the result
-     * THe result contains a status and it's corresponding
-     * message(either positive or negative message
-     */
-    function updateEventDetails()
-    {
-        $data = json_decode(file_get_contents("php://input"));
-        $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
-        $model = new AdminModel();
-        $result = $model->updateEventDetails($data);
-        echo json_encode($result);
-    }
-
-    function viewAllEvents()
-    {
-        $event_organizer_id = 1; // $_session se ayega baad mein
-        $model = new AdminModel();
-        $result = $model->viewAllEvents($event_organizer_id);
-
-    }
-
-    function deleteEvent()
-    {
-        $event_detail_id = $_POST['event_detail_id'];
-        $model = new AdminModel();
-        $result =  $model->deleteEvent($event_detail_id);
-
-    }
-
-    function showExistingImage()
-    {
-
-    }
-
-    /**
-     * creates a directory if not already present and
-     * then uploads the image in the newly created
-     * directory or the already existing one
-     */
-    function uploadImages()
-    {
-        $organiser_id = $_GET['organiser_id'];
-        $event_detail_id = $_GET['event_detail_id'];
-        $primary_image = $_GET['primary_image'];
-        if(!is_dir($organiser_id))
-        {
-            /**
-             *  the directory DOES NOT already exists
-             * so make a new directory
-             */
-            mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
-            //mkdir('C:/xampp/htdocs/shout/server/client_images/'.$organiser_id);
-        }
-        $filename = $_FILES['file']['name'];
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        $file_base = basename($filename,$ext);
-
-
-        $filename = $file_base.microtime().'.'.$ext;
-
-        $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
-        // $destination = 'C:/xampp/htdocs/shout/server/client_images/' .$organiser_id.'/'. $filename;
-
-        if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination ))
-        {
-            // when upload is done then make a database instertion of the
-            // path to the image
-            $model = new AdminModel();
-            $imageresult = $model->addImageUrlToDatabase($destination, $event_detail_id, $primary_image);
-           if($imageresult)
-           {
-               echo $imageresult;
-
-           }
-           else
-           {
-                echo 'image URL was not saved properly.';
-           }
-        }
-
-
-    }
-
-    /**
+    /** this function does not take any input
      * returns an array of event categories from the database
+     * If there are no categories in the database or any other
+     * database error occurs then appropriate message with status
+     * is returned.
      */
     function getEventCategory()
     {
@@ -177,8 +172,11 @@ class AdminController
         }
     }
 
-    /**
-     * returns an array of areas from the database
+    /** this function does not take any input
+     * returns an array of event areas from the database
+     * If there are no areas in the database or any other
+     * database error occurs then appropriate message with status
+     * is returned.
      */
     function getEventArea()
     {
@@ -194,6 +192,12 @@ class AdminController
         }
     }
 
+    /**
+     * This function takes as input the organiser_id
+     * and returns an array of data corresponding to
+     * all the events existing for the particular
+     * organiser
+     */
     function getAllEvents()
     {
         $organiser_id = $_GET['organiser_id'];
@@ -205,9 +209,17 @@ class AdminController
         }
         else
         {
-            echo "No events for the client";
+            echo "There are no existing events. Please contact the administrator for further enquiry";
         }
 
+    }
+
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 }
 

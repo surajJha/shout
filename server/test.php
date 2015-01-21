@@ -10,6 +10,7 @@
 //$next_week = $now->add($interval);
 //echo $next_week->format('Y-m-d');
 
-$date = new DateTime('2015/01/22');
-$date->add(new DateInterval('P1W'));
-echo $date->format('Y-m-d') . "\n";
+//$date = new DateTime('2015/01/22');
+//$date->add(new DateInterval('P1W'));
+//echo $date->format('Y-m-d') . "\n";
+echo php_uname('s');

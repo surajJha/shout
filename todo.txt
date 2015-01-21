@@ -1,0 +1,6 @@
+checck server side validation for files to be uploaded that is max file size etc.
+upload images method in controller mein check if $_file mein actually file aaya bhi hai
+ya nahi. make sure if all inputs are actually there
+
+
+Add active field in database for the events and appropriately change all the queries
