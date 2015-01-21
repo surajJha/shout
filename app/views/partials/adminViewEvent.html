@@ -37,7 +37,7 @@
                     <div>
                         <script type="text/ng-template" id="myModalContent.html">
                             <div class="modal-header">
-                                <h3 class="modal-title">I'm a modal!</h3>
+                                <h3 class="modal-title">Update Event Details</h3>
                             </div>
                             <div class="modal-body">
                             <form class="form-horizontal" role="form" enctype="multipart/form-data" novalidate name="eventForm">
@@ -50,7 +50,7 @@
                                         <div class="form-group">
                                             <label for="event_name" class="col-md-4 control-label">Event Name:</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="event_name" ng-minlength="4" ng-maxlength="8" class="form-control" id="event_name" placeholder="Event Name" ng-model="formData.event_name[id]" required>
+                                                <input type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="formData.event_name[id]">
                                             </div>
                                         </div>
                                     </div>
@@ -269,22 +269,23 @@
                             <div class="row well">
 
                                 <div class="col-lg-4">
-                                    <img ng-src="{{formData.image_encoded_path_array[0]}}" class="edit_image">
+                                    <img ng-src="{{formData.image_encoded_path_array[0]}}" class="edit_image" ng-hide="isImageHidden[0]">
                                     <label for="image1" class="col-md-4 control-label">Image One: </label>
-                                    <button class="btn btn-success" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
+                                    <button class="btn btn-success" ng-file-change="handleSelectedFile(formData.images[0],0)" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
                                     <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
+                                    <div class="file_name_preview">{{newly_selected_file[0]}}</div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <img ng-src="{{formData.image_encoded_path_array[1]}}" class="edit_image">
+                                    <img ng-src="{{formData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
                                     <label for="image2" class="col-md-4 control-label">Image Two: </label>
-                                    <button class="btn btn-success" ng-file-select ng-model="formData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
-
+                                    <button class="btn btn-success" ng-file-change="handleSelectedFile(formData.images[1],1)" ng-file-select ng-model="formData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
+                                    <div class="file_name_preview">{{newly_selected_file[1]}}</div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <img ng-src="{{formData.image_encoded_path_array[2]}}" class="edit_image">
+                                    <img ng-src="{{formData.image_encoded_path_array[2]}}" class="edit_image" ng-hide="isImageHidden[2]">
                                     <label for="image3" class="col-md-4 control-label">Image Three: </label>
-                                    <button class="btn btn-success" ng-file-select ng-model="formData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
-
+                                    <button class="btn btn-success" ng-file-change="handleSelectedFile(formData.images[2],2)" ng-file-select ng-model="formData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
+                                    <div class="file_name_preview">{{newly_selected_file[2]}}</div>
                                 </div>
                             </div>
 
@@ -292,7 +293,7 @@
 
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-primary" ng-click="ok()">OK</button>
+                                <button class="btn btn-primary" ng-click="updateEventDetails()">Update</button>
                                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
                             </div>
                         </script>

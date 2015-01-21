@@ -26,6 +26,8 @@ angular.module('shoutApp')
 
 
 
+
+
       $scope.init = function () {
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
@@ -95,6 +97,8 @@ angular.module('shoutApp')
 
 
 
+
+
   })
     /**
      * this is modal controller
@@ -111,6 +115,13 @@ angular.module('shoutApp')
         $scope.selectedArea = $scope.formData.event_area[id];
         $scope.selectedCategory = $scope.formData.event_category[id];
         $scope.formData.image_encoded_path_array = [];
+        $scope.isImageHidden = [];
+        $scope.newly_selected_file = [];
+
+        $scope.modalFormData = {};
+
+
+
          //
         // console.log(formData);
         /**
@@ -167,17 +178,68 @@ angular.module('shoutApp')
         }
         $scope.init();
 
+
+        /**
+         * Funtion handles the file change in the modal
+         * it shows the name of the newly selected file
+         * and removes the thumbnail of the previous file
+         * the previous file will be deleted only when
+         * the modal form will be submitted
+         */
+
+        $scope.handleSelectedFile = function(file_to_be_uploaded, file_id) {
+
+            $scope.newly_selected_file[file_id] = file_to_be_uploaded[0].name;
+            console.log( $scope.newly_selected_file[file_id]);
+            $scope.isImageHidden[file_id] = true;
+
+        }
+
         var items = [];
         for(var i =0;i<$scope.formData.no_of_days[id];i++){
             items.push(i);
         }
         $scope.days = items;
 
-        $scope.ok = function () {
-        $modalInstance.close($scope.id);
-    };
+
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
+
+        $scope.updateEventDetails = function () {
+            $scope.modalFormData.event_detail_id = $scope.formData.event_detail_id[id];
+            $scope.modalFormData.event_name = $scope.formData.event_name[id];
+            $scope.modalFormData.event_category = $scope.selectedCategory;
+            $scope.modalFormData.event_cost = $scope.formData.event_cost[id];
+            $scope.modalFormData.event_overview = $scope.formData.event_overview[id];
+            $scope.modalFormData.hash1 = $scope.formData.event_hashtags[id][0];
+            $scope.modalFormData.hash2 = $scope.formData.event_hashtags[id][1];
+            $scope.modalFormData.hash3 = $scope.formData.event_hashtags[id][2];
+            $scope.modalFormData.venue_name = $scope.formData.venue_name[id];
+            $scope.modalFormData.event_area = $scope.selectedArea;
+            $scope.modalFormData.event_location = $scope.formData.event_location[id];
+            $scope.modalFormData.change_event_schedule_flag = $scope.change_event_schedule_flag;
+
+            //$scope.modalFormData.no_of_days = $scope.formData.no_of_days[id];
+            //$scope.modalFormData.repeatEventCheckbox = $scope.formData.repeatEventCheckbox[id];
+            //$scope.modalFormData.no_of_weeks = $scope.formData.no_of_weeks[id];
+            //$scope.modalFormData.no_of_months = $scope.formData.no_of_months[id];
+            //$scope.modalFormData.repeatType = $scope.formData.repeatType[id];
+            //$scope.modalFormData.images = [];
+            //$scope.modalFormData.datetime = [];
+
+
+            adminTaskFactory.updateEventDetails($scope.modalFormData).then(function(result){
+                console.log(result);
+            })
+            /**
+             * close the modal only after database has been updated
+             * */
+            console.log($scope.modalFormData);
+
+
+
+             $modalInstance.close($scope.id);
+        };
 });

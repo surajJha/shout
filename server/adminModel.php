@@ -16,7 +16,7 @@ class AdminModel {
 
 
     public function __construct(){
-      //  echo 'inside construtor';
+
         $this->event_organiser_id =1;
 
     }
@@ -32,9 +32,7 @@ class AdminModel {
          return $db->getConnection();
     }
 
-    /**
-     * @param $data
-     */
+
    public function addEvent($data) {
        $db = $this->getDatabaseObject();
       $venue_name = $db->real_escape_string($data->venue_name);
@@ -57,12 +55,9 @@ class AdminModel {
         * before firing the query , check if all the NO NULLABLE coloumns
         * have some value. only then should the query be fired
         */
-
-
-
-       $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
-       $res1 = $db->query($query);
-       if($res1) {
+         $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
+       $eventDetailInserted = $db->query($query);
+       if($eventDetailInserted) {
            /**
             * if first query is true then insert data into event
             * schedule
@@ -75,88 +70,13 @@ class AdminModel {
             * database the hashtag table is updated
             * or added with the hashtag names
             */
-
-           for($k=1; $k<=3; $k++){
-               if($k==1){
-                   $hash = $hash1;
-               }
-               elseif($k==2){
-                   $hash = $hash2;
-               }
-               elseif($k==3){
-                   $hash = $hash3;
-               }
-               $query = "select * from hashtag where hashtag_name= '{$hash}'";
-               $temp = $db->query($query);
-             //  var_dump($query);
-               if($temp->num_rows == 0){
-                   $query = "insert into hashtag (hashtag_name) VALUES ('{$hash}')";
-                //   var_dump($query);
-               }
-               else{
-                   $row[] = $temp->fetch_row();
-                   $row = intval($row[0][2]);
-                   $query = "update hashtag set hashtag_count = '{$row}' + 1  where hashtag_name = '{$hash}' ";
-              //     var_dump($query);
-               }
-               $db->query($query);
-           }
-
-
-
-
-
-           if($repeatEvent) {
-               /**
-                * THe event is repetitive
-                */
-               if($repeatType =='weekly'){
-                   for($i = 0;$i<count($data->datetime);$i++) {
-                       $event_date = $data->datetime[$i]->date;
-                       $event_start_time = $data->datetime[$i]->starttime;
-                       $event_end_time = $data->datetime[$i]->endtime;
-                       for ($j = 0; $j < $no_of_weeks; $j++) {
-                           $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
-                           $res2 = $db->query($query);
-                           $date = new DateTime($event_date);
-                           $date->add(new DateInterval('P1W'));
-                           $event_date = $date->format('Y-m-d');
-                       }
-                   }
-                  }
-                   else if($repeatType == 'monthly') {
-                       for($i = 0;$i<count($data->datetime);$i++) {
-                           $event_date = $data->datetime[$i]->date;
-                           $event_start_time = $data->datetime[$i]->starttime;
-                           $event_end_time = $data->datetime[$i]->endtime;
-                           for ($j = 0; $j < $no_of_months; $j++) {
-                               $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
-                               $res2 = $db->query($query);
-                               $date = new DateTime($event_date);
-                               $date->add(new DateInterval('P1M'));
-                               $event_date = $date->format('Y-m-d');
-                           }
-                       }
-                   }
-
-
-           }
-           else {
-               /**
-                * THe event is non-repetitive
-                */
-               for($i = 0;$i<count($data->datetime);$i++) {
-                   $event_date = $data->datetime[$i]->date;
-                   $event_start_time = $data->datetime[$i]->starttime;
-                   $event_end_time = $data->datetime[$i]->endtime;
-                   $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
-                   $res2 = $db->query($query);
-
-               }
-
-           }
-
-           if($res2){
+         $this->addHashToDatabase($hash1, $hash2, $hash3);
+           $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $data->datetime);
+           /**
+            * check if res2 is true i.e query executed succesfullu
+            * otherwise send appropriate error
+            */
+           if($eventScheduleInserted){
                    $result = array();
                $result['status'] = 'success';
                $result['organiser_id'] = $this->event_organiser_id;
@@ -173,51 +93,43 @@ class AdminModel {
        }
 
 
-       /**
-        *  ccheck if res2 is true i.e query executed succesfullu
-        * otherwise send appropriate error
-        */
+
    }
 
-    /**
-     * Add the image URL to the event_image table in the database
-     */
-    public function addImageUrlToDatabase($destination, $event_detail_id, $primary_image) {
-        $db = $this->getDatabaseObject();
-        $query = "insert into event_image (event_detail_id, event_image_name, primary_image) VALUES ('{$event_detail_id}', '{$destination}','{$primary_image}')";
-        $result = $db->query($query);
-        return $result;
-    }
+
 
     /**
      * @param $data
      */
-    public function editEvent($data) {
+    public function updateEventDetails($data) {
         $db = $this->getDatabaseObject();
-        $event_schedule_id = $db->real_escape_string($data['event_schedule_id']);
-        $event_detail_id = $db->real_escape_string($data['event_detail_id']);
-        $venue_name = $db->real_escape_string($data['venue_name']);
-        $event_name = $db->real_escape_string($data['event_name']);
-        $event_overview =  $db->real_escape_string( $data['event_overview']);
-        $event_hashtags =  $db->real_escape_string($data['event_hashtags']);
-        $event_date =  $db->real_escape_string($data['event_date']);
-        $event_start_time =  $db->real_escape_string($data['event_start_time']);
-        $event_end_time =  $db->real_escape_string( $data['event_end_time']);
-        $event_location =  $db->real_escape_string( $data['event_location']);
-        $event_area =  $db->real_escape_string( $data['event_area']);
-        $event_cost =  $db->real_escape_string( $data['event_cost']);
-        $category_name =  $db->real_escape_string( $data['category_name']);
-        $event_organizer_id =  $db->real_escape_string($data['event_organizer_id']);
+       // var_dump($data);
+       // $event_schedule_id = $db->real_escape_string($data['event_schedule_id']);
+        $event_detail_id = $db->real_escape_string($data->event_detail_id);
+        $venue_name = $db->real_escape_string($data->venue_name);
+        $event_name = $db->real_escape_string($data->event_name);
+        $event_overview =  $db->real_escape_string( $data->event_overview);
+        $event_hashtags =  $db->real_escape_string($data->event_hashtags);
+        //$event_date =  $db->real_escape_string($data['event_date']);
+        //$event_start_time =  $db->real_escape_string($data['event_start_time']);
+       // $event_end_time =  $db->real_escape_string( $data['event_end_time']);
+        $event_location =  $db->real_escape_string( $data->event_location);
+        $event_area =  $db->real_escape_string( $data->event_area);
+        $event_cost =  $db->real_escape_string( $data->event_cost);
+        $category_name =  $db->real_escape_string( $data->event_category);
+       // $event_organizer_id =  $db->real_escape_string($data['event_organizer_id']);
 
-        $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}', event_organizer_id='{$event_organizer_id}' WHERE event_detail_id='{$event_detail_id}'";
+        $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
 
         $res1 = $db->query($query);
+
+        return $res1;
         /**
          * getting id of last inserted row
          */
-        $event_detail_id = $db->insert_id;
-        $query = "UPDATE event_schedule set event_date='{$event_date}', event_start_time='{$event_start_time}', event_end_time = '{$event_end_time}' WHERE event_schedule_id='{$event_schedule_id}'";
-        $res2 =  $db->query($query);
+       // $event_detail_id = $db->insert_id;
+     //   $query = "UPDATE event_schedule set event_date='{$event_date}', event_start_time='{$event_start_time}', event_end_time = '{$event_end_time}' WHERE event_schedule_id='{$event_schedule_id}'";
+      //  $res2 =  $db->query($query);
         /**
          *  check if res2 is true i.e query executed succesfullu
          * otherwise send appropriate error
@@ -247,45 +159,7 @@ class AdminModel {
         return $result;
     }
 
-    public function getEventCategory() {
-        $db = $this->getDatabaseObject();
-        $query = "select category_name from category";
-        $temp = $db->query($query);
-        $result =array();
-        if($temp->num_rows>0){
-            while($row = $temp->fetch_row()){
-                $rows[] = $row;
-            }
-            $result['status'] = 'success';
-            $result['data'] = $rows;
-            return $result;
-        }
-        else {
-           $result['status'] = "failure";
 
-        }
-
-    }
-
-    public function getEventArea() {
-        $db = $this->getDatabaseObject();
-        $query = "SELECT area_name from area";
-        $temp = $db->query($query);
-        $result =array();
-        if($temp->num_rows>0){
-            while($row = $temp->fetch_row()){
-                $rows[] = $row;
-            }
-            $result['status'] = 'success';
-            $result['data'] = $rows;
-            return $result;
-        }
-        else {
-            $result['status'] = "failure";
-
-        }
-
-    }
 
     public function getAllEvents($organiser_id) {
 
@@ -347,6 +221,144 @@ class AdminModel {
             $result['status'] = "failure";
 
         }
+    }
+
+
+    /**
+     * *******************************Utility Functions*******************************
+     */
+
+    /**
+     * Add the image URL to the event_image table in the database
+     */
+    public function addImageUrlToDatabase($destination, $event_detail_id, $primary_image) {
+        $db = $this->getDatabaseObject();
+        $query = "insert into event_image (event_detail_id, event_image_name, primary_image) VALUES ('{$event_detail_id}', '{$destination}','{$primary_image}')";
+        $result = $db->query($query);
+        return $result;
+    }
+
+    public function  addHashToDatabase($hash1, $hash2, $hash3) {
+        $db = $this->getDatabaseObject();
+        for($k=1; $k<=3; $k++){
+            if($k==1){
+                $hash = $hash1;
+            }
+            elseif($k==2){
+                $hash = $hash2;
+            }
+            elseif($k==3){
+                $hash = $hash3;
+            }
+            $query = "select * from hashtag where hashtag_name= '{$hash}'";
+            $temp = $db->query($query);
+
+            if($temp->num_rows == 0){
+                $query = "insert into hashtag (hashtag_name) VALUES ('{$hash}')";
+                //   var_dump($query);
+            }
+            else{
+                $row[] = $temp->fetch_row();
+                $row = intval($row[0][2]);
+                $query = "update hashtag set hashtag_count = '{$row}' + 1  where hashtag_name = '{$hash}' ";
+
+            }
+            $db->query($query);
+        }
+    }
+
+    public function addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $datetime) {
+        $db = $this->getDatabaseObject();
+        if($repeatEvent) {
+            /**
+             * The event is repetitive
+             */
+            if($repeatType =='weekly'){
+                for($i = 0;$i<count($datetime);$i++) {
+                    $event_date = $datetime[$i]->date;
+                    $event_start_time = $datetime[$i]->starttime;
+                    $event_end_time = $datetime[$i]->endtime;
+                    for ($j = 0; $j < $no_of_weeks; $j++) {
+                        $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
+                        $result = $db->query($query);
+                        $date = new DateTime($event_date);
+                        $date->add(new DateInterval('P1W'));
+                        $event_date = $date->format('Y-m-d');
+                    }
+                }
+            }
+            else if($repeatType == 'monthly') {
+                for($i = 0;$i<count($datetime);$i++) {
+                    $event_date = $datetime[$i]->date;
+                    $event_start_time = $datetime[$i]->starttime;
+                    $event_end_time = $datetime[$i]->endtime;
+                    for ($j = 0; $j < $no_of_months; $j++) {
+                        $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
+                        $result = $db->query($query);
+                        $date = new DateTime($event_date);
+                        $date->add(new DateInterval('P1M'));
+                        $event_date = $date->format('Y-m-d');
+                    }
+                }
+            }
+
+
+        }
+        else {
+            /**
+             * The event is non-repetitive
+             */
+            for($i = 0;$i<count($datetime);$i++) {
+                $event_date = $datetime[$i]->date;
+                $event_start_time = $datetime[$i]->starttime;
+                $event_end_time = $datetime[$i]->endtime;
+                $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
+                $result = $db->query($query);
+
+            }
+
+        }
+        return $result;
+    }
+
+    public function getEventCategory() {
+        $db = $this->getDatabaseObject();
+        $query = "select category_name from category";
+        $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0){
+            while($row = $temp->fetch_row()){
+                $rows[] = $row;
+            }
+            $result['status'] = 'success';
+            $result['data'] = $rows;
+            return $result;
+        }
+        else {
+            $result['status'] = "failure";
+
+        }
+
+    }
+
+    public function getEventArea() {
+        $db = $this->getDatabaseObject();
+        $query = "SELECT area_name from area";
+        $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0){
+            while($row = $temp->fetch_row()){
+                $rows[] = $row;
+            }
+            $result['status'] = 'success';
+            $result['data'] = $rows;
+            return $result;
+        }
+        else {
+            $result['status'] = "failure";
+
+        }
+
     }
 
 

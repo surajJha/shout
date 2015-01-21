@@ -43,18 +43,12 @@ class AdminController{
          */
         $data = json_decode(file_get_contents("php://input"));
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
-
         $model = new AdminModel();
-
-       $result = $model->addEvent($data);
-
+        $result = $model->addEvent($data);
         if($result['status'] == "success") {
-            // echo actual response only when result is success and
-            // not if result is a failure.
             echo json_encode($result);
         }
         else {
-            // do not disclose the actual error message
             echo 'Sorry, The data couldn\'t be saved. Please try again.';
         }
 
@@ -76,25 +70,12 @@ class AdminController{
 
     }
 
-    function editEvent(){
-        $data = array();
-        $data['event_schedule_id'] = $_POST['event_schedule_id'];
-        $data['event_detail_id'] = $_POST['event_detail_id'];
-        $data['venue_name'] = $_POST['venue_name'];
-        $data['event_name'] = $_POST['event_name'];
-        $data['event_overview'] = $_POST['event_overview'];
-        $data['event_hashtags'] = $_POST['event_hashtags'];
-        $data['event_date'] = $_POST['event_date'];
-        $data['event_start_time'] = $_POST['event_start_time'];
-        $data['event_end_time'] = $_POST['event_end_time'];
-        $data['event_location'] = $_POST['event_location'];
-        $data['event_area'] = $_POST['event_area'];
-        $data['event_cost'] = $_POST['event_cost'];
-        $data['category_name'] = $_POST['category_name'];
-        $data['event_organizer_id'] = 1;
-
+    function updateEventDetails(){
+        $data = json_decode(file_get_contents("php://input"));
+        $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
         $model = new AdminModel();
-        $result = $model->editEvent($data);
+        $result = $model->updateEventDetails($data);
+        echo json_encode($result);
     }
 
     function viewAllEvents(){
