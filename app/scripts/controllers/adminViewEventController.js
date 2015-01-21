@@ -96,13 +96,20 @@ angular.module('shoutApp')
 
 
   })
+    /**
+     * this is modal controller
+     * its variable and scope are available inside
+     * the modal only
+    */
     .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory) {
         $scope.event_categories = [];
         $scope.event_areas = [];
         $scope.formData = formData;
         $scope.id = id;
         $scope.formData.datetime_edit = formData.datetime;
-       $scope.change_event_schedule_flag = false;
+        $scope.change_event_schedule_flag = false;
+        $scope.selectedArea = $scope.formData.event_area[id];
+        $scope.selectedCategory = $scope.formData.event_category[id];
         $scope.formData.image_encoded_path_array = [];
          //
         // console.log(formData);
@@ -111,6 +118,14 @@ angular.module('shoutApp')
          * page loads to initialize required params
          */
         $scope.init = function() {
+
+            /**
+             * loadImages is called when modal
+             * is opened, to give preview of
+             * the images.
+             * written thrice because it was not working in
+             * for loop
+             */
             adminTaskFactory.loadImages($scope.formData.image[id][0].image_path).then(function(result){
                 $scope.formData.image_encoded_path_array[0] = result;
             })
@@ -151,9 +166,6 @@ angular.module('shoutApp')
             })
         }
         $scope.init();
-
-        $scope.selectedArea = $scope.formData.event_area[id];
-        $scope.selectedCategory = $scope.formData.event_category[id];
 
         var items = [];
         for(var i =0;i<$scope.formData.no_of_days[id];i++){

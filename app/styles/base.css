@@ -227,3 +227,7 @@ input[type="radio"] {
     padding: 2%;
     font-size: 14px;
 }
+.edit_image {
+    padding-left: 25%;
+    padding-bottom: 5px;
+}

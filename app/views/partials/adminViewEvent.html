@@ -269,19 +269,19 @@
                             <div class="row well">
 
                                 <div class="col-lg-4">
-                                    <img ng-src="{{formData.image_encoded_path_array[0]}}">
+                                    <img ng-src="{{formData.image_encoded_path_array[0]}}" class="edit_image">
                                     <label for="image1" class="col-md-4 control-label">Image One: </label>
                                     <button class="btn btn-success" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
                                     <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <img ng-src="{{formData.image_encoded_path_array[1]}}" >
+                                    <img ng-src="{{formData.image_encoded_path_array[1]}}" class="edit_image">
                                     <label for="image2" class="col-md-4 control-label">Image Two: </label>
                                     <button class="btn btn-success" ng-file-select ng-model="formData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
 
                                 </div>
                                 <div class="col-lg-4">
-                                    <img ng-src="{{formData.image_encoded_path_array[2]}}" >
+                                    <img ng-src="{{formData.image_encoded_path_array[2]}}" class="edit_image">
                                     <label for="image3" class="col-md-4 control-label">Image Three: </label>
                                     <button class="btn btn-success" ng-file-select ng-model="formData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
 
