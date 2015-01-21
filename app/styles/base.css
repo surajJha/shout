@@ -222,3 +222,8 @@ input[type="radio"] {
 .modal_date_time {
     margin-bottom: 15px;
 }
+.file_name_preview {
+    color: red;
+    padding: 2%;
+    font-size: 14px;
+}

@@ -196,4 +196,4 @@ class ScaleImage
 // SAMPLE USAGE:
 
 $imageFile = $_GET['imgpath'];
-$image = new ScaleImage($imageFile, 400, 400, 1);
+$image = new ScaleImage($imageFile, 200, 200, 1);
