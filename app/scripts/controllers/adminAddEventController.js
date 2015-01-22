@@ -44,9 +44,10 @@ angular.module('shoutApp')
         $scope.formData.datetime = [];
         $scope.event_categories = [];
         $scope.event_areas = [];
-       // $scope.endtime = '';
-      //  $scope.starttime = ''
         $scope.selectedFile = [];
+        // check if true then disable the form submit
+        $scope.isAnyFileInvalid = false;
+
 
 
 
@@ -89,7 +90,7 @@ angular.module('shoutApp')
           */
         var generateDatepicker = (function () {
             $scope.days = [1,2,3,4,5,6,7];
-            $scope.day = $scope.days[0];
+            $scope.day = '';
             $scope.change = function (no_of_days) {
                 $scope.day = no_of_days;
             }
@@ -153,9 +154,20 @@ angular.module('shoutApp')
 
         /**
          * watch for file change and show the names and preview thumbnail
+         * also check if the file is a valid image file or not
+         * If it is not a valid image file then set the isAnyFileInvalid
+         * flag to true. Use this flag during form validation(to disable/enable
+         * the submit button)
          */
         $scope.fileChanged = function(file_to_be_uploaded, file_id) {
              $scope.selectedFile[file_id] = file_to_be_uploaded[0].name;
+            var image_type = ['jpg','jpeg','gif','png'];
+            var ext =  $scope.selectedFile[file_id].split('.').pop();
+            var validExt = $.inArray(ext,image_type);
+            if(validExt == -1) {
+                $scope.isAnyFileInvalid = true;
+                console.log( $scope.isAnyFileInvalid);
+            }
             console.log($scope.selectedFile[file_id].name);
         }
 

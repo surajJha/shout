@@ -111,28 +111,28 @@ class AdminModel
 
                         $final_result['status'] = 'success';
                         $final_result['message'] = 'Event Updated Successfully';
-                    return $final_result;
+                        return $final_result;
 
                 }
                 else
                 {
-                    $final_result['status'] = 'failure';
-                    $final_result['message'] = 'Event Details were updated but event schedule updation failed. Please try again properly';
-                    return $final_result;
+                        $final_result['status'] = 'failure';
+                      $final_result['message'] = 'Event Details were updated but event schedule updation failed. Please try again properly';
+                      return $final_result;
                 }
             }
             else
             {
-                $final_result['status'] = 'success';
-                $final_result['message'] = 'Event Updated Successfully';
-                return $final_result;
+                     $final_result['status'] = 'success';
+                     $final_result['message'] = 'Event Updated Successfully';
+                     return $final_result;
             }
          }
         else
         {
-            $final_result['status'] = 'failure';
-            $final_result['message'] = 'Updation failed. Nothing was Updated';
-            return $final_result;
+                 $final_result['status'] = 'failure';
+                 $final_result['message'] = 'Updation failed. Nothing was Updated';
+                 return $final_result;
         }
     }
 

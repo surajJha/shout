@@ -4,3 +4,5 @@ ya nahi. make sure if all inputs are actually there
 
 
 Add active field in database for the events and appropriately change all the queries
+
+hashtag ka query tab hi fire karna hai jab hashtags inpout EMPTY nahi hai

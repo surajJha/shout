@@ -3,305 +3,281 @@
         <div class="container-fluid">
         <!--{{eventData[0]['event_detail_id']}}-->
             <div class="row" ng-repeat="i in formData.result_length track by $index">
-                <div class="col-lg-6">
-
-                    <div class ='viewEvents'>
-                        <div class='row eventTitle'> {{formData.event_name[$index]}} </div>
-                        <div class="row" ng-hide = true>
-                            {{formData.venue_name[$index]}}<br><hr>
-                            {{formData.event_category[$index]}}<br><hr>
-                            {{formData.event_detail_id[$index]}}<br><hr>
-                            {{formData.event_overview[$index]}}<br><hr>
-                            {{formData.event_hashtags[$index]}}<br><hr>
-                            {{formData.event_area[$index]}}<br><hr>
-                            {{formData.datetime[$index]}}<br><hr>
-                            {{formData.no_of_days[$index]}}
-
-
-                        </div>
-
-                        <div class='row eventDetails'>
-                            <div class='col-lg-4'>
-                                {{formData.event_location[$index]}}<br>
-                                PRICE : {{formData.event_cost[$index]}}/-
-                            </div>
-                            <div class='col-lg-4'></div>
-                            <div class='col-lg-4' id='options'>
-                                <span class="glyphicon glyphicon-edit"></span>
-                                <span class="glyphicon glyphicon-trash"></span>
-                                <!--<button class='btn btn-primary' id='edit'>Edit</button>-->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <script type="text/ng-template" id="myModalContent.html">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Update Event Details</h3>
-                            </div>
-                            <div class="modal-body">
-                            <form class="form-horizontal" role="form" enctype="multipart/form-data" novalidate name="eventForm">
-                            <h2 class="event-heading">Event Details</h2>
-                            <hr/>
-
-                            <div class="row well">
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="event_name" class="col-md-4 control-label">Event Name:</label>
-                                            <div class="col-md-8">
-                                                <input type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="updatedFormData.event_name[id]">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="event_category" class="col-md-4 control-label">Event Category:</label>
-                                            <div class="col-md-8">
-                                                <select class="form-control" id="event_category" ng-options="var for var in event_categories track by var" name="event_category" ng-model="selectedCategory">
-
-                                                </select>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="event_cost" class="col-md-4 control-label">Cost:</label>
-                                            <div class="col-md-8">
-                                                <input type="text" class="form-control" id="event_cost" placeholder="Minimum Cost" ng-model="updatedFormData.event_cost[id]">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="event_overview" class="col-md-4 control-label">Event Overview:</label>
-                                            <div class="col-md-8">
-                                                <textarea style="resize: none;" class="form-control" rows="6" id="event_overview" ng-model="updatedFormData.event_overview[id]"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row well">
-                                <div class="col-lg-12" style="margin-left: 3%;">
-                                    <div class="col-lg-1"><span class="hashtag-heading" style="font-size: 15px;font-weight: 800;">Hashtag:</span></div>
-                                    <div class="col-lg-3" style="margin-left: 4%">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">#</span>
-                                            <input type="text" class="form-control" id="hash1" ng-model="updatedFormData.event_hashtags[id][0]">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">#</span>
-                                            <input type="text" class="form-control" id="hash2" ng-model="updatedFormData.event_hashtags[id][1]">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">#</span>
-                                            <input type="text" class="form-control" id="hash3" ng-model="updatedFormData.event_hashtags[id][2]">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Venue Form Starts here-->
-                            <h2 class="venue-heading">Venue Details</h2>
-                            <hr/>
-
-                            <div class="row well">
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="venue_name" class="col-md-4 control-label">Venue Name:</label>
-                                            <div class="col-md-8">
-                                                <input type="text" name="venue_name" class="form-control" id="venue_name" placeholder="Venue Name" ng-model="updatedFormData.venue_name[id]">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="event_area" class="col-md-4 control-label">Area:</label>
-                                            <div class="col-md-8">
-                                                <select class="form-control" id="event_area" ng-options="var for var in event_areas track by var" name="event_area" ng-model="selectedArea">
-
-                                                </select>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="event_location" class="col-md-4 control-label">Address:</label>
-                                            <div class="col-md-8">
-                                                <textarea style="resize: none;" class="form-control" rows="4" id="event_location" ng-model="updatedFormData.event_location[id]"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <h2 class="schedule_heading">Event Schedule</h2>
-                            <hr/>
-
-                            <div class="row" ng-repeat="d in countDays" ng-hide="change_event_schedule_flag">
-                                <div class="col-lg-6">
-                                    <input type="text" name="date" class="form-control modal_date_time" ng-model="updatedFormData.datetime_edit[id][d].date" placeholder="" ng-disabled="true">
-                                </div>
-                                <div class="col-lg-3">
-                                    <input type="text" name="start_time" class="form-control modal_date_time" ng-model="updatedFormData.datetime_edit[id][d].start_time"  placeholder="" ng-disabled="true">
-                                </div>
-                                <div class="col-lg-3">
-                                    <input type="text" name="end_time" class="form-control modal_date_time" ng-model="updatedFormData.datetime_edit[id][d].end_time" placeholder="" ng-disabled="true">
-                                </div>
-
-                            </div>
-                                <div class="row">
-                                    <div class="col-lg-2"></div>
-                                <div class="col-lg-10">
-                                    <div class="form-group">
-                                        <label for="change_schedule" class="col-md-6 control-label">Do you want to Change the Event schedule ?</label>
-                                        <div class="col-md-4">
-                                            <input type="checkbox" name="change_schedule" id="change_schedule" ng-model="change_event_schedule_flag">
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-
-
-                            <div ng-show="change_event_schedule_flag">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label for="repeat_event" class="col-md-6 control-label">Do you want to repeat the event (Weekly/Monthly) ?</label>
-                                            <div class="col-md-4">
-                                                <input type="checkbox" name="repeat_event" id="repeat_event" ng-model="updatedFormData.repeatEventCheckbox">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row well" ng-show="updatedFormData.repeatEventCheckbox">
-                                    <div class="col-lg-12 form-group">
-                                        <div class="col-lg-2"></div>
-                                        <div class="col-lg-5">
-                                            <div class="row">
-                                                <div class="col-lg-5">
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="weekly" ng-model="updatedFormData.repeatType" checked>
-                                                            Weekly {{week_checkbox}}
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-7">
-                                                    <select class="form-control" id="no_of_weeks" name="no_of_weeks" ng-model="updatedFormData.no_of_weeks" ng-show="updatedFormData.repeatType == 'weekly'">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                    </select>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <div class="row">
-                                                <div class="col-lg-5">
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="monthly" ng-model="updatedFormData.repeatType">
-                                                            Monthly
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-7">
-                                                    <select class="form-control" id="no_of_months" name="no_of_months" ng-model="updatedFormData.no_of_months" ng-show="updatedFormData.repeatType == 'monthly'">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-lg-2"></div>
-                                        <label for="no_of_days" class="col-md-2 control-label">Select no of Days: </label>
-                                        <div class="col-md-4">
-                                            <select class="form-control" id="no_of_days" name="no_of_days" ng-model="day" ng-change="change(day)">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row" mydatepicker day="day">
-
-                                </div>
-                                <div id="datepicker-placeholder" class="well"></div>
-                            </div>
-
-
-                            <h2 class="image-heading">Image Upload</h2>
-                            <hr/>
-
-                            <div class="row well">
-
-                                <div class="col-lg-4">
-                                    <img ng-src="{{updatedFormData.image_encoded_path_array[0]}}" class="edit_image" ng-hide="isImageHidden[0]">
-                                    <label for="image1" class="col-md-4 control-label">Image One: </label>
-                                    <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[0],0)" ng-file-select ng-model="updatedFormData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
-                                    <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
-                                    <div class="file_name_preview">{{newly_selected_file[0]}}</div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <img ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
-                                    <label for="image2" class="col-md-4 control-label">Image Two: </label>
-                                    <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[1],1)" ng-file-select ng-model="updatedFormData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
-                                    <div class="file_name_preview">{{newly_selected_file[1]}}</div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <img ng-src="{{updatedFormData.image_encoded_path_array[2]}}" class="edit_image" ng-hide="isImageHidden[2]">
-                                    <label for="image3" class="col-md-4 control-label">Image Three: </label>
-                                    <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[2],2)" ng-file-select ng-model="updatedFormData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
-                                    <div class="file_name_preview">{{newly_selected_file[2]}}</div>
-                                </div>
-                            </div>
-
-                            </form>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary" ng-click="updateEventDetails()">Update</button>
-                                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-                            </div>
-                        </script>
+                <div class="col-lg-8">
+                    <eventwidget></eventwidget>
+                     <div>
                         <button class="btn btn-default" ng-click="open('lg',formData, $index)">Large modal</button>
                     </div>
 
                 </div>
             </div>
+
+
+
+
+        <!--Model FOrm code starts here-->
+        <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Update Event Details</h3>
+        </div>
+        <div class="modal-body">
+        <form class="form-horizontal" role="form" enctype="multipart/form-data" novalidate name="eventForm">
+        <h2 class="event-heading">Event Details</h2>
+        <hr/>
+
+        <div class="row well">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="event_name" class="col-md-4 control-label">Event Name:</label>
+                        <div class="col-md-8">
+                            <input type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="updatedFormData.event_name[id]">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="event_category" class="col-md-4 control-label">Event Category:</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="event_category" ng-options="var for var in event_categories track by var" name="event_category" ng-model="selectedCategory">
+
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="event_cost" class="col-md-4 control-label">Cost:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="event_cost" placeholder="Minimum Cost" ng-model="updatedFormData.event_cost[id]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="event_overview" class="col-md-4 control-label">Event Overview:</label>
+                        <div class="col-md-8">
+                            <textarea style="resize: none;" class="form-control" rows="6" id="event_overview" ng-model="updatedFormData.event_overview[id]"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row well">
+            <div class="col-lg-12" style="margin-left: 3%;">
+                <div class="col-lg-1"><span class="hashtag-heading" style="font-size: 15px;font-weight: 800;">Hashtag:</span></div>
+                <div class="col-lg-3" style="margin-left: 4%">
+                    <div class="input-group">
+                        <span class="input-group-addon">#</span>
+                        <input type="text" class="form-control" id="hash1" ng-model="updatedFormData.event_hashtags[id][0]">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">#</span>
+                        <input type="text" class="form-control" id="hash2" ng-model="updatedFormData.event_hashtags[id][1]">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">#</span>
+                        <input type="text" class="form-control" id="hash3" ng-model="updatedFormData.event_hashtags[id][2]">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Venue Form Starts here-->
+        <h2 class="venue-heading">Venue Details</h2>
+        <hr/>
+
+        <div class="row well">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="venue_name" class="col-md-4 control-label">Venue Name:</label>
+                        <div class="col-md-8">
+                            <input type="text" name="venue_name" class="form-control" id="venue_name" placeholder="Venue Name" ng-model="updatedFormData.venue_name[id]">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="event_area" class="col-md-4 control-label">Area:</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="event_area" ng-options="var for var in event_areas track by var" name="event_area" ng-model="selectedArea">
+
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="event_location" class="col-md-4 control-label">Address:</label>
+                        <div class="col-md-8">
+                            <textarea style="resize: none;" class="form-control" rows="4" id="event_location" ng-model="updatedFormData.event_location[id]"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="schedule_heading">Event Schedule</h2>
+        <hr/>
+
+        <div class="row" ng-repeat="d in countDays" ng-hide="change_event_schedule_flag">
+            <div class="col-lg-6">
+                <input type="text" name="date" class="form-control modal_date_time" ng-model="updatedFormData.datetime_edit[id][d].date" placeholder="" ng-disabled="true">
+            </div>
+            <div class="col-lg-3">
+                <input type="text" name="start_time" class="form-control modal_date_time" ng-model="updatedFormData.datetime_edit[id][d].start_time"  placeholder="" ng-disabled="true">
+            </div>
+            <div class="col-lg-3">
+                <input type="text" name="end_time" class="form-control modal_date_time" ng-model="updatedFormData.datetime_edit[id][d].end_time" placeholder="" ng-disabled="true">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10">
+                <div class="form-group">
+                    <label for="change_schedule" class="col-md-6 control-label">Do you want to Change the Event schedule ?</label>
+                    <div class="col-md-4">
+                        <input type="checkbox" name="change_schedule" id="change_schedule" ng-model="change_event_schedule_flag">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div ng-show="change_event_schedule_flag">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="repeat_event" class="col-md-6 control-label">Do you want to repeat the event (Weekly/Monthly) ?</label>
+                        <div class="col-md-4">
+                            <input type="checkbox" name="repeat_event" id="repeat_event" ng-model="updatedFormData.repeatEventCheckbox">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row well" ng-show="updatedFormData.repeatEventCheckbox">
+                <div class="col-lg-12 form-group">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="weekly" ng-model="updatedFormData.repeatType" checked>
+                                        Weekly {{week_checkbox}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <select class="form-control" id="no_of_weeks" name="no_of_weeks" ng-model="updatedFormData.no_of_weeks" ng-show="updatedFormData.repeatType == 'weekly'">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="monthly" ng-model="updatedFormData.repeatType">
+                                        Monthly
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <select class="form-control" id="no_of_months" name="no_of_months" ng-model="updatedFormData.no_of_months" ng-show="updatedFormData.repeatType == 'monthly'">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-lg-2"></div>
+                    <label for="no_of_days" class="col-md-2 control-label">Select no of Days: </label>
+                    <div class="col-md-4">
+                        <select class="form-control" id="no_of_days" name="no_of_days" ng-model="day" ng-change="change(day)">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" mydatepicker day="day">
+
+            </div>
+            <div id="datepicker-placeholder" class="well"></div>
+        </div>
+
+
+        <h2 class="image-heading">Image Upload</h2>
+        <hr/>
+
+        <div class="row well">
+
+            <div class="col-lg-4">
+                <img ng-src="{{updatedFormData.image_encoded_path_array[0]}}" class="edit_image" ng-hide="isImageHidden[0]">
+                <label for="image1" class="col-md-4 control-label">Image One: </label>
+                <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[0],0)" ng-file-select ng-model="updatedFormData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
+                <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
+                <div class="file_name_preview">{{newly_selected_file[0]}}</div>
+            </div>
+            <div class="col-lg-4">
+                <img ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
+                <label for="image2" class="col-md-4 control-label">Image Two: </label>
+                <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[1],1)" ng-file-select ng-model="updatedFormData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
+                <div class="file_name_preview">{{newly_selected_file[1]}}</div>
+            </div>
+            <div class="col-lg-4">
+                <img ng-src="{{updatedFormData.image_encoded_path_array[2]}}" class="edit_image" ng-hide="isImageHidden[2]">
+                <label for="image3" class="col-md-4 control-label">Image Three: </label>
+                <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[2],2)" ng-file-select ng-model="updatedFormData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
+                <div class="file_name_preview">{{newly_selected_file[2]}}</div>
+            </div>
+        </div>
+
+        </form>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="updateEventDetails()">Update</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        </script>
 
     </div>
 </div>

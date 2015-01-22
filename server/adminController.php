@@ -214,7 +214,7 @@ class AdminController
 
     }
 
-    function test_input($data)
+    function filter_input($data)
     {
         $data = trim($data);
         $data = stripslashes($data);
