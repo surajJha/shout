@@ -52,7 +52,8 @@ angular.module('shoutApp')
         $http.post($rootScope.baseUrl + '/server/adminController.php?func=addEvent', formData)
             .success(function(res){
                 defer.resolve(res);
-                console.log(res);
+               // console.log(res);
+               // console.log('factory');
             })
             .error(function (err, status) {
                 defer.reject(err);

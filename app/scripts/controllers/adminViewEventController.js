@@ -40,7 +40,7 @@ angular.module('shoutApp')
                * repeat the loop and create the div
               */
                 $scope.makeArray(result);
-                var k = 0;
+             console.log(result);
               for(var i=0; i< result.length; i++){
                   $scope.formData.event_detail_id[i] = result[i].event_detail_id;
                   $scope.formData.event_name[i] = result[i].event_name;
@@ -71,12 +71,7 @@ angular.module('shoutApp')
                     }
 
                 }
-
-
-
               }
-
-
           }); //getallevents func ends here
       }
         $scope.init();
