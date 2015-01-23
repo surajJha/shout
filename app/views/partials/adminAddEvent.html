@@ -10,11 +10,9 @@
                         <div class="row">
                             <div class="form-group">
                                 <label for="event_name" class="col-md-4 control-label">Event Name:</label>
-                                <div class="col-md-8">
-                                    <input type="text" name="event_name" ng-minlength="4" ng-maxlength="8" class="form-control" id="event_name" placeholder="Event Name" ng-model="formData.event_name" ng-model-options="{ updateOn: 'blur' }"  required>
-                                    <div class="error-message" ng-show="eventForm.event_name.$invalid && !eventForm.event_name.$pristine && eventForm.event_name.$error.required">Field is required</div>
-                                    <div class="alert alert-danger" ng-class="" ng-show="eventForm.event_name.$invalid && eventForm.event_name.$dirty && eventForm.event_name.$error.minlength">too low</div>
-                                    <div class="error-message" style="color: red;" ng-show="eventForm.event_name.$invalid && eventForm.event_name.$dirty && eventForm.event_name.$error.maxlength">too high</div>
+                                <div class="col-md-8" >
+                                    <input ng-class="{ 'has-error' : eventForm.event_name.$invalid && !eventForm.event_name.$pristine }" type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="formData.event_name" ng-model-options="{ updateOn: 'blur' }" required>
+                                    <span class="validation-message" ng-show="eventForm.event_name.$error.required && eventForm.event_name.$dirty">Event name cannot be empty !</span>
                                 </div>
                             </div>
                         </div>
@@ -22,9 +20,10 @@
                             <div class="form-group">
                                 <label for="event_category" class="col-md-4 control-label">Event Category:</label>
                                 <div class="col-md-8">
-                                    <select class="form-control" id="event_category" ng-options="var for var in event_categories" name="event_category" ng-model="formData.event_category">
+                                    <select class="form-control" id="event_category" ng-options="var for var in event_categories" name="event_category" ng-model="formData.event_category" required>
 
                                     </select>
+                                    <span class="validation-notification" ng-show="eventForm.event_category.$error.required">Please select an event category !</span>
 
                                 </div>
                             </div>
@@ -33,7 +32,12 @@
                             <div class="form-group">
                                 <label for="event_cost" class="col-md-4 control-label">Cost:</label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="event_cost" placeholder="Minimum Cost" ng-model="formData.event_cost">
+                                    <input type="number" ng-class="{ 'has-error' : eventForm.event_cost.$invalid && !eventForm.event_cost.$pristine }" class="form-control" name="event_cost" id="event_cost" placeholder="Minimum Cost" ng-model="formData.event_cost" ng-model-options="{ updateOn: 'blur' }" required min="0" max="100000">
+                                    <span class="validation-message" ng-show="eventForm.event_cost.$error.required && eventForm.event_cost.$dirty">Event cost cannot be empty</span>
+                                    <span class="validation-message" ng-show="eventForm.event_cost.$error.number && eventForm.event_cost.$dirty">Event cost should be a number !</span>
+                                    <span class="validation-message" ng-show="eventForm.event_cost.$error.min && eventForm.event_cost.$dirty">Event cost cannot be less than zero !</span>
+                                    <span class="validation-message" ng-show="eventForm.event_cost.$error.max && eventForm.event_cost.$dirty">Event cost cannot be greater than Rs.100000 !</span>
+
                                 </div>
                             </div>
                         </div>
@@ -43,7 +47,9 @@
                             <div class="form-group">
                                 <label for="event_overview" class="col-md-4 control-label">Event Overview:</label>
                                 <div class="col-md-8">
-                                    <textarea style="resize: none;" class="form-control" rows="6" id="event_overview" ng-model="formData.event_overview"></textarea>
+                                    <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_overview.$invalid && !eventForm.event_overview.$pristine }" class="form-control" name="event_overview" rows="6" id="event_overview" ng-model="formData.event_overview" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
+                                    <span class="validation-message" ng-show="eventForm.event_overview.$error.required && eventForm.event_overview.$dirty">Event Overview cannot be empty !</span>
+                                    <span class="validation-message" ng-show="eventForm.event_overview.$error.minlength && eventForm.event_overview.$dirty">Event Overview details are too short !</span>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +89,9 @@
                             <div class="form-group">
                                 <label for="venue_name" class="col-md-4 control-label">Venue Name:</label>
                                 <div class="col-md-8">
-                                    <input type="text" name="venue_name" class="form-control" id="venue_name" placeholder="Venue Name" ng-model="formData.venue_name">
+                                    <input type="text" name="venue_name" ng-class="{ 'has-error' : eventForm.venue_name.$invalid && !eventForm.venue_name.$pristine }" class="form-control" id="venue_name" placeholder="Venue Name" ng-model="formData.venue_name" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="2">
+                                    <span class="validation-message" ng-show="eventForm.venue_name.$error.required && eventForm.venue_name.$dirty">Venue name cannot be empty !</span>
+                                    <span class="validation-message" ng-show="eventForm.venue_name.$error.minlength && eventForm.venue_name.$dirty">Venue name length can't be less than 3 !</span>
                                 </div>
                             </div>
                         </div>
@@ -91,10 +99,10 @@
                             <div class="form-group">
                                 <label for="event_area" class="col-md-4 control-label">Area:</label>
                                 <div class="col-md-8">
-                                    <select class="form-control" id="event_area" ng-options="var for var in event_areas" name="event_area" ng-model="formData.event_area">
+                                    <select class="form-control" id="event_area" ng-options="var for var in event_areas" name="event_area" ng-model="formData.event_area" required>
 
                                     </select>
-
+                                    <span class="validation-notification" ng-show="eventForm.event_area.$error.required">Please select an Event Area !</span>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +112,9 @@
                             <div class="form-group">
                                 <label for="event_location" class="col-md-4 control-label">Address:</label>
                                 <div class="col-md-8">
-                                    <textarea style="resize: none;" class="form-control" rows="4" id="event_location" ng-model="formData.event_location"></textarea>
+                                    <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="4" id="event_location" ng-model="formData.event_location" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
+                                    <span class="validation-message" ng-show="eventForm.event_location.$error.required && eventForm.event_location.$dirty">Address cannot be empty !</span>
+                                    <span class="validation-message" ng-show="eventForm.event_location.$error.minlength && eventForm.event_location.$dirty">Address length cannot be less than 5 !</span>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +190,7 @@
                         <div class="col-lg-2"></div>
                         <label for="no_of_days" class="col-md-2 control-label">Select no of Days: </label>
                         <div class="col-md-4">
-                            <select class="form-control" id="no_of_days" name="no_of_days" ng-model="day" ng-change="change(day)">
+                            <select class="form-control" id="no_of_days" name="no_of_days" ng-model="day" ng-change="change(day)" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -189,6 +199,7 @@
                                 <option value="6">6</option>
                                 <option value="7">7</option>
                             </select>
+                            <span class="validation-notification" ng-show="eventForm.no_of_days.$error.required">Please select no. of days for the event !</span>
                         </div>
                     </div>
                 </div>
@@ -205,18 +216,18 @@
 
                         <div class="col-lg-4">
                             <label for="image1" class="col-md-4 control-label">Image One: </label>
-                            <button class="btn btn-success" ng-file-change="fileChanged(formData.images[0], 0)" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
+                            <button class="btn btn-success"  ng-file-change="fileChanged(formData.images[0], 0)" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
                             <div class="file_name_preview">{{selectedFile[0]}}</div>
                             <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
                         </div>
                         <div class="col-lg-4">
                             <label for="image2" class="col-md-4 control-label">Image Two: </label>
-                            <button class="btn btn-success" ng-file-change="fileChanged(formData.images[1], 1)" ng-file-select ng-model="formData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
+                            <button class="btn btn-success"  ng-file-change="fileChanged(formData.images[1], 1)" ng-file-select ng-model="formData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
                             <div class="file_name_preview">{{selectedFile[1]}}</div>
                         </div>
                         <div class="col-lg-4">
                             <label for="image3" class="col-md-4 control-label">Image Three: </label>
-                            <button class="btn btn-success" ng-file-change="fileChanged(formData.images[2], 2)" ng-file-select ng-model="formData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
+                            <button class="btn btn-success"  ng-file-change="fileChanged(formData.images[2], 2)" ng-file-select ng-model="formData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
                             <div class="file_name_preview">{{selectedFile[2]}}</div>
                         </div>
                 </div>

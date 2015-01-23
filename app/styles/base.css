@@ -195,7 +195,8 @@ input[type="radio"] {
 /*************************** View Events CSS ***********************************/
 .viewEvents{
     width: 100%;
-    height: 200px;
+    height: 100%;
+    /*height: 200px;*/
     background-color: #64A3A3;
     border: solid black 1px;
     -webkit-box-shadow: 3px 2px 5px 0px rgba(10,38,38,0.75);
@@ -230,4 +231,30 @@ input[type="radio"] {
 .edit_image {
     padding-left: 25%;
     padding-bottom: 5px;
+}
+.validation-message {
+    color: red;
+    font-size: 14px;
+    padding: 0%;
+    margin: 18%;
+    margin-top: 3px;
+}
+.validation-notification {
+    color: lightcoral;
+    font-size: 14px;
+    padding: 0%;
+    margin: 18%;
+    margin-top: 3px;
+}
+/*input.ng-invalid .ng-dirty {*/
+    /*background-color: rgb(250, 255, 189);*/
+    /*border: 1px solid red;*/
+/*}*/
+/*textarea.ng-invalid .ng-dirty {*/
+    /*background-color: rgb(250, 255, 189);*/
+    /*border: 1px solid red;*/
+/*}*/
+.has-error{
+    background-color: rgb(250, 255, 189);
+    border: 1px solid red;
 }
