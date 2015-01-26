@@ -108,6 +108,7 @@ class AdminController
         if(!is_dir($organiser_id))
         {
             mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
+
         }
         $filename = $_FILES['file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);

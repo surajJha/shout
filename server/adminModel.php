@@ -94,6 +94,9 @@ class AdminModel
         $hash1 = $db->real_escape_string($data->hash1);
         $hash2 = $db->real_escape_string($data->hash2);
         $hash3 = $db->real_escape_string($data->hash3);
+       // $changed_image_details = $data->changedImageDetails;
+       // $eventImageInserted = '';
+      //  $changed_image_path = $data->changedImageFilePath;
         $final_result = [];
      //   $event_organizer_id =  $db->real_escape_string($data->event_organizer_id);
         $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
@@ -121,6 +124,23 @@ class AdminModel
                       return $final_result;
                 }
             }
+//            else if(count($changed_image_details) != 0){
+//                for($i=0; $i<count($changed_image_details);$i++){
+//                    if($changed_image_details[$i] != ''){
+//                     //   $this->deletePreviousEventImage($changed_image_details[$i]);
+//                       $eventImageInserted = $this->addEventImageToDatabase($changed_image_details[$i]);
+//                    }
+//                }
+//
+//                if($eventImageInserted){
+//                    $final_result['status'] = 'success';
+//                    $final_result['message'] = 'Image and event details were updated successfully';
+//                }
+//                else{
+//                    $final_result['status'] = 'failure';
+//                    $final_result['message'] = 'event details was updated successfully but image updation failed. Please try again';
+//                }
+//            }
             else
             {
                      $final_result['status'] = 'success';
@@ -151,7 +171,7 @@ class AdminModel
     public function getAllEvents($organiser_id)
     {
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image,ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)
@@ -192,6 +212,7 @@ class AdminModel
                     $z = array();
                     $z['image_path'] = $y[0];
                     $z['primary'] = $y[1];
+                    $z['event_image_id'] = $y[2];
                     array_push($rows[$i]['image'] , $z);
                 }
 
@@ -368,7 +389,6 @@ class AdminModel
         $deleted = $db->query($query);
         return $deleted;
     }
-
 
 }
 
