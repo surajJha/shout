@@ -34,15 +34,13 @@ angular.module('shoutApp')
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
 
-            //  console.log(result);
-
               /** Storing the length in
               * result_length so that it can be
                * used in ng-repeat to
                * repeat the loop and create the div
               */
                 $scope.makeArray(result);
-
+             console.log(result);
               for(var i=0; i< result.length; i++){
                   $scope.formData.event_detail_id[i] = result[i].event_detail_id;
                   $scope.formData.event_name[i] = result[i].event_name;
@@ -73,12 +71,7 @@ angular.module('shoutApp')
                     }
 
                 }
-
-
-
               }
-
-
           }); //getallevents func ends here
       }
         $scope.init();
@@ -153,7 +146,6 @@ angular.module('shoutApp')
         $scope.day = '';
         $scope.event_categories = [];
         $scope.event_areas = [];
-        $scope.updatedFormData.changedImageFileId = [];
 
         $scope.modalFormData = {};
 
@@ -187,16 +179,21 @@ angular.module('shoutApp')
              */
            for(var i = 0; i <$scope.updatedFormData.image[id].length; i++){
                     (function(i_alias){
+                        //console.log($scope.updatedFormData.image[id][i_alias].image_path);
                         adminTaskFactory.loadImages($scope.updatedFormData.image[id][i_alias].image_path).then(function(result){
                           //  console.log(result);
                             $scope.updatedFormData.image_encoded_path_array[i_alias] = result;
 
-                          //  console.log(i_alias)
+                            console.log(i_alias);
+                            console.log($scope.updatedFormData.image_encoded_path_array[i_alias]);
                         })
                     }(i));
            }
         } // end of init function
         $scope.init();
+
+        console.log($scope.updatedFormData.image[id]);
+
 
         /**
          * get date and time fields of the dynamically
@@ -219,11 +216,10 @@ angular.module('shoutApp')
          * the modal form will be submitted
          */
 
-        $scope.handleSelectedFile = function(file_to_be_uploaded, file_id, event_image_id) {
-          //  console.log(event_image_details);
+        $scope.handleSelectedFile = function(file_to_be_uploaded, file_id) {
+
             $scope.newly_selected_file[file_id] = file_to_be_uploaded[0].name;
             $scope.isImageHidden[file_id] = true;
-            $scope.updatedFormData.changedImageFileId[file_id] = event_image_id;
 
         }
 
@@ -247,7 +243,6 @@ angular.module('shoutApp')
     };
 
         $scope.updateEventDetails = function () {
-           // console.log($scope.updatedFormData);
             $scope.modalFormData.event_detail_id = $scope.updatedFormData.event_detail_id[id];
             $scope.modalFormData.event_name = $scope.updatedFormData.event_name[id];
             $scope.modalFormData.event_category = $scope.selectedCategory;
@@ -264,13 +259,6 @@ angular.module('shoutApp')
             $scope.modalFormData.no_of_weeks = $scope.updatedFormData.no_of_weeks;
             $scope.modalFormData.no_of_months = $scope.updatedFormData.no_of_months;
             $scope.modalFormData.repeatType = $scope.updatedFormData.repeatType;
-            $scope.modalFormData.image = $scope.updatedFormData.image[id];
-            $scope.modalFormData.changedImageFileId = $scope.updatedFormData.changedImageFileId;
-            $scope.modalFormData.newly_selected_file = $scope.newly_selected_file;
-
-         //   console.log($scope.modalFormData.changedImageDetails);
-
-         //   console.log($scope.modalFormData.changedImageDetails[1] == '' );
 
 
             if($scope.modalFormData.change_event_schedule_flag) {

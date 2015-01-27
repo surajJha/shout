@@ -47,6 +47,7 @@ angular.module('shoutApp')
         $scope.selectedFile = [];
         // check if true then disable the form submit
         $scope.isAnyFileInvalid = false;
+        $scope.isAnyFileSizeInvalid = false;
 
 
 
@@ -111,9 +112,12 @@ angular.module('shoutApp')
          * button will be pressed on the form
          */
         $scope.submitEventForm = function () {
+          //  console.log('inside contr');
           $scope.getDateTime();
         adminTaskFactory.addNewEvent($scope.formData).then(function(result){
+            console.log("controller result");
             console.log(result);
+            console.log(result['status']);
            /** for successful insertion into the database
             * the result returned should bt "success"
             * */
@@ -161,15 +165,31 @@ angular.module('shoutApp')
          */
         $scope.fileChanged = function(file_to_be_uploaded, file_id) {
              $scope.selectedFile[file_id] = file_to_be_uploaded[0].name;
-            var image_type = ['jpg','jpeg','gif','png'];
-            var ext =  $scope.selectedFile[file_id].split('.').pop();
-            var validExt = $.inArray(ext,image_type);
-            if(validExt == -1) {
+            console.log(file_to_be_uploaded[0]);
+
+            if(!(file_to_be_uploaded[0].type == 'image/png' || file_to_be_uploaded[0].type == 'image/jpeg'))
+            {
                 $scope.isAnyFileInvalid = true;
-                console.log( $scope.isAnyFileInvalid);
             }
-            console.log($scope.selectedFile[file_id].name);
+            if(file_to_be_uploaded[0].size>5000000)
+            {
+                $scope.isAnyFileSizeInvalid = true;
+            }
+
+
         }
 
 
     });
+
+
+
+
+
+//var image_type = ['jpg','jpeg','gif','png'];
+//var ext =  $scope.selectedFile[file_id].split('.').pop();
+//var validExt = $.inArray(ext,image_type);
+//if(validExt == -1) {
+//    $scope.isAnyFileInvalid = true;
+// //   console.log( $scope.isAnyFileInvalid);
+//}

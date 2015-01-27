@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="container-fluid">
         <!--{{eventData[0]['event_detail_id']}}-->
             <div class="row" ng-repeat="i in formData.result_length track by $index">
@@ -249,21 +249,21 @@
 
         <div class="row well">
 
-            <div class="col-lg-4">
-                <img ng-src="{{updatedFormData.image_encoded_path_array[0]}}" class="edit_image" ng-hide="isImageHidden[0]">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img height="160" width="200" ng-src="{{updatedFormData.image_encoded_path_array[0]}}" class="edit_image" ng-hide="isImageHidden[0]">
                 <label for="image1" class="col-md-4 control-label">Image One: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[0],0, updatedFormData.image[id][0].event_image_id)" ng-file-select ng-model="updatedFormData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
                 <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
                 <div class="file_name_preview">{{newly_selected_file[0]}}</div>
             </div>
-            <div class="col-lg-4">
-                <img ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img height="160" width="200" ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
                 <label for="image2" class="col-md-4 control-label">Image Two: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[1],1,updatedFormData.image[id][1].event_image_id)" ng-file-select ng-model="updatedFormData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
                 <div class="file_name_preview">{{newly_selected_file[1]}}</div>
             </div>
-            <div class="col-lg-4">
-                <img ng-src="{{updatedFormData.image_encoded_path_array[2]}}" class="edit_image" ng-hide="isImageHidden[2]">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img height="160" width="200" ng-src="{{updatedFormData.image_encoded_path_array[2]}}" class="edit_image" ng-hide="isImageHidden[2]">
                 <label for="image3" class="col-md-4 control-label">Image Three: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[2],2,updatedFormData.image[id][2].event_image_id)" ng-file-select ng-model="updatedFormData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
                 <div class="file_name_preview">{{newly_selected_file[2]}}</div>

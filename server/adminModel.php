@@ -1,11 +1,11 @@
 <?php
 
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 ini_set('display_errors', '1');
 include_once 'databaseConnection.php';
 class AdminModel
 {
-    private $event_organiser_id;
+    protected $event_organiser_id;
     public function __construct()
     {
         $this->event_organiser_id =1;
@@ -14,7 +14,7 @@ class AdminModel
     /**
      * @return mysqli
      * function creates a new DatabaseConnection object
-     * and calls the getCOnntection() and returns
+     * and calls the getConntection() and returns
      * a mysqli object
      */
     protected function getDatabaseObject()
@@ -23,18 +23,36 @@ class AdminModel
          return $db->getConnection();
     }
 
-
+    /**
+     * @param $data
+     * @return array|string
+     * This function takes as input the post form variables
+     * from the controller and applies real escape string to
+     * make it safe for database insertion.
+     * It also takes event_organiser_id from the session
+     * variable (not implemented yet).
+     * It then fires an insert query to the event_Detail
+     * table, if it is successful , then it inserts the
+     * hashtags to the hashtag table if hashtags are available(from user)
+     * hence this query is optional.
+     * It then inserts the date information into the event_schedule
+     * table . If event schedule is inserted properly then this
+     * function returns a succes message status and organiser_id
+     * and event_detail id. Else it returns failure status and appropriate
+     * failure message.
+     *
+     */
    public function addEvent($data)
    {
        $db = $this->getDatabaseObject();
-      $venue_name = $db->real_escape_string($data->venue_name);
+       $venue_name = $db->real_escape_string($data->venue_name);
        $event_name = $db->real_escape_string($data->event_name);
-      $event_overview =  $db->real_escape_string( $data->event_overview);
-      $event_hashtags =  $db->real_escape_string($data->event_hashtags);
+       $event_overview =  $db->real_escape_string( $data->event_overview);
+       $event_hashtags ='qwerty'; // $db->real_escape_string($data->event_hashtags);
        $event_location =  $db->real_escape_string( $data->event_location);
-      $event_area =  $db->real_escape_string( $data->event_area);
-      $event_cost =  $db->real_escape_string( $data->event_cost);
-      $category_name =  $db->real_escape_string( $data->event_category);
+       $event_area =  $db->real_escape_string( $data->event_area);
+       $event_cost =  $db->real_escape_string( $data->event_cost);
+       $category_name =  $db->real_escape_string( $data->event_category);
        $repeatEvent = $db->real_escape_string( $data->repeatEventCheckbox);
        $repeatType = $db->real_escape_string( $data->repeatType);
        $no_of_weeks = $db->real_escape_string( $data->no_of_weeks);
@@ -42,36 +60,53 @@ class AdminModel
        $hash1 = $db->real_escape_string($data->hash1);
        $hash2 = $db->real_escape_string($data->hash2);
        $hash3 = $db->real_escape_string($data->hash3);
-     // $event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
+     //$event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
        $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
        $eventDetailInserted = $db->query($query);
+       $result = array();
        if($eventDetailInserted)
        {
-           // getting id of last inserted row
            $event_detail_id = $db->insert_id;
-           $this->addHashToDatabase($hash1, $hash2, $hash3);
+         //$this->addHashToDatabase($hash1, $hash2, $hash3);
            $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $data->datetime);
            if($eventScheduleInserted)
            {
-               $result = array();
+
                $result['status'] = 'success';
                $result['organiser_id'] = $this->event_organiser_id;
                $result['event_detail_id'] = $event_detail_id;
+               $result['message'] = 'Event details added successfully';
                return $result;
            }
            else
            {
-               return 'Error in running the second query, during inserting data in the schedule table '.$db->error;
+               $result['status'] = 'failure';
+               $result['message'] = 'Error in running the second query, during inserting data in the schedule table '.$db->error;
+               return $result;
            }
        }
        else
        {
-           return 'Error in running the first query to insert data in details table '.$db->error;
+           $result['status'] = 'failure';
+           $result['message'] = 'Error in running the first query to insert data in details table '.$db->error;
+           return $result;
        }
    }
 
-
+    /**
+     * @param $data
+     * @return array
+     * This function takes as input the form details as $data array and cleans the
+     * data using real_escape_String for use in the datbase .
+     * It then fires the UPDATE query to update the event_Details.
+     * If event details are updated then it fire UPDATE query to update hashtags
+     * which is optional. After that an UPDATE query is fired to update event schedule
+     * which is also optional. If everything executes then success status is returned with
+     * the result array and also a success messae is sent. ELSE failure status with failure
+     * message is returned
+     *
+     */
     public function updateEventDetails($data)
     {
         $db = $this->getDatabaseObject();
@@ -94,9 +129,6 @@ class AdminModel
         $hash1 = $db->real_escape_string($data->hash1);
         $hash2 = $db->real_escape_string($data->hash2);
         $hash3 = $db->real_escape_string($data->hash3);
-       // $changed_image_details = $data->changedImageDetails;
-       // $eventImageInserted = '';
-      //  $changed_image_path = $data->changedImageFilePath;
         $final_result = [];
      //   $event_organizer_id =  $db->real_escape_string($data->event_organizer_id);
         $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
@@ -124,23 +156,6 @@ class AdminModel
                       return $final_result;
                 }
             }
-//            else if(count($changed_image_details) != 0){
-//                for($i=0; $i<count($changed_image_details);$i++){
-//                    if($changed_image_details[$i] != ''){
-//                     //   $this->deletePreviousEventImage($changed_image_details[$i]);
-//                       $eventImageInserted = $this->addEventImageToDatabase($changed_image_details[$i]);
-//                    }
-//                }
-//
-//                if($eventImageInserted){
-//                    $final_result['status'] = 'success';
-//                    $final_result['message'] = 'Image and event details were updated successfully';
-//                }
-//                else{
-//                    $final_result['status'] = 'failure';
-//                    $final_result['message'] = 'event details was updated successfully but image updation failed. Please try again';
-//                }
-//            }
             else
             {
                      $final_result['status'] = 'success';
@@ -158,20 +173,43 @@ class AdminModel
 
     /**
      * @param $event_detail_id
+     * Takes event_Detail_id as input and deactivates the corresponding event
+     * by setting the ACTIVE flag to inactive.
+     * It then deletes the image URL's from the event_image table and also deletes
+     * the images stored in the FILESYSTEM. The funtion returns success status if deletion
+     * is done else returns failure .
      */
     public function deleteEvent($event_detail_id)
     {
         $db = $this->getDatabaseObject();
-        $query = "Delete from event_detail WHERE event_detail_id='{$event_detail_id}'";
-        $res1 = $db->query($query);
-        $query = "Delete from event_schedule WHERE event_detail_id='{$event_detail_id}'";
-        $res2 = $db->query($query);
+        $isDeleted = 'set this flag as the output of query. Should be boolean';
+        if($isDeleted)
+        {
+            $result['status'] = 'success';
+            $result['message'] = 'Events details deleted successfully';
+            return $result;
+        }
+        else
+        {
+            $result['status'] = 'failure';
+            $result['message'] = 'Events details were not deleted properly.';
+            return $result;
+        }
+
+
     }
+
+     /**
+     * This function takes organiser_id as input and based on this it fires a SELECT query to
+     * fetch data of all the events belonging to the particular Organiser.
+     * The date and time is stored as arrays in an outer array. Same is done for storing the
+     * Image URL's.Thus the entire result is sent back as a multidimensional array.
+     */
 
     public function getAllEvents($organiser_id)
     {
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image,ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)
@@ -204,28 +242,44 @@ class AdminModel
                         array_push($rows[$i]['datetime'] , $z);
                     }
                 }
-                $temp_image_array = explode(',',$row['image']);
-                $y = array();
-                foreach ($temp_image_array as $x)
+                else
                 {
-                    $y = explode('=',$x);
-                    $z = array();
-                    $z['image_path'] = $y[0];
-                    $z['primary'] = $y[1];
-                    $z['event_image_id'] = $y[2];
-                    array_push($rows[$i]['image'] , $z);
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Schedule not fetched properly';
+                    return $result;
                 }
-
-
-                $i++;
+                if($row['image'])
+                {
+                    $temp_image_array = explode(',',$row['image']);
+                    $y = array();
+                    foreach ($temp_image_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['image_path'] = $y[0];
+                        $z['primary'] = $y[1];
+                        array_push($rows[$i]['image'] , $z);
+                    }
+                    $i++;
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Image URL\'s not fetched Properly';
+                    return $result;
+                }
             }
+
             $result['status'] = 'success';
+            $result['message'] = 'Event Details successfully fetched';
             $result['data'] =$rows;
-           return $result;
+            return $result;
         }
         else {
             $result['status'] = "failure";
+            $result['message'] = 'All the event details were not fetched properly. Please check database errors or database LOG file for more information';
             $result['data'] = '';
+            return $result;
 
         }
     }
@@ -234,16 +288,43 @@ class AdminModel
      */
 
     /**
-     * Add the image URL to the event_image table in the database
+     * @param $destination
+     * @param $event_detail_id
+     * @param $primary_image
+     * @return bool|mysqli_result
+     * THis function takes as input destination for the image i.e. the file path in the
+     * file system , the event_detail_ud and the primary image flag(1 or 0).
+     * It then stores the image URL and other data in the event_image Table
      */
     public function addImageUrlToDatabase($destination, $event_detail_id, $primary_image)
     {
         $db = $this->getDatabaseObject();
         $query = "insert into event_image (event_detail_id, event_image_name, primary_image) VALUES ('{$event_detail_id}', '{$destination}','{$primary_image}')";
-        $result = $db->query($query);
-        return $result;
+        $imageUrlInserted = $db->query($query);
+        $result = array();
+        if($imageUrlInserted)
+        {
+            $result['status'] = 'success';
+            $result['message'] = 'image Url\'s were successfully inserted into the database';
+            return $result;
+        }
+        else
+        {
+            $result['status'] = 'failure';
+            $result['message'] = 'image Url\'s were Not properly inserted into the database '.$db->error;
+            return $result;
+        }
     }
 
+    /**
+     * @param $hash1
+     * @param $hash2
+     * @param $hash3
+     * This function takes as input 3 or more hash strings and checks if the hash
+     * is already present in the table. IF the hash string is already present, then
+     * its count is incremented else it is inserted as a new hash string in the table.
+     * It returns true is successful else false.
+     */
     public function  addHashToDatabase($hash1, $hash2, $hash3)
     {
         $db = $this->getDatabaseObject();
@@ -276,10 +357,34 @@ class AdminModel
                 $query = "update hashtag set hashtag_count = '{$row}' + 1  where hashtag_name = '{$hash}' ";
 
             }
-            $db->query($query);
+            $hashtagInserted = $db->query($query);
+            $result = array();
+            if($hashtagInserted)
+            {
+                $result['status'] = 'success';
+                $result['message'] = 'hashtags inserted/updated properly';
+            }
+            else
+            {
+                $result['status'] = 'failure';
+                $result['message'] = 'hashtags NOT inserted/updated properly '.$db->error;
+            }
         }
     }
 
+    /**
+     * @param $event_detail_id
+     * @param $repeatType
+     * @param $repeatEvent
+     * @param $no_of_months
+     * @param $no_of_weeks
+     * @param $datetime
+     * @return bool|mysqli_result
+     * THis function inserts the event schedule in the datbase. It first checks if event needs to be
+     * repeated or not. For repititive event it checks weekly or monthly type and inserts multiple rows
+     * in the database. FOr non-repititive event only one set of rows are inserted.It returns true if
+     * query is successful else returns false.
+     */
     public function addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $datetime)
     {
         $db = $this->getDatabaseObject();
@@ -296,7 +401,7 @@ class AdminModel
                     for ($j = 0; $j < $no_of_weeks; $j++)
                     {
                         $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
-                        $result = $db->query($query);
+                        $eventScheduleInserted = $db->query($query);
                         $date = new DateTime($event_date);
                         $date->add(new DateInterval('P1W'));
                         $event_date = $date->format('Y-m-d');
@@ -313,7 +418,7 @@ class AdminModel
                     for ($j = 0; $j < $no_of_months; $j++)
                     {
                         $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
-                        $result = $db->query($query);
+                        $eventScheduleInserted = $db->query($query);
                         $date = new DateTime($event_date);
                         $date->add(new DateInterval('P1M'));
                         $event_date = $date->format('Y-m-d');
@@ -332,12 +437,31 @@ class AdminModel
                 $event_start_time = $datetime[$i]->starttime;
                 $event_end_time = $datetime[$i]->endtime;
                 $query = "insert into event_schedule (event_detail_id,event_date,event_start_time,event_end_time) VALUES ('{$event_detail_id}','{$event_date}','{$event_start_time}','{$event_end_time}')";
-                $result = $db->query($query);
+                $eventScheduleInserted = $db->query($query);
             }
+
         }
-        return $result;
+        $result = array();
+        if($eventScheduleInserted)
+        {
+            $result['status'] = 'success';
+            $result['message'] = 'Event schedule inserted successfully';
+            return $result;
+        }
+        else
+        {
+            $result['status'] = 'failure';
+            $result['message'] = 'Event schedule NOT  inserted successfully '.$db->error;
+            return $result;
+        }
+
     }
 
+    /**
+     * This function returns an array of categories of events from
+     * the database. If NO CATEGORY exists then it returns failure message
+     * with empty result data.
+     */
     public function getEventCategory()
     {
         $db = $this->getDatabaseObject();
@@ -351,15 +475,24 @@ class AdminModel
                 $rows[] = $row;
             }
             $result['status'] = 'success';
+            $result['message'] = 'Categories fetched successfully';
             $result['data'] = $rows;
             return $result;
         }
         else
         {
             $result['status'] = "failure";
+            $result['message'] = 'Categories NOT fetched successfully '.$db->error;
+            $result['data'] = '';
+            return $result;
         }
     }
 
+    /**
+     * This function returns an array of Areas of events from
+     * the database. If NO Areas exists then it returns failure message
+     * with empty result data.
+     */
     public function getEventArea()
     {
         $db = $this->getDatabaseObject();
@@ -372,23 +505,45 @@ class AdminModel
                 $rows[] = $row;
             }
             $result['status'] = 'success';
+            $result['message'] = 'Areas fetched successfully';
             $result['data'] = $rows;
             return $result;
         }
         else
         {
             $result['status'] = "failure";
+            $result['message'] = 'Areas NOT fetched successfully '.$db->error;
             $result['data'] = '';
+            return $result;
         }
     }
 
+    /**
+     * @param $event_detail_id
+     * @return bool|mysqli_result
+     * This event takes as input the event detail id and deletes the event schedule from
+     * the databse. It returns true is successful, else false .
+     */
     public function deletePreviousEventSchedule($event_detail_id)
     {
         $db = $this->getDatabaseObject();
         $query = "delete from event_schedule WHERE event_detail_id='{$event_detail_id}'";
         $deleted = $db->query($query);
-        return $deleted;
+        $result = array();
+        if($deleted)
+        {
+            $result['status'] = 'success';
+            $result['message'] = 'Previous Event Schedule details successfully deleted';
+            return $result;
+        }
+        else
+        {
+            $result['status'] = "failure";
+            $result['message'] = 'Previous Event details not deleted successfully'.$db->error;
+            return $result;
+        }
     }
+
 
 }
 

@@ -30,6 +30,8 @@ class AdminController
 
     /**
      * Add event takes the form inputs via post
+     * and then use custom_filter_input to filter
+     * the incoming data and the nuse it.
      * and returns success message on success else
      * return a custom message and not the actual
      * error message as database errors should not
@@ -39,7 +41,18 @@ class AdminController
     function addEvent()
     {
         $data = json_decode(file_get_contents("php://input"));
+        $data->event_name = $this->custom_filter_input($data->event_name);
+        $data->venue_name = $this->custom_filter_input($data->venue_name);
+        $data->event_overview =  $this->custom_filter_input( $data->event_overview);
+        $data->event_location = $this->custom_filter_input( $data->event_location);
+        $data->event_area =  $this->custom_filter_input( $data->event_area);
+        $data->event_cost =  $this->custom_filter_input( $data->event_cost);
+        $data->event_category =  $this->custom_filter_input( $data->event_category);
+        $data->hash1 =  $this->custom_filter_input( $data->hash1);
+        $data->hash2 =  $this->custom_filter_input( $data->hash2);
+        $data->hash3 =  $this->custom_filter_input( $data->hash3);
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
+
         $model = new AdminModel();
         $result = $model->addEvent($data);
         if($result['status'] == "success")
@@ -48,14 +61,15 @@ class AdminController
         }
         else
         {
-            echo 'Sorry, The data couldn\'t be saved. Please try again.';
+            echo $result['message'];
         }
     }
 
 
     /**
      * function takes the post data as input from the
-     * model form and updates the database with new
+     * model form (and also applies custom_filter_input function)
+     * and updates the database with new
      * data filled by the user.
      * It calls generageHashtags function to merge the
      * hashtags into one single string.
@@ -68,10 +82,28 @@ class AdminController
     function updateEventDetails()
     {
         $data = json_decode(file_get_contents("php://input"));
+        $data->event_name = $this->custom_filter_input($data->event_name);
+        $data->venue_name = $this->custom_filter_input($data->venue_name);
+        $data->event_overview =  $this->custom_filter_input( $data->event_overview);
+        $data->event_location = $this->custom_filter_input( $data->event_location);
+        $data->event_area =  $this->custom_filter_input( $data->event_area);
+        $data->event_cost =  $this->custom_filter_input( $data->event_cost);
+        $data->event_category =  $this->custom_filter_input( $data->event_category);
+        $data-> hash1 =  $this->custom_filter_input( $data->hash1);
+        $data-> hash2 =  $this->custom_filter_input( $data->hash2);
+        $data-> hash3 =  $this->custom_filter_input( $data->hash3);
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
         $model = new AdminModel();
         $result = $model->updateEventDetails($data);
-        echo json_encode($result);
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result);
+        }
+        else
+        {
+            echo $result['message'];
+        }
+
     }
 
 
@@ -87,6 +119,7 @@ class AdminController
         $event_detail_id = $_POST['event_detail_id'];
         $model = new AdminModel();
         $result =  $model->deleteEvent($event_detail_id);
+        echo $result;
 
     }
 
@@ -130,7 +163,7 @@ class AdminController
            }
            else
            {
-                echo 'Image was not Uploaded to the server successfully. Please try again';
+                echo $imageUploaded['message'];
            }
         }
     }
@@ -169,7 +202,7 @@ class AdminController
         }
         else
         {
-            echo "no available categories";
+            echo $result['message'];
         }
     }
 
@@ -189,7 +222,7 @@ class AdminController
         }
         else
         {
-            echo "no available areas";
+            echo $result['message'];
         }
     }
 
@@ -215,7 +248,7 @@ class AdminController
 
     }
 
-    function filter_input($data)
+    function custom_filter_input($data)
     {
         $data = trim($data);
         $data = stripslashes($data);
