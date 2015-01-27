@@ -116,10 +116,10 @@ class AdminController
      */
     function deleteEvent()
     {
-        $event_detail_id = $_POST['event_detail_id'];
+        $event_detail_id = $_GET['event_detail_id'];
         $model = new AdminModel();
         $result =  $model->deleteEvent($event_detail_id);
-        echo $result;
+        var_dump($result);
 
     }
 
