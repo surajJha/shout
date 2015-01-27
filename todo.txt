@@ -1,8 +1,15 @@
-checck server side validation for files to be uploaded that is max file size etc.
+1.checck server side validation for files to be uploaded that is max file size etc.
 upload images method in controller mein check if $_file mein actually file aaya bhi hai
 ya nahi. make sure if all inputs are actually there
 
 
-Add active field in database for the events and appropriately change all the queries
+2.Add active field in database for the events and appropriately change all the queries
 
-hashtag ka query tab hi fire karna hai jab hashtags inpout EMPTY nahi hai
+
+
+3.IMPORTANT : In the end plz add colg-md-* and col-sm-* everywhere in all coloumns in all pages to make everything fully responsive
+important: add .img-responsive class to img tag when needed
+
+5 In adminCOntroller for addEvent(), UpdateEvent() and UPloadImags() - CHECK IF ALL THE INPUT FROM THE USERS ARE NOT EMPTY. (check for hashtag input also)
+
+6. form VALIDATION FOR BOTH THE FORMS
