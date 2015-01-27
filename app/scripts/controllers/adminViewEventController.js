@@ -64,7 +64,7 @@ angular.module('shoutApp')
                                 //  console.log(result);
                                 $scope.encoded_image_path_array[j_alias] = result;
 
-                                console.log(j_alias)
+                             //   console.log(j_alias)
 
                             })
                         }(j))
@@ -161,32 +161,6 @@ angular.module('shoutApp')
         $scope.init = function() {
 
             /**
-             * loadImages is called when modal
-             * is opened, to give preview of
-             * the images.
-             * written thrice because it was not working in
-             * for loop
-             */
-
-                //adminTaskFactory.loadImages($scope.updatedFormData.image[id][0].image_path).then(function(result){
-                //    $scope.updatedFormData.image_encoded_path_array[0] = result;
-                //})
-                //
-                //
-                //adminTaskFactory.loadImages($scope.updatedFormData.image[id][1].image_path).then(function(result){
-                //    $scope.updatedFormData.image_encoded_path_array[1] = result;
-                //})
-                //
-                //adminTaskFactory.loadImages($scope.updatedFormData.image[id][2].image_path).then(function(result){
-                //    $scope.updatedFormData.image_encoded_path_array[2] = result;
-                //})
-                //
-
-
-
-
-
-            /**
              *  FIll the category dropdown with initial data
              */
             adminTaskFactory.getEventCategory().then(function (result) {
@@ -210,16 +184,21 @@ angular.module('shoutApp')
              */
            for(var i = 0; i <$scope.updatedFormData.image[id].length; i++){
                     (function(i_alias){
+                        //console.log($scope.updatedFormData.image[id][i_alias].image_path);
                         adminTaskFactory.loadImages($scope.updatedFormData.image[id][i_alias].image_path).then(function(result){
                           //  console.log(result);
                             $scope.updatedFormData.image_encoded_path_array[i_alias] = result;
 
-                            console.log(i_alias)
+                            console.log(i_alias);
+                            console.log($scope.updatedFormData.image_encoded_path_array[i_alias]);
                         })
                     }(i));
            }
         } // end of init function
         $scope.init();
+
+        console.log($scope.updatedFormData.image[id]);
+
 
         /**
          * get date and time fields of the dynamically
