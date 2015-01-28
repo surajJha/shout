@@ -210,7 +210,7 @@ class AdminModel
     public function getAllEvents($organiser_id)
     {
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)
@@ -226,6 +226,7 @@ class AdminModel
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = $row['event_overview'];
                 $rows[$i]['venue_name'] = $row['venue_name'];
+                $rows[$i]['event_organizer_id'] = $row['event_organizer_id'];
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
                 $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
@@ -259,6 +260,7 @@ class AdminModel
                         $z = array();
                         $z['image_path'] = $y[0];
                         $z['primary'] = $y[1];
+                        $z['image_id'] = $y[2];
                         array_push($rows[$i]['image'] , $z);
                     }
                     $i++;
@@ -541,6 +543,35 @@ class AdminModel
         {
             $result['status'] = "failure";
             $result['message'] = 'Previous Event details not deleted successfully'.$db->error;
+            return $result;
+        }
+    }
+
+    /**
+     * @param $destination
+     * @param $event_detail_id
+     * @param $primary_image
+     * @return bool|mysqli_result
+     * THis function takes as input destination for the image i.e. the file path in the
+     * file system , the event_detail_ud and the primary image flag(1 or 0).
+     * It then stores the image URL and other data in the event_image Table
+     */
+    public function addUpdatedImageUrlToDatabase($destination, $event_image_id)
+    {
+        $db = $this->getDatabaseObject();
+        $query = "update event_image set event_image_name = '{$destination}' where event_image_id = '{$event_image_id}' ";
+        $imageUrlInserted = $db->query($query);
+        $result = array();
+        if($imageUrlInserted)
+        {
+            $result['status'] = 'success';
+            $result['message'] = 'image Url\'s were successfully updated into the database';
+            return $result;
+        }
+        else
+        {
+            $result['status'] = 'failure';
+            $result['message'] = 'image Url\'s were Not properly updated into the database '.$db->error;
             return $result;
         }
     }
