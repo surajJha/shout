@@ -56,7 +56,7 @@ angular.module('shoutApp')
                   $scope.formData.event_organizer_id = result[i].event_organizer_id;
                   $scope.formData.image[i] = result[i].image;
                   $scope.formData.datetime[i] = result[i].datetime;
-               //   $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
+                  $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
                   // getting primary images
                   // using closure to preserve the value of for loop variable
                   // so that for loop does not get executed before promise returns
