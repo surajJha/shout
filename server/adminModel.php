@@ -45,53 +45,62 @@ class AdminModel
    public function addEvent($data)
    {
        $db = $this->getDatabaseObject();
-       $venue_name = $db->real_escape_string($data->venue_name);
-       $event_name = $db->real_escape_string($data->event_name);
-       $event_overview =  $db->real_escape_string( $data->event_overview);
+
+       $venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$db->real_escape_string($data->venue_name):'';
+       $event_name = (isset($data->event_name) && $data->event_name!=null )?$db->real_escape_string($data->event_name):'';
+       $event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$db->real_escape_string( $data->event_overview):'';
        $event_hashtags ='qwerty'; // $db->real_escape_string($data->event_hashtags);
-       $event_location =  $db->real_escape_string( $data->event_location);
-       $event_area =  $db->real_escape_string( $data->event_area);
-       $event_cost =  $db->real_escape_string( $data->event_cost);
-       $category_name =  $db->real_escape_string( $data->event_category);
-       $repeatEvent = $db->real_escape_string( $data->repeatEventCheckbox);
-       $repeatType = $db->real_escape_string( $data->repeatType);
-       $no_of_weeks = $db->real_escape_string( $data->no_of_weeks);
-       $no_of_months = $db->real_escape_string( $data->no_of_months);
-       $hash1 = $db->real_escape_string($data->hash1);
-       $hash2 = $db->real_escape_string($data->hash2);
-       $hash3 = $db->real_escape_string($data->hash3);
+       $event_location =  (isset($data->event_location) && $data->event_location!=null )?$db->real_escape_string( $data->event_location):'';
+       $event_area =  (isset($data->event_area) && $data->event_area!=null )?$db->real_escape_string( $data->event_area):'';
+       $event_cost =  (isset($data->event_cost) && $data->event_cost!=null )?$db->real_escape_string( $data->event_cost):'';
+       $category_name =  (isset($data->event_category) && $data->event_category!=null )?$db->real_escape_string( $data->event_category):'';
+       $repeatEvent = (isset($data->repeatEventCheckbox) && $data->repeatEventCheckbox!=null )?$db->real_escape_string( $data->repeatEventCheckbox):'';
+       $repeatType = (isset($data->repeatType) && $data->repeatType!=null )?$db->real_escape_string( $data->repeatType):'';
+       $no_of_weeks = (isset($data->no_of_weeks) && $data->no_of_weeks!=null )?$db->real_escape_string( $data->no_of_weeks):'';
+       $no_of_months = (isset($data->no_of_months) && $data->no_of_months!=null )?$db->real_escape_string( $data->no_of_months):'';
+       $hash1 = (isset($data->hash1) && $data->hash1!=null )?$db->real_escape_string($data->hash1):'';
+       $hash2 = (isset($data->hash2) && $data->hash2!=null )?$db->real_escape_string($data->hash2):'';
+       $hash3 = (isset($data->hash3) && $data->hash3!=null )?$db->real_escape_string($data->hash3):'';
      //$event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
-       $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
-       $eventDetailInserted = $db->query($query);
-       $result = array();
-       if($eventDetailInserted)
-       {
-           $event_detail_id = $db->insert_id;
-         //$this->addHashToDatabase($hash1, $hash2, $hash3);
-           $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $data->datetime);
-           if($eventScheduleInserted)
+       if($venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!='' && $repeatEvent != '' && $repeatType != '' && $no_of_weeks!='' && $no_of_months!=''){
+           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
+           $eventDetailInserted = $db->query($query);
+           $result = array();
+           if($eventDetailInserted)
            {
+               $event_detail_id = $db->insert_id;
+               //$this->addHashToDatabase($hash1, $hash2, $hash3);
+                   $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $data->datetime);
+                   if($eventScheduleInserted)
+                   {
 
-               $result['status'] = 'success';
-               $result['organiser_id'] = $this->event_organiser_id;
-               $result['event_detail_id'] = $event_detail_id;
-               $result['message'] = 'Event details added successfully';
-               return $result;
+                       $result['status'] = 'success';
+                       $result['organiser_id'] = $this->event_organiser_id;
+                       $result['event_detail_id'] = $event_detail_id;
+                       $result['message'] = 'Event details added successfully';
+                       return $result;
+                   }
+                   else
+                   {
+                       $result['status'] = 'failure';
+                       $result['message'] = 'Error in running the second query, during inserting data in the schedule table '.$db->error;
+                       return $result;
+                   }
            }
            else
            {
                $result['status'] = 'failure';
-               $result['message'] = 'Error in running the second query, during inserting data in the schedule table '.$db->error;
+               $result['message'] = 'Error in running the first query to insert data in details table '.$db->error;
                return $result;
            }
        }
-       else
-       {
+       else{
            $result['status'] = 'failure';
-           $result['message'] = 'Error in running the first query to insert data in details table '.$db->error;
+           $result['message'] = 'Some fields are empty';
            return $result;
        }
+
    }
 
     /**
@@ -111,64 +120,81 @@ class AdminModel
     {
         $db = $this->getDatabaseObject();
         // $event_schedule_id = $db->real_escape_string($data['event_schedule_id']);
-        $event_detail_id = $db->real_escape_string($data->event_detail_id);
-        $venue_name = $db->real_escape_string($data->venue_name);
-        $event_name = $db->real_escape_string($data->event_name);
-        $event_overview =  $db->real_escape_string( $data->event_overview);
-        $event_hashtags =  $db->real_escape_string($data->event_hashtags);
-        $event_location =  $db->real_escape_string( $data->event_location);
-        $event_area =  $db->real_escape_string( $data->event_area);
-        $event_cost =  $db->real_escape_string( $data->event_cost);
-        $category_name =  $db->real_escape_string( $data->event_category);
-        $change_event_schedule_flag = $db->real_escape_string( $data->change_event_schedule_flag);
-        $repeatEvent = $db->real_escape_string( $data->repeatEventCheckbox);
-        $repeatType = $db->real_escape_string( $data->repeatType);
-        $no_of_weeks = $db->real_escape_string( $data->no_of_weeks);
-        $no_of_months = $db->real_escape_string( $data->no_of_months);
-        $datetime =  $data->updated_date_time_array;
-        $hash1 = $db->real_escape_string($data->hash1);
-        $hash2 = $db->real_escape_string($data->hash2);
-        $hash3 = $db->real_escape_string($data->hash3);
+        $event_detail_id = (isset($data->event_detail_id) && $data->event_detail_id!=null )?$db->real_escape_string($data->event_detail_id):'';
+        $venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$db->real_escape_string($data->venue_name):'';
+        $event_name = (isset($data->event_name) && $data->event_name!=null )?$db->real_escape_string($data->event_name):'';
+        $event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$db->real_escape_string( $data->event_overview):'';
+        $event_hashtags =  (isset($data->event_hashtags) && $data->event_hashtags!=null )?$db->real_escape_string($data->event_hashtags):'';
+        $event_location =  (isset($data->event_location) && $data->event_location!=null )?$db->real_escape_string( $data->event_location):'';
+        $event_area =  (isset($data->event_area) && $data->event_area!=null )?$db->real_escape_string( $data->event_area):'';
+        $event_cost =  (isset($data->event_cost) && $data->event_cost!=null )?$db->real_escape_string( $data->event_cost):'';
+        $category_name =  (isset($data->event_category) && $data->event_category!=null )?$db->real_escape_string( $data->event_category):'';
+        $change_event_schedule_flag = (isset($data->change_event_schedule_flag) && $data->change_event_schedule_flag!=null )?$db->real_escape_string( $data->change_event_schedule_flag):'';
+
+        $hash1 = (isset($data->hash1) && $data->hash1!=null )?$db->real_escape_string($data->hash1):'';
+        $hash2 = (isset($data->hash2) && $data->hash2!=null )?$db->real_escape_string($data->hash2):'';
+        $hash3 = (isset($data->hash3) && $data->hash3!=null )?$db->real_escape_string($data->hash3):'';
         $final_result = [];
      //   $event_organizer_id =  $db->real_escape_string($data->event_organizer_id);
-        $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
-        $eventDetailsInserted = $db->query($query);
-        if($eventDetailsInserted)
-        {
-            $this->addHashToDatabase($hash1, $hash2, $hash3);
-            if($change_event_schedule_flag)
+        if($venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
+            $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
+            $eventDetailsInserted = $db->query($query);
+            if($eventDetailsInserted)
             {
-                // event schedule has been updated
-                $this->deletePreviousEventSchedule($event_detail_id);
-                $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $datetime);
-                if($eventScheduleInserted)
+                $this->addHashToDatabase($hash1, $hash2, $hash3);
+                if($change_event_schedule_flag)
                 {
+                    $repeatEvent = (isset($data->repeatEventCheckbox) && $data->repeatEventCheckbox!=null )?$db->real_escape_string( $data->repeatEventCheckbox):'';
+                    $repeatType = (isset($data->repeatType) && $data->repeatType!=null )?$db->real_escape_string( $data->repeatType):'';
+                    $no_of_weeks = (isset($data->no_of_weeks) && $data->no_of_weeks!=null )?$db->real_escape_string( $data->no_of_weeks):'';
+                    $no_of_months = (isset($data->no_of_months) && $data->no_of_months!=null )?$db->real_escape_string( $data->no_of_months):'';
+                    $datetime =  (isset($data->updated_date_time_array) && $data->updated_date_time_array!=null )?$data->updated_date_time_array:'';
+                    if($repeatEvent != '' && $repeatType != '' && $no_of_weeks!='' && $no_of_months!=''){
+                        // event schedule has been updated
+                        $this->deletePreviousEventSchedule($event_detail_id);
+                        $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $datetime);
+                        if($eventScheduleInserted)
+                        {
 
+                            $final_result['status'] = 'success';
+                            $final_result['message'] = 'Event Updated Successfully';
+                            return $final_result;
+
+                        }
+                        else
+                        {
+                            $final_result['status'] = 'failure';
+                            $final_result['message'] = 'Event Details were updated but event schedule updation failed. Please try again properly';
+                            return $final_result;
+                        }
+                    }
+                    else
+                    {
                         $final_result['status'] = 'success';
-                        $final_result['message'] = 'Event Updated Successfully';
+                        $final_result['message'] = 'Some fields in schedule are empty';
                         return $final_result;
+                    }
+                }
+                else{
+                    $final_result['status'] = 'success';
+                    $final_result['message'] = 'Event Updated Successfully';
+                    return $final_result;
+                }
 
-                }
-                else
-                {
-                        $final_result['status'] = 'failure';
-                      $final_result['message'] = 'Event Details were updated but event schedule updation failed. Please try again properly';
-                      return $final_result;
-                }
             }
             else
             {
-                     $final_result['status'] = 'success';
-                     $final_result['message'] = 'Event Updated Successfully';
-                     return $final_result;
+                $final_result['status'] = 'failure';
+                $final_result['message'] = 'Updation failed. Nothing was Updated';
+                return $final_result;
             }
-         }
-        else
-        {
-                 $final_result['status'] = 'failure';
-                 $final_result['message'] = 'Updation failed. Nothing was Updated';
-                 return $final_result;
         }
+        else{
+            $result['status'] = 'failure';
+            $result['message'] = 'Some fields are empty';
+            return $result;
+        }
+
     }
 
     /**

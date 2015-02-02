@@ -12,7 +12,7 @@ important: add .img-responsive class to img tag when needed
 
 5 In adminCOntroller for addEvent(), UpdateEvent() and UPloadImags() - CHECK IF ALL THE INPUT FROM THE USERS ARE NOT EMPTY. (check for hashtag input also)
 
-6. form VALIDATION FOR BOTH THE FORMS
+6. form VALIDATION FOR BOTH THE FORMS -- remaining for Date.
 
 
 7. if any of the dates is of past dates then dont give option to edit the schedule
