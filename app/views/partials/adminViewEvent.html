@@ -35,7 +35,8 @@
                     <div class="form-group">
                         <label for="event_name" class="col-md-4 control-label">Event Name:</label>
                         <div class="col-md-8">
-                            <input type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="updatedFormData.event_name[id]">
+                            <input ng-class="{ 'has-error' : eventForm.event_name.$invalid && !eventForm.event_name.$pristine }" type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="updatedFormData.event_name[id]" ng-model-options="{ updateOn: 'blur' }" required>
+                            <span class="validation-message" ng-show="eventForm.event_name.$error.required && eventForm.event_name.$dirty">Event name cannot be empty !</span>
                         </div>
                     </div>
                 </div>
@@ -54,7 +55,11 @@
                     <div class="form-group">
                         <label for="event_cost" class="col-md-4 control-label">Cost:</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" id="event_cost" placeholder="Minimum Cost" ng-model="updatedFormData.event_cost[id]">
+                            <input type="number" ng-class="{ 'has-error' : eventForm.event_cost.$invalid && !eventForm.event_cost.$pristine }" class="form-control" id="event_cost" name="event_cost" placeholder="Minimum Cost" ng-model="updatedFormData.event_cost[id]"  ng-model-options="{ updateOn: 'blur' }" required min="0" max="100000">
+                            <span class="validation-message" ng-show="eventForm.event_cost.$error.required && eventForm.event_cost.$dirty">Event cost cannot be empty</span>
+                            <span class="validation-message" ng-show="eventForm.event_cost.$error.number && eventForm.event_cost.$dirty">Event cost should be a number !</span>
+                            <span class="validation-message" ng-show="eventForm.event_cost.$error.min && eventForm.event_cost.$dirty">Event cost cannot be less than zero !</span>
+                            <span class="validation-message" ng-show="eventForm.event_cost.$error.max && eventForm.event_cost.$dirty">Event cost cannot be greater than Rs.100000 !</span>
                         </div>
                     </div>
                 </div>
@@ -64,7 +69,9 @@
                     <div class="form-group">
                         <label for="event_overview" class="col-md-4 control-label">Event Overview:</label>
                         <div class="col-md-8">
-                            <textarea style="resize: none;" class="form-control" rows="6" id="event_overview" ng-model="updatedFormData.event_overview[id]"></textarea>
+                            <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_overview.$invalid && !eventForm.event_overview.$pristine }" class="form-control" name="event_overview" rows="6" id="event_overview" ng-model="updatedFormData.event_overview[id]" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
+                            <span class="validation-message" ng-show="eventForm.event_overview.$error.required && eventForm.event_overview.$dirty">Event Overview cannot be empty !</span>
+                            <span class="validation-message" ng-show="eventForm.event_overview.$error.minlength && eventForm.event_overview.$dirty">Event Overview details are too short !</span>
                         </div>
                     </div>
                 </div>
@@ -104,7 +111,9 @@
                     <div class="form-group">
                         <label for="venue_name" class="col-md-4 control-label">Venue Name:</label>
                         <div class="col-md-8">
-                            <input type="text" name="venue_name" class="form-control" id="venue_name" placeholder="Venue Name" ng-model="updatedFormData.venue_name[id]">
+                            <input type="text" ng-class="{ 'has-error' : eventForm.venue_name.$invalid && !eventForm.venue_name.$pristine }" name="venue_name" class="form-control" id="venue_name" placeholder="Venue Name" ng-model="updatedFormData.venue_name[id]" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="2">
+                            <span class="validation-message" ng-show="eventForm.venue_name.$error.required && eventForm.venue_name.$dirty">Venue name cannot be empty !</span>
+                            <span class="validation-message" ng-show="eventForm.venue_name.$error.minlength && eventForm.venue_name.$dirty">Venue name length can't be less than 3 !</span>
                         </div>
                     </div>
                 </div>
@@ -125,7 +134,7 @@
                     <div class="form-group">
                         <label for="event_location" class="col-md-4 control-label">Address:</label>
                         <div class="col-md-8">
-                            <textarea style="resize: none;" class="form-control" rows="4" id="event_location" ng-model="updatedFormData.event_location[id]"></textarea>
+                            <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="4" id="event_location" ng-model="updatedFormData.event_location[id]"  ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
                         </div>
                     </div>
                 </div>
