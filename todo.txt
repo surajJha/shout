@@ -3,7 +3,7 @@ upload images method in controller mein check if $_file mein actually file aaya 
 ya nahi. make sure if all inputs are actually there
 
 
-2.Add active field in database for the events and appropriately change all the queries
+2.Add active field in database for the events and appropriately change all the queries ----- DONE
 
 
 
@@ -12,4 +12,7 @@ important: add .img-responsive class to img tag when needed
 
 5 In adminCOntroller for addEvent(), UpdateEvent() and UPloadImags() - CHECK IF ALL THE INPUT FROM THE USERS ARE NOT EMPTY. (check for hashtag input also)
 
-6. form VALIDATION FOR BOTH THE FORMS
+6. form VALIDATION FOR BOTH THE FORMS -- remaining for Date.
+
+
+7. if any of the dates is of past dates then dont give option to edit the schedule

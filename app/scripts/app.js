@@ -62,7 +62,7 @@ angular
             .state('about', {
                 url:'/about',
                 templateUrl:'views/about.html',
-                controller : 'about'
+                controller : 'adminAddEventController'
             })
 
     })

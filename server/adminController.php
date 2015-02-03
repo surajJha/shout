@@ -116,10 +116,10 @@ class AdminController
      */
     function deleteEvent()
     {
-        $event_detail_id = $_POST['event_detail_id'];
+        $event_detail_id = $_GET['event_detail_id'];
         $model = new AdminModel();
         $result =  $model->deleteEvent($event_detail_id);
-        echo $result;
+        var_dump($result);
 
     }
 
@@ -141,6 +141,7 @@ class AdminController
         if(!is_dir($organiser_id))
         {
             mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
+
         }
         $filename = $_FILES['file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -165,6 +166,50 @@ class AdminController
                 echo $imageUploaded['message'];
            }
         }
+    }
+
+
+    /**This funtion takes 2 inputs from the $_GET array
+     *  uploads the image in the directory
+     * It checks for the file validations such as max
+     * file size etc and then uploads the file to
+     * a directory. The directoy name is just the name of
+     * the organiser ID.
+     */
+    function uploadUpdatedImages()
+    {
+        $organiser_id = $_GET['organiser_id'];
+        $event_image_id = $_GET['event_image_id'];
+        $image_path_old = $_GET['image_path_old'];
+        if(unlink($image_path_old)){
+            $filename = $_FILES['file']['name'];
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            $file_base = basename($filename,$ext);
+            $filename = $file_base.microtime().'.'.$ext;
+            $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
+            if(php_uname('s') != 'Linux')
+            {
+                $destination = 'C:/xampp/htdocs/shout/server/client_images/' .$organiser_id.'/'. $filename;
+            }
+            if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination ))
+            {
+                $model = new AdminModel();
+                $imageUploaded = $model->addUpdatedImageUrlToDatabase($destination, $event_image_id);
+                if($imageUploaded)
+                {
+                    echo $imageUploaded;
+
+                }
+                else
+                {
+                    echo $imageUploaded['message'];
+                }
+            }
+        }
+        else{
+            echo 'Deletion of previous file failed';
+        }
+
     }
 
     /**

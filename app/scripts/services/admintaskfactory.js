@@ -74,7 +74,9 @@ angular.module('shoutApp')
         var defer = $q.defer();
         $http.get($rootScope.baseUrl + '/server/resize.php?imgpath='+path)
             .success(function(res){
+              //  console.log(res);
                 defer.resolve(res);
+              // console.log(res);
 
             })
             .error(function (err, status) {
@@ -120,7 +122,22 @@ angular.module('shoutApp')
             $http.post($rootScope.baseUrl + '/server/adminController.php?func=updateEventDetails', modalFormData)
                 .success(function(res){
                     defer.resolve(res);
-                     console.log(res);
+                     console.log("result = "+res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+
+            return defer.promise;
+        }
+
+        factory.deleteEvent = function(event_detail_id){
+            var defer = $q.defer();
+
+            $http.post($rootScope.baseUrl + '/server/adminController.php?func=deleteEvent&event_detail_id='+event_detail_id)
+                .success(function(res){
+                    defer.resolve(res);
+                    console.log(res);
                 })
                 .error(function (err, status) {
                     defer.reject(err);
