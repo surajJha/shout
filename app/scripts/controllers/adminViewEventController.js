@@ -34,7 +34,7 @@ angular.module('shoutApp')
       $scope.init = function () {
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
-              console.log(result);
+             // console.log(result);
 
               /** Storing the length in
               * result_length so that it can be
@@ -42,7 +42,7 @@ angular.module('shoutApp')
                * repeat the loop and create the div
               */
                 $scope.makeArray(result);
-
+              var k = -1;
               for(var i=0; i< result.length; i++){
                   $scope.formData.event_detail_id[i] = result[i].event_detail_id;
                   $scope.formData.event_name[i] = result[i].event_name;
@@ -60,17 +60,21 @@ angular.module('shoutApp')
                   // getting primary images
                   // using closure to preserve the value of for loop variable
                   // so that for loop does not get executed before promise returns
+                  $scope.formData.event_cost[i] = parseInt($scope.formData.event_cost[i]);
+
                 for(var j = 0;j<$scope.formData.image[i].length;j++){
                     if($scope.formData.image[i][j].primary == 1) {
-                        (function(j_alias){
+                        k++;
+                        (function(j_alias,k){
                             adminTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
-                                $scope.encoded_image_path_array[j_alias] = result;
+                                $scope.encoded_image_path_array[k] = result;
 
                             })
-                        }(j))
+                        }(j,k))
                     }
 
                 }
+
               }
           }); //getallevents func ends here
       }

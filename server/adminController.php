@@ -82,16 +82,16 @@ class AdminController
     function updateEventDetails()
     {
         $data = json_decode(file_get_contents("php://input"));
-        $data->event_name = $this->custom_filter_input($data->event_name);
-        $data->venue_name = $this->custom_filter_input($data->venue_name);
-        $data->event_overview =  $this->custom_filter_input( $data->event_overview);
-        $data->event_location = $this->custom_filter_input( $data->event_location);
-        $data->event_area =  $this->custom_filter_input( $data->event_area);
-        $data->event_cost =  $this->custom_filter_input( $data->event_cost);
-        $data->event_category =  $this->custom_filter_input( $data->event_category);
-        $data-> hash1 =  $this->custom_filter_input( $data->hash1);
-        $data-> hash2 =  $this->custom_filter_input( $data->hash2);
-        $data-> hash3 =  $this->custom_filter_input( $data->hash3);
+        $data->event_name = (isset($data->event_name) && $data->event_name!=null )?$this->custom_filter_input($data->event_name):'';
+        $data->venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$this->custom_filter_input($data->venue_name):'';
+        $data->event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$this->custom_filter_input( $data->event_overview):'';
+        $data->event_location = (isset($data->event_location) && $data->event_location!=null )?$this->custom_filter_input( $data->event_location):'';
+        $data->event_area =  (isset($data->event_area) && $data->event_area!=null )?$this->custom_filter_input( $data->event_area):'';
+        $data->event_cost =  (isset($data->event_cost) && $data->event_cost!=null )?$this->custom_filter_input( $data->event_cost):'';
+        $data->event_category =  (isset($data->event_category) && $data->event_category!=null )?$this->custom_filter_input( $data->event_category):'';
+        $data-> hash1 =  (isset($data->hash1) && $data->hash1!=null )?$this->custom_filter_input( $data->hash1):'';
+        $data-> hash2 =  (isset($data->hash2) && $data->hash2!=null )?$this->custom_filter_input( $data->hash2):'';
+        $data-> hash3 =  (isset($data->hash3) && $data->hash3!=null )?$this->custom_filter_input( $data->hash3):'';
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
         $model = new AdminModel();
         $result = $model->updateEventDetails($data);

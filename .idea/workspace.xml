@@ -4,8 +4,12 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="server side validation checking for empty fields">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userModel.php" afterPath="$PROJECT_DIR$/server/userModel.php" />
+    <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminController.php" afterPath="$PROJECT_DIR$/server/adminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminModel.php" afterPath="$PROJECT_DIR$/server/adminModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/eventwidget.html" afterPath="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -130,8 +134,8 @@
       <file leaf-file-name="adminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/adminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1839" max-vertical-offset="4575">
-              <caret line="156" column="38" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+            <state vertical-scroll-proportion="-12.125" vertical-offset="1029" max-vertical-offset="4575">
+              <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="false" />
               </folding>
@@ -142,8 +146,28 @@
       <file leaf-file-name="adminViewEventController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="4830">
-              <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="4890">
+              <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminViewEvent.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5" vertical-offset="675" max-vertical-offset="4845">
+              <caret line="57" column="267" selection-start-line="57" selection-start-column="267" selection-end-line="57" selection-end-column="267" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eventwidget.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.034642033" vertical-offset="0" max-vertical-offset="866">
+              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -152,17 +176,27 @@
       <file leaf-file-name="adminAddEventController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1385" max-vertical-offset="3000">
-              <caret line="117" column="33" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1403" max-vertical-offset="2955">
+              <caret line="116" column="36" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admintaskfactory.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.777778" vertical-offset="873" max-vertical-offset="2445">
+              <caret line="74" column="66" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/userModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51501155" vertical-offset="214" max-vertical-offset="4590">
+            <state vertical-scroll-proportion="64.541664" vertical-offset="2164" max-vertical-offset="4590">
               <caret line="41" column="544" selection-start-line="41" selection-start-column="544" selection-end-line="41" selection-end-column="544" />
               <folding>
                 <marker date="1422947870701" expanded="true" signature="990:1629" placeholder="select ed.ev..event_detail..." />
@@ -177,7 +211,7 @@
       <file leaf-file-name="adminAddEvent.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2924" max-vertical-offset="3825">
+            <state vertical-scroll-proportion="-18.166666" vertical-offset="2924" max-vertical-offset="3825">
               <caret line="224" column="87" selection-start-line="224" selection-start-column="87" selection-end-line="224" selection-end-column="87" />
               <folding />
             </state>
@@ -187,57 +221,25 @@
       <file leaf-file-name="adminModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/adminModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.958333" vertical-offset="3211" max-vertical-offset="9360">
-              <caret line="238" column="581" selection-start-line="238" selection-start-column="560" selection-end-line="238" selection-end-column="581" />
+            <state vertical-scroll-proportion="-39.833332" vertical-offset="8119" max-vertical-offset="9345">
+              <caret line="605" column="0" selection-start-line="605" selection-start-column="0" selection-end-line="605" selection-end-column="0" />
               <folding>
-                <marker date="1422868157169" expanded="true" signature="3672:4002" placeholder="insert into ..." />
-                <marker date="1422868157169" expanded="true" signature="8375:8694" placeholder="UPDATE event..." />
-                <marker date="1422868157169" expanded="true" signature="12158:12237" placeholder="update event..." />
-                <marker date="1422868157169" expanded="true" signature="13136:13772" placeholder="select ed.ev..event_detail..." />
-                <marker date="1422868157169" expanded="true" signature="17478:17619" placeholder="insert into ..." />
-                <marker date="1422868157169" expanded="true" signature="18938:18989" placeholder="select * fro..hashtag..." />
-                <marker date="1422868157169" expanded="true" signature="19110:19163" placeholder="insert into ..." />
-                <marker date="1422868157169" expanded="true" signature="19366:19445" placeholder="update hasht..." />
-                <marker date="1422868157169" expanded="true" signature="21214:21389" placeholder="insert into ..." />
-                <marker date="1422868157169" expanded="true" signature="22126:22301" placeholder="insert into ..." />
-                <marker date="1422868157169" expanded="true" signature="22987:23162" placeholder="insert into ..." />
-                <marker date="1422868157169" expanded="true" signature="23973:24007" placeholder="select categ..category..." />
-                <marker date="1422868157169" expanded="true" signature="24914:24940" placeholder="SELECT area_..area..." />
-                <marker date="1422868157169" expanded="true" signature="25912:25981" placeholder="delete from ..." />
-                <marker date="1422868157169" expanded="true" signature="26981:27082" placeholder="update event..." />
+                <marker date="1422959428201" expanded="true" signature="3642:3972" placeholder="insert into ..." />
+                <marker date="1422959428201" expanded="true" signature="8343:8662" placeholder="UPDATE event..." />
+                <marker date="1422959428201" expanded="true" signature="12126:12205" placeholder="update event..." />
+                <marker date="1422959428201" expanded="true" signature="13104:13740" placeholder="select ed.ev..event_detail..." />
+                <marker date="1422959428201" expanded="true" signature="17446:17587" placeholder="insert into ..." />
+                <marker date="1422959428201" expanded="true" signature="18906:18957" placeholder="select * fro..hashtag..." />
+                <marker date="1422959428201" expanded="true" signature="19078:19131" placeholder="insert into ..." />
+                <marker date="1422959428201" expanded="true" signature="19288:19367" placeholder="update hasht..." />
+                <marker date="1422959428201" expanded="true" signature="21136:21311" placeholder="insert into ..." />
+                <marker date="1422959428201" expanded="true" signature="22048:22223" placeholder="insert into ..." />
+                <marker date="1422959428201" expanded="true" signature="22909:23084" placeholder="insert into ..." />
+                <marker date="1422959428201" expanded="true" signature="23895:23929" placeholder="select categ..category..." />
+                <marker date="1422959428201" expanded="true" signature="24836:24862" placeholder="SELECT area_..area..." />
+                <marker date="1422959428201" expanded="true" signature="25834:25903" placeholder="delete from ..." />
+                <marker date="1422959428201" expanded="true" signature="26903:27004" placeholder="update event..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/userController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="1860">
-              <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
-              <folding>
-                <element signature="e#6#86#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="1245">
-              <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -273,23 +275,23 @@
         <option value="dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_schedule" />
         <option value="$PROJECT_DIR$/app/scripts/directives/mydatepicker.js" />
         <option value="$PROJECT_DIR$/app/views/partials/adminAddEvent.html" />
-        <option value="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
         <option value="$PROJECT_DIR$/app/styles/base.css" />
         <option value="db-console:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
         <option value="$PROJECT_DIR$/app/scripts/directives/eventwidget.js" />
-        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
-        <option value="$PROJECT_DIR$/server/adminController.php" />
         <option value="$PROJECT_DIR$/server/databaseConnection.php" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
         <option value="$PROJECT_DIR$/server/userController.php" />
         <option value="$PROJECT_DIR$/app/views/about.html" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/server/adminModel.php" />
         <option value="$PROJECT_DIR$/todo.txt" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
         <option value="$PROJECT_DIR$/server/userModel.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
+        <option value="$PROJECT_DIR$/server/adminController.php" />
+        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
+        <option value="$PROJECT_DIR$/server/adminModel.php" />
+        <option value="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
       </list>
     </option>
   </component>
@@ -543,7 +545,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -862,7 +922,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422868182730</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="adding and ed.is_active = 1 in usermodel.php">
+      <created>1422947906942</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1422947906942</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -890,13 +956,14 @@
     <editor active="false" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25933832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14374353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25611052" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25559106" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23496966" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27027026" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27027026" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5002758" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1664888" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
@@ -906,7 +973,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -966,7 +1032,8 @@
     <MESSAGE value="done with validation of adEvent form. started with eventWidget" />
     <MESSAGE value="admin part done" />
     <MESSAGE value="server side validation checking for empty fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="server side validation checking for empty fields" />
+    <MESSAGE value="adding and ed.is_active = 1 in usermodel.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding and ed.is_active = 1 in usermodel.php" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -996,21 +1063,21 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4470" max-vertical-offset="8340">
           <caret line="298" column="20" selection-start-line="298" selection-start-column="20" selection-end-line="298" selection-end-column="20" />
           <folding>
-            <marker date="1422868157169" expanded="true" signature="3672:4002" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="8375:8694" placeholder="UPDATE event..." />
-            <marker date="1422868157169" expanded="true" signature="12158:12237" placeholder="update event..." />
-            <marker date="1422868157169" expanded="true" signature="13136:13772" placeholder="select ed.ev..event_detail..." />
-            <marker date="1422868157169" expanded="true" signature="17478:17619" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="18938:18989" placeholder="select * fro..hashtag..." />
-            <marker date="1422868157169" expanded="true" signature="19110:19163" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="19366:19445" placeholder="update hasht..." />
-            <marker date="1422868157169" expanded="true" signature="21214:21389" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="22126:22301" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="22987:23162" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="23973:24007" placeholder="select categ..category..." />
-            <marker date="1422868157169" expanded="true" signature="24914:24940" placeholder="SELECT area_..area..." />
-            <marker date="1422868157169" expanded="true" signature="25912:25981" placeholder="delete from ..." />
-            <marker date="1422868157169" expanded="true" signature="26981:27082" placeholder="update event..." />
+            <marker date="1422959428201" expanded="true" signature="3642:3972" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="8343:8662" placeholder="UPDATE event..." />
+            <marker date="1422959428201" expanded="true" signature="12126:12205" placeholder="update event..." />
+            <marker date="1422959428201" expanded="true" signature="13104:13740" placeholder="select ed.ev..event_detail..." />
+            <marker date="1422959428201" expanded="true" signature="17446:17587" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="18906:18957" placeholder="select * fro..hashtag..." />
+            <marker date="1422959428201" expanded="true" signature="19078:19131" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="19288:19367" placeholder="update hasht..." />
+            <marker date="1422959428201" expanded="true" signature="21136:21311" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="22048:22223" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="22909:23084" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="23895:23929" placeholder="select categ..category..." />
+            <marker date="1422959428201" expanded="true" signature="24836:24862" placeholder="SELECT area_..area..." />
+            <marker date="1422959428201" expanded="true" signature="25834:25903" placeholder="delete from ..." />
+            <marker date="1422959428201" expanded="true" signature="26903:27004" placeholder="update event..." />
           </folding>
         </state>
       </provider>
@@ -1232,13 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="396">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.0" vertical-offset="2214" max-vertical-offset="2970">
@@ -1246,31 +1306,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/eventwidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2297593" vertical-offset="0" max-vertical-offset="914">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/resize.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8988764" vertical-offset="2185" max-vertical-offset="3075">
           <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4005" max-vertical-offset="4440">
-          <caret line="267" column="18" selection-start-line="267" selection-start-column="18" selection-end-line="267" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1016" max-vertical-offset="2445">
-          <caret line="91" column="89" selection-start-line="91" selection-start-column="73" selection-end-line="91" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -1288,28 +1327,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="4830">
-          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23595506" vertical-offset="0" max-vertical-offset="345">
           <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1839" max-vertical-offset="4575">
-          <caret line="156" column="38" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
-          <folding>
-            <element signature="e#6#89#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1335,16 +1356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/userController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="1860">
-          <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
@@ -1353,49 +1364,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+    <entry file="file://$PROJECT_DIR$/server/userController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2924" max-vertical-offset="3825">
-          <caret line="224" column="87" selection-start-line="224" selection-start-column="87" selection-end-line="224" selection-end-column="87" />
-          <folding />
+        <state vertical-scroll-proportion="0.85623" vertical-offset="1234" max-vertical-offset="1860">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="31" />
+          <folding>
+            <element signature="e#6#86#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1385" max-vertical-offset="3000">
-          <caret line="117" column="33" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1403" max-vertical-offset="2955">
+          <caret line="116" column="36" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/eventwidget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.958333" vertical-offset="3211" max-vertical-offset="9360">
-          <caret line="238" column="581" selection-start-line="238" selection-start-column="560" selection-end-line="238" selection-end-column="581" />
+        <state vertical-scroll-proportion="0.25384617" vertical-offset="0" max-vertical-offset="650">
+          <caret line="11" column="75" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.777778" vertical-offset="873" max-vertical-offset="2445">
+          <caret line="74" column="66" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.166666" vertical-offset="2924" max-vertical-offset="3825">
+          <caret line="224" column="87" selection-start-line="224" selection-start-column="87" selection-end-line="224" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/adminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.125" vertical-offset="1029" max-vertical-offset="4575">
+          <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
           <folding>
-            <marker date="1422868157169" expanded="true" signature="3672:4002" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="8375:8694" placeholder="UPDATE event..." />
-            <marker date="1422868157169" expanded="true" signature="12158:12237" placeholder="update event..." />
-            <marker date="1422868157169" expanded="true" signature="13136:13772" placeholder="select ed.ev..event_detail..." />
-            <marker date="1422868157169" expanded="true" signature="17478:17619" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="18938:18989" placeholder="select * fro..hashtag..." />
-            <marker date="1422868157169" expanded="true" signature="19110:19163" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="19366:19445" placeholder="update hasht..." />
-            <marker date="1422868157169" expanded="true" signature="21214:21389" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="22126:22301" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="22987:23162" placeholder="insert into ..." />
-            <marker date="1422868157169" expanded="true" signature="23973:24007" placeholder="select categ..category..." />
-            <marker date="1422868157169" expanded="true" signature="24914:24940" placeholder="SELECT area_..area..." />
-            <marker date="1422868157169" expanded="true" signature="25912:25981" placeholder="delete from ..." />
-            <marker date="1422868157169" expanded="true" signature="26981:27082" placeholder="update event..." />
+            <element signature="e#6#89#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5" vertical-offset="675" max-vertical-offset="4845">
+          <caret line="57" column="267" selection-start-line="57" selection-start-column="267" selection-end-line="57" selection-end-column="267" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="4890">
+          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/userModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51501155" vertical-offset="214" max-vertical-offset="4590">
+        <state vertical-scroll-proportion="64.541664" vertical-offset="2164" max-vertical-offset="4590">
           <caret line="41" column="544" selection-start-line="41" selection-start-column="544" selection-end-line="41" selection-end-column="544" />
           <folding>
             <marker date="1422947870701" expanded="true" signature="990:1629" placeholder="select ed.ev..event_detail..." />
@@ -1403,6 +1442,38 @@
             <marker date="1422947870701" expanded="true" signature="7460:8095" placeholder="select ed.ev..event_detail..." />
             <marker date="1422947870701" expanded="true" signature="10917:11572" placeholder="select ed.ev..event_detail..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-39.833332" vertical-offset="8119" max-vertical-offset="9345">
+          <caret line="605" column="0" selection-start-line="605" selection-start-column="0" selection-end-line="605" selection-end-column="0" />
+          <folding>
+            <marker date="1422959428201" expanded="true" signature="3642:3972" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="8343:8662" placeholder="UPDATE event..." />
+            <marker date="1422959428201" expanded="true" signature="12126:12205" placeholder="update event..." />
+            <marker date="1422959428201" expanded="true" signature="13104:13740" placeholder="select ed.ev..event_detail..." />
+            <marker date="1422959428201" expanded="true" signature="17446:17587" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="18906:18957" placeholder="select * fro..hashtag..." />
+            <marker date="1422959428201" expanded="true" signature="19078:19131" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="19288:19367" placeholder="update hasht..." />
+            <marker date="1422959428201" expanded="true" signature="21136:21311" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="22048:22223" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="22909:23084" placeholder="insert into ..." />
+            <marker date="1422959428201" expanded="true" signature="23895:23929" placeholder="select categ..category..." />
+            <marker date="1422959428201" expanded="true" signature="24836:24862" placeholder="SELECT area_..area..." />
+            <marker date="1422959428201" expanded="true" signature="25834:25903" placeholder="delete from ..." />
+            <marker date="1422959428201" expanded="true" signature="26903:27004" placeholder="update event..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034642033" vertical-offset="0" max-vertical-offset="866">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
