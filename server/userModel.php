@@ -39,7 +39,7 @@ class UserModel
 
     public function getEventsByCategory($category_name){
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and ed.category_name = '{$category_name}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
+        $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and ed.is_active = 1 and ed.category_name = '{$category_name}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
 
         $temp = $db->query($query);
         $result =array();
@@ -105,7 +105,7 @@ class UserModel
     public function getTodaysEvents($current_date)
     {
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and es.event_date = '{$current_date}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
+        $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and ed.is_active = 1 and es.event_date = '{$current_date}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
         $temp = $db->query($query);
         $result = array();
         if ($temp->num_rows > 0) {
@@ -162,7 +162,7 @@ class UserModel
 
         public function getTomorrowsEvents($current_date){
             $db = $this->getDatabaseObject();
-            $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and es.event_date = '{$current_date}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
+            $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and ed.is_active = 1 and es.event_date = '{$current_date}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
             $temp = $db->query($query);
             $result =array();
             if($temp->num_rows>0)
@@ -227,7 +227,7 @@ class UserModel
 
     public function getLatersEvents($from_date,$to_date){
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and es.event_date between '{$from_date}' and '{$to_date}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
+        $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, ed.event_area, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  ei.event_image_name as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ei.primary_image = 1 and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)
