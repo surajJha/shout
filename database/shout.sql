@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2015 at 07:55 PM
+-- Generation Time: Feb 03, 2015 at 12:41 PM
 -- Server version: 5.5.40-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.5
 
@@ -106,26 +106,18 @@ CREATE TABLE IF NOT EXISTS `event_detail` (
   `category_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `event_organizer_id` int(11) NOT NULL,
   `approved` tinyint(1) NOT NULL DEFAULT '0',
+  `is_active` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`event_detail_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `event_detail`
 --
 
-INSERT INTO `event_detail` (`event_detail_id`, `venue_name`, `event_name`, `event_overview`, `event_hashtags`, `event_location`, `event_area`, `event_cost`, `viewer_count`, `priority_count`, `category_name`, `event_organizer_id`, `approved`) VALUES
-(1, 'asd', 'sdfs', 'sfs', 'asdf asd asd', 'asd', 'Goregaon', 0, 0, 0, 'Culture', 1, 0),
-(2, 'q', 'qqqq', 'qqq', 'qq qqqq qqqqqq', 'q', 'Goregaon', 0, 0, 0, 'Culture', 1, 0),
-(3, 'ghj', 'ujhjo', 'fghj', 'ghj ghj fghj', 'ghjk', 'Dadar', 500, 0, 0, 'Comedy', 1, 0),
-(4, 'fghju', 'ghjkl', 'fghjk', 'fghjk ghjkl fghjk', 'hnjml,', 'Dadar', 50, 0, 0, 'Comedy', 1, 0),
-(5, '', '', '', '  ', '', '', 0, 0, 0, '', 1, 0),
-(6, '', '', '', '  ', '', '', 0, 0, 0, '', 1, 0),
-(7, '', '', '', '  ', '', '', 0, 0, 0, '', 1, 0),
-(8, 'asd', 'dsfas', 'asf', 'as as as', 'as', 'Andheri', 0, 0, 0, 'Comedy', 1, 0),
-(9, '', '', '', '  ', '', '', 0, 0, 0, '', 1, 0),
-(10, 'sdf', 'sdfs', 'sdf', 'sdf sdf sfd', 'sfd', 'Santacruz', 0, 0, 0, 'Culture', 1, 0),
-(11, '', '', '', '  ', '', '', 0, 0, 0, '', 1, 0),
-(12, 'asfas', 'sdfsf', 'sdfsdf', 'saf asf asf', 'afaf', 'Jogeshwari', 0, 0, 0, 'Culture', 2, 0);
+INSERT INTO `event_detail` (`event_detail_id`, `venue_name`, `event_name`, `event_overview`, `event_hashtags`, `event_location`, `event_area`, `event_cost`, `viewer_count`, `priority_count`, `category_name`, `event_organizer_id`, `approved`, `is_active`) VALUES
+(15, 'fghjkl', 'testing', 'dfghjkl;''', 'fghjkl gthjkl; ghjkl;', 'fghjkl', 'Dadar', 12345, 0, 0, 'Comedy', 1, 0, 1),
+(16, 'ertyuiop', 'testing', 'ertyu', 'qwerty  ', 'ertyu', 'Andheri', 411, 0, 0, 'Comedy', 1, 0, 1),
+(17, 'andheri', 'final testing', 'wedfgh', 'qwerty  ', 'andheri', 'Andheri', 1234, 0, 0, 'Culture', 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -139,25 +131,31 @@ CREATE TABLE IF NOT EXISTS `event_image` (
   `event_image_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `primary_image` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`event_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `event_image`
 --
 
 INSERT INTO `event_image` (`event_image_id`, `event_detail_id`, `event_image_name`, `primary_image`) VALUES
-(1, 5, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_174046.0.63414200 1421394839.jpg', 0),
-(2, 5, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_180830.0.63627600 1421394839.jpg', 1),
-(3, 5, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_174046.0.63911400 1421394839.jpg', 0),
-(4, 4, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_173354.0.83041600 1421395711.jpg', 1),
-(5, 4, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_174046.0.83094900 1421395711.jpg', 0),
-(6, 4, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_180830.0.83740100 1421395711.jpg', 0),
-(7, 10, '/var/www/html/shout/server/client_images/1/download.0.61134300 1421407951.png', 1),
-(8, 10, '/var/www/html/shout/server/client_images/1/713.0.61319500 1421407951.GIF', 0),
-(9, 10, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_173354.0.61678900 1421407951.jpg', 0),
-(10, 12, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_180830.0.67139500 1421408315.jpg', 1),
-(11, 12, '/var/www/html/shout/server/client_images/1/download.0.67523900 1421408315.png', 0),
-(12, 12, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_173354.0.67417500 1421408315.jpg', 0);
+(1, 4, '/var/www/html/shout/server/client_images/1/download.0.69788800 1421330789.png', 0),
+(2, 4, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_173354.0.70302200 1421330789.jpg', 1),
+(3, 4, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_180830.0.71521000 1421330789.jpg', 0),
+(4, 5, '/var/www/html/shout/server/client_images/1/download.0.95761500 1421331164.png', 0),
+(5, 5, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_173354.0.96686000 1421331164.jpg', 0),
+(6, 5, '/var/www/html/shout/server/client_images/1/rsz_screenshot_from_2014-12-22_180830.0.96686200 1421331164.jpg', 1),
+(7, 13, '/var/www/html/shout/server/client_images/1/mockup_AdTag_Admin.0.83411400 1421763505.png', 0),
+(8, 13, '/var/www/html/shout/server/client_images/1/mockup_1.0.83592200 1421763505.png', 1),
+(9, 13, '/var/www/html/shout/server/client_images/1/Angular.0.83394400 1421763505.png', 0),
+(10, 15, '/var/www/html/shout/server/client_images/1/Angular.0.75520800 1421986885.png', 1),
+(11, 15, '/var/www/html/shout/server/client_images/1/mockup_AdTag_Admin.0.75988400 1421986885.png', 0),
+(12, 15, '/var/www/html/shout/server/client_images/1/mockup_1.0.76073700 1421986885.png', 0),
+(13, 16, '/var/www/html/shout/server/client_images/1/Angular.0.78638900 1422356352.png', 1),
+(14, 16, '/var/www/html/shout/server/client_images/1/new.0.68501200 1422356302.jpg', 0),
+(15, 16, '/var/www/html/shout/server/client_images/1/mockup_1.0.42970200 1422336981.png', 0),
+(16, 17, '/var/www/html/shout/server/client_images/1/Angular.0.87174500 1422426051.png', 1),
+(17, 17, '/var/www/html/shout/server/client_images/1/mockup_1.0.16293900 1422427375.png', 0),
+(18, 17, '/var/www/html/shout/server/client_images/1/mockup_AdTag_Admin.0.87247800 1422426051.png', 0);
 
 -- --------------------------------------------------------
 
@@ -198,25 +196,34 @@ CREATE TABLE IF NOT EXISTS `event_schedule` (
   `event_start_time` time NOT NULL,
   `event_end_time` time DEFAULT NULL,
   PRIMARY KEY (`event_schedule_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `event_schedule`
 --
 
 INSERT INTO `event_schedule` (`event_schedule_id`, `event_detail_id`, `event_date`, `event_start_time`, `event_end_time`) VALUES
-(1, 0, '2015-01-23', '00:00:00', '00:00:00'),
-(2, 0, '2015-01-29', '00:00:00', '00:00:00'),
-(3, 5, '2015-01-22', '00:00:00', '00:00:00'),
-(4, 5, '2015-01-29', '00:00:00', '00:00:00'),
-(5, 5, '2015-01-19', '00:00:00', '00:00:00'),
-(6, 7, '2015-01-23', '00:00:00', '00:00:00'),
-(7, 7, '2015-01-20', '00:00:00', '00:00:00'),
-(8, 4, '2015-01-16', '00:00:00', '00:00:00'),
-(9, 4, '2015-01-23', '00:00:00', '00:00:00'),
-(10, 8, '2015-01-22', '00:00:00', '00:00:00'),
-(11, 10, '2015-01-29', '00:00:00', '00:00:00'),
-(12, 12, '2015-01-08', '00:00:00', '00:00:00');
+(1, 1, '2015-01-16', '03:34:00', '03:34:00'),
+(2, 1, '2015-02-16', '03:34:00', '03:34:00'),
+(3, 1, '2015-01-19', '03:34:00', '03:34:00'),
+(4, 1, '2015-02-19', '03:34:00', '03:34:00'),
+(5, 2, '2015-01-20', '03:36:00', '03:36:00'),
+(6, 2, '2015-01-27', '03:36:00', '03:36:00'),
+(7, 2, '2015-02-03', '03:36:00', '03:36:00'),
+(8, 2, '2015-02-10', '03:36:00', '03:36:00'),
+(9, 2, '2015-02-17', '03:36:00', '03:36:00'),
+(10, 4, '2015-01-05', '03:42:00', '03:42:00'),
+(11, 4, '2015-01-09', '07:36:00', '07:36:00'),
+(12, 5, '2015-01-23', '00:00:00', '00:00:00'),
+(13, 7, '2015-01-28', '16:15:00', '00:00:00'),
+(14, 9, '2015-01-21', '20:45:00', '20:00:00'),
+(15, 11, '2015-01-21', '20:45:00', '20:00:00'),
+(16, 11, '2015-01-21', '20:45:00', '20:00:00'),
+(17, 13, '2015-01-22', '05:30:00', '19:48:00'),
+(18, 15, '2015-01-28', '05:30:00', '09:51:00'),
+(19, 16, '2015-01-29', '05:30:00', '11:06:00'),
+(20, 17, '2015-01-30', '05:30:00', '11:50:00'),
+(21, 17, '2015-01-29', '05:30:00', '11:50:00');
 
 -- --------------------------------------------------------
 
@@ -227,31 +234,35 @@ INSERT INTO `event_schedule` (`event_schedule_id`, `event_detail_id`, `event_dat
 CREATE TABLE IF NOT EXISTS `hashtag` (
   `hashtag_id` int(11) NOT NULL AUTO_INCREMENT,
   `hashtag_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `hashtag_count` int(11) NOT NULL DEFAULT '0',
+  `hashtag_count` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`hashtag_id`),
   UNIQUE KEY `hashtag_name` (`hashtag_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `hashtag`
 --
 
 INSERT INTO `hashtag` (`hashtag_id`, `hashtag_name`, `hashtag_count`) VALUES
-(1, 'asdf', 0),
-(2, 'asd', 1),
-(3, 'qq', 0),
-(4, 'qqqq', 0),
-(5, 'qqqqqq', 0),
-(6, 'ghj', 1),
-(7, 'fghj', 0),
-(8, 'fghjk', 1),
-(9, 'ghjkl', 0),
-(10, '', 1),
-(11, 'as', 1),
-(12, 'sdf', 1),
-(13, 'sfd', 0),
-(14, 'saf', 0),
-(15, 'asf', 1);
+(1, 'music', 1),
+(2, 'karaoke', 1),
+(3, 'newyears', 1),
+(4, 'party', 2),
+(5, 'hot', 1),
+(6, 'drinks', 1),
+(7, '', 1),
+(8, 'oghjkl', 1),
+(9, 'fghjkfghjk', 1),
+(10, 'ghjkl;''', 1),
+(11, 'vbn', 2),
+(12, 'fghj', 2),
+(13, 'ghj', 1),
+(14, 'fvgbnjh', 1),
+(15, 'dfghj', 1),
+(16, 'fghjkl', 1),
+(17, 'gthjkl;', 1),
+(18, 'ghjkl;', 1),
+(19, 'qwerty', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
