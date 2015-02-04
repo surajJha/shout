@@ -115,9 +115,6 @@ angular.module('shoutApp')
           //  console.log('inside contr');
           $scope.getDateTime();
         adminTaskFactory.addNewEvent($scope.formData).then(function(result){
-            console.log("controller result");
-            console.log(result);
-            console.log(result['status']);
            /** for successful insertion into the database
             * the result returned should bt "success"
             * */
