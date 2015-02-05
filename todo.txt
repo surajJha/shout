@@ -13,6 +13,8 @@ important: add .img-responsive class to img tag when needed
 5 In adminCOntroller for addEvent(), UpdateEvent() and UPloadImags() - CHECK IF ALL THE INPUT FROM THE USERS ARE NOT EMPTY. (check for hashtag input also)
 
 6. form VALIDATION FOR BOTH THE FORMS -- remaining for Date.
-
+0
 
 7. if any of the dates is of past dates then dont give option to edit the schedule
+
+|| eventForm.event_name.$invalid && eventForm.event_name.$dirty || eventForm.event_cost.$invalid && eventForm.event_cost.$dirty || eventForm.event_overview.$invalid && eventForm.event_overview.$dirty || eventForm.venue_name.$invalid && eventForm.venue_name.$dirty || eventForm.event_location.$invalid && eventForm.event_location.$dirty || isAnyFileSizeInvalid || isAnyFileInvalid

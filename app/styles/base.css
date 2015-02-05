@@ -224,9 +224,10 @@ input[type="radio"] {
     margin-bottom: 15px;
 }
 .file_name_preview {
-    color: red;
-    padding: 2%;
-    font-size: 14px;
+    color: rgb(35, 52, 35);
+    text-align: center;
+    padding-top: 10px;
+    font-size: 17px;
 }
 .edit_image {
     padding-left: 25%;
@@ -257,4 +258,15 @@ input[type="radio"] {
 .has-error{
     background-color: rgb(250, 255, 189);
     border: 1px solid red;
+}
+
+.event-info-messages {
+    color: #6495ED;
+    font-size: 14px;
+    text-align: -webkit-center;
+}
+
+.image_validation_message{
+    color: red;
+    text-align: center;
 }

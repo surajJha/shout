@@ -158,12 +158,12 @@ class AdminController
             $imageUploaded = $model->addImageUrlToDatabase($destination, $event_detail_id, $primary_image);
            if($imageUploaded)
            {
-               echo $imageUploaded;
+               echo json_encode($imageUploaded);
 
            }
            else
            {
-                echo $imageUploaded['message'];
+                echo json_encode($imageUploaded['message']);
            }
         }
     }
@@ -197,12 +197,12 @@ class AdminController
                 $imageUploaded = $model->addUpdatedImageUrlToDatabase($destination, $event_image_id);
                 if($imageUploaded)
                 {
-                    echo $imageUploaded;
+                    echo json_encode($imageUploaded);
 
                 }
                 else
                 {
-                    echo $imageUploaded['message'];
+                    echo json_encode($imageUploaded['message']);
                 }
             }
         }

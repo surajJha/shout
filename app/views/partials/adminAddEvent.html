@@ -11,7 +11,7 @@
                             <div class="form-group">
                                 <label for="event_name" class="col-md-4 control-label">Event Name:</label>
                                 <div class="col-md-8" >
-                                    <input ng-class="{ 'has-error' : eventForm.event_name.$invalid && !eventForm.event_name.$pristine }" type="text" name="event_name" class="form-control" id="event_name" placeholder="Event Name" ng-model="formData.event_name" ng-model-options="{ updateOn: 'blur' }" required>
+                                    <input ng-class="{ 'has-error' : eventForm.event_name.$invalid && !eventForm.event_name.$pristine }" type="text" name="event_name" class="form-control" id="event_name"  placeholder="Event Name" ng-model="formData.event_name" ng-model-options="{ updateOn: 'blur' }" required>
                                     <span class="validation-message" ng-show="eventForm.event_name.$error.required && eventForm.event_name.$dirty">Event name cannot be empty !</span>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label for="event_overview" class="col-md-4 control-label">Event Overview:</label>
                                 <div class="col-md-8">
-                                    <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_overview.$invalid && !eventForm.event_overview.$pristine }" class="form-control" name="event_overview" rows="6" id="event_overview" ng-model="formData.event_overview" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
+                                    <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_overview.$invalid && !eventForm.event_overview.$pristine }" class="form-control" name="event_overview" rows="6" id="event_overview" tooltip="Give a short description of this event"  tooltip-trigger="mouseenter" tooltip-placement="top" ng-model="formData.event_overview" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
                                     <span class="validation-message" ng-show="eventForm.event_overview.$error.required && eventForm.event_overview.$dirty">Event Overview cannot be empty !</span>
                                     <span class="validation-message" ng-show="eventForm.event_overview.$error.minlength && eventForm.event_overview.$dirty">Event Overview details are too short !</span>
                                 </div>
@@ -62,19 +62,19 @@
                     <div class="col-lg-3" style="margin-left: 4%">
                         <div class="input-group">
                             <span class="input-group-addon">#</span>
-                            <input type="text" class="form-control" id="hash1" ng-model="formData.hash1">
+                            <input type="text" class="form-control" tooltip="Please enter a hashtag. This field is optional"  tooltip-trigger="mouseenter" tooltip-placement="top" id="hash1" ng-model="formData.hash1">
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group">
                             <span class="input-group-addon">#</span>
-                            <input type="text" class="form-control" id="hash2" ng-model="formData.hash2">
+                            <input type="text" class="form-control" tooltip="Please enter a hashtag. This field is optional"  tooltip-trigger="mouseenter" tooltip-placement="top" id="hash2" ng-model="formData.hash2">
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group">
                             <span class="input-group-addon">#</span>
-                            <input type="text" class="form-control" id="hash3" ng-model="formData.hash3">
+                            <input type="text" class="form-control" tooltip="Please enter a hashtag. This field is optional"  tooltip-trigger="mouseenter" tooltip-placement="top" id="hash3" ng-model="formData.hash3">
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                             <div class="form-group">
                                 <label for="event_location" class="col-md-4 control-label">Address:</label>
                                 <div class="col-md-8">
-                                    <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="4" id="event_location" ng-model="formData.event_location" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
+                                    <textarea style="resize: none;" tooltip="Please enter complete address of the Venue."  tooltip-trigger="mouseenter" tooltip-placement="top" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="4" id="event_location" ng-model="formData.event_location" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
                                     <span class="validation-message" ng-show="eventForm.event_location.$error.required && eventForm.event_location.$dirty">Address cannot be empty !</span>
                                     <span class="validation-message" ng-show="eventForm.event_location.$error.minlength && eventForm.event_location.$dirty">Address length cannot be less than 5 !</span>
                                 </div>
@@ -122,6 +122,14 @@
                 </div>
                 <h2 class="schedule_heading">Event Schedule</h2>
                 <hr/>
+                <div class="row">
+                    <!--<div class="col-lg-2"></div>-->
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <p class="event-info-messages">
+                            Please select the checkbox only if this event is repetitive (either weekly or monthly), otherwise directly select the number of days.
+                        </p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
@@ -211,32 +219,65 @@
 
                 <h2 class="image-heading">Image Upload</h2>
                 <hr/>
-
+                <div class="row">
+                    <!--<div class="col-lg-2"></div>-->
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <p class="event-info-messages">
+                            Please select atleast one image (Primary image is compulsory)
+                        </p>
+                    </div>
+                </div>
                 <div class="row well">
-
+                    <div class="row">
                         <div class="col-lg-4">
-                            <label for="image1" class="col-md-4 control-label">Image One: </label>
+                            <label for="image1" class="col-md-4 control-label">Primary Image: </label>
                             <button class="btn btn-success"  ng-file-change="fileChanged(formData.images[0], 0)" ng-file-select ng-model="formData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
                             <div class="file_name_preview">{{selectedFile[0]}}</div>
+                      
+                            <div class="image_validation_message" ng-show="isAnyFileSizeInvalid[0] && isAnyFileSelected[0]">Image file size cannot be greater than 5 MB. Please choose a smaller file.</div>
+
+                            <div class="image_validation_message" ng-show="isAnyFileInvalid[0] && isAnyFileSelected[0]">All Image files should be either JPEG or PNG</div>
+
                             <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
                         </div>
                         <div class="col-lg-4">
                             <label for="image2" class="col-md-4 control-label">Image Two: </label>
                             <button class="btn btn-success"  ng-file-change="fileChanged(formData.images[1], 1)" ng-file-select ng-model="formData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
                             <div class="file_name_preview">{{selectedFile[1]}}</div>
+
+                                <div class="image_validation_message" ng-show="isAnyFileSizeInvalid[1] && isAnyFileSelected[1]">Image file size cannot be greater than 5 MB. Please choose a smaller file.</div>
+
+                            <div class="image_validation_message" ng-show="isAnyFileInvalid[1] && isAnyFileSelected[1]">All Image files should be either JPEG or PNG</div>
                         </div>
                         <div class="col-lg-4">
                             <label for="image3" class="col-md-4 control-label">Image Three: </label>
                             <button class="btn btn-success"  ng-file-change="fileChanged(formData.images[2], 2)" ng-file-select ng-model="formData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
                             <div class="file_name_preview">{{selectedFile[2]}}</div>
+
+                            <div class="image_validation_message" ng-show="isAnyFileSizeInvalid[2] && isAnyFileSelected[2]">Image file size cannot be greater than 5 MB. Please choose a smaller file.</div>
+
+                            <div class="image_validation_message" ng-show="isAnyFileInvalid[2] && isAnyFileSelected[2]">All Image files should be either JPEG or PNG</div>
                         </div>
+                    </div>
+                    <div class="row">
+
+
+                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-lg-4"></div>
-                    <div class="col-lg-3"><button type='submit' class="btn btn-primary"  ng-click="submitEventForm()" style="width: 100%">Submit</button>
-
+                    <div class="col-lg-3"><button type='submit' class="btn btn-primary"  ng-click="submitEventForm()" style="width: 100%" ng-disabled="eventForm.$invalid || isAnyFileSizeInvalid[0] ||isAnyFileInvalid[0] || isAnyFileExceptPrimaryHasError || primaryImageNotSelected">Submit</button>
                     </div>
                 </div>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-12">
+                    <div id="form-submit-message-placeholder">
+
+                    </div>
+
+                </div>
+            </div>
 
             </form>
 
