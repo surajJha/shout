@@ -75,6 +75,13 @@ angular.module('shoutApp')
 
                 }
 
+                  console.log(i);
+                  for(var j=0;j <$scope.formData.image[i].length;j++){
+                      if($scope.formData.image[i][j].image_path == ''){
+                          $scope.formData.image[i][j].image_path = '/var/www/html/shout/app/images/placeholder.jpg';
+                      }
+                  }
+
               }
           }); //getallevents func ends here
       }
@@ -96,7 +103,6 @@ angular.module('shoutApp')
 
 
         $scope.open = function (size, formData, id) {
-
             var modalInstance = $modal.open({
                 templateUrl: 'myModalContent.html',
                 controller: 'ModalInstanceCtrl',
