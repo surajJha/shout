@@ -162,7 +162,6 @@ angular.module('shoutApp')
          */
         $scope.fileChanged = function(file_to_be_uploaded, file_id) {
              $scope.selectedFile[file_id] = file_to_be_uploaded[0].name;
-            console.log(file_to_be_uploaded[0]);
 
             if(!(file_to_be_uploaded[0].type == 'image/png' || file_to_be_uploaded[0].type == 'image/jpeg'))
             {

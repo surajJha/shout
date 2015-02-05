@@ -130,7 +130,7 @@ class AdminController
      * directory or the already existing one.
      * It checks for the file validations such as max
      * file size etc and then uploads the file to
-     * a directory. The directoy name is just the name of
+     * a directory. The directory name is just the name of
      * the organiser ID.
      */
     function uploadImages()
