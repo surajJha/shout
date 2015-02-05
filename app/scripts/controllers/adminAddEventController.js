@@ -202,7 +202,6 @@ angular.module('shoutApp')
                 $scope.primaryImageNotSelected = false;
             }
 
-            console.log(file_to_be_uploaded[0].type);
 
             if(file_to_be_uploaded[0].type == 'image/png' || file_to_be_uploaded[0].type == 'image/jpeg')
             {

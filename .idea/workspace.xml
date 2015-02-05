@@ -4,8 +4,11 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminController.php" afterPath="$PROJECT_DIR$/server/adminController.php" />
+    <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="adding and ed.is_active = 1 in usermodel.php">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" afterPath="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/eventwidget.html" afterPath="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -127,11 +130,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="adminController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/adminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8467742" vertical-offset="0" max-vertical-offset="4575">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.25" vertical-offset="270" max-vertical-offset="4575">
+              <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="false" />
               </folding>
@@ -139,11 +142,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminViewEventController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminViewEventController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3992" max-vertical-offset="4980">
-              <caret line="285" column="30" selection-start-line="285" selection-start-column="23" selection-end-line="285" selection-end-column="35" />
+            <state vertical-scroll-proportion="-1.1629213" vertical-offset="3600" max-vertical-offset="5640">
+              <caret line="171" column="1" selection-start-line="171" selection-start-column="1" selection-end-line="171" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eventwidget.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="285">
+              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -152,8 +165,8 @@
       <file leaf-file-name="adminViewEvent.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="4620">
-              <caret line="60" column="62" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
+            <state vertical-scroll-proportion="-11.083333" vertical-offset="4219" max-vertical-offset="5085">
+              <caret line="299" column="76" selection-start-line="299" selection-start-column="76" selection-end-line="299" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -162,9 +175,12 @@
       <file leaf-file-name="adminAddEventController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2460" max-vertical-offset="4080">
-              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2884" max-vertical-offset="4110">
+              <caret line="197" column="36" selection-start-line="197" selection-start-column="19" selection-end-line="197" selection-end-column="36" />
+              <folding>
+                <marker date="1423139690560" expanded="false" signature="5106:5125" placeholder="..." />
+                <marker date="1423139690560" expanded="false" signature="5719:5738" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -173,7 +189,7 @@
         <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="2445">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -182,8 +198,8 @@
       <file leaf-file-name="adminAddEvent.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3360" max-vertical-offset="4440">
-              <caret line="224" column="55" selection-start-line="224" selection-start-column="55" selection-end-line="224" selection-end-column="55" />
+            <state vertical-scroll-proportion="10.791667" vertical-offset="4039" max-vertical-offset="4905">
+              <caret line="252" column="85" selection-start-line="252" selection-start-column="85" selection-end-line="252" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -192,8 +208,8 @@
       <file leaf-file-name="adminModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/adminModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="9195">
-              <caret line="60" column="61" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="61" />
+            <state vertical-scroll-proportion="-13.75" vertical-offset="1665" max-vertical-offset="9195">
+              <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
               <folding>
                 <marker date="1422959428201" expanded="true" signature="3642:3972" placeholder="insert into ..." />
                 <marker date="1422959428201" expanded="true" signature="8343:8662" placeholder="UPDATE event..." />
@@ -257,12 +273,12 @@
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/server/userModel.php" />
-        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
         <option value="$PROJECT_DIR$/server/adminModel.php" />
-        <option value="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
         <option value="$PROJECT_DIR$/server/adminController.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
+        <option value="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
+        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
       </list>
     </option>
   </component>
@@ -534,7 +550,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -552,7 +568,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -889,7 +909,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423118394289</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="adding and ed.is_active = 1 in usermodel.php">
+      <created>1423139507933</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1423139507933</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -917,13 +943,14 @@
     <editor active="false" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25933832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14374353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25559106" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23496966" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28681743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28681743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5002758" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1664888" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
@@ -933,7 +960,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1353,13 +1379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2764977" vertical-offset="0" max-vertical-offset="868">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="16848" max-vertical-offset="67500">
@@ -1367,50 +1386,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="4620">
-          <caret line="60" column="62" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="2445">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3992" max-vertical-offset="4980">
-          <caret line="285" column="30" selection-start-line="285" selection-start-column="23" selection-end-line="285" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1853" max-vertical-offset="2940">
-          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3360" max-vertical-offset="4440">
-          <caret line="224" column="55" selection-start-line="224" selection-start-column="55" selection-end-line="224" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/adminModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="9195">
-          <caret line="60" column="61" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="61" />
+        <state vertical-scroll-proportion="-13.75" vertical-offset="1665" max-vertical-offset="9195">
+          <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
           <folding>
             <marker date="1422959428201" expanded="true" signature="3642:3972" placeholder="insert into ..." />
             <marker date="1422959428201" expanded="true" signature="8343:8662" placeholder="UPDATE event..." />
@@ -1431,13 +1410,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="2445">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2884" max-vertical-offset="4110">
+          <caret line="197" column="36" selection-start-line="197" selection-start-column="19" selection-end-line="197" selection-end-column="36" />
+          <folding>
+            <marker date="1423139690560" expanded="false" signature="5106:5125" placeholder="..." />
+            <marker date="1423139690560" expanded="false" signature="5719:5738" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.791667" vertical-offset="4039" max-vertical-offset="4905">
+          <caret line="252" column="85" selection-start-line="252" selection-start-column="85" selection-end-line="252" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/adminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8467742" vertical-offset="0" max-vertical-offset="4575">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.25" vertical-offset="270" max-vertical-offset="4575">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="285">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.083333" vertical-offset="4219" max-vertical-offset="5085">
+          <caret line="299" column="76" selection-start-line="299" selection-start-column="76" selection-end-line="299" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1629213" vertical-offset="3600" max-vertical-offset="5640">
+          <caret line="171" column="1" selection-start-line="171" selection-start-column="1" selection-end-line="171" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

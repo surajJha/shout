@@ -265,17 +265,22 @@
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <!--<img src="foo.jpg" onerror="if (this.src != 'error.jpg') this.src = 'error.jpg';">-->
                 <img height="160" width="200" ng-src="{{updatedFormData.image_encoded_path_array[0]}}" class="edit_image" ng-hide="isImageHidden[0]">
-                <label for="image1" class="col-md-4 control-label">Image One: </label>
+                <label for="image1" class="col-md-4 control-label">Primary Image: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[0],0,updatedFormData.image[id][0].image_id, updatedFormData.image[id][0].image_path)" ng-file-select ng-model="updatedFormData.images[0]" ng-multiple="false" accept="image/*" id="image1" >Attach Image One</button>
-                <!--<progressbar max="100" value="progress_arr[0]"><span style="color:black; white-space:nowrap;">{{progress_arr[0]}}</span></progressbar>-->
+                <div class="image_validation_message" ng-show="isAnyUpdatedFileSizeInvalid[0] && isAnyUpdatedFileSelected[0]">Image file size cannot be greater than 5 MB. Please choose a smaller file.</div>
+                <div class="image_validation_message" ng-show="isAnyUpdatedFileInvalid[0] && isAnyUpdatedFileSelected[0]">All Image files should be either JPEG or PNG</div>
                 <div class="file_name_preview">{{newly_selected_file[0]}}</div>
             </div>
+
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <img height="160" width="200" alt="/var/www/html/shout/app/images/placeholder.jpg" onerror="this.src='/images/placeholder.jpg'" ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
                 <label for="image2" class="col-md-4 control-label">Image Two: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[1],1,updatedFormData.image[id][1].image_id, updatedFormData.image[id][1].image_path)" ng-file-select ng-model="updatedFormData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
                 <div class="file_name_preview">{{newly_selected_file[1]}}</div>
+                <div class="image_validation_message" ng-show="isAnyUpdatedFileSizeInvalid[1] && isAnyUpdatedFileSelected[1]">Image file size cannot be greater than 5 MB. Please choose a smaller file.</div>
+                <div class="image_validation_message" ng-show="isAnyUpdatedFileInvalid[1] && isAnyUpdatedFileSelected[1]">All Image files should be either JPEG or PNG</div>
             </div>
+
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <object data="http://localhost/shout/app/images/placeholder.jpg" type="image/*">
                 <img height="160" width="200" ng-src="{{updatedFormData.image_encoded_path_array[2]}}" class="edit_image" ng-hide="isImageHidden[2]">
@@ -283,6 +288,8 @@
                 <label for="image3" class="col-md-4 control-label">Image Three: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[2],2,updatedFormData.image[id][2].image_id, updatedFormData.image[id][2].image_path)" ng-file-select ng-model="updatedFormData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
                 <div class="file_name_preview">{{newly_selected_file[2]}}</div>
+                <div class="image_validation_message" ng-show="isAnyUpdatedFileSizeInvalid[2] && isAnyUpdatedFileSelected[2]">Image file size cannot be greater than 5 MB. Please choose a smaller file.</div>
+                <div class="image_validation_message" ng-show="isAnyUpdatedFileInvalid[2] && isAnyUpdatedFileSelected[2]">All Image files should be either JPEG or PNG</div>
             </div>
         </div>
 
@@ -290,7 +297,7 @@
 
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="updateEventDetails()">Update</button>
+            <button class="btn btn-primary"  ng-disabled="eventForm.$invalid" ng-click="updateEventDetails()">Update</button>
             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
         </script>

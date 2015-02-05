@@ -164,6 +164,12 @@ angular.module('shoutApp')
         $scope.event_areas = [];
         $scope.event_image_id = [];
         $scope.image_path_to_be_deleted = [];
+        $scope.isAnyUpdatedFileInvalid = [true,false,false];
+        $scope.isAnyUpdatedFileSizeInvalid = [true,false,false];
+        $scope.primaryUpdatedImageNotSelected = true
+        $scope.isAnyUpdatedFileSelected = [false,false,false];
+        $scope.isAnyUpdatedFileExceptPrimaryHasError = false;
+        var MAX_FILE_SIZE = 5000000;
 
         $scope.modalFormData = {};
 
@@ -234,6 +240,43 @@ angular.module('shoutApp')
             $scope.isImageHidden[file_id] = true;
             $scope.event_image_id[file_id] = file_id_to_be_changed;
             $scope.image_path_to_be_deleted[file_id] = path_to_be_deleted;
+
+
+            $scope.isAnyUpdatedFileSelected[file_id] = true;
+
+            if(file_id == 0)
+            {
+                $scope.primaryUpdatedImageNotSelected = false;
+            }
+
+
+            if(file_to_be_uploaded[0].type == 'image/png' || file_to_be_uploaded[0].type == 'image/jpeg')
+            {
+                $scope.isAnyUpdatedFileInvalid[file_id] = false;
+            }
+            else
+            {
+                $scope.isAnyUpdatedFileInvalid[file_id] = true;
+            }
+
+            if(file_to_be_uploaded[0].size<MAX_FILE_SIZE)
+            {
+                $scope.isAnyUpdatedFileSizeInvalid[file_id] = false;
+            }
+            else
+            {
+                $scope.isAnyUpdatedFileSizeInvalid[file_id] = true;
+            }
+
+            if( $scope.isAnyUpdatedFileInvalid[1] || $scope.isAnyUpdatedFileInvalid[2] || $scope.isAnyUpdatedFileSizeInvalid[1] || $scope.isAnyUpdatedFileSizeInvalid[2])
+            {
+                $scope.isAnyUpdatedFileExceptPrimaryHasError = true;
+            }
+            else
+            {
+                $scope.isAnyUpdatedFileExceptPrimaryHasError = false;
+
+            }
 
         }
 
