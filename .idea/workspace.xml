@@ -5,21 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/preloader.GIF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/scripts/controllers/about.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminHomeController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/spec/controllers/adminHomecontroller.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminModel.php" afterPath="$PROJECT_DIR$/server/adminModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/adminSidebar.html" afterPath="$PROJECT_DIR$/app/views/partials/adminSidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" afterPath="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" afterPath="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/base.css" afterPath="$PROJECT_DIR$/app/styles/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/eventwidget.html" afterPath="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -148,16 +133,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admintaskfactory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="2790">
-              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="adminAddEventController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -200,7 +175,7 @@
       <file leaf-file-name="base.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40965208" vertical-offset="3732" max-vertical-offset="5831">
+            <state vertical-scroll-proportion="0.4006586" vertical-offset="3732" max-vertical-offset="5831">
               <caret line="241" column="19" selection-start-line="241" selection-start-column="19" selection-end-line="241" selection-end-column="19" />
               <folding />
             </state>
@@ -1075,7 +1050,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423139397093</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="done with everything for admin. update model ka image css remaining">
+      <created>1423225941949</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1423225941949</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1100,9 +1081,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25933832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14374353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15154749" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1119,7 +1101,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1177,7 +1158,8 @@
     <MESSAGE value="added the image url insertion into database feature" />
     <MESSAGE value="Merge branch 'master' of https://github.com/surajJha/shout&#10;&#10;Conflicts:&#10;&#9;app/styles/base.css&#10;" />
     <MESSAGE value="done with validation of adEvent form. started with eventWidget" />
-    <option name="LAST_COMMIT_MESSAGE" value="done with validation of adEvent form. started with eventWidget" />
+    <MESSAGE value="done with everything for admin. update model ka image css remaining" />
+    <option name="LAST_COMMIT_MESSAGE" value="done with everything for admin. update model ka image css remaining" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1604,9 +1586,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/images/yeoman.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40965208" vertical-offset="3732" max-vertical-offset="5831">
+        <state vertical-scroll-proportion="0.4006586" vertical-offset="3732" max-vertical-offset="5831">
           <caret line="241" column="19" selection-start-line="241" selection-start-column="19" selection-end-line="241" selection-end-column="19" />
           <folding />
         </state>
