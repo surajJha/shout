@@ -34,6 +34,7 @@ angular.module('shoutApp')
       $scope.init = function () {
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
+
              // console.log(result);
 
               /** Storing the length in
@@ -81,6 +82,8 @@ angular.module('shoutApp')
                           $scope.formData.image[i][j].image_path = '/var/www/html/shout/app/images/placeholder.jpg';
                       }
                   }
+
+
 
               }
           }); //getallevents func ends here

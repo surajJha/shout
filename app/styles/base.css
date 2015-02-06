@@ -272,3 +272,29 @@ input[type="radio"] {
     color: red;
     text-align: center;
 }
+
+.media-body{
+    display: block;
+
+}
+.hashtag-value{
+    background-color: #286090;
+    color: #fff;
+    padding: 6px 12px;
+    text-align: center;
+}
+.glyphicon-tag{
+    padding-right: 10%;
+}
+
+.button-body{
+    position: absolute;
+    bottom: 10px;
+    right: 5%;
+}
+
+.glyphicon-pencil, .glyphicon-remove{
+    cursor: pointer;
+    font-size: 30px;
+    color: cadetblue;
+}

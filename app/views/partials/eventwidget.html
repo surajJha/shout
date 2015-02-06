@@ -3,47 +3,58 @@
         <div class="col-lg-4" style="height: 210px;">
             <img class="media-object" height="100%" width="100%" ng-src="{{encoded_image_path_array[$index]}}" alt="Media Object"/>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8" style="height: 210px;">
             <div class="media-body">
                 <div class="row">
-                    <div class="col-lg-6">
-                        Event Name:
+                    <div class="col-lg-4">
+                        <h4 class="media-heading">Event Name:</h4>
                     </div>
-                    <div class="col-lg-6">
-                        <h4 class="media-heading">{{formData.event_name[$index]}}</h4>
+                    <div class="col-lg-8">
+                        <div class="col-lg-12">{{formData.event_name[$index]}}</div>
                     </div>
 
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
-                        Venue:
+                    <div class="col-lg-4">
+                        <h4 class="media-heading">Venue:</h4>
                     </div>
-                    <div class="col-lg-6">
-                        <h4 class="media-heading">{{formData.venue_name[$index]}}</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        Cost:
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="media-heading">{{formData.event_cost[$index]}}</h4>
+                    <div class="col-lg-8">
+                        <div class="col-lg-12">{{formData.venue_name[$index]}}</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
-                        HashTags:
+                    <div class="col-lg-4">
+                        <h4 class="media-heading">Cost:</h4>
                     </div>
-                    <div class="col-lg-6">
-                        <h4 class="media-heading">{{formData.event_hashtags[$index]}}</h4>
+                    <div class="col-lg-8">
+                        <div class="col-lg-12">{{formData.event_cost[$index]}}</div>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-lg-4">
+                        <h4 class="media-heading">HashTags:</h4>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="col-lg-4">
+                            <div class="hashtag-value"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][0]}}</div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="hashtag-value"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][1]}}</div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="hashtag-value"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][2]}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row button-body">
                     <div class="col-lg-6">
-                        <button class="btn btn-default" ng-click="open('lg',formData, $index)">Update Event</button>
+                        <span class="glyphicon glyphicon-pencil" ng-click="open('lg',formData, $index)"></span><br>
+                        <span>Edit</span>
+                        <!--<button class="btn btn-default" ng-click="open('lg',formData, $index)">Update Event</button>-->
                     </div>
                     <div class="col-lg-6">
-                        <button class="btn btn-default" ng-click="deleteEvent(formData.event_detail_id[i])">Delete Event</button>
+                        <span class="glyphicon glyphicon-remove" ng-click="deleteEvent(formData.event_detail_id[i])"></span><br>
+                        <span>Delete</span>
                     </div>
                 </div>
 
