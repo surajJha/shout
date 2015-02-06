@@ -149,7 +149,7 @@ class AdminModel
                     $no_of_weeks = (isset($data->no_of_weeks) && $data->no_of_weeks!=null )?$db->real_escape_string( $data->no_of_weeks):'';
                     $no_of_months = (isset($data->no_of_months) && $data->no_of_months!=null )?$db->real_escape_string( $data->no_of_months):'';
                     $datetime =  (isset($data->updated_date_time_array) && $data->updated_date_time_array!=null )?$data->updated_date_time_array:'';
-                    if($repeatEvent != '' && $repeatType != '' && $no_of_weeks!='' && $no_of_months!=''){
+                   // if($repeatEvent != '' && $repeatType != '' && ($no_of_weeks!='' || $no_of_months!='')){
                         // event schedule has been updated
                         $this->deletePreviousEventSchedule($event_detail_id);
                         $eventScheduleInserted = $this->addEventScheduleToDatabase($event_detail_id, $repeatType, $repeatEvent,$no_of_months, $no_of_weeks, $datetime);
@@ -167,13 +167,13 @@ class AdminModel
                             $final_result['message'] = 'Event Details were updated but event schedule updation failed. Please try again properly';
                             return $final_result;
                         }
-                    }
-                    else
-                    {
-                        $final_result['status'] = 'success';
-                        $final_result['message'] = 'Some fields in schedule are empty';
-                        return $final_result;
-                    }
+//                    }
+//                    else
+//                    {
+//                        $final_result['status'] = 'failure';
+//                        $final_result['message'] = 'Some fields in schedule are empty';
+//                        return $final_result;
+//                    }
                 }
                 else{
                     $final_result['status'] = 'success';

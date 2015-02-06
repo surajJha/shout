@@ -1,20 +1,11 @@
 1.checck server side validation for files to be uploaded that is max file size etc.
-upload images method in controller mein check if $_file mein actually file aaya bhi hai
-ya nahi. make sure if all inputs are actually there
-
-
-2.Add active field in database for the events and appropriately change all the queries ----- DONE
-
-
+upload images method in controller mein check if $_file mein actually file aaya bhi hai (only SERVER SIDE REMAINING)
+ya nahi. make sure if all inputs are actually there---------------------------------
 
 3.IMPORTANT : In the end plz add colg-md-* and col-sm-* everywhere in all coloumns in all pages to make everything fully responsive
-important: add .img-responsive class to img tag when needed
+important: add .img-responsive class to img tag when needed--------------------------------
 
-5 In adminCOntroller for addEvent(), UpdateEvent() and UPloadImags() - CHECK IF ALL THE INPUT FROM THE USERS ARE NOT EMPTY. (check for hashtag input also)
+5 In adminCOntroller for addEvent(), UpdateEvent() and UPloadImags() - CHECK IF ALL THE INPUT FROM THE USERS ARE NOT EMPTY only date ka baki hai
 
-6. form VALIDATION FOR BOTH THE FORMS -- remaining for Date.
-0
 
 7. if any of the dates is of past dates then dont give option to edit the schedule
-
-|| eventForm.event_name.$invalid && eventForm.event_name.$dirty || eventForm.event_cost.$invalid && eventForm.event_cost.$dirty || eventForm.event_overview.$invalid && eventForm.event_overview.$dirty || eventForm.venue_name.$invalid && eventForm.venue_name.$dirty || eventForm.event_location.$invalid && eventForm.event_location.$dirty || isAnyFileSizeInvalid || isAnyFileInvalid

@@ -240,31 +240,8 @@ angular.module('shoutApp')
          * Reset form and clear all the models attached to the input fields
          */
         $scope.resetFormAndClearFormModelData = function()
-        { console.log('reloaded');
+        {
             $window.location.reload();
-            //$scope['eventForm'].$setPristine();
-            //$scope.formData = {};
-            //$scope.formData.datetime = [];
-            //$scope.selectedFile = [];
-            //$scope.isAnyFileInvalid = [true,false,false];
-            //$scope.isAnyFileSizeInvalid = [true,false,false];
-            //$scope.primaryImageNotSelected = true
-            //$scope.isAnyFileSelected = [false,false,false];
-            //$scope.isAnyFileExceptPrimaryHasError = false;
-            //angular.element('#datepicker-placeholder').empty();
-
         }
 
     });
-
-
-
-
-
-//var image_type = ['jpg','jpeg','gif','png'];
-//var ext =  $scope.selectedFile[file_id].split('.').pop();
-//var validExt = $.inArray(ext,image_type);
-//if(validExt == -1) {
-//    $scope.isAnyFileInvalid = true;
-// //   console.log( $scope.isAnyFileInvalid);
-//}

@@ -37,18 +37,26 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand mybrand" href="#">Shout</a>
+                            <a class="navbar-brand mybrand" href="#"> <i style="padding-right: 10px;" class="glyphicon glyphicon-home"></i>Rolling Scenes</a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
 
-                            <div class="navbar-right nav navbar-nav"> <a href="#menu-toggle" class="" id="menu-toggle">Toggle Menu</a></div>
-
-
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#menu-toggle" class="" id="menu-toggle">Show/Hide Menu</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div><!-- /.navbar-collapse -->
 
                     </div><!-- /.container-fluid -->
+
+
                 </nav>
             </div>
         </div>
@@ -139,7 +147,6 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/services/admintaskfactory.js"></script>
-        <script src="scripts/controllers/adminHomeController.js"></script>
         <script src="scripts/directives/header.js"></script>
         <script src="scripts/controllers/adminAddEventController.js"></script>
     <script src="scripts/controllers/adminViewEventController.js"></script>

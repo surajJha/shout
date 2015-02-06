@@ -16,45 +16,45 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
-                        <h4 class="media-heading">Venue:</h4>
+                        <h4 class="media-heading event-widget-text">Venue:</h4>
                     </div>
                     <div class="col-lg-8">
-                        <div class="col-lg-12">{{formData.venue_name[$index]}}</div>
+                        <div class="col-lg-12 event-widget-text">{{formData.venue_name[$index]}}</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
-                        <h4 class="media-heading">Cost:</h4>
+                        <h4 class="media-heading event-widget-text">Cost:</h4>
                     </div>
                     <div class="col-lg-8">
-                        <div class="col-lg-12">{{formData.event_cost[$index]}}</div>
+                        <div class="col-lg-12 event-widget-text">{{formData.event_cost[$index]}}</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
-                        <h4 class="media-heading">HashTags:</h4>
+                        <h4 class="media-heading event-widget-text">HashTags:</h4>
                     </div>
                     <div class="col-lg-8">
                         <div class="col-lg-4">
-                            <div class="hashtag-value"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][0]}}</div>
+                            <div class="hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][0]}}</div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="hashtag-value"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][1]}}</div>
+                            <div class="hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][1]}}</div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="hashtag-value"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][2]}}</div>
+                            <div class="hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][2]}}</div>
                         </div>
                     </div>
                 </div>
                 <div class="row button-body">
                     <div class="col-lg-6">
                         <span class="glyphicon glyphicon-pencil" ng-click="open('lg',formData, $index)"></span><br>
-                        <span>Edit</span>
+                        <span class="event-widget-text">Edit</span>
                         <!--<button class="btn btn-default" ng-click="open('lg',formData, $index)">Update Event</button>-->
                     </div>
                     <div class="col-lg-6">
                         <span class="glyphicon glyphicon-remove" ng-click="deleteEvent(formData.event_detail_id[i])"></span><br>
-                        <span>Delete</span>
+                        <span class="event-widget-text">Delete</span>
                     </div>
                 </div>
 

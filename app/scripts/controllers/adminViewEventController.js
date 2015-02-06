@@ -8,7 +8,7 @@
  * Controller of the shoutApp
  */
 angular.module('shoutApp')
-  .controller('adminViewEventController', function ($scope, $rootScope, adminTaskFactory, $modal, $log) {
+  .controller('adminViewEventController', function ($scope, $rootScope, adminTaskFactory, $modal, $log, $window) {
         /**
          * formData is an object which stores the result retreive from
          * database from function getAllEvents
@@ -76,7 +76,7 @@ angular.module('shoutApp')
 
                 }
 
-                  console.log(i);
+
                   for(var j=0;j <$scope.formData.image[i].length;j++){
                       if($scope.formData.image[i][j].image_path == ''){
                           $scope.formData.image[i][j].image_path = '/var/www/html/shout/app/images/placeholder.jpg';
@@ -99,10 +99,17 @@ angular.module('shoutApp')
         }
 
         $scope.deleteEvent = function(event_detail_id){
-            adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
-                console.log(result);
-                $scope.init();
-            })
+            if(confirm("Are you sure you want to delete this event ?"))
+            {
+                adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
+                    console.log(result);
+                    $scope.init();
+                })
+            }
+            else{
+                return;
+            }
+
         }
 
 
@@ -130,6 +137,11 @@ angular.module('shoutApp')
 
             });
         };
+        //
+        //$scope.$on('reloadEventDataInModal', function(event){
+        //    $scope.init();
+        //    console.log("emmited");
+        //})
 
 
 
@@ -142,7 +154,7 @@ angular.module('shoutApp')
      * its variable and scope are available inside
      * the modal only
     */
-    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory, $upload, $rootScope) {
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory, $upload, $rootScope, $timeout, $window) {
 
         /**updatedFormData is and object, and it stores the data received when the modal is opened
          * this object is available in the scope of the modal
@@ -168,8 +180,8 @@ angular.module('shoutApp')
         $scope.event_areas = [];
         $scope.event_image_id = [];
         $scope.image_path_to_be_deleted = [];
-        $scope.isAnyUpdatedFileInvalid = [true,false,false];
-        $scope.isAnyUpdatedFileSizeInvalid = [true,false,false];
+        $scope.isAnyUpdatedFileInvalid = [false,false,false];
+        $scope.isAnyUpdatedFileSizeInvalid = [false,false,false];
         $scope.primaryUpdatedImageNotSelected = true
         $scope.isAnyUpdatedFileSelected = [false,false,false];
         $scope.isAnyUpdatedFileExceptPrimaryHasError = false;
@@ -322,6 +334,7 @@ angular.module('shoutApp')
             $scope.modalFormData.repeatType = $scope.updatedFormData.repeatType;
             $scope.modalFormData.event_organizer_id = 1; //$scope.updatedFormData.event_organizer_id[id];
 
+
             if($scope.modalFormData.change_event_schedule_flag) {
                 $scope.getDateTime();
                 $scope.modalFormData.updated_date_time_array = $scope.updated_date_time_array;
@@ -329,8 +342,39 @@ angular.module('shoutApp')
             }
 
             adminTaskFactory.updateEventDetails($scope.modalFormData).then(function(result){
-                console.log("final output = "+result);
-                $scope.uploadImages();
+                //$scope.uploadImages();
+
+                if(result['status']==='success')
+                {
+                    /**
+                     * upload the images once the form with remaining
+                     * fields have been entered into the database
+                     */
+                    $scope.uploadImages();
+                    angular.element('#form-submit-message-placeholder').empty();
+                    angular.element('#form-submit-message-placeholder').append('<div id="form-submit-message" class="alert alert-success" style="text-align: center;">Event Updated successfully !! You can view this event in the View Events Tab.</div>');
+                    $timeout(function()
+                    {
+                        angular.element('#form-submit-message-placeholder').empty();
+                        $modalInstance.close($scope.id);
+                      //  $window.$rootScope.$emit('reloadEventDataInModal');
+                        $scope.resetFormAndClearFormModelData();
+
+                    },2000);
+
+
+
+                }
+                else
+                {
+                    angular.element('#form-submit-message-placeholder').empty();
+                    angular.element('#form-submit-message-placeholder').append('<div id="form-submit-message" class="alert alert-danger" style="text-align: center;">There was some problem in saving the event data. Please try again or contact the administrator.</div>');
+                    $timeout(function()
+                    {
+                        angular.element('#form-submit-message-placeholder').empty();
+                    },3000);
+
+                }
 
             })
 
@@ -361,6 +405,11 @@ angular.module('shoutApp')
 
             }
 
+            $scope.resetFormAndClearFormModelData = function()
+            {
+                $window.location.reload();
+            }
+
             /**
              * close the modal only after database has been updated
              * */
@@ -368,6 +417,6 @@ angular.module('shoutApp')
 
 
 
-             $modalInstance.close($scope.id);
+
         };
 });

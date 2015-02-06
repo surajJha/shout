@@ -2,11 +2,30 @@
 html,body {
     height: 100%;
 }
+.navbar-default .navbar-nav > li > a{
+    padding-top: 34px;
+    color: white;
+    font-size: 18px;
+}
+.navbar-default .navbar-nav > li > a:hover{
 
+    color: #ffffff;
+}
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #2B567D;
+    color: #ffffff;
+}
+.navbar-brand {
+    text-align: center;
+
+}
+.navbar-header {
+    padding-left: 45%;
+}
 .mypageheader{
     height: 70px;
-    background:darkred;
+    background:#2B567D;
 }
 
 .navbar-default .mybrand{
@@ -27,10 +46,13 @@ html,body {
 }
 
 .mycontent{
-    margin-top: 1.5%;
+    margin-top: 1.4%;
     /*margin-left: 0%;*/
 }
 
+.navbar-default {
+    border:none;
+}
 /*=========Sidebar code================*/
 
 
@@ -54,7 +76,7 @@ html,body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #274063;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -95,7 +117,9 @@ html,body {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #ffffff;
+    font-size: 17px;
+
 }
 
 .sidebar-nav li a:hover {
@@ -197,14 +221,27 @@ input[type="radio"] {
     width: 100%;
     height: 100%;
     /*height: 200px;*/
-    background-color: rgba(163, 137, 137, 0.09);
+    background-color: rgba(24, 23, 23, .2);
     -webkit-box-shadow: 0px 0px 2px;
     -moz-box-shadow: 0px 0px 2px;
     box-shadow: 0px 0px 2px;
+    padding: 10px;
+    margin-bottom: 20px
 
-
-
-
+}
+.viewEvents:hover{
+    background-color: #4E4E4E;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    width: 103%;
+    -webkit-transition: all .2s ease-in; /* For Safari 3.1 to 6.0 */
+    transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    height: 230px;
+    margin-left: -1%;
+    /*-webkit-transition: margin-left .3s; *//* For Safari 3.1 to 6.0 */
+    /*transition: margin-left .3s;*/
 }
 
 .eventTitle {
@@ -268,8 +305,8 @@ input[type="radio"] {
     text-align: -webkit-center;
 }
 
-.image_validation_message{
-    color: red;
+.image_validation_message, .schedule-repeat-event-radio-validation{
+    color: lightcoral;
     text-align: center;
 }
 

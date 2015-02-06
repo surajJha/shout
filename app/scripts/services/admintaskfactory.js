@@ -114,7 +114,7 @@ angular.module('shoutApp')
             $http.post($rootScope.baseUrl + '/server/adminController.php?func=updateEventDetails', modalFormData)
                 .success(function(res){
                     defer.resolve(res);
-                     console.log("result = "+res);
+
                 })
                 .error(function (err, status) {
                     defer.reject(err);

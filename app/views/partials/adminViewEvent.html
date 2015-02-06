@@ -291,8 +291,17 @@
 
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary"  ng-disabled="eventForm.$invalid" ng-click="updateEventDetails()">Update</button>
+            <button class="btn btn-primary"  ng-disabled="eventForm.$dirty && eventForm.$invalid || isAnyUpdatedFileSizeInvalid[0] ||isAnyUpdatedFileInvalid[0] || isAnyUpdatedFileExceptPrimaryHasError " ng-click="updateEventDetails()">Update</button>
             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-12">
+                    <div id="form-submit-message-placeholder">
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
         </script>
 
