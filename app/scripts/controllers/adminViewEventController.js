@@ -95,9 +95,10 @@ angular.module('shoutApp')
             $scope.formData.result_length = items;
         }
 
-        $scope.delete = function(event_detail_id){
+        $scope.deleteEvent = function(event_detail_id){
             adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
                 console.log(result);
+                $scope.init();
             })
         }
 

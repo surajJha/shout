@@ -5,10 +5,50 @@
         </div>
         <div class="col-lg-8">
             <div class="media-body">
-        <h4 class="media-heading">{{formData.event_name[$index]}}</h4>
-        {{formData.event_overview[$index]}}
-    </div>
-    </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        Event Name:
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="media-heading">{{formData.event_name[$index]}}</h4>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        Venue:
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="media-heading">{{formData.venue_name[$index]}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        Cost:
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="media-heading">{{formData.event_cost[$index]}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        HashTags:
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="media-heading">{{formData.event_hashtags[$index]}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button class="btn btn-default" ng-click="open('lg',formData, $index)">Update Event</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-default" ng-click="deleteEvent(formData.event_detail_id[i])">Delete Event</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 </div>

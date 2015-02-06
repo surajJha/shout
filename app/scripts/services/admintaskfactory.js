@@ -62,14 +62,6 @@ angular.module('shoutApp')
         return defer.promise;
     }
 
-    factory.EditEvent = function() {
-
-    }
-
-    factory.deleteEvent = function() {
-
-    }
-
     factory.loadImages = function(path) {
         var defer = $q.defer();
         $http.get($rootScope.baseUrl + '/server/resize.php?imgpath='+path)
@@ -134,7 +126,7 @@ angular.module('shoutApp')
         factory.deleteEvent = function(event_detail_id){
             var defer = $q.defer();
 
-            $http.post($rootScope.baseUrl + '/server/adminController.php?func=deleteEvent&event_detail_id='+event_detail_id)
+            $http.get($rootScope.baseUrl + '/server/adminController.php?func=deleteEvent&event_detail_id='+event_detail_id)
                 .success(function(res){
                     defer.resolve(res);
                     console.log(res);

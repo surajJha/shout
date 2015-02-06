@@ -4,15 +4,9 @@
 
         <!--{{eventData[0]['event_detail_id']}}-->
             <div class="row" ng-repeat="i in formData.result_length track by $index">
-                <div class="col-lg-8">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
                     <eventwidget></eventwidget>
-                     <div>
-                        <button class="btn btn-default" ng-click="open('lg',formData, $index)">Large modal</button>
-                    </div>
-                    <div>
-                        <button class="btn btn-default" ng-click="delete(formData.event_detail_id[i])">Delete</button>
-                    </div>
-
                 </div>
             </div>
 

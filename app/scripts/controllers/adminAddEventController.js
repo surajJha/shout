@@ -8,7 +8,7 @@
  * Controller of the shoutApp
  */
 angular.module('shoutApp')
-  .controller('adminAddEventController', function ($scope, $rootScope, $upload, adminTaskFactory, $timeout) {
+  .controller('adminAddEventController', function ($scope, $rootScope, $upload, adminTaskFactory, $timeout, $window) {
         /**
          * declaring all global variables for
          * this controller
@@ -141,8 +141,11 @@ angular.module('shoutApp')
                    $timeout(function()
                    {
                        angular.element('#form-submit-message-placeholder').empty();
+                       $scope.resetFormAndClearFormModelData();
+
                    },3000);
-                   $scope.resetFormAndClearFormModelData();
+
+
 
                }
             else
@@ -237,17 +240,18 @@ angular.module('shoutApp')
          * Reset form and clear all the models attached to the input fields
          */
         $scope.resetFormAndClearFormModelData = function()
-        {
-            $scope['eventForm'].$setPristine();
-            $scope.formData = {};
-            $scope.formData.datetime = [];
-            $scope.selectedFile = [];
-            $scope.isAnyFileInvalid = [true,false,false];
-            $scope.isAnyFileSizeInvalid = [true,false,false];
-            $scope.primaryImageNotSelected = true
-            $scope.isAnyFileSelected = [false,false,false];
-            $scope.isAnyFileExceptPrimaryHasError = false;
-            angular.element('#datepicker-placeholder').empty();
+        { console.log('reloaded');
+            $window.location.reload();
+            //$scope['eventForm'].$setPristine();
+            //$scope.formData = {};
+            //$scope.formData.datetime = [];
+            //$scope.selectedFile = [];
+            //$scope.isAnyFileInvalid = [true,false,false];
+            //$scope.isAnyFileSizeInvalid = [true,false,false];
+            //$scope.primaryImageNotSelected = true
+            //$scope.isAnyFileSelected = [false,false,false];
+            //$scope.isAnyFileExceptPrimaryHasError = false;
+            //angular.element('#datepicker-placeholder').empty();
 
         }
 
