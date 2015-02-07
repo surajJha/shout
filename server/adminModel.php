@@ -64,7 +64,7 @@ class AdminModel
      //$event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
        if($venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
-           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
+           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
            $eventDetailInserted = $db->query($query);
            $result = array();
            if($eventDetailInserted)
@@ -137,7 +137,7 @@ class AdminModel
         $final_result = [];
      //   $event_organizer_id =  $db->real_escape_string($data->event_organizer_id);
         if($venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
-            $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
+            $query = "UPDATE event_detail set venue_name='{$venue_name}', event_name='{$event_name}', event_overview='{$event_overview}', event_hashtags='{$event_hashtags}', event_location='{$event_location}', event_area_id='{$event_area}', event_cost='{$event_cost}', category_name='{$category_name}' WHERE event_detail_id='{$event_detail_id}'";
             $eventDetailsInserted = $db->query($query);
             if($eventDetailsInserted)
             {
@@ -236,7 +236,7 @@ class AdminModel
     public function getAllEvents($organiser_id)
     {
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area_id, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)

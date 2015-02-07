@@ -1,0 +1,12 @@
+select area_name, 'Area' as type
+FROM area
+WHERE area_name LIKE 'a%'
+AND city_name = 'Mumbai'
+UNION ALL
+select e.event_name, 'Event' as type
+FROM event_detail e, area a
+WHERE e.event_area_id = a.area_id and a.city_name = 'Mumbai' and e.event_name LIKE 'a%'
+UNION ALL
+select e.venue_name, 'Venue' as type
+FROM event_detail e, area a
+WHERE e.event_area_id = a.area_id and a.city_name = 'Mumbai' and e.venue_name LIKE 'a%'

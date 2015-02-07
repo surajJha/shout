@@ -8,7 +8,18 @@
     </div>
     <div class="col-lg-10">
         <div id="page-content-wrapper">
-            <div class="container-fluid">
+            <div class="container-fluid" ng-controller="adminController">
+                    <angucomplete id="members"
+                                  placeholder="Search members"
+                                  pause="100"
+                                  selectedobject="testObj"
+                                  url="http://localhost/shout/server/userController.php?func=getSearchResults&city=Mumbai&q="
+                                  datafield=""
+                                  titlefield="area_name"
+                                  descriptionfield="type"
+                                  inputclass="form-control form-control-small"/>
+
+            </div>
         <div ui-view></div>
         </div>
         </div>

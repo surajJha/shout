@@ -25,8 +25,8 @@ class UserController
 
     public function __construct()
     {
-       // $func = $_GET['func'];
-        $this->getLatersEvents();
+        $func = $_GET['func'];
+        $this->$func();
 
     }
 
@@ -112,6 +112,32 @@ class UserController
         {
             echo "There are no existing events.";
         }
+    }
+
+    public function getSearchResults()
+    {
+        $city = $this->custom_filter_input($_GET['city']);
+        $q = $this->custom_filter_input($_GET['q']);
+        $model = new UserModel();
+        $result = $model->getSearchResults($city, $q);
+
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result['data']);
+        }
+        else
+        {
+            echo "No Search Results Found.";
+        }
+
+    }
+
+    function custom_filter_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
 }

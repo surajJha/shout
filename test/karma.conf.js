@@ -33,6 +33,7 @@ module.exports = function(config) {
         'bower_components/angular-bootstrap/ui-bootstrap.js',
         'bower_components/angular-ui-utils/ui-utils.js',
         'bower_components/angular-ui-map/ui-map.js',
+        'bower_components/angucomplete/angucomplete.js',
       'app/scripts/**/*.js',
      // 'test/mock/**/*.js',
       'test/spec/**/*.js'

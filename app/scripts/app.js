@@ -21,7 +21,8 @@ angular
         'ui.utils',
     'angularFileUpload',
     'ui.bootstrap',
-        'ui.map'
+        'ui.map',
+        'angucomplete'
 
   ])
 
@@ -34,6 +35,7 @@ angular
             .state('admin', {
                 //abstract:true,
                 url:'/admin',
+                controller:'adminController',
 
                 views:{
                     '':{

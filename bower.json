@@ -19,7 +19,8 @@
     "angular-bootstrap": "~0.12.0",
     "angular-ui-map": "~0.5.0",
     "angular-ui-utils": "~0.2.1",
-    "bootstrap-sweetalert": "~0.4.3"
+    "bootstrap-sweetalert": "~0.4.3",
+    "angucomplete": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",

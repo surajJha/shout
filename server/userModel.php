@@ -283,6 +283,38 @@ class UserModel
 
     }
 
+    public function getSearchResults($city, $q)
+    {
+        $db = $this->getDatabaseObject();
+        $query = "select area_name, 'Area' as type FROM area WHERE area_name LIKE '{$q}%' AND city_name = '{$city}' UNION ALL  select e.event_name, 'Event' as type FROM event_detail e, area a WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.event_name LIKE '{$q}%' UNION ALL  select e.venue_name, 'Venue' as type FROM event_detail e, area a WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.venue_name LIKE '{$q}%'";
+
+
+       // echo $query;
+        $temp = $db->query($query);
+
+       // var_dump($temp->num_rows>0);
+        $result =array();
+        if($temp->num_rows>0) {
+            $i = 0;
+            while ($row = $temp->fetch_assoc()){
+
+                $rows[$i]['area_name'] = $row['area_name'];
+                $rows[$i]['type'] = $row['type'];
+                $i++;
+            }
+            $result['status'] = 'success';
+            $result['data'] = $rows;
+        }
+        else{
+            $result['status'] = 'failure';
+            $result['data'] = 'No results found';
+        }
+       return $result;
+
+    }
 
 
 }
+//
+//$test = new UserModel();
+//$test->getSearchResults('Mumbai', 'andh');
