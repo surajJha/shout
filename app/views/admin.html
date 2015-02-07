@@ -9,21 +9,24 @@
     <div class="col-lg-10">
         <div id="page-content-wrapper">
             <div class="container-fluid" ng-controller="adminController">
+                <form class="form-horizontal" role="form" name="AddShareForm" novalidate ng-submit="testa(testObj)">
                     <angucomplete id="members"
                                   placeholder="Search members"
                                   pause="100"
-                                  selectedobject="testObj"
+                                  selectedobject="AddShareForm.testObj"
                                   url="http://localhost/shout/server/userController.php?func=getSearchResults&city=Mumbai&q="
                                   datafield=""
+                                  searchfields="testObj"
                                   titlefield="area_name"
                                   descriptionfield="type"
                                   inputclass="form-control form-control-small"
-                                  ng-model="selectedobject"
-                                    ng-click="testa()"
                             />
+                    <!--<input type="hidden" ng-model="testObj">-->
+                </form>
+
 
             </div>
-            {{testObj.originalObject.area_name}}
+
         <div ui-view></div>
         </div>
         </div>

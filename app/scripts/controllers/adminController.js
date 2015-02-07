@@ -9,7 +9,9 @@
  */
 angular.module('shoutApp')
     .controller('adminController', function ($scope, $rootScope, $http) {
-        $scope.testa = function(){
+        $scope.testa = function(a){
+            $scope.result='';
             console.log("aaya");
+            console.log($scope.testObj);
         }
     });
