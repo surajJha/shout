@@ -320,10 +320,10 @@ input[type="radio"] {
     padding: 6px 12px;
     text-align: center;
 }
-.glyphicon-tag{
-    padding-right: 10%;
-}
 
+.navbar-default .mybrand:hover {
+    color: #ffffff;
+}
 .button-body{
     position: absolute;
     bottom: 10px;

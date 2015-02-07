@@ -98,18 +98,44 @@ angular.module('shoutApp')
             $scope.formData.result_length = items;
         }
 
-        $scope.deleteEvent = function(event_detail_id){
-            if(confirm("Are you sure you want to delete this event ?"))
-            {
-                adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
-                    console.log(result);
-                    $scope.init();
-                })
-            }
-            else{
-                return;
-            }
+        //$scope.deleteEvent = function(event_detail_id){
+        //    if(confirm("Are you sure you want to delete this event ?"))
+        //    {
+        //        adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
+        //            console.log(result);
+        //            $scope.init();
+        //        })
+        //    }
+        //    else{
+        //        return;
+        //    }
+        //
+        //}
 
+        $scope.deleteEventNow = function(event_detail_id){
+            swal({
+                title: "Are you sure?",
+                text: "This Event will be permanently deleted!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false },
+                function(isConfirm){
+                    if (isConfirm) {
+                        adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
+                           // console.log(result);
+                            swal("Deleted!", "This Event has been deleted.", "success");
+                            $scope.init();
+                        })
+
+                    }
+                    else {
+                        swal("Cancelled", "Phew! The Event wa not deleted", "error");
+                    }
+                });
         }
 
 

@@ -35,15 +35,15 @@
                         <h4 class="media-heading event-widget-text">HashTags:</h4>
                     </div>
                     <div class="col-lg-8">
-                        <div class="col-lg-4">
-                            <div class="hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][0]}}</div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][1]}}</div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][2]}}</div>
-                        </div>
+                        <!--<div class="col-lg-4">-->
+                            <div class=" col-lg-4 hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][0]}}</div>
+                        <!--</div>-->
+                        <!--<div class="col-lg-4">-->
+                            <div class="col-lg-4 hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][1]}}</div>
+                        <!--</div>-->
+                        <!--<div class="col-lg-4">-->
+                            <div class="col-lg-4 hashtag-value event-widget-text"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{formData.event_hashtags[$index][2]}}</div>
+                        <!--</div>-->
                     </div>
                 </div>
                 <div class="row button-body">
@@ -53,7 +53,7 @@
                         <!--<button class="btn btn-default" ng-click="open('lg',formData, $index)">Update Event</button>-->
                     </div>
                     <div class="col-lg-6">
-                        <span class="glyphicon glyphicon-remove" ng-click="deleteEvent(formData.event_detail_id[i])"></span><br>
+                        <span class="glyphicon glyphicon-remove" ng-click="deleteEventNow(formData.event_detail_id[i])"></span><br>
                         <span class="event-widget-text">Delete</span>
                     </div>
                 </div>
