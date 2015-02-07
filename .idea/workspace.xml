@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="" />
     <list default="true" id="a71434d1-35c3-4c02-8c00-24ae8ba1e054" name="New changelist" comment="New changelist">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/searchquery.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin.html" afterPath="$PROJECT_DIR$/app/views/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminModel.php" afterPath="$PROJECT_DIR$/server/adminModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/karma.conf.js" afterPath="$PROJECT_DIR$/test/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userController.php" afterPath="$PROJECT_DIR$/server/userController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userModel.php" afterPath="$PROJECT_DIR$/server/userModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -135,8 +127,8 @@
       <file leaf-file-name="adminController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4698" max-vertical-offset="5904">
-              <caret line="186" column="59" selection-start-line="186" selection-start-column="59" selection-end-line="186" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -189,7 +181,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="162">
               <caret line="0" column="275" selection-start-line="0" selection-start-column="275" selection-end-line="0" selection-end-column="275" />
-              <folding />
+              <folding>
+                <marker date="0" expanded="true" signature="0:107" placeholder="select area_..area..." />
+                <marker date="0" expanded="true" signature="108:274" placeholder="select e.eve..event_detail..." />
+                <marker date="0" expanded="true" signature="275:431" placeholder="select e.ven..event_detail..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -236,8 +232,8 @@
       <file leaf-file-name="adminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/adminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-150.33333" vertical-offset="1233" max-vertical-offset="5580">
-              <caret line="294" column="4" selection-start-line="294" selection-start-column="4" selection-end-line="300" selection-end-column="5" />
+            <state vertical-scroll-proportion="-9.0" vertical-offset="1233" max-vertical-offset="5580">
+              <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -246,8 +242,8 @@
       <file leaf-file-name="admin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55187637" vertical-offset="146" max-vertical-offset="612">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.55187637" vertical-offset="146" max-vertical-offset="684">
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -289,11 +285,11 @@
         <option value="$PROJECT_DIR$/test/karma.conf.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminController.js" />
         <option value="$PROJECT_DIR$/server/searchquery.txt" />
         <option value="$PROJECT_DIR$/server/userModel.php" />
         <option value="db-console:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/" />
         <option value="$PROJECT_DIR$/server/userController.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminController.js" />
         <option value="$PROJECT_DIR$/app/views/admin.html" />
       </list>
     </option>
@@ -875,7 +871,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423288964843</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="New changelist">
+      <created>1423297293228</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1423297293228</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1307,14 +1309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-150.33333" vertical-offset="1233" max-vertical-offset="5580">
-          <caret line="294" column="4" selection-start-line="294" selection-start-column="4" selection-end-line="300" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/searchquery.txt">
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -1322,14 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="306">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4698" max-vertical-offset="5904">
-          <caret line="186" column="59" selection-start-line="186" selection-start-column="59" selection-end-line="186" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -1346,30 +1332,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="162">
           <caret line="0" column="275" selection-start-line="0" selection-start-column="275" selection-end-line="0" selection-end-column="275" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.592592" vertical-offset="4952" max-vertical-offset="11034">
-          <caret line="291" column="25" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="25" />
           <folding>
-            <marker date="1423290069125" expanded="true" signature="3642:3975" placeholder="insert into ..." />
-            <marker date="1423290069125" expanded="true" signature="8346:8668" placeholder="UPDATE event..." />
-            <marker date="1423290069125" expanded="true" signature="12150:12229" placeholder="update event..." />
-            <marker date="1423290069125" expanded="true" signature="13128:13767" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423290069125" expanded="true" signature="17473:17614" placeholder="insert into ..." />
-            <marker date="1423290069125" expanded="true" signature="18933:18984" placeholder="select * fro..hashtag..." />
-            <marker date="1423290069125" expanded="true" signature="19105:19158" placeholder="insert into ..." />
-            <marker date="1423290069125" expanded="true" signature="19315:19394" placeholder="update hasht..." />
-            <marker date="1423290069125" expanded="true" signature="21163:21338" placeholder="insert into ..." />
-            <marker date="1423290069125" expanded="true" signature="22075:22250" placeholder="insert into ..." />
-            <marker date="1423290069125" expanded="true" signature="22936:23111" placeholder="insert into ..." />
-            <marker date="1423290069125" expanded="true" signature="23922:23956" placeholder="select categ..category..." />
-            <marker date="1423290069125" expanded="true" signature="24863:24889" placeholder="SELECT area_..area..." />
-            <marker date="1423290069125" expanded="true" signature="25861:25930" placeholder="delete from ..." />
-            <marker date="1423290069125" expanded="true" signature="26930:27031" placeholder="update event..." />
+            <marker date="0" expanded="true" signature="0:107" placeholder="select area_..area..." />
+            <marker date="0" expanded="true" signature="108:274" placeholder="select e.eve..event_detail..." />
+            <marker date="0" expanded="true" signature="275:431" placeholder="select e.ven..event_detail..." />
           </folding>
         </state>
       </provider>
@@ -1402,10 +1368,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/adminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0" vertical-offset="1233" max-vertical-offset="5580">
+          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.592592" vertical-offset="4952" max-vertical-offset="11034">
+          <caret line="291" column="25" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="25" />
+          <folding>
+            <marker date="1423290069125" expanded="true" signature="3642:3975" placeholder="insert into ..." />
+            <marker date="1423290069125" expanded="true" signature="8346:8668" placeholder="UPDATE event..." />
+            <marker date="1423290069125" expanded="true" signature="12150:12229" placeholder="update event..." />
+            <marker date="1423290069125" expanded="true" signature="13128:13767" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423290069125" expanded="true" signature="17473:17614" placeholder="insert into ..." />
+            <marker date="1423290069125" expanded="true" signature="18933:18984" placeholder="select * fro..hashtag..." />
+            <marker date="1423290069125" expanded="true" signature="19105:19158" placeholder="insert into ..." />
+            <marker date="1423290069125" expanded="true" signature="19315:19394" placeholder="update hasht..." />
+            <marker date="1423290069125" expanded="true" signature="21163:21338" placeholder="insert into ..." />
+            <marker date="1423290069125" expanded="true" signature="22075:22250" placeholder="insert into ..." />
+            <marker date="1423290069125" expanded="true" signature="22936:23111" placeholder="insert into ..." />
+            <marker date="1423290069125" expanded="true" signature="23922:23956" placeholder="select categ..category..." />
+            <marker date="1423290069125" expanded="true" signature="24863:24889" placeholder="SELECT area_..area..." />
+            <marker date="1423290069125" expanded="true" signature="25861:25930" placeholder="delete from ..." />
+            <marker date="1423290069125" expanded="true" signature="26930:27031" placeholder="update event..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55187637" vertical-offset="146" max-vertical-offset="612">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.55187637" vertical-offset="146" max-vertical-offset="684">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
           <folding />
         </state>
       </provider>

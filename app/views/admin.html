@@ -17,9 +17,13 @@
                                   datafield=""
                                   titlefield="area_name"
                                   descriptionfield="type"
-                                  inputclass="form-control form-control-small"/>
+                                  inputclass="form-control form-control-small"
+                                  ng-model="selectedobject"
+                                    ng-click="testa()"
+                            />
 
             </div>
+            {{testObj.originalObject.area_name}}
         <div ui-view></div>
         </div>
         </div>
