@@ -236,7 +236,7 @@ class AdminModel
     public function getAllEvents($organiser_id)
     {
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_area_id, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and ed.event_organizer_id = '{$organiser_id}' group by ed.event_detail_id";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)
@@ -245,7 +245,9 @@ class AdminModel
             while($row = $temp->fetch_assoc())
             {
                 $rows[$i]['category_name'] = $row['category_name'];
-                $rows[$i]['event_area'] = $row['event_area'];
+                $rows[$i]['event_city'] = $row['city_name'];
+                $rows[$i]['event_area'][0] = $row['area_id'];
+                $rows[$i]['event_area'][1] = $row['area_name'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
@@ -521,10 +523,10 @@ class AdminModel
      * the database. If NO Areas exists then it returns failure message
      * with empty result data.
      */
-    public function getEventArea()
+    public function getEventArea($city)
     {
         $db = $this->getDatabaseObject();
-        $query = "SELECT area_name from area";
+        $query = "SELECT area_id,area_name from area where city_name = '{$city}'";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0){
@@ -541,6 +543,36 @@ class AdminModel
         {
             $result['status'] = "failure";
             $result['message'] = 'Areas NOT fetched successfully '.$db->error;
+            $result['data'] = '';
+            return $result;
+        }
+    }
+
+    /**
+     * This function returns an array of Cities of events from
+     * the database. If NO Cities exists then it returns failure message
+     * with empty result data.
+     */
+    public function getEventCity()
+    {
+        $db = $this->getDatabaseObject();
+        $query = "SELECT DISTINCT city_name from area";
+        $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0){
+            while($row = $temp->fetch_row())
+            {
+                $rows[] = $row;
+            }
+            $result['status'] = 'success';
+            $result['message'] = 'Cities fetched successfully';
+            $result['data'] = $rows;
+            return $result;
+        }
+        else
+        {
+            $result['status'] = "failure";
+            $result['message'] = 'Cities NOT fetched successfully '.$db->error;
             $result['data'] = '';
             return $result;
         }

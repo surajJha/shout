@@ -92,11 +92,25 @@ angular.module('shoutApp')
 
         return defer.promise;
     }
-
-        factory.getEventArea = function () {
+        factory.getEventCity = function () {
             var defer = $q.defer();
 
-            $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventArea')
+            $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventCity')
+                .success(function(res){
+                    defer.resolve(res.data);
+                    // console.log(res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+
+            return defer.promise;
+        }
+
+        factory.getEventArea = function (city) {
+            var defer = $q.defer();
+
+            $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventArea&city='+city)
                 .success(function(res){
                     defer.resolve(res.data);
                     // console.log(res);

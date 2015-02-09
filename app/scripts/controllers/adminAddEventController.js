@@ -44,6 +44,8 @@ angular.module('shoutApp')
         $scope.formData.datetime = [];
         $scope.event_categories = [];
         $scope.event_areas = [];
+        $scope.event_areas_id = [];
+        $scope.event_cities = [];
         $scope.selectedFile = [];
         $scope.isAnyFileInvalid = [true,false,false];
         $scope.isAnyFileSizeInvalid = [true,false,false];
@@ -63,7 +65,7 @@ angular.module('shoutApp')
          * Init function will be called as soon as the
          * page loads to initialize required params.
          * 1. FIll the category dropdown with initial data
-         * 2. FIll the area dropdown with initial data
+         * 2. FIll the city dropdown with initial data
          */
         $scope.init = function()
         {
@@ -75,15 +77,32 @@ angular.module('shoutApp')
                 }
 
             });
-            adminTaskFactory.getEventArea().then(function(result)
-            {
-                 for(var i = 0;i<result.length;i++)
-                 {
-                     $scope.event_areas[i] = result[i][0];
-                 }
-             })
+            adminTaskFactory.getEventCity().then(function(result){
+                for(var i = 0;i<result.length;i++)
+                {
+                    $scope.event_cities[i] = result[i][0];
+                }
+            })
         }
         $scope.init();
+
+        /**
+         * This function is called when city is selected
+         * and the area dropdown is filled with the received data
+         */
+
+        $scope.getEventArea = function(city){
+            $scope.event_areas = [];
+            adminTaskFactory.getEventArea(city).then(function(result)
+            {
+                for(var i = 0;i<result.length;i++)
+                {
+                    //$scope.event_areas_id[i] = result[i][0];
+                    $scope.event_areas[i] = result[i];
+                }
+            })
+
+        }
 
 
         /**
@@ -92,7 +111,6 @@ angular.module('shoutApp')
          * this function is associated only with the dropdown
          */
           /** $scope.day is used to store the number of days selected in dropdown
-           * $scope.day = $scope.days[0]; this stores the first value by default
           */
         var generateDatepicker = (function ()
           {
@@ -122,6 +140,7 @@ angular.module('shoutApp')
          */
         $scope.submitEventForm = function ()
         {
+           // console.log($scope.formData);
           //  console.log('inside contr');
           $scope.getDateTime();
         adminTaskFactory.addNewEvent($scope.formData).then(function(result)

@@ -113,9 +113,20 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
+                        <label for="event_city" class="col-md-4 control-label">City:</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="event_city" ng-options="var for var in event_cities track by var" name="event_city" ng-model="selectedCity" ng-change="getUpdatedEventArea(selectedCity)" required>
+
+                            </select>
+                            <span class="validation-notification" ng-show="eventForm.event_city.$error.required">Please select a City !</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
                         <label for="event_area" class="col-md-4 control-label">Area:</label>
                         <div class="col-md-8">
-                            <select class="form-control" id="event_area" ng-options="var for var in event_areas track by var" name="event_area" ng-model="selectedArea">
+                            <select class="form-control" id="event_area" ng-options="var[0] as var[1] for var in event_areas  track by var[0]" name="event_area" ng-model="selectedArea">
 
                             </select>
 
@@ -128,7 +139,7 @@
                     <div class="form-group">
                         <label for="event_location" class="col-md-4 control-label">Address:</label>
                         <div class="col-md-8">
-                            <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="4" id="event_location" ng-model="updatedFormData.event_location[id]"  ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
+                            <textarea style="resize: none;" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="6" id="event_location" ng-model="updatedFormData.event_location[id]"  ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
                         </div>
                     </div>
                 </div>
@@ -267,7 +278,8 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <img height="160" width="200" alt="/var/www/html/shout/app/images/placeholder.jpg" onerror="this.src='/images/placeholder.jpg'" ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
+                <!--<img height="160" width="200" alt="/var/www/html/shout/app/images/placeholder.jpg" onerror="this.src='/images/placeholder.jpg'" ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">-->
+                <img height="160" width="200" ng-src="{{updatedFormData.image_encoded_path_array[1]}}" class="edit_image" ng-hide="isImageHidden[1]">
                 <label for="image2" class="col-md-4 control-label">Image Two: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[1],1,updatedFormData.image[id][1].image_id, updatedFormData.image[id][1].image_path)" ng-file-select ng-model="updatedFormData.images[1]" ng-multiple="false" accept="image/*" id="image2" >Attach Image Two</button>
                 <div class="file_name_preview">{{newly_selected_file[1]}}</div>
@@ -276,9 +288,9 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <object data="http://localhost/shout/app/images/placeholder.jpg" type="image/*">
+                <!--<object data="http://localhost/shout/app/images/placeholder.jpg" type="image/*">-->
                 <img height="160" width="200" ng-src="{{updatedFormData.image_encoded_path_array[2]}}" class="edit_image" ng-hide="isImageHidden[2]">
-                </object>
+                <!--</object>-->
                 <label for="image3" class="col-md-4 control-label">Image Three: </label>
                 <button class="btn btn-success" ng-file-change="handleSelectedFile(updatedFormData.images[2],2,updatedFormData.image[id][2].image_id, updatedFormData.image[id][2].image_path)" ng-file-select ng-model="updatedFormData.images[2]" ng-multiple="false" accept="image/*" id="image3" >Attach Image Three</button>
                 <div class="file_name_preview">{{newly_selected_file[2]}}</div>

@@ -23,6 +23,7 @@ angular.module('shoutApp')
         $scope.formData.event_hashtags = [];
         $scope.formData.venue_name = [];
         $scope.formData.event_area = [];
+        $scope.formData.event_city = [];
         $scope.formData.event_location = [];
         $scope.formData.image = [];
         $scope.formData.datetime = [];
@@ -35,6 +36,7 @@ angular.module('shoutApp')
           var organiser_id = 1; //change to sessionid afterwards
           adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
 
+              console.log(result);
              // console.log(result);
 
               /** Storing the length in
@@ -43,6 +45,7 @@ angular.module('shoutApp')
                * repeat the loop and create the div
               */
                 $scope.makeArray(result);
+
               var k = -1;
               for(var i=0; i< result.length; i++){
                   $scope.formData.event_detail_id[i] = result[i].event_detail_id;
@@ -53,11 +56,12 @@ angular.module('shoutApp')
                   $scope.formData.event_hashtags[i] = result[i].event_hashtags;
                   $scope.formData.venue_name[i] = result[i].venue_name;
                   $scope.formData.event_area[i] = result[i].event_area;
+                  $scope.formData.event_city[i] = result[i].event_city;
                   $scope.formData.event_location[i] = result[i].event_location;
                   $scope.formData.event_organizer_id = result[i].event_organizer_id;
                   $scope.formData.image[i] = result[i].image;
                   $scope.formData.datetime[i] = result[i].datetime;
-                  $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
+              //    $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
                   // getting primary images
                   // using closure to preserve the value of for loop variable
                   // so that for loop does not get executed before promise returns
@@ -77,11 +81,11 @@ angular.module('shoutApp')
                 }
 
 
-                  for(var j=0;j <$scope.formData.image[i].length;j++){
-                      if($scope.formData.image[i][j].image_path == ''){
-                          $scope.formData.image[i][j].image_path = '/var/www/html/shout/app/images/placeholder.jpg';
-                      }
-                  }
+                  //for(var j=0;j <$scope.formData.image[i].length;j++){
+                  //    if($scope.formData.image[i][j].image_path == ''){
+                  //        $scope.formData.image[i][j].image_path = '/var/www/html/shout/app/images/placeholder.jpg';
+                  //    }
+                  //}
 
 
 
@@ -196,6 +200,7 @@ angular.module('shoutApp')
         $scope.updatedFormData.datetime_edit = formData.datetime;
         $scope.change_event_schedule_flag = false;
         $scope.selectedArea = $scope.updatedFormData.event_area[id];
+        $scope.selectedCity = $scope.updatedFormData.event_city[id];
         $scope.selectedCategory = $scope.updatedFormData.event_category[id];
         $scope.updatedFormData.image_encoded_path_array = [];
         $scope.isImageHidden = [];
@@ -203,6 +208,7 @@ angular.module('shoutApp')
         $scope.updated_date_time_array = [];
         $scope.day = '';
         $scope.event_categories = [];
+        $scope.event_cities = [];
         $scope.event_areas = [];
         $scope.event_image_id = [];
         $scope.image_path_to_be_deleted = [];
@@ -231,11 +237,22 @@ angular.module('shoutApp')
 
             })
             /**
-             *  FIll the area dropdown with initial data
+             *  FIll the city dropdown with initial data
              */
-            adminTaskFactory.getEventArea().then(function(result){
-                for(var i = 0;i<result.length;i++){
-                    $scope.event_areas[i] = result[i][0];
+            adminTaskFactory.getEventCity().then(function(result){
+                for(var i = 0;i<result.length;i++)
+                {
+                    $scope.event_cities[i] = result[i][0];
+                }
+            })
+
+            /* FIll the area dropdown with the intial data */
+            adminTaskFactory.getEventArea($scope.selectedCity).then(function(result)
+            {
+                for(var i = 0;i<result.length;i++)
+                {
+                    //$scope.event_areas_id[i] = result[i][0];
+                    $scope.event_areas[i] = result[i];
                 }
             })
 
@@ -253,6 +270,24 @@ angular.module('shoutApp')
            }
         } // end of init function
         $scope.init();
+
+        /**
+         * This function is called when city is selected
+         * and the area dropdown is filled with the received data
+         */
+
+        $scope.getUpdatedEventArea = function(city){
+            $scope.event_areas = [];
+            adminTaskFactory.getEventArea(city).then(function(result)
+            {
+                for(var i = 0;i<result.length;i++)
+                {
+                    //$scope.event_areas_id[i] = result[i][0];
+                    $scope.event_areas[i] = result[i];
+                }
+            })
+
+        }
 
 
         /**

@@ -259,7 +259,28 @@ class AdminController
     function getEventArea()
     {
         $model = new AdminModel();
-        $result = $model->getEventArea();
+        $city = $_GET['city'];
+        $result = $model->getEventArea($city);
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result);
+        }
+        else
+        {
+            echo $result['message'];
+        }
+    }
+
+    /** this function does not take any input
+     * returns an array of event cities from the database
+     * If there are no cities in the database or any other
+     * database error occurs then appropriate message with status
+     * is returned.
+     */
+    function getEventCity()
+    {
+        $model = new AdminModel();
+        $result = $model->getEventCity();
         if($result['status'] == 'success')
         {
             echo json_encode($result);

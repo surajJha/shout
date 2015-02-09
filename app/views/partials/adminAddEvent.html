@@ -97,22 +97,34 @@
                         </div>
                         <div class="row">
                             <div class="form-group">
+                                <label for="event_city" class="col-md-4 control-label">City:</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="event_city" ng-options="var for var in event_cities" name="event_city" ng-model="formData.event_city" ng-change="getEventArea(formData.event_city)" required>
+
+                                    </select>
+                                    <span class="validation-notification" ng-show="eventForm.event_city.$error.required">Please select a City !</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
                                 <label for="event_area" class="col-md-4 control-label">Area:</label>
                                 <div class="col-md-8">
-                                    <select class="form-control" id="event_area" ng-options="var for var in event_areas" name="event_area" ng-model="formData.event_area" required>
+                                    <select class="form-control" id="event_area" ng-options="var[0] as var[1] for var in event_areas" name="event_area" ng-model="formData.event_area" required>
 
                                     </select>
                                     <span class="validation-notification" ng-show="eventForm.event_area.$error.required">Please select an Event Area !</span>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="col-lg-6">
                         <div class="row">
                             <div class="form-group">
                                 <label for="event_location" class="col-md-4 control-label">Address:</label>
                                 <div class="col-md-8">
-                                    <textarea style="resize: none;" tooltip="Please enter complete address of the Venue."  tooltip-trigger="mouseenter" tooltip-placement="top" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="4" id="event_location" ng-model="formData.event_location" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
+                                    <textarea style="resize: none;" tooltip="Please enter complete address of the Venue."  tooltip-trigger="mouseenter" tooltip-placement="top" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="6" id="event_location" ng-model="formData.event_location" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
                                     <span class="validation-message" ng-show="eventForm.event_location.$error.required && eventForm.event_location.$dirty">Address cannot be empty !</span>
                                     <span class="validation-message" ng-show="eventForm.event_location.$error.minlength && eventForm.event_location.$dirty">Address length cannot be less than 5 !</span>
                                 </div>
