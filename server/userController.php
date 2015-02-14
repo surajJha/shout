@@ -132,6 +132,23 @@ class UserController
 
     }
 
+    public function getEventBySearch(){
+        $searchParam = $this->custom_filter_input($_GET['searchParam']);
+        $tablename = $this->custom_filter_input($_GET['tablename']);
+
+        $model = new UserModel();
+        $result = $model->getEventBySearch($searchParam, $tablename);
+
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result['data']);
+        }
+        else
+        {
+            echo "No Search Results Found.";
+        }
+    }
+
     function custom_filter_input($data)
     {
         $data = trim($data);

@@ -153,6 +153,26 @@ angular.module('shoutApp')
         }
 
 
+        /**
+         * getEventBySearch is to be placed in roll folder
+         * this function displays the events based on search param and type
+         */
+        factory.getEventBySearch = function(searchParam, tablename){
+            var defer = $q.defer();
+
+            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename)
+                .success(function(res){
+                    defer.resolve(res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+
+            return defer.promise;
+        }
+
+
+
 
 
 

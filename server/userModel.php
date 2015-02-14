@@ -313,6 +313,96 @@ class UserModel
 
     }
 
+    public function getEventBySearch($searchParam,$tablename){
+        $db = $this->getDatabaseObject();
+
+        if($tablename == 'Venue'){
+            $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and ed.venue_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
+        }
+        elseif($tablename == 'Area'){
+            $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and a.area_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
+        }
+        elseif($tablename == 'Event'){
+            $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and ed.event_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
+        }
+
+        $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0)
+        {
+            $i = 0;
+            while($row = $temp->fetch_assoc())
+            {
+                $rows[$i]['category_name'] = $row['category_name'];
+                $rows[$i]['event_area'] = $row['area_name'];
+                $rows[$i]['event_city'] = $row['city_name'];
+                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_location'] = $row['event_location'];
+                $rows[$i]['event_name'] = $row['event_name'];
+                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['venue_name'] = $row['venue_name'];
+                $rows[$i]['datetime'] = array();
+                $rows[$i]['image'] = array();
+                $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
+                if($row['schedule'])
+                {
+                    $temp_date_array = explode(',',$row['schedule']);
+                    $y = array();
+                    foreach ($temp_date_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['date'] = $y[0];
+                        $z['start_time'] = $y[1];
+                        $z['end_time'] = $y[2];
+                        array_push($rows[$i]['datetime'] , $z);
+                    }
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Schedule not fetched properly';
+                    return $result;
+                }
+
+                if($row['image'])
+                {
+                    $temp_image_array = explode(',',$row['image']);
+                    $y = array();
+                    foreach ($temp_image_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['image_path'] = $y[0];
+                        $z['primary'] = $y[1];
+                        array_push($rows[$i]['image'] , $z);
+                    }
+                    $i++;
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Image URL\'s not fetched Properly';
+                    return $result;
+                }
+            }
+
+            $result['status'] = 'success';
+            $result['message'] = 'Event Details successfully fetched';
+            $result['data'] = $rows;
+            return $result;
+        }
+        else {
+            $result['status'] = "failure";
+            $result['message'] = 'No Events Found';
+            $result['data'] = '';
+            return $result;
+
+        }
+
+    }
+
 
 }
 //
