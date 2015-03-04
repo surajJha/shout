@@ -25,6 +25,18 @@
 
         <div class="row well">
             <div class="col-lg-6">
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="organiser_id" class="col-md-4 control-label">Organiser ID:</label>
+                        <div class="col-md-8" >
+                            <input ng-class="{ 'has-error' : eventForm.organiser_id.$invalid && !eventForm.organiser_id.$pristine }" type="text" name="organiser_id" class="form-control" id="organiser_id"  placeholder="Organiser ID" ng-model="formData.organiser_id" ng-model-options="{ updateOn: 'blur' }" required>
+                            <span class="validation-message" ng-show="eventForm.organiser_id.$error.required && eventForm.organiser_id.$dirty">Organiser ID cannot be empty !</span>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="row">
                     <div class="form-group">
                         <label for="event_name" class="col-md-4 control-label">Event Name:</label>

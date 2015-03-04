@@ -25,6 +25,7 @@ angular.module('shoutApp')
          */
 
         $scope.formData = {};
+        $scope.formData.organiser_id = '';
         $scope.formData.event_name = '';
         $scope.formData.event_category = '';
         $scope.formData.event_cost = '';
@@ -140,7 +141,7 @@ angular.module('shoutApp')
          */
         $scope.submitEventForm = function ()
         {
-           // console.log($scope.formData);
+           //console.log($scope.formData);
           //  console.log('inside contr');
           $scope.getDateTime();
         adminTaskFactory.addNewEvent($scope.formData).then(function(result)

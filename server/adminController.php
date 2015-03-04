@@ -41,6 +41,7 @@ class AdminController
     function addEvent()
     {
         $data = json_decode(file_get_contents("php://input"));
+        $data->organiser_id = (isset($data->organiser_id) && $data->organiser_id!=null )?$this->custom_filter_input($data->organiser_id):'';
         $data->event_name = (isset($data->event_name) && $data->event_name!=null )?$this->custom_filter_input($data->event_name):'';
         $data->venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$this->custom_filter_input($data->venue_name):'';
         $data->event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$this->custom_filter_input( $data->event_overview):'';
@@ -82,6 +83,7 @@ class AdminController
     function updateEventDetails()
     {
         $data = json_decode(file_get_contents("php://input"));
+        $data->organiser_id = (isset($data->organiser_id) && $data->organiser_id!=null )?$this->custom_filter_input($data->organiser_id):'';
         $data->event_name = (isset($data->event_name) && $data->event_name!=null )?$this->custom_filter_input($data->event_name):'';
         $data->venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$this->custom_filter_input($data->venue_name):'';
         $data->event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$this->custom_filter_input( $data->event_overview):'';

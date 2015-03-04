@@ -15,17 +15,13 @@ angular.module('shoutApp')
     var factory = {};
 
     // Public API here
-    /*
+    /**
     Add all the public functions to the factory object
     and then return the factory object which
-    will be then avaibale to the controller
+    will be then available to the controller
     which is using this factory
-     */
-        /**
-         * Function returns all the events
-         * belonging to a perticular client/admin
-         * @returns {*}
-         */
+     **/
+
     factory.getAllEvents = function(organiser_id) {
       var defer = $q.defer();
 
@@ -40,12 +36,7 @@ angular.module('shoutApp')
 
       return defer.promise;
     }
-        /**
-         * addnewevent takes the formdata model as input
-         * and makes a post request to the adminController
-         * @param formData
-         * @returns {*}
-         */
+
     factory.addNewEvent = function(formData) {
         var defer = $q.defer();
 
@@ -151,12 +142,6 @@ angular.module('shoutApp')
 
             return defer.promise;
         }
-
-
-
-
-
-
    return factory;
   });
 

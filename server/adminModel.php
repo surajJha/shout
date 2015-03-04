@@ -8,7 +8,7 @@ class AdminModel
     protected $event_organiser_id;
     public function __construct()
     {
-        $this->event_organiser_id =1;
+//        $this->event_organiser_id =1;
     }
 
     /**
@@ -45,7 +45,7 @@ class AdminModel
    public function addEvent($data)
    {
        $db = $this->getDatabaseObject();
-
+       $organiser_id = (isset($data->organiser_id) && $data->organiser_id!=null )?$db->real_escape_string($data->organiser_id):'';
        $venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$db->real_escape_string($data->venue_name):'';
        $event_name = (isset($data->event_name) && $data->event_name!=null )?$db->real_escape_string($data->event_name):'';
        $event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$db->real_escape_string( $data->event_overview):'';
@@ -64,7 +64,7 @@ class AdminModel
      //$event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
        if($venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
-           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$this->event_organiser_id}')";
+           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','$organiser_id}')";
            $eventDetailInserted = $db->query($query);
            $result = array();
            if($eventDetailInserted)
@@ -76,7 +76,7 @@ class AdminModel
                    {
 
                        $result['status'] = 'success';
-                       $result['organiser_id'] = $this->event_organiser_id;
+                       $result['organiser_id'] = $organiser_id;
                        $result['event_detail_id'] = $event_detail_id;
                        $result['message'] = 'Event details added successfully';
                        return $result;
