@@ -22,7 +22,8 @@ angular
     'angularFileUpload',
     'ui.bootstrap',
         'ui.map',
-        'angucomplete'
+        'angucomplete',
+        'angucomplete-alt'
 
   ])
 
