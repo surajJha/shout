@@ -36,7 +36,7 @@ angular
             .state('admin', {
                 //abstract:true,
                 url:'/admin',
-                controller:'adminController',
+
 
                 views:{
                     '':{

@@ -32,16 +32,23 @@ class Login {
         $data->password = (isset($data->password) && $data->password!=null )?$this->custom_filter_input($data->password):'';
 
         $db = $this->getDatabaseObject();
-        $query = "select event_organizer_name, event_organizer_password from event_organizer where event_organizer_name = '{$data->username}' and event_organizer_password = '{$data->password}'";
+        $query = "select event_organizer_id from event_organizer where event_organizer_name = '{$data->username}' and event_organizer_password = '{$data->password}'";
 
         $temp = $db->query($query);
+        $result = array();
         if($temp->num_rows == 1)
         {
-            echo "success";
+            $result['message'] = 'success';
+            while ($row = $temp->fetch_assoc()) {
+                $result['data'] =$row['event_organizer_id'];
+            }
+            echo json_encode($result);
         }
         else
         {
-            echo "failure";
+            $result['message'] = 'failure';
+            $result['data'] = '';
+            echo json_encode($result);
         }
 
     }
