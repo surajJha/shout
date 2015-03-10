@@ -23,6 +23,7 @@ class AdminController
 
 
     public function __construct() {
+        session_start();
         $func = $_GET['func'];
         $this->$func();
 
@@ -41,7 +42,8 @@ class AdminController
     function addEvent()
     {
         $data = json_decode(file_get_contents("php://input"));
-        $data->organiser_id = (isset($data->organiser_id) && $data->organiser_id!=null )?$this->custom_filter_input($data->organiser_id):'';
+//        $data->organiser_id = $_SESSION['organiser_id'];
+        $data->organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
         $data->event_name = (isset($data->event_name) && $data->event_name!=null )?$this->custom_filter_input($data->event_name):'';
         $data->venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$this->custom_filter_input($data->venue_name):'';
         $data->event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$this->custom_filter_input( $data->event_overview):'';
@@ -83,7 +85,6 @@ class AdminController
     function updateEventDetails()
     {
         $data = json_decode(file_get_contents("php://input"));
-        $data->organiser_id = (isset($data->organiser_id) && $data->organiser_id!=null )?$this->custom_filter_input($data->organiser_id):'';
         $data->event_name = (isset($data->event_name) && $data->event_name!=null )?$this->custom_filter_input($data->event_name):'';
         $data->venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$this->custom_filter_input($data->venue_name):'';
         $data->event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$this->custom_filter_input( $data->event_overview):'';
@@ -137,13 +138,16 @@ class AdminController
      */
     function uploadImages()
     {
-        $organiser_id = $_GET['organiser_id'];
+        $organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
         $event_detail_id = $_GET['event_detail_id'];
         $primary_image = $_GET['primary_image'];
         if(!is_dir($organiser_id))
         {
             mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
-
+        }
+        if(php_uname('s') != 'Linux' && !is_dir($organiser_id))
+        {
+            mkdir('C:/xampp/htdocs/shout/server/client_images/' .$organiser_id);
         }
         $filename = $_FILES['file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -180,7 +184,7 @@ class AdminController
      */
     function uploadUpdatedImages()
     {
-        $organiser_id = $_GET['organiser_id'];
+        $organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
         $event_image_id = $_GET['event_image_id'];
         $image_path_old = $_GET['image_path_old'];
         if(unlink($image_path_old)){
@@ -301,7 +305,7 @@ class AdminController
      */
     function getAllEvents()
     {
-        $organiser_id = $_GET['organiser_id'];
+        $organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
         $model = new AdminModel();
         $result = $model->getAllEvents($organiser_id);
         if($result['status'] == 'success')

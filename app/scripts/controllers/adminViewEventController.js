@@ -33,8 +33,7 @@ angular.module('shoutApp')
         $scope.encoded_image_path_array = [];
 
       $scope.init = function () {
-          var organiser_id = 1; //change to sessionid afterwards
-          adminTaskFactory.getAllEvents(organiser_id).then(function (result) {
+          adminTaskFactory.getAllEvents().then(function (result) {
 
               console.log(result);
              // console.log(result);
@@ -403,7 +402,6 @@ angular.module('shoutApp')
             }
 
             adminTaskFactory.updateEventDetails($scope.modalFormData).then(function(result){
-                //$scope.uploadImages();
 
                 if(result['status']==='success')
                 {
@@ -447,7 +445,7 @@ angular.module('shoutApp')
                         var file = $scope.updatedFormData.images[i];
                         console.log($scope.image_path_to_be_deleted[i]);
                         $upload.upload({
-                            url: $rootScope.baseUrl +'/server/adminController.php?func=uploadUpdatedImages&organiser_id='+$scope.modalFormData.event_organizer_id+'&event_image_id='+$scope.event_image_id[i]+'&image_path_old='+$scope.image_path_to_be_deleted[i],
+                            url: $rootScope.baseUrl +'/server/adminController.php?func=uploadUpdatedImages&event_image_id='+$scope.event_image_id[i]+'&image_path_old='+$scope.image_path_to_be_deleted[i],
                             method: 'POST',
                             data: file,
                             file: file

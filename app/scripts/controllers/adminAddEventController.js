@@ -155,7 +155,7 @@ angular.module('shoutApp')
                   * upload the images once the form with remaining
                   * fields have been entered into the database
                     */
-                   $scope.uploadImages(result['organiser_id'],result['event_detail_id']);
+                   $scope.uploadImages(result['event_detail_id']);
                    angular.element('#form-submit-message-placeholder').empty();
                    angular.element('#form-submit-message-placeholder').append('<div id="form-submit-message" class="alert alert-success" style="text-align: center;">Event added successfully !! You can view this event in the View Events Tab.</div>');
                    $timeout(function()
@@ -181,7 +181,7 @@ angular.module('shoutApp')
           });
         }
 
-        $scope.uploadImages = function(organiser_id, event_detail_id)
+        $scope.uploadImages = function(event_detail_id)
         {
 
             for(var i = 0;i<$scope.formData.images.length;i++)
@@ -190,8 +190,8 @@ angular.module('shoutApp')
                 if(i == 0)primary_image=1;
                 var file = $scope.formData.images[i];
                 $upload.upload({
-                    url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&organiser_id='+organiser_id+'&event_detail_id='+event_detail_id+'&primary_image='+primary_image,
-                    method: 'POST',
+                    url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&event_detail_id='+event_detail_id+'&primary_image='+primary_image,
+                method: 'POST',
                     data: file,
                     file: file
 
