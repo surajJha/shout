@@ -30,7 +30,7 @@ angular
     .config(function($stateProvider, $urlRouterProvider){
 
         // For any unmatched url, send to /route1
-        $urlRouterProvider.otherwise("/admin")
+        $urlRouterProvider.otherwise("/login")
 
         $stateProvider
             .state('admin', {
@@ -62,10 +62,10 @@ angular
                 controller : 'adminViewEventController'
 
             })
-            .state('about', {
-                url:'/about',
-                templateUrl:'views/about.html',
-                controller : 'adminAddEventController'
+            .state('login', {
+                url:'/login',
+                templateUrl:'views/login.html',
+                controller : 'loginController'
             })
 
     })

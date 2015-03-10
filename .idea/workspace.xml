@@ -3,19 +3,19 @@
   <component name="AnalysisUIOptions">
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/server/adminController.php" line="121" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="Added search by area event venue">
+    <list id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="" />
+    <list default="true" id="a71434d1-35c3-4c02-8c00-24ae8ba1e054" name="New changelist" comment="New changelist">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/controllers/login.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/spec/controllers/login.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/services/loginservice.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/spec/services/loginservice.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin.html" afterPath="$PROJECT_DIR$/app/views/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" afterPath="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userController.php" afterPath="$PROJECT_DIR$/server/userController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userModel.php" afterPath="$PROJECT_DIR$/server/userModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -29,6 +29,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/shout$karma.coverage" NAME="karma Coverage Results" MODIFIED="1423201186331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="KarmaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CoverageViewManager">
     <option name="myAutoScrollToSource" value="true" />
   </component>
@@ -72,6 +75,42 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
+        <option name="myItemId" value="event_image" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - shout@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="shout" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="event_detail" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - shout@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="shout" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
         <option name="myItemId" value="area" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
@@ -83,68 +122,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="databaseConnection.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/databaseConnection.php">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47275922" vertical-offset="20" max-vertical-offset="612">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="833">
-              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/adminModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2363636" vertical-offset="4114" max-vertical-offset="11356">
-              <caret line="238" column="426" selection-start-line="238" selection-start-column="331" selection-end-line="238" selection-end-column="426" />
+            <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="360">
+              <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
               <folding>
-                <marker date="1423479362492" expanded="true" signature="3642:3975" placeholder="insert into ..." />
-                <marker date="1423479362492" expanded="true" signature="8346:8668" placeholder="UPDATE event..." />
-                <marker date="1423479362492" expanded="true" signature="12150:12229" placeholder="update event..." />
-                <marker date="1423479362492" expanded="true" signature="13128:13830" placeholder="select ed.ev..event_detail..." />
-                <marker date="1423479362492" expanded="true" signature="17661:17802" placeholder="insert into ..." />
-                <marker date="1423479362492" expanded="true" signature="19121:19172" placeholder="select * fro..hashtag..." />
-                <marker date="1423479362492" expanded="true" signature="19293:19346" placeholder="insert into ..." />
-                <marker date="1423479362492" expanded="true" signature="19503:19582" placeholder="update hasht..." />
-                <marker date="1423479362492" expanded="true" signature="21351:21526" placeholder="insert into ..." />
-                <marker date="1423479362492" expanded="true" signature="22263:22438" placeholder="insert into ..." />
-                <marker date="1423479362492" expanded="true" signature="23124:23299" placeholder="insert into ..." />
-                <marker date="1423479362492" expanded="true" signature="24110:24144" placeholder="select categ..category..." />
-                <marker date="1423479362492" expanded="true" signature="25056:25118" placeholder="SELECT area_..area..." />
-                <marker date="1423479362492" expanded="true" signature="26008:26043" placeholder="SELECT DISTI..area..." />
-                <marker date="1423479362492" expanded="true" signature="27017:27086" placeholder="delete from ..." />
-                <marker date="1423479362492" expanded="true" signature="28086:28187" placeholder="update event..." />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminController.js">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-              <caret line="10" column="88" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.6227348" vertical-offset="0" max-vertical-offset="607">
+              <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/userController.php">
+      <file leaf-file-name="loginservice.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/loginservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.461538" vertical-offset="2032" max-vertical-offset="2754">
-              <caret line="139" column="67" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="720">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.222222" vertical-offset="435" max-vertical-offset="1170">
+              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+              <folding>
+                <marker date="1425965823114" expanded="true" signature="993:1149" placeholder="select event..event_organizer..." />
+                <marker date="1425965823114" expanded="true" signature="993:1166" placeholder="select event..event_organizer..." />
+                <marker date="1425965823114" expanded="true" signature="993:1167" placeholder="select event..event_organizer..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQL - shout@localhost" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://db-console:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
+              <caret line="0" column="152" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="153" />
               <folding />
             </state>
           </provider>
@@ -153,30 +181,40 @@
       <file leaf-file-name="userModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/userModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.038462" vertical-offset="5751" max-vertical-offset="7718">
-              <caret line="326" column="9" selection-start-line="326" selection-start-column="9" selection-end-line="326" selection-end-column="9" />
+            <state vertical-scroll-proportion="-14.666667" vertical-offset="432" max-vertical-offset="7488">
+              <caret line="46" column="9" selection-start-line="40" selection-start-column="8" selection-end-line="46" selection-end-column="9" />
               <folding>
-                <marker date="1423931866326" expanded="true" signature="990:1629" placeholder="select ed.ev..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="4241:4876" placeholder="select ed.ev..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="7460:8095" placeholder="select ed.ev..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="10917:11572" placeholder="select ed.ev..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="13871:13968" placeholder="select area_..area..." />
-                <marker date="1423931866326" expanded="true" signature="13871:14304" placeholder="select area_..." />
-                <marker date="1423931866326" expanded="true" signature="13980:14136" placeholder="select e.eve..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="14148:14304" placeholder="select e.ven..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="15083:15766" placeholder="select ed.ev..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="15839:16520" placeholder="select ed.ev..event_detail..." />
-                <marker date="1423931866326" expanded="true" signature="16594:17277" placeholder="select ed.ev..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="990:1629" placeholder="select ed.ev..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="4241:4876" placeholder="select ed.ev..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="7460:8095" placeholder="select ed.ev..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="10917:11572" placeholder="select ed.ev..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="13871:13968" placeholder="select area_..area..." />
+                <marker date="1423986656743" expanded="true" signature="13871:14304" placeholder="select area_..." />
+                <marker date="1423986656743" expanded="true" signature="13980:14136" placeholder="select e.eve..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="14148:14304" placeholder="select e.ven..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="15083:15766" placeholder="select ed.ev..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="15839:16520" placeholder="select ed.ev..event_detail..." />
+                <marker date="1423986656743" expanded="true" signature="16594:17277" placeholder="select ed.ev..event_detail..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <file leaf-file-name="userController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/userController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state vertical-scroll-proportion="8.666667" vertical-offset="432" max-vertical-offset="2934">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/adminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.333333" vertical-offset="5391" max-vertical-offset="5958">
+              <caret line="315" column="3" selection-start-line="315" selection-start-column="3" selection-end-line="321" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -185,28 +223,8 @@
       <file leaf-file-name="admintaskfactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2363" max-vertical-offset="3213">
-              <caret line="162" column="99" selection-start-line="162" selection-start-column="99" selection-end-line="162" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminAddEventController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="4624">
-              <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615" vertical-offset="2142" max-vertical-offset="3060">
-              <caret line="148" column="53" selection-start-line="148" selection-start-column="53" selection-end-line="148" selection-end-column="53" />
+            <state vertical-scroll-proportion="-9.814815" vertical-offset="599" max-vertical-offset="3402">
+              <caret line="48" column="11" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -221,31 +239,44 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="PUSH_TAGS">
-      <GitPushTagMode />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
+    <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/directives/addbutton.js" />
-        <option value="$PROJECT_DIR$/app/styles/base.css" />
-        <option value="$PROJECT_DIR$/server/resize.php" />
+        <option value="$PROJECT_DIR$/test/spec/controllers/adminHomecontroller.js" />
+        <option value="db-console:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/" />
+        <option value="$PROJECT_DIR$/app/views/about.html" />
+        <option value="$PROJECT_DIR$/app/css/base.css" />
+        <option value="$PROJECT_DIR$/app/views/main.html" />
+        <option value="$PROJECT_DIR$/app/views/partials/adminSidebar.html" />
+        <option value="$PROJECT_DIR$/test/spec/controllers/adminAddEventController.js" />
         <option value="$PROJECT_DIR$/app/scripts/directives/mydatepicker.js" />
-        <option value="$PROJECT_DIR$/app/views/partials/adminAddEvent.html" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
-        <option value="$PROJECT_DIR$/server/adminController.php" />
+        <option value="$PROJECT_DIR$/server/test.php" />
+        <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/server/adminModel.php" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
-        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
-        <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/app/views/admin.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
+        <option value="$PROJECT_DIR$/app/views/partials/adminAddEvent.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
-        <option value="$PROJECT_DIR$/server/userController.php" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminController.js" />
+        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
+        <option value="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
+        <option value="$PROJECT_DIR$/app/styles/base.css" />
+        <option value="$PROJECT_DIR$/bower_components/angucomplete/angucomplete.js" />
+        <option value="$PROJECT_DIR$/test/karma.conf.js" />
+        <option value="$PROJECT_DIR$/server/searchquery.txt" />
         <option value="$PROJECT_DIR$/server/userModel.php" />
-        <option value="$PROJECT_DIR$/server/databaseConnection.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminController.js" />
+        <option value="$PROJECT_DIR$/server/userController.php" />
+        <option value="$PROJECT_DIR$/server/adminController.php" />
+        <option value="$PROJECT_DIR$/app/views/admin.html" />
+        <option value="$PROJECT_DIR$/test/spec/controllers/login.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/views/login.html" />
+        <option value="$PROJECT_DIR$/app/scripts/services/loginservice.js" />
+        <option value="db-console:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/" />
+        <option value="$PROJECT_DIR$/server/login.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
       </list>
     </option>
   </component>
@@ -402,18 +433,15 @@
     </gruntfiles>
     <initial>false</initial>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-  </component>
   <component name="JsKarmaPackageDirSetting">
     <data>$PROJECT_DIR$/node_modules/karma</data>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="x" value="57" />
+    <option name="y" value="21" />
+    <option name="width" value="1309" />
+    <option name="height" value="747" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -443,6 +471,9 @@
     <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -499,7 +530,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -513,11 +544,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angucomplete-alt" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -532,6 +563,64 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -597,31 +686,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../roll" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editorconfig.notification" value="Applied .editorconfig settings" />
@@ -642,20 +713,340 @@
       <recent name="$PROJECT_DIR$/server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/client_images" />
       <recent name="$PROJECT_DIR$/app/styles" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:80" />
+          <option name="urlPath" value="shout/server/adminController.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category_name" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventArea" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getAllEvents" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="organiser_id" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:80" />
+          <option name="urlPath" value="shout/server/adminController.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category_name" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventArea" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:80" />
+          <option name="urlPath" value="shout/server/adminController.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category_name" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventCategory" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:80" />
+          <option name="urlPath" value="shout/server/userController.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category_name" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:80" />
+          <option name="urlPath" value="shout/server/userController.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:80" />
+          <option name="urlPath" value="shout/server/userController" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="func" />
+                <option name="value" value="getEventsByCategory" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="category" />
+                <option name="value" value="comedy" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:80" />
+          <option name="urlPath" value="/resources" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Karma.karma">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
@@ -664,19 +1055,22 @@
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
-      <pass-parent-envs>true</pass-parent-envs>
+      <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="false" name="karma" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="$PROJECT_DIR$/test/karma.conf.js">
@@ -687,7 +1081,9 @@
       <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerRun" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Karma.karma" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -696,6 +1092,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="" />
+      <changelist id="a71434d1-35c3-4c02-8c00-24ae8ba1e054" name="New changelist" comment="" />
       <created>1419832958275</created>
       <option name="number" value="Default" />
       <updated>1419832958275</updated>
@@ -736,145 +1133,116 @@
       <option name="project" value="LOCAL" />
       <updated>1420213337019</updated>
     </task>
-    <task id="LOCAL-00008" summary="Datepicker completed">
-      <created>1420990832689</created>
+    <task id="LOCAL-00008" summary="installed datepicker and file upload">
+      <created>1420786599628</created>
       <option name="number" value="00008" />
       <option name="project" value="LOCAL" />
-      <updated>1420990832689</updated>
+      <updated>1420786599628</updated>
     </task>
-    <task id="LOCAL-00009" summary="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP">
-      <created>1420991286789</created>
+    <task id="LOCAL-00009" summary="installed datepicker and file upload">
+      <created>1420786632198</created>
       <option name="number" value="00009" />
       <option name="project" value="LOCAL" />
-      <updated>1420991286789</updated>
+      <updated>1420786632198</updated>
     </task>
-    <task id="LOCAL-00010" summary="added time picker">
-      <created>1420993333448</created>
+    <task id="LOCAL-00010" summary="form without datepicker">
+      <created>1420892583740</created>
       <option name="number" value="00010" />
       <option name="project" value="LOCAL" />
-      <updated>1420993333448</updated>
+      <updated>1420892583740</updated>
     </task>
-    <task id="LOCAL-00011" summary="edit template">
-      <created>1421596372269</created>
+    <task id="LOCAL-00011" summary="Insert done partially">
+      <created>1421219374214</created>
       <option name="number" value="00011" />
       <option name="project" value="LOCAL" />
-      <updated>1421596372269</updated>
+      <updated>1421219374214</updated>
     </task>
-    <task id="LOCAL-00012" summary="nothing">
-      <created>1421596464868</created>
+    <task id="LOCAL-00012" summary="New changelist">
+      <created>1421302543176</created>
       <option name="number" value="00012" />
       <option name="project" value="LOCAL" />
-      <updated>1421596464868</updated>
+      <updated>1421302543176</updated>
     </task>
-    <task id="LOCAL-00013" summary="addition of modal done">
-      <created>1421689181146</created>
+    <task id="LOCAL-00013" summary="admincontroller documentattion almost done">
+      <created>1421866780112</created>
       <option name="number" value="00013" />
       <option name="project" value="LOCAL" />
-      <updated>1421689181146</updated>
+      <updated>1421866780112</updated>
     </task>
-    <task id="LOCAL-00014" summary="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP">
-      <created>1421774015172</created>
+    <task id="LOCAL-00014" summary="added test images&#10;">
+      <created>1421940696248</created>
       <option name="number" value="00014" />
       <option name="project" value="LOCAL" />
-      <updated>1421774015172</updated>
+      <updated>1421940696248</updated>
     </task>
-    <task id="LOCAL-00015" summary="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP">
-      <created>1421856208388</created>
+    <task id="LOCAL-00015" summary="New changelist">
+      <created>1423202347290</created>
       <option name="number" value="00015" />
       <option name="project" value="LOCAL" />
-      <updated>1421856208388</updated>
+      <updated>1423202347290</updated>
     </task>
-    <task id="LOCAL-00016" summary="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP">
-      <created>1421860938424</created>
+    <task id="LOCAL-00016" summary="New changelist">
+      <created>1423205064886</created>
       <option name="number" value="00016" />
       <option name="project" value="LOCAL" />
-      <updated>1421860938424</updated>
+      <updated>1423205064886</updated>
     </task>
-    <task id="LOCAL-00017" summary="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP">
-      <created>1422268010302</created>
+    <task id="LOCAL-00017" summary="New changelist">
+      <created>1423288964843</created>
       <option name="number" value="00017" />
       <option name="project" value="LOCAL" />
-      <updated>1422268010302</updated>
+      <updated>1423288964843</updated>
     </task>
-    <task id="LOCAL-00018" summary="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP">
-      <created>1422378042304</created>
+    <task id="LOCAL-00018" summary="New changelist">
+      <created>1423297293228</created>
       <option name="number" value="00018" />
       <option name="project" value="LOCAL" />
-      <updated>1422378042304</updated>
+      <updated>1423297293228</updated>
     </task>
-    <task id="LOCAL-00019" summary="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP">
-      <created>1422805739516</created>
+    <task id="LOCAL-00019" summary="New changelist">
+      <created>1423300614537</created>
       <option name="number" value="00019" />
       <option name="project" value="LOCAL" />
-      <updated>1422805739516</updated>
+      <updated>1423300614537</updated>
     </task>
-    <task id="LOCAL-00020" summary="Added area_id in everything required there is a minor bug.">
-      <created>1423480277522</created>
+    <task id="LOCAL-00020" summary="New changelist">
+      <created>1423302993079</created>
       <option name="number" value="00020" />
       <option name="project" value="LOCAL" />
-      <updated>1423480277522</updated>
+      <updated>1423302993079</updated>
     </task>
     <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <frame x="57" y="21" width="1309" height="747" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58908504" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32263243" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19359756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.589939" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41463414" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18138042" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23520127" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24886535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25809" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19818456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18468824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18138042" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423756" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48784193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905295" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291239" sideWeight="0.5007728" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="REST Client" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33231708" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.111280486" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42557883" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940805" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32263243" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18138042" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23520127" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18138042" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423756" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58908504" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905295" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24886535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19818456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42557883" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.configurationType" implementationName="JavaScriptTestRunnerKarma" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -894,449 +1262,453 @@
     </option>
     <MESSAGE value="first ccommit" />
     <MESSAGE value="project initial setup complete. no meaningful code written yet" />
-    <MESSAGE value="Datepicker completed" />
-    <MESSAGE value="added time picker" />
-    <MESSAGE value="edit template" />
-    <MESSAGE value="nothing" />
-    <MESSAGE value="addition of modal done" />
     <MESSAGE value="ADDED THE PRELIMINARY SQL FILE AND DONE WITH KARMA SETUP" />
-    <MESSAGE value="Added area_id in everything required there is a minor bug." />
-    <MESSAGE value="Added search by area event venue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added search by area event venue" />
+    <MESSAGE value="installed datepicker and file upload" />
+    <MESSAGE value="form without datepicker" />
+    <MESSAGE value="Insert done partially" />
+    <MESSAGE value="admincontroller documentattion almost done" />
+    <MESSAGE value="added test images&#10;" />
+    <MESSAGE value="New changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="New changelist" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/test/spec/controllers/adminAddEventController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1602">
-          <caret line="36" column="83" selection-start-line="36" selection-start-column="83" selection-end-line="36" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.48447204" vertical-offset="0" max-vertical-offset="504">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/mydatepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="360">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1302" max-vertical-offset="2070">
+          <caret line="91" column="408" selection-start-line="91" selection-start-column="408" selection-end-line="91" selection-end-column="408" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+    <entry file="file://$PROJECT_DIR$/server/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="972">
+        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="378">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
+          <caret line="5" column="84" selection-start-line="5" selection-start-column="84" selection-end-line="5" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/shout_neha.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4356">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="1782">
-          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
-        </state>
+    <entry file="dbDummy://dbtable:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/shout..event_image">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="918">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6044" max-vertical-offset="7452">
-          <caret line="357" column="92" selection-start-line="357" selection-start-column="92" selection-end-line="357" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1602">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="342">
-          <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1782">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="918">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6044" max-vertical-offset="7452">
-          <caret line="357" column="92" selection-start-line="357" selection-start-column="92" selection-end-line="357" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="964" max-vertical-offset="1602">
-          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="792">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-        </state>
+    <entry file="dbDummy://dbtable:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/shout..event_schedule">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6787" max-vertical-offset="7452">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1566">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+    <entry file="dbDummy://dbtable:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/shout..hashtag">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1566">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1746">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.bowerrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6044" max-vertical-offset="7452">
-          <caret line="357" column="92" selection-start-line="357" selection-start-column="92" selection-end-line="357" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="108" max-vertical-offset="918">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3</OriginalElement>
-          <nodes>
-            <node x="610.2185792349726" y="808.6812386156648">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.area</node>
-            <node x="351.0" y="410.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_schedule</node>
-            <node x="0.0" y="410.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_organizer</node>
-            <node x="0.0" y="0.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_detail</node>
-            <node x="520.0" y="610.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.category</node>
-            <node x="285.0" y="610.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.hashtag</node>
-            <node x="0.0" y="610.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_image</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.6391152502910361" x="4.0" y="506.0" />
-          <SelectedNodes>
-            <node>9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_schedule</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1818">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="373">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/eventController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/adminSidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1190">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="401" max-vertical-offset="1260">
+          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/eventModel.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/phrase.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3884007" vertical-offset="0" max-vertical-offset="569">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.33278418" vertical-offset="5666" max-vertical-offset="7218">
+          <caret line="326" column="16" selection-start-line="326" selection-start-column="16" selection-end-line="326" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/base.css">
+    <entry file="file://$PROJECT_DIR$/bower_components/bootstrap-sweetalert/lib/sweet-alert.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="3842">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        <state vertical-scroll-proportion="-0.033492822" vertical-offset="14" max-vertical-offset="810">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/addbutton.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/eventwidget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="17" column="143" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="143" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/header.js">
+    <entry file="file://$PROJECT_DIR$/bower_components/bootstrap-sweetalert/lib/sweet-alert.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.33190578" vertical-offset="3409" max-vertical-offset="12780">
+          <caret line="200" column="29" selection-start-line="200" selection-start-column="29" selection-end-line="200" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/bootstrap-sweetalert/lib/sweet-alert.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.325" vertical-offset="4212" max-vertical-offset="10260">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/bootstrap/dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.740741" vertical-offset="74896" max-vertical-offset="114084">
+          <caret line="4171" column="16" selection-start-line="4171" selection-start-column="10" selection-end-line="4171" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/shout..event_detail">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/shout..area">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1854">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/angucomplete/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3636364" vertical-offset="810" max-vertical-offset="1944">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/angucomplete/angucomplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4536">
+          <caret line="3" column="19" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/eventController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="504">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/searchquery.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4952" max-vertical-offset="11034">
+          <caret line="291" column="25" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="522">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/shout..category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/resize.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="3485">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1972" max-vertical-offset="3690">
+          <caret line="152" column="52" selection-start-line="152" selection-start-column="52" selection-end-line="152" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29209623" vertical-offset="0" max-vertical-offset="582">
-          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/mydatepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1336" max-vertical-offset="1938">
-          <caret line="91" column="1025" selection-start-line="91" selection-start-column="1025" selection-end-line="91" selection-end-column="1025" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4416" max-vertical-offset="8313">
-          <caret line="279" column="36" selection-start-line="279" selection-start-column="36" selection-end-line="279" selection-end-column="36" />
-          <folding>
-            <marker date="1423479764339" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423479764339" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="5627">
-          <caret line="87" column="149" selection-start-line="87" selection-start-column="149" selection-end-line="87" selection-end-column="149" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2912" max-vertical-offset="7452">
+          <caret line="223" column="16" selection-start-line="223" selection-start-column="16" selection-end-line="223" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+    <entry file="file://$PROJECT_DIR$/dist/styles/main.042196f7.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="2125" max-vertical-offset="5610">
-          <caret line="132" column="30" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/dist/scripts/scripts.a3d08343.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="2142" max-vertical-offset="3060">
-          <caret line="148" column="53" selection-start-line="148" selection-start-column="53" selection-end-line="148" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="401">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53724605" vertical-offset="0" max-vertical-offset="5236">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="792">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angucomplete-alt/angucomplete-alt.js">
+    <entry file="file://$PROJECT_DIR$/app/styles/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54371" vertical-offset="153" max-vertical-offset="11509">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6174">
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="19" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="4624">
-          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1764" max-vertical-offset="4896">
+          <caret line="114" column="45" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
+          <folding>
+            <marker date="1423986656731" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1423986656731" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="1260">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="8802">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <marker date="1423986656731" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1423986656731" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.333334" vertical-offset="0" max-vertical-offset="5544">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="833">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="378">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+    <entry file="file://$PROJECT_DIR$/test/spec/controllers/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2363" max-vertical-offset="3213">
-          <caret line="162" column="99" selection-start-line="162" selection-start-column="99" selection-end-line="162" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminController.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="10" column="88" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1548">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="5940">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3333335" vertical-offset="2691" max-vertical-offset="3276">
+          <caret line="156" column="49" selection-start-line="156" selection-start-column="49" selection-end-line="156" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/userController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.461538" vertical-offset="2032" max-vertical-offset="2754">
-          <caret line="139" column="67" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="67" />
+        <state vertical-scroll-proportion="8.666667" vertical-offset="432" max-vertical-offset="2934">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+    <entry file="file://$PROJECT_DIR$/app/views/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2363636" vertical-offset="4114" max-vertical-offset="11356">
-          <caret line="238" column="426" selection-start-line="238" selection-start-column="331" selection-end-line="238" selection-end-column="426" />
+        <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="360">
+          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
           <folding>
-            <marker date="1423479362492" expanded="true" signature="3642:3975" placeholder="insert into ..." />
-            <marker date="1423479362492" expanded="true" signature="8346:8668" placeholder="UPDATE event..." />
-            <marker date="1423479362492" expanded="true" signature="12150:12229" placeholder="update event..." />
-            <marker date="1423479362492" expanded="true" signature="13128:13830" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423479362492" expanded="true" signature="17661:17802" placeholder="insert into ..." />
-            <marker date="1423479362492" expanded="true" signature="19121:19172" placeholder="select * fro..hashtag..." />
-            <marker date="1423479362492" expanded="true" signature="19293:19346" placeholder="insert into ..." />
-            <marker date="1423479362492" expanded="true" signature="19503:19582" placeholder="update hasht..." />
-            <marker date="1423479362492" expanded="true" signature="21351:21526" placeholder="insert into ..." />
-            <marker date="1423479362492" expanded="true" signature="22263:22438" placeholder="insert into ..." />
-            <marker date="1423479362492" expanded="true" signature="23124:23299" placeholder="insert into ..." />
-            <marker date="1423479362492" expanded="true" signature="24110:24144" placeholder="select categ..category..." />
-            <marker date="1423479362492" expanded="true" signature="25056:25118" placeholder="SELECT area_..area..." />
-            <marker date="1423479362492" expanded="true" signature="26008:26043" placeholder="SELECT DISTI..area..." />
-            <marker date="1423479362492" expanded="true" signature="27017:27086" placeholder="delete from ..." />
-            <marker date="1423479362492" expanded="true" signature="28086:28187" placeholder="update event..." />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.814815" vertical-offset="599" max-vertical-offset="3402">
+          <caret line="48" column="11" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/adminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.333333" vertical-offset="5391" max-vertical-offset="5958">
+          <caret line="315" column="3" selection-start-line="315" selection-start-column="3" selection-end-line="321" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/userModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.038462" vertical-offset="5751" max-vertical-offset="7718">
-          <caret line="326" column="9" selection-start-line="326" selection-start-column="9" selection-end-line="326" selection-end-column="9" />
+        <state vertical-scroll-proportion="-14.666667" vertical-offset="432" max-vertical-offset="7488">
+          <caret line="46" column="9" selection-start-line="40" selection-start-column="8" selection-end-line="46" selection-end-column="9" />
           <folding>
-            <marker date="1423931866326" expanded="true" signature="990:1629" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="4241:4876" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="7460:8095" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="10917:11572" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="13871:13968" placeholder="select area_..area..." />
-            <marker date="1423931866326" expanded="true" signature="13871:14304" placeholder="select area_..." />
-            <marker date="1423931866326" expanded="true" signature="13980:14136" placeholder="select e.eve..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="14148:14304" placeholder="select e.ven..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="15083:15766" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="15839:16520" placeholder="select ed.ev..event_detail..." />
-            <marker date="1423931866326" expanded="true" signature="16594:17277" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="990:1629" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="4241:4876" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="7460:8095" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="10917:11572" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="13871:13968" placeholder="select area_..area..." />
+            <marker date="1423986656743" expanded="true" signature="13871:14304" placeholder="select area_..." />
+            <marker date="1423986656743" expanded="true" signature="13980:14136" placeholder="select e.eve..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="14148:14304" placeholder="select e.ven..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="15083:15766" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="15839:16520" placeholder="select ed.ev..event_detail..." />
+            <marker date="1423986656743" expanded="true" signature="16594:17277" placeholder="select ed.ev..event_detail..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/databaseConnection.php">
+    <entry file="dbDummy://dbtable:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/shout..event_organizer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://db-console:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47275922" vertical-offset="20" max-vertical-offset="612">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="31" />
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="152" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="153" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.222222" vertical-offset="435" max-vertical-offset="1170">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding>
+            <marker date="1425965823114" expanded="true" signature="993:1149" placeholder="select event..event_organizer..." />
+            <marker date="1425965823114" expanded="true" signature="993:1166" placeholder="select event..event_organizer..." />
+            <marker date="1425965823114" expanded="true" signature="993:1167" placeholder="select event..event_organizer..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/loginservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="720">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6227348" vertical-offset="0" max-vertical-offset="607">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
   </component>
 </project>
+

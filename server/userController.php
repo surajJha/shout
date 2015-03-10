@@ -159,4 +159,4 @@ class UserController
 
 }
 
-$model1 = new UserController();
+$model = new UserController();
