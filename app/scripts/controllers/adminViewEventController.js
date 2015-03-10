@@ -34,58 +34,49 @@ angular.module('shoutApp')
 
       $scope.init = function () {
           adminTaskFactory.getAllEvents().then(function (result) {
-
-              console.log(result);
-             // console.log(result);
-
               /** Storing the length in
               * result_length so that it can be
                * used in ng-repeat to
                * repeat the loop and create the div
               */
-                $scope.makeArray(result);
+
 
               var k = -1;
-              for(var i=0; i< result.length; i++){
-                  $scope.formData.event_detail_id[i] = result[i].event_detail_id;
-                  $scope.formData.event_name[i] = result[i].event_name;
-                  $scope.formData.event_category[i] = result[i].category_name;
-                  $scope.formData.event_cost[i] = result[i].event_cost;
-                  $scope.formData.event_overview[i] = result[i].event_overview;
-                  $scope.formData.event_hashtags[i] = result[i].event_hashtags;
-                  $scope.formData.venue_name[i] = result[i].venue_name;
-                  $scope.formData.event_area[i] = result[i].event_area;
-                  $scope.formData.event_city[i] = result[i].event_city;
-                  $scope.formData.event_location[i] = result[i].event_location;
-                  $scope.formData.event_organizer_id = result[i].event_organizer_id;
-                  $scope.formData.image[i] = result[i].image;
-                  $scope.formData.datetime[i] = result[i].datetime;
-              //    $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
-                  // getting primary images
-                  // using closure to preserve the value of for loop variable
-                  // so that for loop does not get executed before promise returns
-                  $scope.formData.event_cost[i] = parseInt($scope.formData.event_cost[i]);
+              if(result != 'There are no existing events. Please contact the administrator for further enquiry'){
+                  $scope.makeArray(result);
+                  for(var i=0; i< result.length; i++){
+                      $scope.formData.event_detail_id[i] = result[i].event_detail_id;
+                      $scope.formData.event_name[i] = result[i].event_name;
+                      $scope.formData.event_category[i] = result[i].category_name;
+                      $scope.formData.event_cost[i] = result[i].event_cost;
+                      $scope.formData.event_overview[i] = result[i].event_overview;
+                      $scope.formData.event_hashtags[i] = result[i].event_hashtags;
+                      $scope.formData.venue_name[i] = result[i].venue_name;
+                      $scope.formData.event_area[i] = result[i].event_area;
+                      $scope.formData.event_city[i] = result[i].event_city;
+                      $scope.formData.event_location[i] = result[i].event_location;
+                      $scope.formData.event_organizer_id = result[i].event_organizer_id;
+                      $scope.formData.image[i] = result[i].image;
+                      $scope.formData.datetime[i] = result[i].datetime;
+                      //    $scope.formData.no_of_days[i] = $scope.formData.datetime[i].length;
+                      // getting primary images
+                      // using closure to preserve the value of for loop variable
+                      // so that for loop does not get executed before promise returns
+                      $scope.formData.event_cost[i] = parseInt($scope.formData.event_cost[i]);
 
-                for(var j = 0;j<$scope.formData.image[i].length;j++){
-                    if($scope.formData.image[i][j].primary == 1) {
-                        k++;
-                        (function(j_alias,k){
-                            adminTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
-                                $scope.encoded_image_path_array[k] = result;
+                      for(var j = 0;j<$scope.formData.image[i].length;j++){
+                          if($scope.formData.image[i][j].primary == 1) {
+                              k++;
+                              (function(j_alias,k){
+                                  adminTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
+                                      $scope.encoded_image_path_array[k] = result;
 
-                            })
-                        }(j,k))
-                    }
+                                  })
+                              }(j,k))
+                          }
 
-                }
-
-
-                  //for(var j=0;j <$scope.formData.image[i].length;j++){
-                  //    if($scope.formData.image[i][j].image_path == ''){
-                  //        $scope.formData.image[i][j].image_path = '/var/www/html/shout/app/images/placeholder.jpg';
-                  //    }
-                  //}
-
+                      }
+              }
 
 
               }
@@ -385,7 +376,7 @@ angular.module('shoutApp')
             $scope.modalFormData.hash2 = $scope.updatedFormData.event_hashtags[id][1];
             $scope.modalFormData.hash3 = $scope.updatedFormData.event_hashtags[id][2];
             $scope.modalFormData.venue_name = $scope.updatedFormData.venue_name[id];
-            $scope.modalFormData.event_area = $scope.selectedArea;
+            $scope.modalFormData.event_area = $scope.selectedArea[0];
             $scope.modalFormData.event_location = $scope.updatedFormData.event_location[id];
             $scope.modalFormData.change_event_schedule_flag = $scope.change_event_schedule_flag;
             $scope.modalFormData.repeatEventCheckbox = $scope.updatedFormData.repeatEventCheckbox;
@@ -393,7 +384,6 @@ angular.module('shoutApp')
             $scope.modalFormData.no_of_months = $scope.updatedFormData.no_of_months;
             $scope.modalFormData.repeatType = $scope.updatedFormData.repeatType;
             $scope.modalFormData.event_organizer_id = 1; //$scope.updatedFormData.event_organizer_id[id];
-
 
             if($scope.modalFormData.change_event_schedule_flag) {
                 $scope.getDateTime();
