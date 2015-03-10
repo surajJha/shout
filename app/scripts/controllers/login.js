@@ -27,4 +27,21 @@ angular.module('shoutApp')
                }
             })
         }
+
+        $scope.logout = function(){
+            console.log("logout pressed");
+            loginService.logout().then(function(res){
+                if(res.message = 'success'){
+                    sessionService.destroy('user')
+                    $state.go('login');
+                }
+            })
+
+        }
+
+       //$scope.isLogged = function() {
+       //    if (sessionService.get('user')) return true;
+       //    else return false;
+       //}
+
   });

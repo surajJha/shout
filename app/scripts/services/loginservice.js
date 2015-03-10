@@ -21,14 +21,24 @@ angular.module('shoutApp')
           $http.post($rootScope.baseUrl + '/server/login.php?func=login', user)
               .success(function(res){
                   defer.resolve(res);
-
               })
               .error(function (err, status) {
                   defer.reject(err);
               })
-
           return defer.promise;
+      },
 
-      }
+        logout: function ( ) {
+            var defer = $q.defer();
+
+            $http.get($rootScope.baseUrl + '/server/login.php?func=logout')
+                .success(function(res){
+                    defer.resolve(res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+            return defer.promise;
+        }
     };
   });

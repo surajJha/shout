@@ -22,8 +22,8 @@ angular
     'angularFileUpload',
     'ui.bootstrap',
         'ui.map',
-        'angucomplete',
-        'angucomplete-alt'
+        'angucomplete'
+
 
   ])
 
@@ -69,7 +69,7 @@ angular
             })
 
     })
-  .run(function($rootScope){
+  .run(function($rootScope, $location, sessionService){
         /**
          * base URL  points to the server where PHP interpreter
          * is present. PORT 80 used by apache has the interpreter
@@ -77,4 +77,12 @@ angular
          * @type {string}
          */
     $rootScope.baseUrl = 'http://localhost:80/shout'
+
+    //var routespermission = ['/admin']; // stats that require permission
+    //    $rootScope.$on('$routeChangeStart', function(){
+    //        if(routespermission.indexOf($location.path()) != -1 &&  !(sessionService.get('user')))
+    //        {
+    //            $location.path('/login')
+    //        }
+    //    })
   })

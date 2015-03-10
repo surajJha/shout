@@ -38,10 +38,13 @@ class Login {
         $result = array();
         if($temp->num_rows == 1)
         {
+            session_start();
             $result['message'] = 'success';
             while ($row = $temp->fetch_assoc()) {
                 $result['data'] =$row['event_organizer_id'];
+                $_SESSION['organiser_id'] = $row['event_organizer_id'];
             }
+
             echo json_encode($result);
         }
         else
@@ -51,6 +54,16 @@ class Login {
             echo json_encode($result);
         }
 
+    }
+
+    public function logout() {
+        session_start();
+        session_unset();
+        session_destroy();
+        session_write_close();
+        $result = array();
+        $result['message'] = 'success';
+        echo json_encode($result);
     }
 
     function custom_filter_input($data)
