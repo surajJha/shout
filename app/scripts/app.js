@@ -69,7 +69,7 @@ angular
             })
 
     })
-  .run(function($rootScope, $location, sessionService){
+  .run(function($route, $state, $stateParams, $rootScope, $location, sessionService){
         /**
          * base URL  points to the server where PHP interpreter
          * is present. PORT 80 used by apache has the interpreter
@@ -85,4 +85,10 @@ angular
     //            $location.path('/login')
     //        }
     //    })
+        $rootScope.$on('$stateChangeSuccess', function(){
+            if(($state.is('admin') || $state.is('admin.add') || $state.is('admin.view') ) && (sessionStorage.getItem('user')=='' || sessionStorage.getItem('user')==0 || sessionStorage.getItem('user')==null)){
+                $state.go('login');
+            }
+        });
+
   })

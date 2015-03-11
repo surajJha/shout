@@ -5,10 +5,10 @@ ini_set('display_errors', '1');
 include_once 'databaseConnection.php';
 class AdminModel
 {
-    protected $event_organiser_id;
+
     public function __construct()
     {
-//        $this->event_organiser_id =1;
+
     }
 
     /**
@@ -63,7 +63,7 @@ class AdminModel
        $hash3 = (isset($data->hash3) && $data->hash3!=null )?$db->real_escape_string($data->hash3):'';
      //$event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
-       if($venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
+       if($organiser_id!='' && $venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
            $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','$organiser_id}')";
            $eventDetailInserted = $db->query($query);
            $result = array();
