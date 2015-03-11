@@ -41,9 +41,11 @@ class Login {
             session_start();
             $result['message'] = 'success';
             while ($row = $temp->fetch_assoc()) {
-                $result['data'] =$row['event_organizer_id'];
                 $_SESSION['organiser_id'] = $row['event_organizer_id'];
+                $result['data'] = $_SESSION['organiser_id'];
+//                $_SESSION['organiser_id'] = $row['event_organizer_id'];
             }
+
 
             echo json_encode($result);
         }

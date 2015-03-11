@@ -17,6 +17,7 @@ angular.module('shoutApp')
             loginService.login($scope.user).then(function (res) {
                if(res.message == 'success'){
                    sessionService.set("user", res.data);
+                   console.log(res);
                    //$location.path('/admin');
                    $state.go('admin')
 

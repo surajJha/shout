@@ -7,9 +7,9 @@
  * # eventwidget
  */
 angular.module('shoutApp')
-  .directive('eventwidget', function ($rootScope) {
+  .directive('eventwidget', function ($rootScope, $sce) {
     return {
-      templateUrl: $rootScope.baseUrl+'/app/views/partials/eventwidget.html',
+      templateUrl: 'views/partials/eventwidget.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
 
