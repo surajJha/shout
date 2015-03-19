@@ -92,20 +92,6 @@ angular.module('shoutApp')
             $scope.formData.result_length = items;
         }
 
-        //$scope.deleteEvent = function(event_detail_id){
-        //    if(confirm("Are you sure you want to delete this event ?"))
-        //    {
-        //        adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
-        //            console.log(result);
-        //            $scope.init();
-        //        })
-        //    }
-        //    else{
-        //        return;
-        //    }
-        //
-        //}
-
         $scope.deleteEventNow = function(event_detail_id){
             swal({
                 title: "Are you sure?",
@@ -120,7 +106,6 @@ angular.module('shoutApp')
                 function(isConfirm){
                     if (isConfirm) {
                         adminTaskFactory.deleteEvent(event_detail_id).then(function (result) {
-                           // console.log(result);
                             swal("Deleted!", "This Event has been deleted.", "success");
                             $scope.init();
                         })
@@ -157,16 +142,6 @@ angular.module('shoutApp')
 
             });
         };
-        //
-        //$scope.$on('reloadEventDataInModal', function(event){
-        //    $scope.init();
-        //    console.log("emmited");
-        //})
-
-
-
-
-
 
   })
     /**
@@ -433,7 +408,6 @@ angular.module('shoutApp')
                 for(var i = 0;i<$scope.event_image_id.length;i++) {
                     if($scope.event_image_id[i]!= undefined){
                         var file = $scope.updatedFormData.images[i];
-                        console.log($scope.image_path_to_be_deleted[i]);
                         $upload.upload({
                             url: $rootScope.baseUrl +'/server/adminController.php?func=uploadUpdatedImages&event_image_id='+$scope.event_image_id[i]+'&organiser_id='+$scope.modalFormData.event_organizer_id+'&image_path_old='+$scope.image_path_to_be_deleted[i],
                             method: 'POST',

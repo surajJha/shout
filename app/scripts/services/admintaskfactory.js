@@ -42,8 +42,6 @@ angular.module('shoutApp')
         $http.post($rootScope.baseUrl + '/server/adminController.php?func=addEvent', formData)
             .success(function(res){
                 defer.resolve(res);
-               // console.log(res);
-               // console.log('factory');
             })
             .error(function (err, status) {
                 defer.reject(err);
@@ -56,9 +54,7 @@ angular.module('shoutApp')
         var defer = $q.defer();
         $http.get($rootScope.baseUrl + '/server/resize.php?imgpath='+path)
             .success(function(res){
-              //  console.log(res);
                 defer.resolve(res);
-              // console.log(res);
 
             })
             .error(function (err, status) {
@@ -74,7 +70,6 @@ angular.module('shoutApp')
         $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventCategory')
             .success(function(res){
                 defer.resolve(res.data);
-               // console.log(res);
             })
             .error(function (err, status) {
                 defer.reject(err);
@@ -88,7 +83,6 @@ angular.module('shoutApp')
             $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventCity')
                 .success(function(res){
                     defer.resolve(res.data);
-                    // console.log(res);
                 })
                 .error(function (err, status) {
                     defer.reject(err);
@@ -103,7 +97,6 @@ angular.module('shoutApp')
             $http.get($rootScope.baseUrl + '/server/adminController.php?func=getEventArea&city='+city)
                 .success(function(res){
                     defer.resolve(res.data);
-                    // console.log(res);
                 })
                 .error(function (err, status) {
                     defer.reject(err);
@@ -133,7 +126,6 @@ angular.module('shoutApp')
             $http.get($rootScope.baseUrl + '/server/adminController.php?func=deleteEvent&event_detail_id='+event_detail_id)
                 .success(function(res){
                     defer.resolve(res);
-                    console.log(res);
                 })
                 .error(function (err, status) {
                     defer.reject(err);

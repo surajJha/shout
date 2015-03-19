@@ -17,20 +17,16 @@ angular.module('shoutApp')
             loginService.login($scope.user).then(function (res) {
                if(res.message == 'success'){
                    sessionService.set("user", res.data);
-                 //  console.log(res);
-                   //$location.path('/admin');
                    $state.go('admin')
 
                }
                 else{
-                   console.log(res);
                    $state.go('login')
                }
             })
         }
 
         $scope.logout = function(){
-            console.log("logout pressed");
             loginService.logout().then(function(res){
                 if(res.message = 'success'){
                     sessionService.destroy('user')
