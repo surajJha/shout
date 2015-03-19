@@ -60,6 +60,9 @@ class Login {
 
     public function logout() {
         session_start();
+        if(isset($_SESSION['organiser_id'])){
+            unset($_SESSION['organiser_id']);
+        }
         session_unset();
         session_destroy();
         session_write_close();

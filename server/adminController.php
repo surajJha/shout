@@ -144,20 +144,20 @@ class AdminController
         $primary_image = $_GET['primary_image'];
         if(!is_dir($organiser_id))
         {
-            mkdir('/var/www/html/shout/server/client_images/'.$organiser_id);
+            mkdir('client_images/'.$organiser_id);
         }
         if(php_uname('s') != 'Linux' && !is_dir($organiser_id))
         {
-            mkdir('C:/xampp/htdocs/shout/server/client_images/' .$organiser_id);
+            mkdir('client_images/' .$organiser_id);
         }
         $filename = $_FILES['file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
         $file_base = basename($filename,$ext);
         $filename = $file_base.microtime().'.'.$ext;
-        $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
+        $destination = 'client_images/' .$organiser_id.'/'. $filename;
         if(php_uname('s') != 'Linux')
         {
-            $destination = 'C:/xampp/htdocs/shout/server/client_images/' .$organiser_id.'/'. $filename;
+            $destination = 'client_images/' .$organiser_id.'/'. $filename;
         }
         if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination ))
         {
@@ -194,10 +194,10 @@ class AdminController
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
             $file_base = basename($filename,$ext);
             $filename = $file_base.microtime().'.'.$ext;
-            $destination = '/var/www/html/shout/server/client_images/' .$organiser_id.'/'. $filename;
+            $destination = 'client_images/' .$organiser_id.'/'. $filename;
             if(php_uname('s') != 'Linux')
             {
-                $destination = 'C:/xampp/htdocs/shout/server/client_images/' .$organiser_id.'/'. $filename;
+                $destination = 'client_images/' .$organiser_id.'/'. $filename;
             }
             if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination ))
             {
