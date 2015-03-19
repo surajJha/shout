@@ -8,7 +8,7 @@
  * Controller of the shoutApp
  */
 angular.module('shoutApp')
-  .controller('adminAddEventController', function ($scope, $rootScope, $upload, adminTaskFactory, $timeout, $window) {
+  .controller('adminAddEventController', function ($scope, $rootScope, $upload, adminTaskFactory, $timeout, $window, sessionService) {
         /**
          * declaring all global variables for
          * this controller
@@ -141,8 +141,7 @@ angular.module('shoutApp')
          */
         $scope.submitEventForm = function ()
         {
-           //console.log($scope.formData);
-          //  console.log('inside contr');
+            $scope.formData.organiser_id = sessionService.get("user");
           $scope.getDateTime();
         adminTaskFactory.addNewEvent($scope.formData).then(function(result)
         {
@@ -183,14 +182,13 @@ angular.module('shoutApp')
 
         $scope.uploadImages = function(event_detail_id)
         {
-
             for(var i = 0;i<$scope.formData.images.length;i++)
             {
                 var primary_image =0;
                 if(i == 0)primary_image=1;
                 var file = $scope.formData.images[i];
                 $upload.upload({
-                    url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&event_detail_id='+event_detail_id+'&primary_image='+primary_image,
+                    url: $rootScope.baseUrl +'/server/adminController.php?func=uploadImages&event_detail_id='+event_detail_id+'&organiser_id='+$scope.formData.organiser_id+'&primary_image='+primary_image,
                 method: 'POST',
                     data: file,
                     file: file

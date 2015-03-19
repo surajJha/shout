@@ -76,8 +76,8 @@ angular
          * port 9000 used by the grunt server cannot run PHP
          * @type {string}
          */
-   // $rootScope.baseUrl = 'http://localhost:80/shout';
-        $rootScope.baseUrl = 'http://www.rollingscenes.com';
+   $rootScope.baseUrl = 'http://localhost:80/shout';
+   //     $rootScope.baseUrl = 'http://www.rollingscenes.com';
 
         $rootScope.$on('$stateChangeSuccess', function(){
             if(($state.is('admin') || $state.is('admin.add') || $state.is('admin.view') ) && (sessionStorage.getItem('user')=='' || sessionStorage.getItem('user')==0 || sessionStorage.getItem('user')==null)){

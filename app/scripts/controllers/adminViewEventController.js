@@ -174,7 +174,7 @@ angular.module('shoutApp')
      * its variable and scope are available inside
      * the modal only
     */
-    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory, $upload, $rootScope, $timeout, $window) {
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, id, formData, adminTaskFactory, $upload, $rootScope, $timeout, $window, sessionService) {
 
         /**updatedFormData is and object, and it stores the data received when the modal is opened
          * this object is available in the scope of the modal
@@ -383,7 +383,7 @@ angular.module('shoutApp')
             $scope.modalFormData.no_of_weeks = $scope.updatedFormData.no_of_weeks;
             $scope.modalFormData.no_of_months = $scope.updatedFormData.no_of_months;
             $scope.modalFormData.repeatType = $scope.updatedFormData.repeatType;
-            $scope.modalFormData.event_organizer_id = 1; //$scope.updatedFormData.event_organizer_id[id];
+            $scope.modalFormData.event_organizer_id = sessionService.get("user");
 
             if($scope.modalFormData.change_event_schedule_flag) {
                 $scope.getDateTime();
@@ -435,7 +435,7 @@ angular.module('shoutApp')
                         var file = $scope.updatedFormData.images[i];
                         console.log($scope.image_path_to_be_deleted[i]);
                         $upload.upload({
-                            url: $rootScope.baseUrl +'/server/adminController.php?func=uploadUpdatedImages&event_image_id='+$scope.event_image_id[i]+'&image_path_old='+$scope.image_path_to_be_deleted[i],
+                            url: $rootScope.baseUrl +'/server/adminController.php?func=uploadUpdatedImages&event_image_id='+$scope.event_image_id[i]+'&organiser_id='+$scope.modalFormData.event_organizer_id+'&image_path_old='+$scope.image_path_to_be_deleted[i],
                             method: 'POST',
                             data: file,
                             file: file
