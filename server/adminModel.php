@@ -64,7 +64,7 @@ class AdminModel
      //$event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
        if($organiser_id!='' && $venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
-           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','$organiser_id}')";
+           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$organiser_id}')";
            $eventDetailInserted = $db->query($query);
            $result = array();
            if($eventDetailInserted)
