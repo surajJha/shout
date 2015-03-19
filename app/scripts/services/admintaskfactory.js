@@ -22,10 +22,10 @@ angular.module('shoutApp')
     which is using this factory
      **/
 
-    factory.getAllEvents = function() {
+    factory.getAllEvents = function(organiser_id) {
       var defer = $q.defer();
 
-      $http.get($rootScope.baseUrl + '/server/adminController.php?func=getAllEvents')
+      $http.get($rootScope.baseUrl + '/server/adminController.php?func=getAllEvents&organiser_id='+organiser_id)
         .success(function(res){
           defer.resolve(res);
         })

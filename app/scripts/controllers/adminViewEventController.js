@@ -8,7 +8,7 @@
  * Controller of the shoutApp
  */
 angular.module('shoutApp')
-  .controller('adminViewEventController', function ($scope, $rootScope, adminTaskFactory, $modal, $log, $window) {
+  .controller('adminViewEventController', function ($scope, $rootScope, adminTaskFactory, $modal, $log, $window, sessionService) {
         /**
          * formData is an object which stores the result retreive from
          * database from function getAllEvents
@@ -31,9 +31,12 @@ angular.module('shoutApp')
         $scope.formData.no_of_days = [];
         $scope.formData.event_organizer_id = [];
         $scope.encoded_image_path_array = [];
+        $scope.event_organizer_id = sessionService.get("user");
 
       $scope.init = function () {
-          adminTaskFactory.getAllEvents().then(function (result) {
+          adminTaskFactory.getAllEvents($scope.event_organizer_id).then(function (result) {
+
+
               /** Storing the length in
               * result_length so that it can be
                * used in ng-repeat to
