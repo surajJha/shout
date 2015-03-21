@@ -142,22 +142,22 @@ class AdminController
         $organiser_id = $_GET['organiser_id'];
         $event_detail_id = $_GET['event_detail_id'];
         $primary_image = $_GET['primary_image'];
-        if(!is_dir($organiser_id))
-        {
-            mkdir('client_images/'.$organiser_id);
-        }
-        if(php_uname('s') != 'Linux' && !is_dir($organiser_id))
-        {
-            mkdir('client_images/' .$organiser_id);
-        }
+//        if(!is_dir($organiser_id))
+//        {
+//            mkdir('client_images/'.$organiser_id);
+//        }
+//        if(php_uname('s') != 'Linux' && !is_dir($organiser_id))
+//        {
+//            mkdir('client_images/' .$organiser_id);
+//        }
         $filename = $_FILES['file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
         $file_base = basename($filename,$ext);
         $filename = $file_base.microtime().'.'.$ext;
-        $destination = 'client_images/' .$organiser_id.'/'. $filename;
+        $destination = 'client_images/' . $filename;
         if(php_uname('s') != 'Linux')
         {
-            $destination = 'client_images/' .$organiser_id.'/'. $filename;
+            $destination = 'client_images/' . $filename;
         }
         if(move_uploaded_file( $_FILES['file']['tmp_name'] , $destination ))
         {
