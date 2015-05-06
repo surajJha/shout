@@ -252,7 +252,7 @@ class AdminModel
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
-                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['event_organizer_id'] = $row['event_organizer_id'];
                 $rows[$i]['datetime'] = array();
@@ -502,7 +502,7 @@ class AdminModel
         {
             while($row = $temp->fetch_row())
             {
-                $rows[] = $row;
+                $rows[] = htmlspecialchars_decode(stripslashes($row));
             }
             $result['status'] = 'success';
             $result['message'] = 'Categories fetched successfully';
