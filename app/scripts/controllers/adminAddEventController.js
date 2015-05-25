@@ -72,11 +72,12 @@ angular.module('shoutApp')
         {
             adminTaskFactory.getEventCategory().then(function (result)
             {
-                for(var i = 0;i<result.length;i++)
-                {
-                    $scope.event_categories[i] = result[i][0];
+                if(result){
+                    for(var i = 0;i<result.length;i++)
+                    {
+                        $scope.event_categories[i] = result[i][0];
+                    }
                 }
-
             });
             adminTaskFactory.getEventCity().then(function(result){
                 for(var i = 0;i<result.length;i++)
