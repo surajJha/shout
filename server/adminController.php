@@ -153,7 +153,8 @@ class AdminController
         $filename = $_FILES['file']['name'];
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
         $file_base = basename($filename,$ext);
-        $filename = $file_base.microtime().'.'.$ext;
+//        $filename = $file_base.microtime().'.'.$ext;
+        $filename = microtime().'.'.$ext;
         $destination = 'client_images/' . $filename;
         if(php_uname('s') != 'Linux')
         {
@@ -193,7 +194,8 @@ class AdminController
             $filename = $_FILES['file']['name'];
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
             $file_base = basename($filename,$ext);
-            $filename = $file_base.microtime().'.'.$ext;
+//            $filename = $file_base.microtime().'.'.$ext;
+            $filename = microtime().'.'.$ext;
             $destination = 'client_images/' .$organiser_id.'/'. $filename;
             if(php_uname('s') != 'Linux')
             {
