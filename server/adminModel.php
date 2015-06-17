@@ -65,6 +65,7 @@ class AdminModel
 
        if($organiser_id!='' && $venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
            $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$organiser_id}')";
+
            $eventDetailInserted = $db->query($query);
            $result = array();
            if($eventDetailInserted)
@@ -502,7 +503,7 @@ class AdminModel
         {
             while($row = $temp->fetch_row())
             {
-                $rows[] = htmlspecialchars_decode(stripslashes($row));
+                $rows[] = $row;
             }
             $result['status'] = 'success';
             $result['message'] = 'Categories fetched successfully';
