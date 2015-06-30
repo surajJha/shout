@@ -197,11 +197,25 @@ angular.module('shoutApp')
                 }).progress(function(evt) {
 
                 }).success(function(data, status, headers, config) {
+                    var last_inserted_image_id = data.image_id;
 
+                    $upload.upload({
+                        url: $rootScope.baseUrl +'/server/resizeImageAndroid.php?event_image_id='+last_inserted_image_id,
+                        method: 'POST',
+                        data: file,
+                        file: file
 
+                    }).progress(function(evt) {
+
+                    }).success(function(data, status, headers, config) {
+
+                    }).error(function(error){
+                        console.log(error.message);
+                    });
                 }).error(function(error){
                     console.log(error.message);
                 });
+
             }
 
 
