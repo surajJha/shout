@@ -1,6 +1,6 @@
 <?php
 
-//error_reporting(E_ALL);
+error_reporting(E_ALL);
 ini_set('display_errors', '1');
 include_once 'databaseConnection.php';
 class AdminModel
@@ -332,6 +332,37 @@ class AdminModel
     {
         $db = $this->getDatabaseObject();
         $query = "insert into event_image (event_detail_id, event_image_name, primary_image) VALUES ('{$event_detail_id}', '{$destination}','{$primary_image}')";
+        $imageUrlInserted = $db->query($query);
+        $image_id = $db->insert_id;
+        $result = array();
+        if($imageUrlInserted)
+        {
+            $result['status'] = 'success';
+            $result['image_id'] = $image_id;
+            $result['message'] = 'image Url\'s were successfully inserted into the database';
+            return $result;
+        }
+        else
+        {
+            $result['status'] = 'failure';
+            $result['message'] = 'image Url\'s were Not properly inserted into the database '.$db->error;
+            return $result;
+        }
+    }
+
+    /**
+     * @param $destination
+     * @param $event_detail_id
+     * @param $primary_image
+     * @return bool|mysqli_result
+     * THis function takes as input destination for the image i.e. the file path in the
+     * file system , the event_detail_ud and the primary image flag(1 or 0).
+     * It then stores the image URL and other data in the event_image Table for Android
+     */
+    public function addAndroidImageUrlToDatabase($destination, $event_image_id)
+    {
+        $db = $this->getDatabaseObject();
+        $query = "update event_image set event_image_name_android = '{$destination}' WHERE event_image_id = '{$event_image_id}'";
         $imageUrlInserted = $db->query($query);
         $result = array();
         if($imageUrlInserted)
