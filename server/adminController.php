@@ -10,10 +10,12 @@ ini_set('display_errors', '1');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 include_once 'adminModel.php';
+require_once 'ExecutionTimeLogger.php';
 
 class AdminController
 {
     protected $func = '';
+    protected $executionTimeLogger = '';
     protected $response_code = array(
         '10' => 'Success',
         '11' => 'Missing Arguments',
@@ -25,6 +27,7 @@ class AdminController
     public function __construct() {
         session_start();
         $func = $_GET['func'];
+        $this->executionTimeLogger = new ExecutionTimeLogger();
         $this->$func();
 
     }
@@ -41,6 +44,7 @@ class AdminController
      */
     function addEvent()
     {
+        $start = microtime(true);
         $data = json_decode(file_get_contents("php://input"));
         $data->organiser_id = (isset($data->organiser_id) && $data->organiser_id!=null )?$this->custom_filter_input($data->organiser_id):'';
 //        $data->organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
@@ -48,6 +52,8 @@ class AdminController
         $data->venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$this->custom_filter_input($data->venue_name):'';
         $data->event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$this->custom_filter_input( $data->event_overview):'';
         $data->event_location = (isset($data->event_location) && $data->event_location!=null )?$this->custom_filter_input( $data->event_location):'';
+        $data->event_latitude = (isset($data->event_latitude) && $data->event_latitude!=null )?$this->custom_filter_input( $data->event_latitude):'';
+        $data->event_longitude = (isset($data->event_longitude) && $data->event_longitude!=null )?$this->custom_filter_input( $data->event_longitude):'';
         $data->event_area =  (isset($data->event_area) && $data->event_area!=null )?$this->custom_filter_input( $data->event_area):'';
         $data->event_cost =  (isset($data->event_cost) && $data->event_cost!=null )?$this->custom_filter_input( $data->event_cost):'';
         $data->event_category =  (isset($data->event_category) && $data->event_category!=null )?$this->custom_filter_input( $data->event_category):'';
@@ -58,6 +64,8 @@ class AdminController
 
         $model = new AdminModel();
         $result = $model->addEvent($data);
+        $end = microtime(true);
+        $this->executionTimeLogger->logExecutionTime("addEvent", $start, $end);
         if($result['status'] == "success")
         {
             echo json_encode($result);
@@ -84,6 +92,7 @@ class AdminController
      */
     function updateEventDetails()
     {
+        $start = microtime(true);
         $data = json_decode(file_get_contents("php://input"));
         $data->event_name = (isset($data->event_name) && $data->event_name!=null )?$this->custom_filter_input($data->event_name):'';
         $data->venue_name = (isset($data->venue_name) && $data->venue_name!=null )?$this->custom_filter_input($data->venue_name):'';
@@ -98,6 +107,8 @@ class AdminController
         $data->event_hashtags = $this->generateHashtag($data->hash1, $data->hash2, $data->hash3);
         $model = new AdminModel();
         $result = $model->updateEventDetails($data);
+        $end = microtime(true);
+        $this->executionTimeLogger->logExecutionTime("updateEventDetails", $start, $end);
         if($result['status'] == 'success')
         {
             echo json_encode($result);
@@ -119,9 +130,12 @@ class AdminController
      */
     function deleteEvent()
     {
+        $start = microtime(true);
         $event_detail_id = $_GET['event_detail_id'];
         $model = new AdminModel();
         $result =  $model->deleteEvent($event_detail_id);
+        $end = microtime(true);
+        $this->executionTimeLogger->logExecutionTime("deleteEvent", $start, $end);
         var_dump($result);
 
     }
@@ -138,6 +152,7 @@ class AdminController
      */
     function uploadImages()
     {
+        $start = microtime(true);
 //        $organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
         $organiser_id = $_GET['organiser_id'];
         $event_detail_id = $_GET['event_detail_id'];
@@ -156,6 +171,7 @@ class AdminController
 //        $filename = $file_base.microtime().'.'.$ext;
         $filename = microtime().'.'.$ext;
         $destination = 'client_images/' . $filename;
+        $mobile_destination = 'mobile_images/' . $filename;
         if(php_uname('s') != 'Linux')
         {
             $destination = 'client_images/' . $filename;
@@ -164,6 +180,8 @@ class AdminController
         {
             $model = new AdminModel();
             $imageUploaded = $model->addImageUrlToDatabase($destination, $event_detail_id, $primary_image);
+            $end = microtime(true);
+            $this->executionTimeLogger->logExecutionTime("uploadImages", $start, $end);
            if($imageUploaded)
            {
                echo json_encode($imageUploaded);
@@ -186,7 +204,7 @@ class AdminController
      */
     function uploadUpdatedImages()
     {
-//        $organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
+        $start = microtime(true);
         $organiser_id = $_GET['organiser_id'];
         $event_image_id = $_GET['event_image_id'];
         $image_path_old = $_GET['image_path_old'];
@@ -194,7 +212,6 @@ class AdminController
             $filename = $_FILES['file']['name'];
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
             $file_base = basename($filename,$ext);
-//            $filename = $file_base.microtime().'.'.$ext;
             $filename = microtime().'.'.$ext;
             $destination = 'client_images/' .$organiser_id.'/'. $filename;
             if(php_uname('s') != 'Linux')
@@ -205,6 +222,8 @@ class AdminController
             {
                 $model = new AdminModel();
                 $imageUploaded = $model->addUpdatedImageUrlToDatabase($destination, $event_image_id);
+                $end = microtime(true);
+                $this->executionTimeLogger->logExecutionTime("uploadUpdatedImages", $start, $end);
                 if($imageUploaded)
                 {
                     echo json_encode($imageUploaded);
@@ -309,9 +328,12 @@ class AdminController
      */
     function getAllEvents()
     {
+        $start = microtime(true);
         $organiser_id = (isset($_SESSION['organiser_id']) && $_SESSION['organiser_id']!=null )?$this->custom_filter_input($_SESSION['organiser_id']):'';
         $model = new AdminModel();
         $result = $model->getAllEvents($organiser_id);
+        $end = microtime(true);
+        $this->executionTimeLogger->logExecutionTime("getAllEvents", $start, $end);
         if($result['status'] == 'success')
         {
             echo json_encode($result['data']);

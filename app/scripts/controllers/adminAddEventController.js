@@ -36,6 +36,8 @@ angular.module('shoutApp')
         $scope.formData.venue_name = '';
         $scope.formData.event_area = '';
         $scope.formData.event_location = '';
+        $scope.formData.event_latitude = '';
+        $scope.formData.event_longitude = '';
         $scope.formData.no_of_days = '';
         $scope.formData.repeatEventCheckbox = '';
         $scope.formData.no_of_weeks = '';
@@ -55,9 +57,24 @@ angular.module('shoutApp')
         $scope.isAnyFileExceptPrimaryHasError = false;
         var MAX_FILE_SIZE = 5000000;
 
+    $("#event_location").on("blur", function(){
+        var address = $("#event_location").val();
+         $scope.getCoordinates(address);
 
+    })
 
-
+$scope.getCoordinates = function(address) {
+    var geocoder = new google.maps.Geocoder();
+    var coord = [];
+    geocoder.geocode({address : address} , function(results ,status){
+        if(results){
+            if(results[0].hasOwnProperty('geometry') && results[0].geometry) {
+                $scope.formData.event_latitude =  results[0].geometry.location.A;
+                $scope.formData.event_longitude =  results[0].geometry.location.F;
+            }
+        }
+    })
+}
 
         /**
          * ========================================================

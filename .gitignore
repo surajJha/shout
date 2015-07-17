@@ -5,3 +5,4 @@ node_modules
 bower_components
 .idea
 .idea/workspace.xml
+server/client_images_web

@@ -127,6 +127,7 @@
                                     <textarea style="resize: none;" tooltip="Please enter complete address of the Venue."  tooltip-trigger="mouseenter" tooltip-placement="top" ng-class="{ 'has-error' : eventForm.event_location.$invalid && !eventForm.event_location.$pristine }" name="event_location" class="form-control" rows="6" id="event_location" ng-model="formData.event_location" ng-model-options="{ updateOn: 'blur' }" required ng-minlength="5"></textarea>
                                     <span class="validation-message" ng-show="eventForm.event_location.$error.required && eventForm.event_location.$dirty">Address cannot be empty !</span>
                                     <span class="validation-message" ng-show="eventForm.event_location.$error.minlength && eventForm.event_location.$dirty">Address length cannot be less than 5 !</span>
+                               {{formData.event_latitude}} , {{formData.event_longitude}}
                                 </div>
                             </div>
                         </div>

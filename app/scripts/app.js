@@ -77,7 +77,7 @@ angular
          * @type {string}
          */
     //$rootScope.baseUrl = 'http://192.168.0.4:80/shout';
-        $rootScope.baseUrl = 'http://www.rollingscenes.com';
+        $rootScope.baseUrl = 'http://rollingscenes.com';
 
         $rootScope.$on('$stateChangeSuccess', function(){
             if(($state.is('admin') || $state.is('admin.add') || $state.is('admin.view') ) && (sessionStorage.getItem('user')=='' || sessionStorage.getItem('user')==0 || sessionStorage.getItem('user')==null)){

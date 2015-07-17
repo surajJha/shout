@@ -4,60 +4,128 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="adding and ed.is_active = 1 in usermodel.php">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/1.jpg" afterPath="$PROJECT_DIR$/server/client_images/1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/10.jpg" afterPath="$PROJECT_DIR$/server/client_images/10.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/11.jpg" afterPath="$PROJECT_DIR$/server/client_images/11.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/12.jpg" afterPath="$PROJECT_DIR$/server/client_images/12.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/13.png" afterPath="$PROJECT_DIR$/server/client_images/13.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/14.png" afterPath="$PROJECT_DIR$/server/client_images/14.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/15.png" afterPath="$PROJECT_DIR$/server/client_images/15.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/16.jpg" afterPath="$PROJECT_DIR$/server/client_images/16.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/2.jpg" afterPath="$PROJECT_DIR$/server/client_images/2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/3.jpg" afterPath="$PROJECT_DIR$/server/client_images/3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/4.jpg" afterPath="$PROJECT_DIR$/server/client_images/4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/5.jpg" afterPath="$PROJECT_DIR$/server/client_images/5.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/6.jpg" afterPath="$PROJECT_DIR$/server/client_images/6.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/7.jpg" afterPath="$PROJECT_DIR$/server/client_images/7.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/8.jpg" afterPath="$PROJECT_DIR$/server/client_images/8.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/client_images/9.jpg" afterPath="$PROJECT_DIR$/server/client_images/9.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/favicon.ico" afterPath="$PROJECT_DIR$/dist/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/placeholder.jpg" afterPath="$PROJECT_DIR$/app/images/placeholder.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/preloader.GIF" afterPath="$PROJECT_DIR$/app/images/preloader.GIF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/.htaccess" afterPath="$PROJECT_DIR$/dist/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/addbutton.js" afterPath="$PROJECT_DIR$/app/scripts/directives/addbutton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/admin.html" afterPath="$PROJECT_DIR$/dist/views/admin.html" />
+    <list default="true" id="6cd7c9e4-cce4-44fe-a222-2c63daf9a40a" name="Default" comment="done with everything for admin. update model ka image css remaining">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.00323900 1436941963.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.03153900 1436942303.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.17994600 1436941913.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.29473100 1436942779.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.41222900 1436942349.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.42993100 1435144383.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.44523100 1436940823.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.49242400 1436942124.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.50649700 1436941399.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.65139500 1436941712.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.68915600 1436940983.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.83991200 1436942555.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/0.86087100 1436941169.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/122c07c569e0e4ef90e8640aee4b9d038224f0c1_1_36.0.63562500 1428775665.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/13076732-happy-hour-sign.0.42341100 1428818388.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/292-happy-hour.0.36726800 1428818750.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/292-happy-hour.0.62459900 1428437717.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/292-happy-hour.0.70289600 1428436377.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/292-happy-hour.0.90749500 1428817575.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/444931-happy-hours-buy-one-get-one-free.0.01291300 1428823532.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/5948ce864b37a3eedc6b4a19d0ac9314cdd4619b_1_36.0.23782600 1428599918.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/9342835bee2e403665f0a2c5aa08662c099357cc_1_36.0.39634100 1428774943.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/Angular.0.15902700 1432897874.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/Drinks-HD-Wallpapers-11.0.33714500 1428815960.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/ET00022138.0.47880500 1429337247.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/ET00029459.0.48607300 1429336245.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/ET00029539.0.99094700 1429337619.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/ET00029558.0.52998600 1429335717.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/ET00029745.0.55843800 1429334062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/ET00029902.0.92712900 1429336893.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/ET00030111.0.11662400 1429333722.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/Food_Drinks_Refreshing_Drink_015736_.0.28211600 1428818190.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/Musicians_in_Herat,_1973.0.28168200 1428605034.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/Poetry on the Big Mic.0.67752400 1429115210.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/Winter-Tiger-Wild-Cat-Images.0.35378600 1432897874.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/aHR0cHM6Ly9zY29udGVudC54eC5mYmNkbi5uZXQvaHBob3Rvcy14ZnQxL3QzMS4wLTgvczcyMHg3MjAvMTExNTQ1NzZfNzU3MTg5MjAxMDYwNzgyXzQzMDI0ODk0Njk1NDA1ODYzNjRfby5qcGc=.0.96619400 1428826837.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/aHR0cHM6Ly9zY29udGVudC54eC5mYmNkbi5uZXQvaHBob3Rvcy14cGYxL3QzMS4wLTgvczcyMHg3MjAvMTEwMTA1MjZfNzU2MTI3Njg0NTAwMjY3XzcwMjgzMjgwNDc1MzEyMzA3OTdfby5wbmc=.0.01596500 1428826144.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/allmytea.0.74221700 1426922972.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/b2g9MDYxYWVlYWU5NGM3MWIyNzdjYzEyZGZkZjViZWNmNmMmb2U9NTVFMzZBNUM=.0.64748900 1428825968.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/b2g9MzZjM2YxM2IxYzgyNDMxMGYwODE1OTMwZjIxYzY1NWYmb2U9NTVCMTI2QTQ=.0.48488000 1428605522.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/b2g9MzZjM2YxM2IxYzgyNDMxMGYwODE1OTMwZjIxYzY1NWYmb2U9NTVCMTI2QTQ=.0.97180900 1428826591.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/b63edbc8162f2519d654683ad772149ac319bef4_1_36.0.23898100 1428601785.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/barsandnightlife_large.0.06206300 1428463697.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/barsandnightlife_large.0.60877300 1428599643.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/bf63535da0843b513d9fd2b652ea8501127c8eb0_1_36.0.52843500 1428774263.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/bg-food-drink.0.99489800 1428817992.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/bg1.0.53848100 1428206146.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/c.0.30300500 1428827360.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/c.0.62555700 1428827511.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/c06c1e8d037f75fc4acc551642041ed988a792ab_1_36.0.97058000 1428774161.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/c1.0.69160600 1428827688.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/cf7849617237fd0250a4a0bfa7a6c583de1b4e34_1_36.0.66412900 1428600642.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/cheese-fondue.0.17678700 1428817019.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/cigar-pairings.0.79968700 1428816151.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/d.0.20373600 1428827013.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/dance1.0.10760500 1433695577.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/dance2.0.21607600 1433695577.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/dance3.0.61098400 1433695577.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/download.0.14428500 1427472958.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/drinks-for-christmas-2012-cover.0.71105300 1428602955.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/e5bf9d86f608f9ee4d072db691232c15b4e5e634_1_36.0.49000100 1428775153.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/eba80d4b046201ccda721a95a4bdb1403b13c396_1_36.0.04124700 1428773373.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/eff8be965c4f4e90237912a50a2313ccc5cb9d90_1_36.0.35165800 1428774633.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/fb3f61349afa66bf24e4f46c34992496ba2c0195_1_36.0.89939800 1428600392.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/game.0.22144100 1428773743.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/happy-hour-sign.0.81358900 1428817807.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/happy_hour.0.61722100 1428818903.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/happy_hours_by_grafix19.0.98264100 1428819070.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/happy_hours_tnc_horizontal_banner_008.0.51792800 1428823660.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/kali-wp-june-2014_1920x1080_A.0.00218500 1427873319.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/kali-wp-june-2014_1920x1080_A.0.06684100 1427872838.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/kali-wp-june-2014_1920x1080_A.0.23473400 1427871712.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/kali-wp-june-2014_1920x1080_A.0.29441100 1427871560.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/kali-wp-june-2014_1920x1080_A.0.40705600 1427871859.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/kusadasi_night_life.0.55575700 1428603687.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/lil.0.87032500 1428203811.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/master-musician.0.26005000 1428773974.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/mock.0.73357800 1427380405.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/moon.0.05832500 1426921605.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/moon.0.75369300 1426921408.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/openmic.0.29859300 1429115861.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p1.0.06263000 1427259259.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p1.0.06636400 1423139782.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p1.0.36073700 1427258782.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p1.0.39531200 1428202771.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p1.0.67913600 1428204331.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p1.0.85580800 1427259288.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p2.0.63306400 1427259040.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/p4.0.44201300 1427259312.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/sailing-trip-5620.0.66502800 1428762376.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/snacks.0.72569000 1428164663.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/testaurant-happy-hour.0.54347900 1428602336.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/tree-247122.0.83813000 1432897874.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/vintage-cameras-chor-bazaars.0.64684200 1428763098.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/client_images_web/y.0.58646000 1428827232.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/compressOldImages.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/client_images/9.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/adminAddEvent.html" afterPath="$PROJECT_DIR$/app/views/partials/adminAddEvent.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/partials/adminAddEvent.html" afterPath="$PROJECT_DIR$/dist/views/partials/adminAddEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/partials/adminSidebar.html" afterPath="$PROJECT_DIR$/dist/views/partials/adminSidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/partials/adminViewEvent.html" afterPath="$PROJECT_DIR$/dist/views/partials/adminViewEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/eventwidget.html" afterPath="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/partials/eventwidget.html" afterPath="$PROJECT_DIR$/dist/views/partials/eventwidget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/eventwidget.js" afterPath="$PROJECT_DIR$/app/scripts/directives/eventwidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/directives/eventwidget.js" afterPath="$PROJECT_DIR$/test/spec/directives/eventwidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminController.php" afterPath="$PROJECT_DIR$/server/adminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/adminModel.php" afterPath="$PROJECT_DIR$/server/adminModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.html" afterPath="$PROJECT_DIR$/app/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/login.html" afterPath="$PROJECT_DIR$/dist/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/login.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/controllers/login.js" afterPath="$PROJECT_DIR$/test/spec/controllers/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/login.php" afterPath="$PROJECT_DIR$/server/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/loginservice.js" afterPath="$PROJECT_DIR$/app/scripts/services/loginservice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/services/loginservice.js" afterPath="$PROJECT_DIR$/test/spec/services/loginservice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/styles/main.661e341f.css" afterPath="$PROJECT_DIR$/dist/styles/main.661e341f.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/oldieshim.d41d8cd9.js" afterPath="$PROJECT_DIR$/dist/scripts/oldieshim.d41d8cd9.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/robots.txt" afterPath="$PROJECT_DIR$/dist/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/searchquery.txt" afterPath="$PROJECT_DIR$/server/searchquery.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/sessionservice.js" afterPath="$PROJECT_DIR$/app/scripts/services/sessionservice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/services/sessionservice.js" afterPath="$PROJECT_DIR$/test/spec/services/sessionservice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/shout.sql" afterPath="$PROJECT_DIR$/database/shout.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/shout_neha.sql" afterPath="$PROJECT_DIR$/database/shout_neha.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userController.php" afterPath="$PROJECT_DIR$/server/userController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/styles/vendor.e929d4d9.css" afterPath="$PROJECT_DIR$/dist/styles/vendor.e929d4d9.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -135,42 +203,6 @@
         <option name="myItemId" value="shout" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="event_organizer" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - shout@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="shout" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="event_image" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - shout@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="shout" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -179,11 +211,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="adminController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="12276">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <marker date="1437134484953" expanded="true" signature="4007:4407" placeholder="insert into ..." />
+                <marker date="1437134484953" expanded="true" signature="8767:9089" placeholder="UPDATE event..." />
+                <marker date="1437134484953" expanded="true" signature="12571:12650" placeholder="update event..." />
+                <marker date="1437134484953" expanded="true" signature="13549:14251" placeholder="select ed.ev..event_detail..." />
+                <marker date="1437134484953" expanded="true" signature="18121:18262" placeholder="insert into ..." />
+                <marker date="1437134484953" expanded="true" signature="19389:19498" placeholder="update event..." />
+                <marker date="1437134484953" expanded="true" signature="20819:20870" placeholder="select * fro..hashtag..." />
+                <marker date="1437134484953" expanded="true" signature="20991:21044" placeholder="insert into ..." />
+                <marker date="1437134484953" expanded="true" signature="21201:21280" placeholder="update hasht..." />
+                <marker date="1437134484953" expanded="true" signature="23049:23224" placeholder="insert into ..." />
+                <marker date="1437134484953" expanded="true" signature="23961:24136" placeholder="insert into ..." />
+                <marker date="1437134484953" expanded="true" signature="24822:24997" placeholder="insert into ..." />
+                <marker date="1437134484953" expanded="true" signature="25808:25842" placeholder="select categ..category..." />
+                <marker date="1437134484953" expanded="true" signature="26754:26816" placeholder="SELECT area_..area..." />
+                <marker date="1437134484953" expanded="true" signature="27706:27741" placeholder="SELECT DISTI..area..." />
+                <marker date="1437134484953" expanded="true" signature="28715:28784" placeholder="delete from ..." />
+                <marker date="1437134484953" expanded="true" signature="29784:29885" placeholder="update event..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resizeImageAndroid.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/resizeImageAndroid.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1491" max-vertical-offset="4212">
+              <caret line="110" column="23" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resizeTemp.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/resizeTemp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="3780">
+              <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="18" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/adminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="4980">
-              <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+            <state vertical-scroll-proportion="-6.2678823" vertical-offset="5729" max-vertical-offset="6444">
+              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="false" />
               </folding>
@@ -191,96 +271,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/login.php">
+      <file leaf-file-name="resize.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/resize.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5833333" vertical-offset="349" max-vertical-offset="1260">
-              <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-              <folding>
-                <marker date="1426162407382" expanded="true" signature="993:1139" placeholder="select event..event_organizer..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminViewEventController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3780" max-vertical-offset="7155">
-              <caret line="261" column="22" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
-              <folding>
-                <marker date="1426162407326" expanded="false" signature="15959:15978" placeholder="..." />
-                <marker date="1426162407326" expanded="false" signature="16729:16748" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="databaseConnection.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/databaseConnection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="540">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="3690">
+              <caret line="83" column="32" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eventwidget.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
+      <file leaf-file-name="compressOldImages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/compressOldImages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2251732" vertical-offset="0" max-vertical-offset="1050">
-              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminViewEvent.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4485" max-vertical-offset="4965">
-              <caret line="299" column="18" selection-start-line="299" selection-start-column="18" selection-end-line="299" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminAddEventController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2955" max-vertical-offset="4095">
-              <caret line="197" column="36" selection-start-line="197" selection-start-column="19" selection-end-line="197" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admintaskfactory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="2295">
-              <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminAddEvent.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3780" max-vertical-offset="4620">
-              <caret line="252" column="85" selection-start-line="252" selection-start-column="85" selection-end-line="252" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/adminModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1995" max-vertical-offset="9675">
-              <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="317" max-vertical-offset="4032">
+              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -295,6 +300,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="image_compression" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -304,36 +314,42 @@
         <option value="$PROJECT_DIR$/app/views/main.html" />
         <option value="db-console:/f644af44/148d5a9b-39fc-459f-971f-c0ef995882c2/" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/myCtrl.js" />
-        <option value="$PROJECT_DIR$/app/views/admin.html" />
         <option value="$PROJECT_DIR$/server/fileResize.php" />
         <option value="$PROJECT_DIR$/server/rest.php" />
-        <option value="$PROJECT_DIR$/app/views/partials/adminSidebar.html" />
         <option value="$PROJECT_DIR$/test/spec/controllers/adminViewEventController.js" />
         <option value="dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_detail" />
         <option value="$PROJECT_DIR$/test/karma.conf.js" />
         <option value="$PROJECT_DIR$/test/spec/controllers/adminAddEventController.js" />
+        <option value="$PROJECT_DIR$/app/views/about.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/about.js" />
-        <option value="$PROJECT_DIR$/server/resize.php" />
         <option value="dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_schedule" />
+        <option value="db-console:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/" />
+        <option value="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
+        <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/app/views/partials/adminSidebar.html" />
+        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
+        <option value="$PROJECT_DIR$/app/scripts/services/sessionservice.js" />
+        <option value="$PROJECT_DIR$/app/styles/base.css" />
+        <option value="$PROJECT_DIR$/app/scripts/services/loginservice.js" />
+        <option value="$PROJECT_DIR$/app/views/admin.html" />
+        <option value="$PROJECT_DIR$/app/views/login.html" />
+        <option value="$PROJECT_DIR$/app/scripts/directives/eventwidget.js" />
+        <option value="$PROJECT_DIR$/server/login.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
+        <option value="$PROJECT_DIR$/server/databaseConnection.php" />
+        <option value="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/directives/mydatepicker.js" />
         <option value="$PROJECT_DIR$/app/views/partials/adminAddEvent.html" />
-        <option value="$PROJECT_DIR$/app/styles/base.css" />
-        <option value="db-console:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/scripts/services/admintaskfactory.js" />
-        <option value="$PROJECT_DIR$/app/scripts/directives/eventwidget.js" />
-        <option value="$PROJECT_DIR$/server/databaseConnection.php" />
-        <option value="$PROJECT_DIR$/server/userController.php" />
-        <option value="$PROJECT_DIR$/app/views/about.html" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/todo.txt" />
-        <option value="$PROJECT_DIR$/server/userModel.php" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
+        <option value="$PROJECT_DIR$/server/resize.php" />
+        <option value="$PROJECT_DIR$/server/resizeTemp.php" />
+        <option value="$PROJECT_DIR$/server/compressOldImages.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/server/adminModel.php" />
         <option value="$PROJECT_DIR$/server/adminController.php" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js" />
-        <option value="$PROJECT_DIR$/app/views/partials/eventwidget.html" />
-        <option value="$PROJECT_DIR$/app/views/partials/adminViewEvent.html" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js" />
       </list>
     </option>
   </component>
@@ -495,7 +511,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1985" />
+    <option name="x" value="65" />
     <option name="y" value="-4" />
     <option name="width" value="1855" />
     <option name="height" value="1084" />
@@ -545,6 +561,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -587,6 +604,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -605,7 +636,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -623,21 +654,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cm-admin-local" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editorconfig.notification" value="Applied .editorconfig settings" />
@@ -651,11 +721,29 @@
     <property name="dynamic.classpath" value="false" />
     <property name="database.results.filters.show" value="false" />
     <property name="Console.TableResult.DefaultCopyAction" value="JSON" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="194" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="219" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="224" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1133" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="207" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="216" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="222" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1125" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/database" />
+      <recent name="$PROJECT_DIR$/server/client_images_web" />
+      <recent name="$PROJECT_DIR$/server/client_images" />
       <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/database" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -665,7 +753,18 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Karma.karma">
+  <component name="RunManager" selected="PHPUnit.shout">
+    <configuration default="false" name="shout on bigrock_admin_server" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" temporary="true" scope="Directory" path="$PROJECT_DIR$" server_id="baaff969-a8af-461f-ac05-af64e20d5d0d" server_name="bigrock_admin_server">
+      <RunnerSettings RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="shout" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -698,7 +797,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="baaff969-a8af-461f-ac05-af64e20d5d0d" server_name="bigrock_admin_server">
       <method />
     </configuration>
     <configuration default="false" name="karma" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="$PROJECT_DIR$/test/karma.conf.js">
@@ -709,9 +808,17 @@
       <ConfigurationWrapper RunnerId="KarmaJavaScriptTestRunnerRun" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Karma.karma" />
+      <item index="1" class="java.lang.String" itemvalue="PHPUnit on Server.shout on bigrock_admin_server" />
+      <item index="2" class="java.lang.String" itemvalue="PHPUnit.shout" />
     </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.shout" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit on Server.shout on bigrock_admin_server" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -917,66 +1024,60 @@
       <updated>1421934582012</updated>
     </task>
     <task id="LOCAL-00034" summary="done with validation of adEvent form. started with eventWidget">
-      <created>1422356462182</created>
+      <created>1422021276857</created>
       <option name="number" value="00034" />
       <option name="project" value="LOCAL" />
-      <updated>1422356462182</updated>
+      <updated>1422021276857</updated>
     </task>
-    <task id="LOCAL-00035" summary="admin part done">
-      <created>1422427539150</created>
+    <task id="LOCAL-00035" summary="done with validation of adEvent form. started with eventWidget">
+      <created>1422944727462</created>
       <option name="number" value="00035" />
       <option name="project" value="LOCAL" />
-      <updated>1422427539151</updated>
+      <updated>1422944727462</updated>
     </task>
-    <task id="LOCAL-00036" summary="admin part done">
-      <created>1422453398346</created>
+    <task id="LOCAL-00036" summary="done with validation of adEvent form. started with eventWidget">
+      <created>1423139397093</created>
       <option name="number" value="00036" />
       <option name="project" value="LOCAL" />
-      <updated>1422453398346</updated>
+      <updated>1423139397093</updated>
     </task>
-    <task id="LOCAL-00037" summary="server side validation checking for empty fields">
-      <created>1422868086384</created>
+    <task id="LOCAL-00037" summary="done with everything for admin. update model ka image css remaining">
+      <created>1423225941949</created>
       <option name="number" value="00037" />
       <option name="project" value="LOCAL" />
-      <updated>1422868086384</updated>
+      <updated>1423225941949</updated>
     </task>
-    <task id="LOCAL-00038" summary="server side validation checking for empty fields">
-      <created>1422868182730</created>
+    <task id="LOCAL-00038" summary="done with everything for admin. update model ka image css remaining">
+      <created>1423229739586</created>
       <option name="number" value="00038" />
       <option name="project" value="LOCAL" />
-      <updated>1422868182730</updated>
+      <updated>1423229739586</updated>
     </task>
-    <task id="LOCAL-00039" summary="adding and ed.is_active = 1 in usermodel.php">
-      <created>1422947906942</created>
+    <task id="LOCAL-00039" summary="done with everything for admin. update model ka image css remaining">
+      <created>1425997514220</created>
       <option name="number" value="00039" />
       <option name="project" value="LOCAL" />
-      <updated>1422947906942</updated>
+      <updated>1425997514220</updated>
     </task>
-    <task id="LOCAL-00040" summary="adding and ed.is_active = 1 in usermodel.php">
-      <created>1422972480584</created>
+    <task id="LOCAL-00040" summary="done with everything for admin. update model ka image css remaining">
+      <created>1426082498303</created>
       <option name="number" value="00040" />
       <option name="project" value="LOCAL" />
-      <updated>1422972480584</updated>
+      <updated>1426082498303</updated>
     </task>
-    <task id="LOCAL-00041" summary="adding and ed.is_active = 1 in usermodel.php">
-      <created>1423118394289</created>
+    <task id="LOCAL-00041" summary="done with everything for admin. update model ka image css remaining">
+      <created>1426774208571</created>
       <option name="number" value="00041" />
       <option name="project" value="LOCAL" />
-      <updated>1423118394289</updated>
+      <updated>1426774208571</updated>
     </task>
-    <task id="LOCAL-00042" summary="adding and ed.is_active = 1 in usermodel.php">
-      <created>1423139507933</created>
+    <task id="LOCAL-00042" summary="done with everything for admin. update model ka image css remaining">
+      <created>1430921199690</created>
       <option name="number" value="00042" />
       <option name="project" value="LOCAL" />
-      <updated>1423139507933</updated>
+      <updated>1430921199690</updated>
     </task>
-    <task id="LOCAL-00043" summary="adding and ed.is_active = 1 in usermodel.php">
-      <created>1423145605196</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1423145605196</updated>
-    </task>
-    <option name="localTasksCounter" value="44" />
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1000,48 +1101,49 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25933832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25878593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14374353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25504783" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18317358" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23496966" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12465527" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16381688" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19139548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5002758" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1664888" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08093717" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43863395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25079703" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25665602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32746115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42557883" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42557883" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32746115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35129532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43863395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14374353" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14589989" sideWeight="0.4997242" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15129533" sideWeight="0.4997242" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25025854" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23496966" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12465527" sideWeight="0.4992272" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5002758" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.4997242" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2601036" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1664888" sideWeight="0.4997242" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25933832" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5007728" order="4" side_tool="true" content_ui="tabs" />
@@ -1049,7 +1151,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17870933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19194704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32746115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42557883" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1078,10 +1180,8 @@
     <MESSAGE value="added the image url insertion into database feature" />
     <MESSAGE value="Merge branch 'master' of https://github.com/surajJha/shout&#10;&#10;Conflicts:&#10;&#9;app/styles/base.css&#10;" />
     <MESSAGE value="done with validation of adEvent form. started with eventWidget" />
-    <MESSAGE value="admin part done" />
-    <MESSAGE value="server side validation checking for empty fields" />
-    <MESSAGE value="adding and ed.is_active = 1 in usermodel.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding and ed.is_active = 1 in usermodel.php" />
+    <MESSAGE value="done with everything for admin. update model ka image css remaining" />
+    <option name="LAST_COMMIT_MESSAGE" value="done with everything for admin. update model ka image css remaining" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1090,166 +1190,239 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+    <entry file="file://$PROJECT_DIR$/server/resizeTemp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="2295">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="3780">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
+    <entry file="file://$PROJECT_DIR$/server/resize.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3780" max-vertical-offset="4620">
-          <caret line="252" column="85" selection-start-line="252" selection-start-column="85" selection-end-line="252" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="3690">
+          <caret line="83" column="32" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+    <entry file="file://$PROJECT_DIR$/server/compressOldImages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1995" max-vertical-offset="9675">
-          <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="317" max-vertical-offset="4032">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+    <entry file="dbDummy://dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_organizer">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/bootstrap/less/mixins/resize.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8318" max-vertical-offset="9195">
-          <caret line="605" column="0" selection-start-line="605" selection-start-column="0" selection-end-line="605" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
+    <entry file="dbDummy://db-console:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="4335">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-          <folding>
-            <marker date="1426162407326" expanded="false" signature="15959:15978" placeholder="..." />
-            <marker date="1426162407326" expanded="false" signature="16729:16748" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="126">
+          <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+    <entry file="dbDummy://dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_image">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..hashtag">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_detail">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f644af44/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3/shout..event_schedule">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="234">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/images/preloader.GIF">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/images/pre.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4470" max-vertical-offset="8340">
-          <caret line="298" column="20" selection-start-line="298" selection-start-column="20" selection-end-line="298" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="1" column="116" selection-start-line="1" selection-start-column="116" selection-end-line="1" selection-end-column="116" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/eventwidget.js">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminSidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="360">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="954">
+          <caret line="33" column="108" selection-start-line="33" selection-start-column="108" selection-end-line="33" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/images/yeoman.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../roll/server/databaseConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="648">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1084" max-vertical-offset="1854">
+          <caret line="55" column="15" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/spec/services/admintaskfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="938">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/spec/directives/eventwidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="916">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+        <state vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="1098">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="414">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="686">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="5958">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.333334" vertical-offset="324" max-vertical-offset="1260">
+          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/sessionservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/loginservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="900">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="954">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/databaseConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="738">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1566">
+          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="792">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="757" max-vertical-offset="1692">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/addbutton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6787" max-vertical-offset="7452">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/mydatepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1566">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1566">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1746">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.bowerrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6044" max-vertical-offset="7452">
-          <caret line="357" column="92" selection-start-line="357" selection-start-column="92" selection-end-line="357" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="108" max-vertical-offset="918">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3</OriginalElement>
-          <nodes>
-            <node x="610.2185792349726" y="808.6812386156648">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.area</node>
-            <node x="351.0" y="410.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_schedule</node>
-            <node x="0.0" y="410.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_organizer</node>
-            <node x="0.0" y="0.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_detail</node>
-            <node x="520.0" y="610.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.category</node>
-            <node x="0.0" y="610.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_image</node>
-            <node x="285.0" y="610.0">9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.hashtag</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.6391152502910361" x="4.0" y="506.0" />
-          <SelectedNodes>
-            <node>9a5c27a2-5636-47d0-8fcf-5ebe67b9cab3.table:shout.event_schedule</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1890">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1260,237 +1433,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/eventwidget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="211" max-vertical-offset="9882">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin.html">
+    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0" vertical-offset="0" max-vertical-offset="396">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminSidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.185185" vertical-offset="256" max-vertical-offset="1260">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angular-ui-utils/ui-utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9305761" vertical-offset="0" max-vertical-offset="42228">
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1836">
-          <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angular-ui-map/ui-map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/spec/controllers/adminAddEventController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/gd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19754" max-vertical-offset="47952">
-          <caret line="1036" column="41" selection-start-line="1036" selection-start-column="41" selection-end-line="1036" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/spec/controllers/adminViewEventController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.325" vertical-offset="0" max-vertical-offset="720">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/mydatepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.037037" vertical-offset="1250" max-vertical-offset="1998">
-          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/bootstrap/less/mixins/resize.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="1530">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9259257" vertical-offset="3332" max-vertical-offset="4770">
-          <caret line="197" column="17" selection-start-line="197" selection-start-column="17" selection-end-line="197" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5058" max-vertical-offset="6192">
+          <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="300" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0" vertical-offset="2214" max-vertical-offset="2970">
-          <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/resize.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8988764" vertical-offset="2185" max-vertical-offset="3075">
-          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23595506" vertical-offset="0" max-vertical-offset="345">
-          <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="1245">
-          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/userController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85623" vertical-offset="1234" max-vertical-offset="1860">
-          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/eventwidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25384617" vertical-offset="0" max-vertical-offset="650">
-          <caret line="11" column="75" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16848" max-vertical-offset="67500">
-          <caret line="1143" column="17" selection-start-line="1143" selection-start-column="17" selection-end-line="1143" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1665" max-vertical-offset="9195">
-          <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="873" max-vertical-offset="2445">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2884" max-vertical-offset="4110">
-          <caret line="197" column="36" selection-start-line="197" selection-start-column="19" selection-end-line="197" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1293" max-vertical-offset="2052">
+          <caret line="82" column="111" selection-start-line="82" selection-start-column="111" selection-end-line="82" selection-end-column="111" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/adminAddEvent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3780" max-vertical-offset="4440">
-          <caret line="252" column="85" selection-start-line="252" selection-start-column="85" selection-end-line="252" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1993" max-vertical-offset="5598">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#11;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminAddEventController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="809" max-vertical-offset="5454">
+          <caret line="61" column="19" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/adminViewEvent.html">
+    <entry file="file://$PROJECT_DIR$/coverage/PhantomJS 1.9.8 (Linux)/scripts/services/admintaskfactory.js.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4485" max-vertical-offset="4965">
-          <caret line="299" column="18" selection-start-line="299" selection-start-column="18" selection-end-line="299" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="-7.851852" vertical-offset="10012" max-vertical-offset="13842">
+          <caret line="568" column="102" selection-start-line="568" selection-start-column="102" selection-end-line="568" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/admintaskfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="2610">
+          <caret line="52" column="22" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/adminViewEventController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3780" max-vertical-offset="7155">
-          <caret line="261" column="22" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+        <state vertical-scroll-proportion="-13.518518" vertical-offset="949" max-vertical-offset="8172">
+          <caret line="73" column="106" selection-start-line="73" selection-start-column="96" selection-end-line="73" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/resizeTemp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="3780">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/resizeImageAndroid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1491" max-vertical-offset="4212">
+          <caret line="110" column="23" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/resize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="3690">
+          <caret line="83" column="32" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16912752" vertical-offset="0" max-vertical-offset="745">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/temp_images/c06c1e8d037f75fc4acc551642041ed988a792ab_1_36.0.97058000 1428774161.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/compressOldImages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="317" max-vertical-offset="4032">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/adminModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="12276">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <marker date="1426162407326" expanded="false" signature="15959:15978" placeholder="..." />
-            <marker date="1426162407326" expanded="false" signature="16729:16748" placeholder="..." />
+            <marker date="1437134484953" expanded="true" signature="4007:4407" placeholder="insert into ..." />
+            <marker date="1437134484953" expanded="true" signature="8767:9089" placeholder="UPDATE event..." />
+            <marker date="1437134484953" expanded="true" signature="12571:12650" placeholder="update event..." />
+            <marker date="1437134484953" expanded="true" signature="13549:14251" placeholder="select ed.ev..event_detail..." />
+            <marker date="1437134484953" expanded="true" signature="18121:18262" placeholder="insert into ..." />
+            <marker date="1437134484953" expanded="true" signature="19389:19498" placeholder="update event..." />
+            <marker date="1437134484953" expanded="true" signature="20819:20870" placeholder="select * fro..hashtag..." />
+            <marker date="1437134484953" expanded="true" signature="20991:21044" placeholder="insert into ..." />
+            <marker date="1437134484953" expanded="true" signature="21201:21280" placeholder="update hasht..." />
+            <marker date="1437134484953" expanded="true" signature="23049:23224" placeholder="insert into ..." />
+            <marker date="1437134484953" expanded="true" signature="23961:24136" placeholder="insert into ..." />
+            <marker date="1437134484953" expanded="true" signature="24822:24997" placeholder="insert into ..." />
+            <marker date="1437134484953" expanded="true" signature="25808:25842" placeholder="select categ..category..." />
+            <marker date="1437134484953" expanded="true" signature="26754:26816" placeholder="SELECT area_..area..." />
+            <marker date="1437134484953" expanded="true" signature="27706:27741" placeholder="SELECT DISTI..area..." />
+            <marker date="1437134484953" expanded="true" signature="28715:28784" placeholder="delete from ..." />
+            <marker date="1437134484953" expanded="true" signature="29784:29885" placeholder="update event..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/adminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="4980">
-          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        <state vertical-scroll-proportion="-6.2678823" vertical-offset="5729" max-vertical-offset="6444">
+          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/databaseConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="540">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5833333" vertical-offset="349" max-vertical-offset="1260">
-          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-          <folding>
-            <marker date="1426162407382" expanded="true" signature="993:1139" placeholder="select event..event_organizer..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/eventwidget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2251732" vertical-offset="0" max-vertical-offset="1050">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>

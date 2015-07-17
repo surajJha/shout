@@ -3,6 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 include_once 'databaseConnection.php';
+
 class AdminModel
 {
 
@@ -51,6 +52,8 @@ class AdminModel
        $event_overview =  (isset($data->event_overview) && $data->event_overview!=null )?$db->real_escape_string( $data->event_overview):'';
        $event_hashtags = (isset($data->event_hashtags) && $data->event_hashtags!=null )?$db->real_escape_string($data->event_hashtags):'';
        $event_location =  (isset($data->event_location) && $data->event_location!=null )?$db->real_escape_string( $data->event_location):'';
+       $event_latitude =  (isset($data->event_latitude) && $data->event_latitude!=null )?$db->real_escape_string( $data->event_latitude):'';
+       $event_longitude =  (isset($data->event_longitude) && $data->event_longitude!=null )?$db->real_escape_string( $data->event_longitude):'';
        $event_area =  (isset($data->event_area) && $data->event_area!=null )?$db->real_escape_string( $data->event_area):'';
        $event_cost =  (isset($data->event_cost) && $data->event_cost!=null )?$db->real_escape_string( $data->event_cost):'';
        $category_name =  (isset($data->event_category) && $data->event_category!=null )?$db->real_escape_string( $data->event_category):'';
@@ -64,7 +67,7 @@ class AdminModel
      //$event_organizer_id = 1; // $db->real_escape_string($data->event_organizer_id);
 
        if($organiser_id!='' && $venue_name!='' && $event_name!='' && $event_overview!='' && $event_location!='' && $event_area!='' && $event_cost!='' && $category_name!=''){
-           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$organiser_id}')";
+           $query = "insert into event_detail (venue_name,event_name,event_overview,event_hashtags,event_location,event_area_id,event_cost,category_name,event_organizer_id, event_latitude , event_longitude) VALUES ('{$venue_name}','{$event_name}','{$event_overview}','{$event_hashtags}','{$event_location}','{$event_area}','{$event_cost}','{$category_name}','{$organiser_id}' , '{$event_latitude}' , '{$event_longitude}')";
 
            $eventDetailInserted = $db->query($query);
            $result = array();
@@ -378,6 +381,8 @@ class AdminModel
             return $result;
         }
     }
+
+
 
     /**
      * @param $hash1
